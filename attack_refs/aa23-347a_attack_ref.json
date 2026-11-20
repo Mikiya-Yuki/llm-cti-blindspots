@@ -1,0 +1,602 @@
+{
+ "case_id": "AA23-347A",
+ "input_words": 2726,
+ "input_sha256": "d63f464ef3d350a4f296e77896de8019a9982c482db51fff55abbd8359095d93",
+ "inline_ids": [
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    57,
+    69
+   ],
+   "evidence": "The SVR used the following Mimikatz commands [ T1003 ]:"
+  },
+  {
+   "id": "T1003.001",
+   "name": "LSASS Memory",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    48
+   ],
+   "evidence": "This was done using an open source project called “EDRSandBlast.” The authoring agencies have observed the SVR using EDRSandBlast to remove protected process light (PPL) protection, which is used for controlling and protecting running processes and protecting them from infection. The actors then inject code into AV/EDR processes for a small subset of victims [ T1068 ]. Additionally, executables that are likely to be detected (i.e. Mimikatz) were executed in memory [ T1003.001 ]."
+  },
+  {
+   "id": "T1003.002",
+   "name": "Security Account Manager",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    73
+   ],
+   "evidence": "In order to exfiltrate Windows Registry, the SVR saved hives into files [ T1003.002 ], packed them, and then exfiltrated them using a backdoor capability. it used “reg save” to save SYSTEM, SAM and SECURITY registry hives, and used powershell to stage .zip archives in the C:\\Windows\\Temp\\ directory."
+  },
+  {
+   "id": "T1027.001",
+   "name": "Binary Padding",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    102
+   ],
+   "evidence": "GraphicalProton is a simplistic backdoor that uses OneDrive, Dropbox, and randomly generated BMPs [ T1027.001 ] to exchange data with the SVR operator."
+  },
+  {
+   "id": "T1033",
+   "name": "System Owner/User Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    12
+   ],
+   "evidence": "Initial observations show the SVR used the following basic, built-in commands to perform host reconnaissance [ T1033 ],[ T1059.003 ],[ T1592.002 ]:"
+  },
+  {
+   "id": "T1036",
+   "name": "Masquerading",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    110
+   ],
+   "evidence": "While the GraphicalProton backdoor has remained mostly unchanged over the months we have been tracking it, to avoid detection the adversary wrapped the tool in various different layers of obfuscation, encryption, encoders, and stagers. Two specific variants of GraphicalProton “packaging” are especially noteworthy – a variant that uses DLL hijacking [ T1574.002 ] in Zabbix as a means to start execution (and potentially provide long-term, hard-to-detect access) and a variant that masks itself within vcperf [ T1036 ], an open-source C++ build analysis tool from Microsoft."
+  },
+  {
+   "id": "T1041",
+   "name": "Exfiltration Over C2 Channel",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "Additionally, the authoring agencies have observed the SVR exfiltrating files [ T1041 ] which may provide insight into the host system’s operating system:"
+  },
+  {
+   "id": "T1046",
+   "name": "Network Service Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    80
+   ],
+   "evidence": "After the SVR built a secure foothold and gained an awareness of a victim’s TeamCity server, it then focused on network reconnaissance [ T1590.004 ]. The SVR performed network reconnaissance using a mix of built-in commands and additional tools, such as port scanner and PowerSploit, which it launched into memory [ T1046 ]. The SVR executed the following PowerSploit commands:"
+  },
+  {
+   "id": "T1047",
+   "name": "Windows Management Instrumentation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    94,
+    96
+   ],
+   "evidence": "The SVR executed Rsockstun either in memory or using the Windows Management Instrumentation Command Line (WMIC) [ T1047 ] utility after dropping it to disk:"
+  },
+  {
+   "id": "T1049",
+   "name": "System Network Connections Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    103,
+    103
+   ],
+   "evidence": "After execution, GraphicalProton gathers environment information such as active TCP/UDP connections [ T1049 ], running processes [ T1049 ], as well as user, host, and domain names [ T1590 ]. OneDrive is used as a primary communication channel while Dropbox is treated as a backup channel [ T1567 ]. API keys are hardcoded into the malware. When communicating with cloud services, GraphicalProton generates a randomly named directory which is used to store infection-specific BMP files - with both commands and results [ T1564.001 ]. Directory name is re-randomized each time the GraphicalProton proce"
+  },
+  {
+   "id": "T1053.005",
+   "name": "Scheduled Task",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    63
+   ],
+   "evidence": "The SVR relied on scheduled tasks [ T1053.005 ] to secure persistent execution of backdoors. Depending on the privileges the SVR had, their executables were stored in one of following directories:"
+  },
+  {
+   "id": "T1059.001",
+   "name": "PowerShell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    44
+   ],
+   "evidence": "Based on the review of the exploitation, the SVR also showed an interest in details of the SQL Server [ T1059.001 ],[ T1505.001 ]:"
+  },
+  {
+   "id": "T1059.003",
+   "name": "Windows Command Shell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    12
+   ],
+   "evidence": "Initial observations show the SVR used the following basic, built-in commands to perform host reconnaissance [ T1033 ],[ T1059.003 ],[ T1592.002 ]:"
+  },
+  {
+   "id": "T1068",
+   "name": "Exploitation for Privilege Escalation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    47,
+    48
+   ],
+   "evidence": "To avoid detection, the SVR used a “Bring Your Own Vulnerable Driver” [ T1068 ] technique to disable or outright kill endpoint detection and response (EDR) and antivirus (AV) software [ T1562.001 ]."
+  },
+  {
+   "id": "T1098",
+   "name": "Account Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    54
+   ],
+   "evidence": "To facilitate privilege escalation [ T1098 ], the SVR used multiple techniques, including WinPEAS, NoLMHash registry key modification, and the Mimikatz tool."
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    11
+   ],
+   "evidence": "The SVR started to exploit Internet-connected JetBrains TeamCity servers [ T1190 ] in late September 2023 using CVE-2023-42793, which enables the insecure handling of specific paths allowing for bypassing authorization, resulting in arbitrary code execution on the server. The authoring agencies' observations show that the TeamCity exploitation usually resulted in code execution [ T1203 ] with high privileges granting the SVR an advantageous foothold in the network environment. The authoring agencies are not currently aware of any other initial access vector to JetBrains TeamCity currently bein"
+  },
+  {
+   "id": "T1203",
+   "name": "Exploitation for Client Execution",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    11
+   ],
+   "evidence": "The SVR started to exploit Internet-connected JetBrains TeamCity servers [ T1190 ] in late September 2023 using CVE-2023-42793, which enables the insecure handling of specific paths allowing for bypassing authorization, resulting in arbitrary code execution on the server. The authoring agencies' observations show that the TeamCity exploitation usually resulted in code execution [ T1203 ] with high privileges granting the SVR an advantageous foothold in the network environment. The authoring agencies are not currently aware of any other initial access vector to JetBrains TeamCity currently bein"
+  },
+  {
+   "id": "T1210",
+   "name": "Exploitation of Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    96,
+    98
+   ],
+   "evidence": "The SVR used WMIC to facilitate lateral movement [ T1047 ],[ T1210 ]."
+  },
+  {
+   "id": "T1505.001",
+   "name": "SQL Stored Procedures",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    44
+   ],
+   "evidence": "Based on the review of the exploitation, the SVR also showed an interest in details of the SQL Server [ T1059.001 ],[ T1505.001 ]:"
+  },
+  {
+   "id": "T1558.001",
+   "name": "Golden Ticket",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    68
+   ],
+   "evidence": "To secure long-term access to the environment, the SVR used the Rubeus toolkit to craft Ticket Granting Tickets (TGTs) [ T1558.001 ]."
+  },
+  {
+   "id": "T1562.001",
+   "name": "Disable or Modify Tools",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1685",
+   "evidence_paragraphs": [
+    47
+   ],
+   "evidence": "To avoid detection, the SVR used a “Bring Your Own Vulnerable Driver” [ T1068 ] technique to disable or outright kill endpoint detection and response (EDR) and antivirus (AV) software [ T1562.001 ]."
+  },
+  {
+   "id": "T1564",
+   "name": "Hide Artifacts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    53
+   ],
+   "evidence": "To avoid detection by network monitoring, the SVR devised a covert C2 channel that used Microsoft OneDrive and Dropbox cloud services. To further enable obfuscation, data exchanged with malware via OneDrive and Dropbox were hidden inside randomly generated BMP files [ T1564 ], illustrated below:"
+  },
+  {
+   "id": "T1564.001",
+   "name": "Hidden Files and Directories",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    103
+   ],
+   "evidence": "After execution, GraphicalProton gathers environment information such as active TCP/UDP connections [ T1049 ], running processes [ T1049 ], as well as user, host, and domain names [ T1590 ]. OneDrive is used as a primary communication channel while Dropbox is treated as a backup channel [ T1567 ]. API keys are hardcoded into the malware. When communicating with cloud services, GraphicalProton generates a randomly named directory which is used to store infection-specific BMP files - with both commands and results [ T1564.001 ]. Directory name is re-randomized each time the GraphicalProton proce"
+  },
+  {
+   "id": "T1567",
+   "name": "Exfiltration Over Web Service",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    103
+   ],
+   "evidence": "After execution, GraphicalProton gathers environment information such as active TCP/UDP connections [ T1049 ], running processes [ T1049 ], as well as user, host, and domain names [ T1590 ]. OneDrive is used as a primary communication channel while Dropbox is treated as a backup channel [ T1567 ]. API keys are hardcoded into the malware. When communicating with cloud services, GraphicalProton generates a randomly named directory which is used to store infection-specific BMP files - with both commands and results [ T1564.001 ]. Directory name is re-randomized each time the GraphicalProton proce"
+  },
+  {
+   "id": "T1572",
+   "name": "Protocol Tunneling",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    90
+   ],
+   "evidence": "In selected environments the SVR used an additional tool named, “rr.exe”—a modified open source reverse socks tunneler named Rsockstun—to establish a tunnel to the C2 infrastructure [ T1572 ]."
+  },
+  {
+   "id": "T1574.002",
+   "name": "DLL Side-Loading",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1574.001",
+   "evidence_paragraphs": [
+    110
+   ],
+   "evidence": "While the GraphicalProton backdoor has remained mostly unchanged over the months we have been tracking it, to avoid detection the adversary wrapped the tool in various different layers of obfuscation, encryption, encoders, and stagers. Two specific variants of GraphicalProton “packaging” are especially noteworthy – a variant that uses DLL hijacking [ T1574.002 ] in Zabbix as a means to start execution (and potentially provide long-term, hard-to-detect access) and a variant that masks itself within vcperf [ T1036 ], an open-source C++ build analysis tool from Microsoft."
+  },
+  {
+   "id": "T1590",
+   "name": "Gather Victim Network Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    103
+   ],
+   "evidence": "After execution, GraphicalProton gathers environment information such as active TCP/UDP connections [ T1049 ], running processes [ T1049 ], as well as user, host, and domain names [ T1590 ]. OneDrive is used as a primary communication channel while Dropbox is treated as a backup channel [ T1567 ]. API keys are hardcoded into the malware. When communicating with cloud services, GraphicalProton generates a randomly named directory which is used to store infection-specific BMP files - with both commands and results [ T1564.001 ]. Directory name is re-randomized each time the GraphicalProton proce"
+  },
+  {
+   "id": "T1590.004",
+   "name": "Network Topology",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    80
+   ],
+   "evidence": "After the SVR built a secure foothold and gained an awareness of a victim’s TeamCity server, it then focused on network reconnaissance [ T1590.004 ]. The SVR performed network reconnaissance using a mix of built-in commands and additional tools, such as port scanner and PowerSploit, which it launched into memory [ T1046 ]. The SVR executed the following PowerSploit commands:"
+  },
+  {
+   "id": "T1592.002",
+   "name": "Software",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    12
+   ],
+   "evidence": "Initial observations show the SVR used the following basic, built-in commands to perform host reconnaissance [ T1033 ],[ T1059.003 ],[ T1592.002 ]:"
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T1003.001",
+   "name": "LSASS Memory",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "OS Credential Dumping: LSASS Memory | T1003.001 | SVR cyber actors executed Mimikatz commands in memory to gain access to credentials stored in memory."
+  },
+  {
+   "id": "T1003.002",
+   "name": "Security Account Manager",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "OS Credential Dumping: Security Account Manager | T1003.002 | SVR cyber actors used: privilege::debug lsadump::cache lsadump::secrets lsadump::sam sekurlsa::logonpasswords Mimikatz commands to gain access to credentials. Additionally, SVR cyber actors exfiltrated Windows registry hives to steal cred"
+  },
+  {
+   "id": "T1020",
+   "name": "Automated Exfiltration",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Automated Exfiltration | T1020 | SVR cyber actors may exfiltrate data, such as sensitive documents, through the use of automated processing after being gathered during collection."
+  },
+  {
+   "id": "T1027.001",
+   "name": "Binary Padding",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Obfuscated Files or Information: Binary Padding | T1027.001 | SVR cyber actors use BMPs to perform binary padding while exchange data is exfiltrated to an their C2 station."
+  },
+  {
+   "id": "T1033",
+   "name": "System Owner/User Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "System Owner/User Discovery | T1033 | SVR cyber actors use these built-in commands to perform host reconnaissance: whoami /priv, whoami / all, whoami / groups, whoami / domain to perform user discovery."
+  },
+  {
+   "id": "T1036",
+   "name": "Masquerading",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Masquerading | T1036 | SVR cyber actors use a variant that uses DLL hijacking in Zabbix as a means to start execution (and potentially provide long-term, hard-to-detect access) and a variant that masks itself within vcperf, an open-source C++ build analysis tool from Microsoft."
+  },
+  {
+   "id": "T1041",
+   "name": "Exfiltration Over C2 Channel",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over C2 Channel | T1041 | SVR cyber actors may steal data by exfiltrating it over an existing C2 channel. Stolen data is encoded into normal communications using the same protocol as C2 communications."
+  },
+  {
+   "id": "T1046",
+   "name": "Network Service Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Network Service Discovery | T1046 | SVR cyber actors performed network reconnaissance using a mix of built-in commands and additional tools, such as port scanner and PowerSploit."
+  },
+  {
+   "id": "T1047",
+   "name": "Windows Management Instrumentation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Windows Management Instrumentation | T1047 | SVR cyber actors executed Rsockstun either in memory or using Windows Management Instrumentation (WMI) to execute malicious commands and payloads. wmic process call create \"C:\\Program Files\\Windows Defender Advanced Threat Protection\\Sense.exe -connect po"
+  },
+  {
+   "id": "T1053.005",
+   "name": "Scheduled Task",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Scheduled Task | T1053.005 | SVR cyber actors may abuse Windows Task Schedule to perform task scheduling for initial or recurring execution of malicious code."
+  },
+  {
+   "id": "T1055",
+   "name": "Process Injection",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Process Injection | T1055 | SVR cyber actors inject code into AV and EDR processes to evade defenses."
+  },
+  {
+   "id": "T1057",
+   "name": "Process Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Process Discovery | T1057 | SVR cyber actors use GraphicalProton to gather running processes data."
+  },
+  {
+   "id": "T1059.001",
+   "name": "PowerShell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Command and Scripting Interpreter: PowerShell | T1059.001 | SVR cyber actors used powershell commands to compress Microsoft SQL server .dll files."
+  },
+  {
+   "id": "T1059.003",
+   "name": "Windows Command Shell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Command and Scripting Interpreter: Windows Command Shell | T1059.003 | SVR cyber actors execute these powershell commands to perform host reconnaissance: powershell ([adsisearcher]\"((samaccountname=<redacted>))\").Findall().Properties powershell ([adsisearcher]\"((samaccountname=<redacted>))\").Findall"
+  },
+  {
+   "id": "T1068",
+   "name": "Exploitation for Privilege Escalation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploitation for Privilege Escalation | T1068 | SVR cyber actors exploit JetBrains TeamCity vulnerability to achieve escalated privileges. To avoid detection, the SVR cyber actors used a “Bring Your Own Vulnerable Driver”  technique to disable EDR and AV defense mechanisms."
+  },
+  {
+   "id": "T1098",
+   "name": "Account Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Account Manipulation | T1098 | SVR cyber actors may manipulate accounts to maintain and/or elevate access to victim systems."
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploit Public-Facing Application | T1190 | SVR cyber actors exploit internet-connected JetBrains TeamCity server using CVE-2023-42793 for initial access."
+  },
+  {
+   "id": "T1203",
+   "name": "Exploitation for Client Execution",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploitation for Client Execution | T1203 | SVR cyber actors leverage arbitrary code execution after exploiting CVE-2023-42793."
+  },
+  {
+   "id": "T1210",
+   "name": "Exploitation of Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploitation of Remote Services | T1210 | SVR cyber actors may exploit remote services to gain unauthorized access to internal systems once inside a network."
+  },
+  {
+   "id": "T1505.001",
+   "name": "SQL Stored Procedures",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Server Software Component: SQL Stored Procedures | T1505.001 | SVR cyber actors abuse SQL server stored procedures to maintain persistence."
+  },
+  {
+   "id": "T1547",
+   "name": "Boot or Logon Autostart Execution",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Boot or Logon Autostart Execution | T1547 | SVR cyber actors used C:\\Windows\\system32\\ntoskrnl.exe to configure automatic system boot settings to maintain persistence."
+  },
+  {
+   "id": "T1555.003",
+   "name": "Credentials from Web Browsers",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Credentials from Password Stores: Credentials from Web Browsers | T1555.003 | In a few specific cases, the SVR used the SharpChromium tool to obtain sensitive browser data such as session cookies, browsing history, or saved logins."
+  },
+  {
+   "id": "T1558.001",
+   "name": "Golden Ticket",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Steal or Forge Kerberos Tickets: Golden Ticket | T1558.001 | To secure long-term access to the environment, the SVR used the Rubeus toolkit to craft Ticket Granting Tickets (TGTs)."
+  },
+  {
+   "id": "T1562.001",
+   "name": "Disable or Modify Tools",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1685",
+   "table_row": "Disable or Modify Tools | T1562.001 | SVR cyber actors may modify and/or disable tools to avoid possible detection of their malware/tools and activities."
+  },
+  {
+   "id": "T1564",
+   "name": "Hide Artifacts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Hide Artifacts | T1564 | SVR cyber actors may attempt to hide artifacts associated with their behaviors to evade detection."
+  },
+  {
+   "id": "T1564.001",
+   "name": "Hidden Files and Directories",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Hide Artifacts: Hidden Files and Directories | T1564.001 | When communicating with cloud services, GraphicalProton generates a randomly named directory which is used to store infection-specific BMP files - with both commands and results."
+  },
+  {
+   "id": "T1567",
+   "name": "Exfiltration Over Web Service",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over Web Service | T1567 | SVR cyber actors use OneDrive and Dropbox to exfiltrate data to their C2 station."
+  },
+  {
+   "id": "T1568",
+   "name": "Dynamic Resolution",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Dynamic Resolution | T1568 | SVR may dynamically establish connections to command-and-control infrastructure to evade common detections and remediations."
+  },
+  {
+   "id": "T1572",
+   "name": "Protocol Tunneling",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Protocol Tunneling | T1572 | SVR cyber actors may tunnel network communications to and from a victim system within a separate protocol to avoid detection/network filtering and/or enable access to otherwise unreachable systems. In selected environments, the SVR used an additional tool named, “rr.exe”"
+  },
+  {
+   "id": "T1574.002",
+   "name": "DLL Side-Loading",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1574.001",
+   "table_row": "Hijack Execution Flow: DLL Side-Loading | T1574.002 | SVR cyber actors use a variant of GraphicalProton that uses DLL hijacking in Zabbix as a means to start execution."
+  },
+  {
+   "id": "T1590",
+   "name": "Gather Victim Network Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Gather Victim Network Information | T1590 | SVR cyber actors use GraphicalProton to gather victim network information."
+  },
+  {
+   "id": "T1590.004",
+   "name": "Network Topology",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Gather Victim Network Information: Network Topology | T1590.004 | SVR cyber actors may gather information about the victim’s network topology that can be used during targeting."
+  },
+  {
+   "id": "T1592.002",
+   "name": "Software",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Gather Victim Host Information: Software | T1592.002 | SVR cyber actors may gather information about the victim’s host networks that can be used during targeting."
+  }
+ ],
+ "n_inline": 29,
+ "n_table": 33,
+ "n_union": 35,
+ "n_inline_not_active": 2,
+ "n_table_not_active": 2
+}

@@ -1,0 +1,773 @@
+{
+ "case_id": "AA24-249A",
+ "authoring_agencies": [
+  {
+   "name": "Federal Bureau of Investigation (FBI)",
+   "quote": "Federal Bureau of Investigation (FBI)"
+  },
+  {
+   "name": "Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "National Security Agency (NSA)",
+   "quote": "National Security Agency (NSA)"
+  },
+  {
+   "name": "U.S. Department of the Treasury",
+   "quote": "U.S. Department of the Treasury"
+  },
+  {
+   "name": "U.S. Department of State (Rewards for Justice)",
+   "quote": "U.S. Department of State (Rewards for Justice)"
+  },
+  {
+   "name": "U.S. Cyber Command Cyber National Mission Force (CNMF)",
+   "quote": "U.S. Cyber Command Cyber National Mission Force (CNMF)"
+  },
+  {
+   "name": "Netherlands Defence Intelligence and Security Service (MIVD)",
+   "quote": "Netherlands Defence Intelligence and Security Service (MIVD)"
+  },
+  {
+   "name": "Czech Military Intelligence (VZ)",
+   "quote": "Czech Military Intelligence (VZ)"
+  },
+  {
+   "name": "Czech Republic Security Information Service (BIS)",
+   "quote": "Czech Republic Security Information Service (BIS)"
+  },
+  {
+   "name": "German Federal Office for the Protection of the Constitution (BfV)",
+   "quote": "German Federal Office for the Protection of the Constitution (BfV)"
+  },
+  {
+   "name": "Estonian Internal Security Service (KAPO)",
+   "quote": "Estonian Internal Security Service (KAPO)"
+  },
+  {
+   "name": "Latvian State Security Service (VDD)",
+   "quote": "Latvian State Security Service (VDD)"
+  },
+  {
+   "name": "Security Service of Ukraine (SBU)",
+   "quote": "Security Service of Ukraine (SBU)"
+  },
+  {
+   "name": "Computer Emergency Response Team of Ukraine (CERT-UA)",
+   "quote": "Computer Emergency Response Team of Ukraine (CERT-UA)"
+  },
+  {
+   "name": "Canadian Security Intelligence Service (CSIS)",
+   "quote": "Canadian Security Intelligence Service (CSIS)"
+  },
+  {
+   "name": "Communications Security Establishment Canada (CSE)",
+   "quote": "Communications Security Establishment Canada (CSE)"
+  },
+  {
+   "name": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)",
+   "quote": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)"
+  },
+  {
+   "name": "United Kingdom National Cyber Security Centre (NCSC-UK)",
+   "quote": "United Kingdom National Cyber Security Centre (NCSC-UK)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "Unit 29155",
+   "kind": "primary",
+   "quote": "GRU Unit 29155 cyber actors began deploying the destructive WhisperGate malware"
+  },
+  {
+   "name": "161st Specialist Training Center",
+   "kind": "unit",
+   "quote": "Russian General Staff Main Intelligence Directorate (GRU) 161st Specialist Training Center (Unit 29155)"
+  },
+  {
+   "name": "Russian General Staff Main Intelligence Directorate (GRU)",
+   "kind": "parent_organization",
+   "quote": "cyber actors affiliated with the Russian General Staff Main Intelligence Directorate (GRU)"
+  },
+  {
+   "name": "Cadet Blizzard",
+   "kind": "alias",
+   "quote": "Cadet Blizzard (formerly known as DEV-0586 by Microsoft)"
+  },
+  {
+   "name": "DEV-0586",
+   "kind": "alias",
+   "quote": "Cadet Blizzard (formerly known as DEV-0586 by Microsoft)"
+  },
+  {
+   "name": "Ember Bear",
+   "kind": "alias",
+   "quote": "Ember Bear (also known as Bleeding Bear by CrowdStrike)"
+  },
+  {
+   "name": "Bleeding Bear",
+   "kind": "alias",
+   "quote": "Ember Bear (also known as Bleeding Bear by CrowdStrike)"
+  },
+  {
+   "name": "Frozenvista",
+   "kind": "alias",
+   "quote": "Frozenvista"
+  },
+  {
+   "name": "UNC2589",
+   "kind": "alias",
+   "quote": "UNC2589"
+  },
+  {
+   "name": "UAC-0056",
+   "kind": "alias",
+   "quote": "UAC-0056"
+  },
+  {
+   "name": "G1003",
+   "kind": "alias",
+   "quote": "the most notable threat group names related under MITRE ATT&CK G1003"
+  },
+  {
+   "name": "cyber-criminal affiliates",
+   "kind": "affiliate_label",
+   "quote": "Unit 29155 actors and their cyber-criminal affiliates commonly maintain accounts on dark web forums"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "assess that cyber actors affiliated with the Russian General Staff Main Intelligence Directorate (GRU) 161st Specialist Training Center (Unit 29155) are responsible for computer network operations against global targets for the purposes of espionage, sabotage, and reputational harm",
+   "attributing_party": "FBI, CISA, and NSA",
+   "attributed_to": "Russian GRU 161st Specialist Training Center (Unit 29155)",
+   "strength_markers": [
+    "assess",
+    "affiliated with",
+    "are responsible for"
+   ]
+  },
+  {
+   "quote": "GRU Unit 29155 cyber actors began deploying the destructive WhisperGate malware against multiple Ukrainian victim organizations as early as January 13, 2022.",
+   "attributing_party": "the authoring agencies (FBI, CISA, NSA)",
+   "attributed_to": "GRU Unit 29155 (WhisperGate deployment against Ukraine)",
+   "strength_markers": [
+    "began deploying"
+   ]
+  },
+  {
+   "quote": "These cyber actors are separate from other known and more established GRU-affiliated cyber groups, such as Unit 26165 and Unit 74455.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "distinct from GRU Unit 26165 and Unit 74455",
+   "strength_markers": [
+    "separate from",
+    "GRU-affiliated"
+   ]
+  },
+  {
+   "quote": "FBI, NSA, and CISA assess Unit 29155 is responsible for attempted coups, sabotage and influence operations, and assassination attempts throughout Europe.",
+   "attributing_party": "FBI, NSA, and CISA",
+   "attributed_to": "Unit 29155 (non-cyber operations in Europe)",
+   "strength_markers": [
+    "assess",
+    "is responsible for"
+   ]
+  },
+  {
+   "quote": "FBI assesses the Unit 29155 cyber actors to be junior active-duty GRU officers under the direction of experienced Unit 29155 leadership.",
+   "attributing_party": "FBI",
+   "attributed_to": "GRU (active-duty officers under Unit 29155 leadership)",
+   "strength_markers": [
+    "assesses",
+    "active-duty GRU officers",
+    "under the direction of"
+   ]
+  },
+  {
+   "quote": "FBI assesses Unit 29155 cyber actors rely on non-GRU actors, including known cyber-criminals and enablers to conduct their operations.",
+   "attributing_party": "FBI",
+   "attributed_to": "non-GRU actors (known cyber-criminals and enablers) supporting Unit 29155",
+   "strength_markers": [
+    "assesses",
+    "rely on"
+   ]
+  },
+  {
+   "quote": "Note: Cybersecurity companies have different methods of tracking and attributing cyber actors, and this may not be a 1:1 correlation to the U.S. Government’s understanding for all activity related to these groupings.",
+   "attributing_party": "the authoring agencies (caveat on cybersecurity companies' tracking)",
+   "attributed_to": "industry group names (Cadet Blizzard, Ember Bear, Frozenvista, UNC2589, UAC-0056)",
+   "strength_markers": [
+    "may not be a 1:1 correlation"
+   ]
+  },
+  {
+   "quote": "While Unit 29155 cyber actors are best known for their use of WhisperGate malware against Ukraine, the use of WhisperGate is not unique to the group.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "WhisperGate is not exclusive to Unit 29155",
+   "strength_markers": [
+    "best known for",
+    "not unique to the group"
+   ]
+  },
+  {
+   "quote": "As a result, many TTPs overlap with those of other cyber actors, which can lead to misattribution.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "other cyber actors (TTP overlap caveat)",
+   "strength_markers": [
+    "overlap",
+    "misattribution"
+   ]
+  },
+  {
+   "quote": "For additional information on Russian state-sponsored malicious cyber activity",
+   "attributing_party": "the authoring agencies (reference pointer only)",
+   "attributed_to": "Russian state (generic)",
+   "strength_markers": [
+    "state-sponsored"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A3",
+ "attribution_strength_rationale": "FBI, CISA, and NSA 'assess that cyber actors affiliated with the Russian General Staff Main Intelligence Directorate (GRU) 161st Specialist Training Center (Unit 29155) are responsible for' the operations, and FBI 'assesses' them 'to be junior active-duty GRU officers'; a specific GRU unit is named with 'assess ... are responsible for' wording, so the 'affiliated with' hedge does not lower the code.",
+ "malware_tools": [
+  {
+   "name": "WhisperGate",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "GRU Unit 29155 cyber actors began deploying the destructive WhisperGate malware against multiple Ukrainian victim organizations"
+  },
+  {
+   "name": "Impacket",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "Cyber actors used Impacket for post-exploitation and lateral movement."
+  },
+  {
+   "name": "Nmap",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "they further used Nmap (via the Nmap Scripting Engine [NSE]) to write custom scripts for discovering and scanning other machines"
+  },
+  {
+   "name": "Rclone",
+   "category": "rmm_or_legit_software",
+   "core": true,
+   "quote": "These cyber actors commonly use the command-line program Rclone to exfiltrate data to a remote location from victim infrastructure."
+  },
+  {
+   "name": "Raspberry Robin",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "obtain various hacker tools such as malware and malware loaders like Raspberry Robin and SaintBot"
+  },
+  {
+   "name": "SaintBot",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "obtain various hacker tools such as malware and malware loaders like Raspberry Robin and SaintBot"
+  },
+  {
+   "name": "Acunetix",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Unit 29155 cyber actors leveraged both Acunetix and Nmap to identify open ports, services, and vulnerabilities for networks."
+  },
+  {
+   "name": "Amass",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Unit 29155 cyber actors leveraged both Amass and VirusTotal to obtain subdomains for target websites."
+  },
+  {
+   "name": "VirusTotal",
+   "category": "other",
+   "core": false,
+   "quote": "Unit 29155 cyber actors leveraged both Amass and VirusTotal to obtain subdomains for target websites."
+  },
+  {
+   "name": "Droopescan",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Droopescan"
+  },
+  {
+   "name": "JoomScan",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "JoomScan"
+  },
+  {
+   "name": "MASSCAN",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Unit 29155 cyber actors used MASSCAN and Nmap to discover other machines once inside victim networks."
+  },
+  {
+   "name": "Netcat",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Use of Meterpreter and Netcat to execute reverse shells over ports such as 8081."
+  },
+  {
+   "name": "Shodan",
+   "category": "other",
+   "core": false,
+   "quote": "Unit 29155 cyber actors used Shodan to identify hosts with a specific set of vulnerabilities or device types."
+  },
+  {
+   "name": "WPScan",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "WPScan"
+  },
+  {
+   "name": "OpenVPN",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Unit 29155 cyber actors have used infrastructure configured with OpenVPN configuration over port 1194"
+  },
+  {
+   "name": "Adminer",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Adminer in combination with Impacket and ldapdomaindump were tools used for gathering information on AD."
+  },
+  {
+   "name": "ldapdomaindump",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Adminer in combination with Impacket and ldapdomaindump were tools used for gathering information on AD."
+  },
+  {
+   "name": "secretsdump.py (Impacket)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The script secretsdump.py was used from the Impacket framework to obtain domain credentials"
+  },
+  {
+   "name": "psexec.py (Impacket)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "while psexec.py was subsequently used to move laterally within a victim network"
+  },
+  {
+   "name": "ntlmrelayx.py (Impacket)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Cyber actors used ntlmrelayx.py via Impacket and krbrelayx.py, which requires Impacket to function."
+  },
+  {
+   "name": "krbrelayx.py",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Cyber actors used ntlmrelayx.py via Impacket and krbrelayx.py, which requires Impacket to function."
+  },
+  {
+   "name": "Responder.py",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Cyber actors used Responder.py."
+  },
+  {
+   "name": "ProxyChains",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Unit 29155 cyber actors used a Pass-the-Hash via ProxyChains."
+  },
+  {
+   "name": "SSH",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "Cyber actors performed SSH and SSHPass executions."
+  },
+  {
+   "name": "SSHPass",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Cyber actors performed SSH and SSHPass executions."
+  },
+  {
+   "name": "smbclient",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "obtaining NT hashes via Server Message Block (SMB) using smbclient"
+  },
+  {
+   "name": "Windows Management Instrumentation (WMI)",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "executing Windows Management Instrumentation (WMI) with hashes"
+  },
+  {
+   "name": "PSQL",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "subsequently PSQL and MySQL clients to access internal databases"
+  },
+  {
+   "name": "MySQL clients",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "subsequently PSQL and MySQL clients to access internal databases"
+  },
+  {
+   "name": "su-bruteforce",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Cyber actors used su-bruteforce to brute force a selected user using the su command."
+  },
+  {
+   "name": "su command",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "Cyber actors used su-bruteforce to brute force a selected user using the su command."
+  },
+  {
+   "name": "BloodHound",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Cyber actors used BloodHound, an open source AD reconnaissance tool"
+  },
+  {
+   "name": "CrackMapExec",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Cyber actors used CrackMapExec via ProxyChains with SMB protocol targeting internal victim IP addresses."
+  },
+  {
+   "name": "LinPEAS",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Cyber actors used LinPEAS, an open source script designed to automate the process of searching for potential privilege escalation vulnerabilities on a Linux victim."
+  },
+  {
+   "name": "GO Simple Tunnel (GOST)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Cyber actors used GO Simple Tunnel (GOST)"
+  },
+  {
+   "name": "Through the Wire (proof-of-concept exploit for CVE-2022-26134)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Through the Wire is a proof of concept exploit for CVE-2022-26134"
+  },
+  {
+   "name": "Meterpreter",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "the actors can then launch a Meterpreter payload"
+  },
+  {
+   "name": "Metasploit Framework",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Use of the Metasploit Framework to search for and/or access modules such as mysql, postgres, and ssh software and features."
+  },
+  {
+   "name": "exp_door v1.0.2 (PHP web shell)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Use of PHP ( exp_door v1.0.2, b374k, WSO 4.0.5 ) and the P.A.S. web shells, likely for initial access."
+  },
+  {
+   "name": "b374k (PHP web shell)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Use of PHP ( exp_door v1.0.2, b374k, WSO 4.0.5 ) and the P.A.S. web shells, likely for initial access."
+  },
+  {
+   "name": "WSO 4.0.5 (PHP web shell)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Use of PHP ( exp_door v1.0.2, b374k, WSO 4.0.5 ) and the P.A.S. web shells, likely for initial access."
+  },
+  {
+   "name": "P.A.S. web shell",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Use of PHP ( exp_door v1.0.2, b374k, WSO 4.0.5 ) and the P.A.S. web shells, likely for initial access."
+  },
+  {
+   "name": "EternalBlue",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Use of EternalBlue."
+  },
+  {
+   "name": "reGeorg",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Use of reGeorg or Neo-reGeorg to set up a proxy to tunnel network traffic following compromise of a victim website"
+  },
+  {
+   "name": "Neo-reGeorg",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Use of reGeorg or Neo-reGeorg to set up a proxy to tunnel network traffic following compromise of a victim website"
+  },
+  {
+   "name": "dnscat/2",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Using Domain Name System (DNS) tunneling tools, such as dnscat/2 and Iodine, to tunnel IPv4 network traffic."
+  },
+  {
+   "name": "Iodine",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Using Domain Name System (DNS) tunneling tools, such as dnscat/2 and Iodine, to tunnel IPv4 network traffic."
+  },
+  {
+   "name": "PowerShell (New-MailboxExportRequest)",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "exfiltrate mail artifacts, such as email messages, using PowerShell via the following command"
+  }
+ ],
+ "vulnerabilities": [
+  {
+   "cve": "CVE-2021-33044",
+   "product": "Dahua Security (Dahua IP cameras)",
+   "core": true,
+   "quote": "Unit 29155 cyber actors exploited CVE-2021-33044 and CVE-2021-33045 on Dahua IP cameras to bypass identity authentication"
+  },
+  {
+   "cve": "CVE-2021-33045",
+   "product": "Dahua Security (Dahua IP cameras)",
+   "core": true,
+   "quote": "Unit 29155 cyber actors exploited CVE-2021-33044 and CVE-2021-33045 on Dahua IP cameras to bypass identity authentication"
+  },
+  {
+   "cve": "CVE-2022-26134",
+   "product": "Atlassian Confluence Server and Data Center",
+   "core": true,
+   "quote": "CVE-2022-26134 (Atlassian Confluence Server and Data Center)"
+  },
+  {
+   "cve": "CVE-2022-26138",
+   "product": "Atlassian Confluence Server and Data Center",
+   "core": true,
+   "quote": "CVE-2022-26138 (Atlassian Confluence Server and Data Center)"
+  },
+  {
+   "cve": "CVE-2022-3236",
+   "product": "Sophos: Firewall",
+   "core": true,
+   "quote": "CVE-2022-3236 (Sophos: Firewall)"
+  },
+  {
+   "cve": "CVE-2020-1472",
+   "product": "Microsoft: Windows Server (exploit script obtained, NOT exploited)",
+   "core": false,
+   "quote": "CVE-2020-1472 (Microsoft: Windows Server)"
+  },
+  {
+   "cve": "CVE-2021-26084",
+   "product": "Atlassian Confluence Server and Data Center (exploit script obtained, NOT exploited)",
+   "core": false,
+   "quote": "CVE-2021-26084 (Atlassian Confluence Server and Data Center)"
+  },
+  {
+   "cve": "CVE-2021-3156",
+   "product": "Red Hat: Privilege Escalation via Command Line Argument Parsing (exploit script obtained, NOT exploited)",
+   "core": false,
+   "quote": "CVE-2021-3156 (Red Hat: Privilege Escalation via Command Line Argument Parsing)"
+  },
+  {
+   "cve": "CVE-2021-4034",
+   "product": "Red Hat: Polkit Privilege Escalation (exploit script obtained, NOT exploited)",
+   "core": false,
+   "quote": "CVE-2021-4034 (Red Hat: Polkit Privilege Escalation)"
+  },
+  {
+   "cve": "CVE-2022-27666",
+   "product": "Red Hat: Heap Buffer Overflow Flaw (exploit script obtained, NOT exploited)",
+   "core": false,
+   "quote": "CVE-2022-27666 (Red Hat: Heap Buffer Overflow Flaw)"
+  }
+ ],
+ "affected_products_or_technologies": [
+  {
+   "name": "IP cameras (default credentials; image exfiltration)",
+   "core": false,
+   "quote": "using exploitation scripts to authenticate to IP cameras with default usernames and passwords, and exfiltrating images (JPG files)"
+  },
+  {
+   "name": "Internet of Things (IoT) devices",
+   "core": false,
+   "quote": "Unit 29155 cyber actors have used Shodan to scan for Internet of Things (IoT) devices"
+  },
+  {
+   "name": "Microsoft Outlook Web Access (OWA) infrastructure (password spraying)",
+   "core": false,
+   "quote": "Cyber actors targeted victims’ Microsoft Outlook Web Access (OWA) infrastructure with password spraying to obtain valid usernames and passwords."
+  },
+  {
+   "name": "mail servers",
+   "core": false,
+   "quote": "actor infrastructure has also been used to compromise multiple mail servers and exfiltrate mail artifacts"
+  },
+  {
+   "name": "Active Directory (AD)",
+   "core": false,
+   "quote": "to perform Active Directory (AD) enumeration"
+  },
+  {
+   "name": "corporate Microsoft Windows network",
+   "core": false,
+   "quote": "Cyber actors performed lateral movement from compromised web servers to exploit a corporate Microsoft Windows network"
+  },
+  {
+   "name": "victim websites (defacement)",
+   "core": false,
+   "quote": "Unit 29155 cyber actors have defaced victim websites and used public website domains to post exfiltrated victim information."
+  },
+  {
+   "name": "internet-facing systems",
+   "core": false,
+   "quote": "These cyber actors commonly attempt to exploit weaknesses in internet-facing systems, like the CVEs listed above, to initially access networks."
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "critical infrastructure and key resource sectors",
+   "core": true,
+   "quote": "Unit 29155 cyber actors are known to target critical infrastructure and key resource sectors"
+  },
+  {
+   "sector": "government services",
+   "core": true,
+   "quote": "including the government services, financial services, transportation systems, energy, and healthcare sectors of NATO members, the EU, Central American, and Asian countries"
+  },
+  {
+   "sector": "financial services",
+   "core": true,
+   "quote": "including the government services, financial services, transportation systems, energy, and healthcare sectors of NATO members, the EU, Central American, and Asian countries"
+  },
+  {
+   "sector": "transportation systems",
+   "core": true,
+   "quote": "including the government services, financial services, transportation systems, energy, and healthcare sectors of NATO members, the EU, Central American, and Asian countries"
+  },
+  {
+   "sector": "energy",
+   "core": true,
+   "quote": "including the government services, financial services, transportation systems, energy, and healthcare sectors of NATO members, the EU, Central American, and Asian countries"
+  },
+  {
+   "sector": "healthcare",
+   "core": true,
+   "quote": "including the government services, financial services, transportation systems, energy, and healthcare sectors of NATO members, the EU, Central American, and Asian countries"
+  },
+  {
+   "sector": "efforts to provide aid to Ukraine (stated primary targeting focus since early 2022)",
+   "core": true,
+   "quote": "Since early 2022, the primary focus of the cyber actors appears to be targeting and disrupting efforts to provide aid to Ukraine."
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "Ukraine",
+   "core": true,
+   "quote": "WhisperGate malware against multiple Ukrainian victim organizations"
+  },
+  {
+   "region": "North Atlantic Treaty Organization (NATO) members",
+   "core": true,
+   "quote": "computer network operations against numerous members of the North Atlantic Treaty Organization (NATO) in Europe and North America"
+  },
+  {
+   "region": "Europe",
+   "core": true,
+   "quote": "as well as countries in Europe, Latin America, and Central Asia"
+  },
+  {
+   "region": "Latin America",
+   "core": true,
+   "quote": "as well as countries in Europe, Latin America, and Central Asia"
+  },
+  {
+   "region": "Central Asia",
+   "core": true,
+   "quote": "as well as countries in Europe, Latin America, and Central Asia"
+  },
+  {
+   "region": "European Union (EU) countries",
+   "core": true,
+   "quote": "more than 14,000 instances of domain scanning across at least 26 NATO members and several additional European Union (EU) countries"
+  },
+  {
+   "region": "North America",
+   "core": false,
+   "quote": "North Atlantic Treaty Organization (NATO) in Europe and North America"
+  },
+  {
+   "region": "Central American countries",
+   "core": false,
+   "quote": "including the government services, financial services, transportation systems, energy, and healthcare sectors of NATO members, the EU, Central American, and Asian countries"
+  },
+  {
+   "region": "Asian countries",
+   "core": false,
+   "quote": "including the government services, financial services, transportation systems, energy, and healthcare sectors of NATO members, the EU, Central American, and Asian countries"
+  },
+  {
+   "region": "global",
+   "core": false,
+   "quote": "computer network operations against global targets"
+  }
+ ],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "since at least 2020",
+   "meaning": "start of Unit 29155 computer network (cyber) operations",
+   "core": true,
+   "quote": "for the purposes of espionage, sabotage, and reputational harm since at least 2020"
+  },
+  {
+   "expression": "as early as January 13, 2022",
+   "meaning": "start of WhisperGate deployment against Ukrainian victim organizations",
+   "core": true,
+   "quote": "against multiple Ukrainian victim organizations as early as January 13, 2022"
+  },
+  {
+   "expression": "Since early 2022",
+   "meaning": "start of the actors' primary focus on targeting and disrupting aid to Ukraine",
+   "core": true,
+   "quote": "Since early 2022, the primary focus of the cyber actors appears to be targeting and disrupting efforts to provide aid to Ukraine"
+  },
+  {
+   "expression": "since 2020",
+   "meaning": "scope of the joint collective assessment of Unit 29155 cyber operations",
+   "core": false,
+   "quote": "as a collective assessment of Unit 29155 cyber operations since 2020"
+  },
+  {
+   "expression": "Since at least 2020",
+   "meaning": "start of the actors' use of virtual private servers (VPSs) for operations",
+   "core": false,
+   "quote": "Since at least 2020, Unit 29155 cyber actors have used virtual private servers (VPSs)"
+  },
+  {
+   "expression": "February 26, 2022",
+   "meaning": "publication date of the earlier joint advisory 'Destructive Malware Targeting Organizations in Ukraine' (reference date)",
+   "core": false,
+   "quote": "Destructive Malware Targeting Organizations in Ukraine, published February 26, 2022"
+  },
+  {
+   "expression": "June 26, 2024",
+   "meaning": "date of a U.S. DOJ press release on Russian state-sponsored activity/indictments (reference date)",
+   "core": false,
+   "quote": "press releases for June 26, 2024, and September 5, 2024"
+  },
+  {
+   "expression": "September 5, 2024",
+   "meaning": "date of a U.S. DOJ press release on Russian state-sponsored activity/indictments (reference date)",
+   "core": false,
+   "quote": "press releases for June 26, 2024, and September 5, 2024"
+  }
+ ],
+ "notes": "(1) CVE-2020-1472, CVE-2021-26084, CVE-2021-3156, CVE-2021-4034 and CVE-2022-27666 are ones for which the actors obtained exploit scripts 'but not exploiting'; a model saying they were exploited is wrong. Only CVE-2021-33044, CVE-2021-33045, CVE-2022-26134, CVE-2022-26138 and CVE-2022-3236 were 'exploited ... for initial access'. (2) Unit 26165 and Unit 74455 are named only as SEPARATE, 'more established GRU-affiliated cyber groups'; listing them as aliases of Unit 29155 is wrong. (3) The industry names (Cadet Blizzard/DEV-0586, Ember Bear/Bleeding Bear, Frozenvista, UNC2589, UAC-0056) are 'related' names, with the caveat that they 'may not be a 1:1 correlation' to the U.S. Government's understanding. G1003 is a MITRE ATT&CK group ID. (4) The coups/sabotage/assassination sentence concerns Unit 29155's non-cyber operations in Europe. (5) WhisperGate use 'is not unique to the group'. Raspberry Robin use is hedged ('may have used ... in the role of an access broker'). Raspberry Robin and SaintBot were obtained via dark web forums. (6) The publicly available scanning tools carry a disclaimer: the actors were 'not observed using these tools outside of their intended purpose'. Nmap includes the Nmap Scripting Engine (NSE). secretsdump.py, psexec.py and ntlmrelayx.py are Impacket scripts. The GOST binary was named 'java'. EternalBlue is named without a CVE ID. VirusTotal and Shodan are online services used by the actors. (7) Not keyed as items: mega[.]nz (exfiltration domain, IOC), i.php/tunnel.jsp (resource names), port lists, Metasploit module names (mysql, postgres, ssh), VPS/VPN anonymization infrastructure, and generic 'reverse shell'. GitHub repositories are named only as the source of CVE exploit scripts (not an intrusion tool); SOCKS5 is the proxy mode GOST ran in (a protocol, not keyed separately). DEV-0586 is Microsoft's former name and Bleeding Bear is CrowdStrike's name. 'Russian state-sponsored' appears only in a pointer to DOJ press releases. Webmail and VPNs appear only in mitigation advice. (8) The DOJ press-release dates and February 26, 2022 are reference/publication dates, not activity dates. 'for 30 days' is a GOST usage duration, and 'more than 14,000 instances of domain scanning across at least 26 NATO members' is a count. (9) Not in the input: Appendix A (WhisperGate malware analysis), Tables 1-2 (victim observations, scripts) and Appendix B IOCs; component names that appear only there are not keyed. (10) No victims are named."
+}

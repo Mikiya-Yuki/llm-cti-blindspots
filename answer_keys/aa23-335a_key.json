@@ -1,0 +1,294 @@
+{
+ "case_id": "AA23-335A",
+ "authoring_agencies": [
+  {
+   "name": "Federal Bureau of Investigation (FBI)",
+   "quote": "The Federal Bureau of Investigation (FBI)"
+  },
+  {
+   "name": "Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "the Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "National Security Agency (NSA)",
+   "quote": "the National Security Agency (NSA)"
+  },
+  {
+   "name": "Environmental Protection Agency (EPA)",
+   "quote": "the Environmental Protection Agency (EPA)"
+  },
+  {
+   "name": "Israel National Cyber Directorate (INCD)",
+   "quote": "the Israel National Cyber Directorate (INCD)"
+  },
+  {
+   "name": "Canadian Centre for Cyber Security (CCCS)",
+   "quote": "the Canadian Centre for Cyber Security (CCCS)"
+  },
+  {
+   "name": "United Kingdom’s National Cyber Security Centre (NCSC)",
+   "quote": "the United Kingdom’s National Cyber Security Centre (NCSC)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "IRGC-affiliated APT cyber actors",
+   "kind": "primary",
+   "quote": "continued malicious cyber activity by IRGC-affiliated APT cyber actors"
+  },
+  {
+   "name": "CyberAv3ngers",
+   "kind": "persona",
+   "quote": "CyberAv3ngers is an Iranian IRGC-affiliated cyber persona"
+  },
+  {
+   "name": "CyberAveng3rs",
+   "kind": "alias",
+   "quote": "(also known as CyberAveng3rs or Cyber Avengers)"
+  },
+  {
+   "name": "Cyber Avengers",
+   "kind": "alias",
+   "quote": "(also known as CyberAveng3rs or Cyber Avengers)"
+  },
+  {
+   "name": "Islamic Revolutionary Guard Corps (IRGC)",
+   "kind": "parent_organization",
+   "quote": "cyber actors affiliated with the Iranian Government’s Islamic Revolutionary Guard Corps (IRGC)"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "malicious cyber activities conducted by advanced persistent threat (APT) cyber actors affiliated with the Iranian Government’s Islamic Revolutionary Guard Corps (IRGC)",
+   "attributing_party": "the authoring agencies (advisory's opening note)",
+   "attributed_to": "Iranian Government’s Islamic Revolutionary Guard Corps (IRGC) — via affiliation",
+   "strength_markers": [
+    "affiliated with"
+   ]
+  },
+  {
+   "quote": "are releasing this updated joint advisory to warn network defenders of continued malicious cyber activity by IRGC-affiliated APT cyber actors",
+   "attributing_party": "the authoring agencies (FBI, CISA, NSA, EPA, INCD, CCCS, UK NCSC)",
+   "attributed_to": "IRGC — via affiliation",
+   "strength_markers": [
+    "IRGC-affiliated"
+   ]
+  },
+  {
+   "quote": "In November 2023, IRGC-affiliated cyber actors using the persona “CyberAv3ngers” began actively targeting and compromising Israeli-made Unitronics Vision Series programmable logic controllers (PLCs) and human machine interfaces (HMIs).",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "IRGC — via affiliation, acting through the CyberAv3ngers persona",
+   "strength_markers": [
+    "IRGC-affiliated",
+    "persona"
+   ]
+  },
+  {
+   "quote": "This advisory provides observed TTPs the authoring agencies assess are likely associated with this IRGC-affiliated APT.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "this IRGC-affiliated APT",
+   "strength_markers": [
+    "assess",
+    "likely associated with",
+    "IRGC-affiliated"
+   ]
+  },
+  {
+   "quote": "CyberAv3ngers is an Iranian IRGC-affiliated cyber persona (also known as CyberAveng3rs or Cyber Avengers)",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "Iran / IRGC — via affiliation (persona)",
+   "strength_markers": [
+    "IRGC-affiliated",
+    "persona"
+   ]
+  },
+  {
+   "quote": "Beginning on Nov. 22, 2023, IRGC cyber actors accessed multiple U.S.-based WWS facilities",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "IRGC (unhedged 'IRGC cyber actors', used once)",
+   "strength_markers": [
+    "IRGC cyber actors"
+   ]
+  },
+  {
+   "quote": "the authoring agencies are releasing this updated joint advisory to share TTPs associated with IRGC cyber operations",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "IRGC cyber operations",
+   "strength_markers": [
+    "associated with",
+    "IRGC cyber operations"
+   ]
+  },
+  {
+   "quote": "CyberAv3ngers also reportedly has connections to another IRGC-linked group known as Soldiers of Solomon.",
+   "attributing_party": "unspecified reporting (relayed by the authoring agencies with 'reportedly')",
+   "attributed_to": "Soldiers of Solomon — a separate IRGC-linked group connected to CyberAv3ngers",
+   "strength_markers": [
+    "reportedly",
+    "connections",
+    "IRGC-linked"
+   ]
+  },
+  {
+   "quote": "For more information on Iranian state-sponsored malicious cyber activity, see CISA’s Iran Cyber Threat Overview and Advisories webpage",
+   "attributing_party": "the authoring agencies (cross-reference sentence)",
+   "attributed_to": "Iranian state (generic; cross-reference only)",
+   "strength_markers": [
+    "state-sponsored"
+   ]
+  },
+  {
+   "quote": "Additionally, the NCSC observed the targeting of PLC devices, including in the United Kingdom, likely as part of a wider cyber campaign against Israel and Israeli-made technology.",
+   "attributing_party": "UK NCSC",
+   "attributed_to": "a wider cyber campaign against Israel and Israeli-made technology (campaign linkage, not a state)",
+   "strength_markers": [
+    "likely as part of"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A1",
+ "attribution_strength_rationale": "Although a specific organ is named, the main attribution sentence speaks of 'APT cyber actors affiliated with the Iranian Government’s Islamic Revolutionary Guard Corps (IRGC)' and the advisory consistently uses 'IRGC-affiliated', the 'CyberAv3ngers' 'persona', and 'assess are likely associated with', i.e., hedged affiliation rather than a direct claim that the IRGC itself conducted the activity, so A1 best represents it (A3 is the nearest alternative because of the isolated phrases 'IRGC cyber actors accessed' and 'IRGC cyber operations').",
+ "malware_tools": [
+  {
+   "name": "custom ladder logic files (actor-developed replacement PLC programs with no inputs/outputs; unnamed)",
+   "category": "other",
+   "core": true,
+   "quote": "The IRGC-affiliated APT cyber actors also developed custom ladder logic files to download for each of these device types."
+  }
+ ],
+ "vulnerabilities": [],
+ "affected_products_or_technologies": [
+  {
+   "name": "Unitronics Vision Series programmable logic controllers (PLCs) and human machine interfaces (HMIs) (incl. older models/version types)",
+   "core": true,
+   "quote": "Israeli-made Unitronics Vision Series programmable logic controllers (PLCs) and human machine interfaces (HMIs)"
+  },
+  {
+   "name": "Israeli-made technology / equipment ('made in Israel')",
+   "core": false,
+   "quote": "likely as part of a wider cyber campaign against Israel and Israeli-made technology"
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "Water and Wastewater Systems (WWS) Sector",
+   "core": true,
+   "quote": "CyberAv3ngers targeted U.S.-based Unitronics PLC devices used in multiple critical infrastructure industries, including the WWS Sector"
+  },
+  {
+   "sector": "energy",
+   "core": true,
+   "quote": "claimed responsibility for numerous attacks against critical infrastructure organizations primarily in the water and energy sectors"
+  },
+  {
+   "sector": "critical infrastructure (multiple critical infrastructure industries)",
+   "core": false,
+   "quote": "newly observed TTPs employed by IRGC-affiliated APT cyber actors targeting U.S. and global critical infrastructure"
+  },
+  {
+   "sector": "shipping (Israeli PLCs)",
+   "core": false,
+   "quote": "CyberAv3ngers targeted Israeli PLCs in the water, energy, shipping, and distribution sectors."
+  },
+  {
+   "sector": "distribution (Israeli PLCs)",
+   "core": false,
+   "quote": "CyberAv3ngers targeted Israeli PLCs in the water, energy, shipping, and distribution sectors."
+  },
+  {
+   "sector": "food and beverage manufacturing (industry using these PLCs)",
+   "core": false,
+   "quote": "used in other industries including, but not limited to, energy, food and beverage manufacturing, transportation systems, and healthcare"
+  },
+  {
+   "sector": "transportation systems (industry using these PLCs)",
+   "core": false,
+   "quote": "used in other industries including, but not limited to, energy, food and beverage manufacturing, transportation systems, and healthcare"
+  },
+  {
+   "sector": "healthcare (industry using these PLCs)",
+   "core": false,
+   "quote": "used in other industries including, but not limited to, energy, food and beverage manufacturing, transportation systems, and healthcare"
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "United States (multiple U.S. states)",
+   "core": true,
+   "quote": "The victims spanned multiple U.S. states and foreign countries."
+  },
+  {
+   "region": "Israel",
+   "core": true,
+   "quote": "CyberAv3ngers targeted Israeli PLCs in the water, energy, shipping, and distribution sectors."
+  },
+  {
+   "region": "United Kingdom",
+   "core": false,
+   "quote": "the NCSC observed the targeting of PLC devices, including in the United Kingdom"
+  },
+  {
+   "region": "global / foreign countries / other countries",
+   "core": false,
+   "quote": "targeting U.S. and global critical infrastructure"
+  }
+ ],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "In November 2023",
+   "meaning": "IRGC-affiliated actors (CyberAv3ngers persona) began actively targeting and compromising Unitronics Vision Series PLCs/HMIs",
+   "core": true,
+   "quote": "In November 2023, IRGC-affiliated cyber actors using the persona “CyberAv3ngers” began actively targeting and compromising"
+  },
+  {
+   "expression": "Beginning on Nov. 22, 2023",
+   "meaning": "IRGC cyber actors began accessing multiple U.S.-based WWS facilities",
+   "core": true,
+   "quote": "Beginning on Nov. 22, 2023, IRGC cyber actors accessed multiple U.S.-based WWS facilities"
+  },
+  {
+   "expression": "Between November 2023 and January 2024",
+   "meaning": "period in which CyberAv3ngers targeted U.S.-based Unitronics PLC devices, likely in four waves (at least 75 devices compromised)",
+   "core": true,
+   "quote": "Between November 2023 and January 2024, CyberAv3ngers targeted U.S.-based Unitronics PLC devices"
+  },
+  {
+   "expression": "Between Sept. 13, 2023, and Oct. 30, 2023",
+   "meaning": "period in which the CyberAv3ngers Telegram channel displayed legitimate and false claims of cyberattacks against Israel",
+   "core": false,
+   "quote": "Between Sept. 13, 2023, and Oct. 30, 2023, the CyberAv3ngers Telegram channel displayed both legitimate and false claims of multiple cyberattacks against Israel."
+  },
+  {
+   "expression": "In October 2023",
+   "meaning": "CyberAv3ngers claimed credit on Telegram for cyberattacks against Israel-based PLCs",
+   "core": false,
+   "quote": "In October 2023, CyberAv3ngers claimed credit on their Telegram Channel for cyberattacks against Israel-based PLCs."
+  },
+  {
+   "expression": "Since 2020",
+   "meaning": "CyberAv3ngers has claimed responsibility for cyberattacks in Israel since 2020 (several claims false)",
+   "core": false,
+   "quote": "Since 2020, CyberAv3ngers has claimed responsibility for cyberattacks in Israel"
+  },
+  {
+   "expression": "late 2023",
+   "meaning": "timing of the CyberAv3ngers campaign that compromised additional Unitronics version types",
+   "core": false,
+   "quote": "The late 2023 campaign conducted by CyberAv3ngers compromised additional Unitronics version types"
+  },
+  {
+   "expression": "Dec. 1, 2023",
+   "meaning": "original publication date of the joint advisory (its IOCs are 'not current')",
+   "core": false,
+   "quote": "Originally published Dec. 1, 2023"
+  },
+  {
+   "expression": "Dec. 18, 2024",
+   "meaning": "date of the advisory update (start of the marked update section)",
+   "core": false,
+   "quote": "(Update Dec. 18, 2024)"
+  }
+ ],
+ "notes": "No CVE IDs, no named malware or tools, and no named victim organizations appear. The exploited weaknesses are internet-facing PLCs with Unitronics default passwords or no password, on the default TCP port 20256 (the actors changed it to 20257) — described as 'vulnerabilities that were likely exploited', not CVEs. The only actor-built artifact is the custom ladder logic (unnamed; listed under malware_tools as 'other' — credit any mention of custom/replacement ladder logic, wherever the model puts it). DESIGNATIONS: 'Soldiers of Solomon' is a DIFFERENT IRGC-linked group with which CyberAv3ngers 'reportedly has connections'; it is NOT an alias (listing it as one is an error; noting it as a connected group is correct). CyberAveng3rs and Cyber Avengers are aliases of the persona; 'Cyberav3ngers' in the defacement text is a spelling variant. 'IRGC cyber actors' (used once) is a variant label. The IRGC is listed as parent_organization only because it is the organ named; the text says 'affiliated with', not that the actors are an IRGC unit. ATTRIBUTION AMBIGUITY: the IRGC is a specific organ (A3-type element), but the main sentence and almost all references use 'affiliated with'/'IRGC-affiliated' plus persona wording; one-off phrases 'IRGC cyber actors accessed multiple U.S.-based WWS facilities' and 'TTPs associated with IRGC cyber operations' are more direct, and the only 'state-sponsored' wording is a cross-reference sentence ('For more information on Iranian state-sponsored malicious cyber activity'). Gold code A1; A3 is the closest alternative reading. The IRGC's designation as a foreign terrorist organization by the United States and Canada is context only (Canada is not a target region). SECTORS: energy, food and beverage manufacturing, transportation systems and healthcare are first named as industries where these PLCs are used (exposure), not confirmed victims; energy is also explicitly a CyberAv3ngers target ('primarily in the water and energy sectors'; Israeli PLCs in water, energy, shipping, distribution), hence core. Shipping and distribution relate only to Israeli PLC targeting/claims (Sept–Oct 2023). Several CyberAv3ngers claims in Israel are explicitly 'false'. FACTS a summary may include: at least 75 devices compromised, at least 34 in the U.S. WWS Sector, likely in four waves; actions = erased/replaced ladder logic, renamed devices, reset software version to an older version, disabled upload/download and password-protected upload settings, changed the port, did not burn the logic to the device, uploaded an HMI defacement splash page ('You have been hacked, down with Israel. Every equipment ‘made in Israel’ is CyberAv3ngers legal target.'). The PLCs may be rebranded under other manufacturers' names. The Telegram channel is the persona's claims outlet, not a tool. Dec. 1, 2023 is the original publication and Dec. 18, 2024 the update date (metadata, core=false)."
+}

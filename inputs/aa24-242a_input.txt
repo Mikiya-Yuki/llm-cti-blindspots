@@ -1,0 +1,137 @@
+Note: This joint Cybersecurity Advisory is part of an ongoing #StopRansomware effort to publish advisories for network defenders that detail various ransomware variants and ransomware threat actors. These #StopRansomware advisories include recently and historically observed tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) to help organizations protect against ransomware. Visit stopransomware.gov to see all #StopRansomware advisories and to learn more about other ransomware threats and no-cost resources.
+
+The Federal Bureau of Investigation (FBI), the Cybersecurity and Infrastructure Security Agency (CISA), the Multi-State Information Sharing and Analysis Center (MS-ISAC), and the Department of Health and Human Services (HHS) (hereafter referred to as the authoring organizations) are releasing this joint advisory to disseminate known RansomHub ransomware IOCs and TTPs. These have been identified through FBI threat response activities and third-party reporting as recently as August 2024. RansomHub is a ransomware-as-a-service variant—formerly known as Cyclops and Knight—that has established itself as an efficient and successful service model (recently attracting high-profile affiliates from other prominent variants such as LockBit and ALPHV).
+
+Since its inception in February 2024, RansomHub has encrypted and exfiltrated data from at least 210 victims representing the water and wastewater, information technology, government services and facilities, healthcare and public health, emergency services, food and agriculture, financial services, commercial facilities, critical manufacturing, transportation, and communications critical infrastructure sectors.
+
+The affiliates leverage a double-extortion model by encrypting systems and exfiltrating data to extort victims. It should be noted that data exfiltration methods are dependent on the affiliate conducting the network compromise. The ransom note dropped during encryption does not generally include an initial ransom demand or payment instructions. Instead, the note provides victims with a client ID and instructs them to contact the ransomware group via a unique.onion URL (reachable through the Tor browser). The ransom note typically gives victims between three and 90 days to pay the ransom (depending on the affiliate) before the ransomware group publishes their data on the RansomHub Tor data leak site.
+
+The authoring organizations encourage network defenders to implement the recommendations in the Mitigations section of this cybersecurity advisory to reduce the likelihood and impact of ransomware incidents.
+
+Note: This advisory uses the MITRE ATT&CK ® Matrix for Enterprise framework, version 15. See the MITRE ATT&CK Tactics and Techniques section for a table of the threat actors’ activity mapped to MITRE ATT&CK tactics and techniques.
+
+RansomHub affiliates typically compromise internet facing systems and user endpoints by using methods such as phishing emails, exploitation of known vulnerabilities, and password spraying. Password spraying targets accounts compromised through data breaches. Proof-of-concept exploits are obtained from sources such as ExploitDB and GitHub. Exploits based on the following CVEs have been observed:
+
+CVE-2023-3519 ( CWE-94 )
+
+Citrix ADC (NetScaler) Remote Code Execution. A vulnerability exists within Citrix ADC that allows an unauthenticated attacker to trigger a stack buffer overflow of the NSPPE (NetScaler Packet Processing Engine) process by making a specially crafted HTTP GET request. Successful exploitation results in remote code execution as root.
+
+CVE-2023-27997 ( CWE-787 | CWE-122 )
+
+A heap-based buffer overflow vulnerability in FortiOS version 7.2.4 and below, version 7.0.11 and below, version 6.4.12 and below, version 6.0.16 and below and FortiProxy version 7.2.3 and below, version 7.0.9 and below, version 2.0.12 and below, version 1.2 all versions, version 1.1 all versions SSL-VPN may allow a remote attacker to execute arbitrary code or commands via specifically crafted requests.
+
+CVE-2023-46604 ( CWE-502 )
+
+The Java OpenWire protocol marshaller, such as in Apache ActiveMQ, is vulnerable to Remote Code Execution. This vulnerability may allow a remote attacker with network access to open either a Java-based OpenWire broker or client to run arbitrary shell commands by manipulating serialized class types in the OpenWire protocol to cause either the client or the broker (respectively) to instantiate any class on the classpath. Upgrading both brokers and clients to version 5.15.16, 5.16.7, 5.17.6, or 5.18.3 fixes this issue.
+
+CVE-2023-22515
+
+A vulnerability in publicly accessible Confluence Data Center and Server instances that allows the creation of unauthorized Confluence administrator accounts and access to Confluence instances. Atlassian Cloud sites are not affected by this vulnerability. If your Confluence site is accessed via an atlassian.net domain, it is hosted by Atlassian and is not vulnerable to this issue.
+
+CVE-2023-46747 ( CWE-306 | CWE-288 )
+
+Undisclosed requests may bypass configuration utility authentication, allowing an attacker with network access to the BIG-IP system through the management port and/or self IP addresses to execute arbitrary system commands. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated.
+
+CVE-2023-48788 ( CWE-89 )
+
+An improper neutralization of special elements used in an SQL command (SQL injection') in Fortinet FortiClientEMS version 7.2.0 through 7.2.2 and FortiClientEMS 7.0.1 through 7.0.10 allows attacker to execute unauthorized code or commands via specially crafted packets.
+
+CVE-2017-0144
+
+The SMBv1 server in Microsoft Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 allows remote attackers to execute arbitrary code via crafted packets, also known as “Windows SMB Remote Code Execution Vulnerability”.
+
+CVE-2020-1472
+
+An elevation of privilege vulnerability exists when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller using the Netlogon Remote Protocol (MS-NRPC).
+
+CVE-2020-0787
+
+This vulnerability was also potentially exploited along with the Zerologon privilege escalation vulnerability.
+
+RansomHub affiliates conduct network scanning with tools such as AngryIPScanner, Nmap, and PowerShell-based living off the land methods with PowerShell to conduct network scanning.
+
+Cybersecurity researchers have observed affiliates renaming the ransomware executable with innocuous file names, such as Windows.exe, left on the user’s desktop ( C:\Users\%USERNAME%\Desktop ) or downloads ( C:\Users\%USERNAME%\Downloads ). The affiliates have also cleared Windows and Linux system logs to inhibit any potential incident response. Affiliates used Windows Management Instrumentation to disable antivirus products. In some instances, RansomHub-specific tools were deployed to disable endpoint detection and response (EDR) tooling.
+
+Following initial access, RansomHub affiliates created user accounts for persistence, reenabled disabled accounts, and used Mimikatz on Windows systems to gather credentials and escalate privileges to SYSTEM. Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP), PsExec, Anydesk, Connectwise, N-Able, Cobalt Strike, Metasploit, or other widely used command-and-control (C2) methods.
+
+Data exfiltration methods depend heavily on the affiliate conducting the network compromise. The ransomware binary does not normally include any mechanism for data exfiltration. Data exfiltration has been observed through the usage of tools such as PuTTY, Amazon AWS S3 buckets/tools, HTTP POST requests, WinSCP, Rclone, Cobalt Strike, Metasploit, and other methods.
+
+RansomHub ransomware has typically leveraged an Elliptic Curve Encryption algorithm called Curve 25519 to encrypt user accessible files on the system. Curve 25519 uses a public/private key that is unique to each victim organization. To successfully encrypt files that are currently in use, the ransomware binary will typically attempt to stop the following processes:
+
+"vmms.exe"
+
+"msaccess.exe"
+
+"mspub.exe"
+
+"svchost.exe"
+
+"vmcompute.exe"
+
+"notepad.exe"
+
+"ocautoupds.exe"
+
+"ocomm.exe"
+
+"ocssd.exe"
+
+"oracle.exe"
+
+"onenote.exe"
+
+"outlook.exe"
+
+"powerpnt.exe"
+
+"explorer.exe"
+
+"sql.exe"
+
+"steam.exe"
+
+"synctime.exe"
+
+"vmwp.exe"
+
+"thebat.exe"
+
+"thunderbird.exe"
+
+"visio.exe"
+
+"winword.exe"
+
+"wordpad.exe"
+
+"xfssvccon.exe"
+
+"TeamViewer.exe"
+
+"agntsvc.exe"
+
+"dbsnmp.exe"
+
+"dbeng50.exe"
+
+"encsvc.exe"
+
+The ransomware binary will attempt to encrypt any files that the user has access to, including user files and networked shares.
+
+RansomHub implements intermittent encryption, encrypting files in 0x100000 byte chunks and skipping every 0x200000 bytes of data in between encrypted chunks. Files smaller than 0x100000 bytes in size are completely encrypted. Files are appended with 58 (0x3A) bytes of data at the end. This data contains a value which is likely part of an encryption/decryption key. The structure of the appended 0x3A bytes is listed below with images from three different encrypted files.
+
+The next eight bytes are the size of encrypted blocks. If the entire file is encrypted, this section is all zeros. In this example, each encrypted section is 0x100000 bytes long, with 0x100000 bytes between each encrypted block. This number was observed changing based on the size of the encrypted file.
+
+The next two bytes were always seen to be 0x0001.
+
+The next 32 bytes are the public encryption key for the file.
+
+The next four bytes are a checksum value.
+
+The last four bytes are always seen to be the sequence 0x00ABCDEF.
+
+The ransomware executable does not typically encrypt executable files. A random file extension is added to file names and a ransom note generally titled How To Restore Your Files.txt is left on the compromised system. To further inhibit system recovery, the ransomware executable typically leverages the vssadmin.exe program to delete volume shadow copies.
+
+See Table 1 for publicly available tools and applications used by RansomHub affiliates. This includes legitimate tools repurposed for their operations.
+
+Disclaimer: Use of these tools and applications should not be attributed as malicious without analytical evidence to support threat actor use and/or control.

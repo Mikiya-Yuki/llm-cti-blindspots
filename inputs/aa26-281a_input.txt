@@ -1,0 +1,197 @@
+Integrity Technology Group, a China-based company with links to the Chinese government, enables China-linked threat actors to exploit US and foreign organization networks across multiple sectors using various tools and techniques. This advisory provides an analysis of tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) from Integrity Technology Group and the threat actors they enable (hereafter referred to as “the threat actors”). The analysis in this advisory provides network defenders with detection and mitigation guidance to reduce the risk of threat actors compromising critical data.
+
+The threat actors use a unique combination of large-scale botnets, virtual private network (VPN) infrastructure, living-off-the-land (LOTL) techniques, and repositories of computer network exploitation (CNE) tools. Although these techniques are not unique to Chinese threat actors, this advisory details how the threat actors use them to support CNE activity.
+
+The threat actors targeted victims across multiple US critical infrastructure sectors, including: Government Services and Facilities, Critical Manufacturing, Healthcare and Public Health, and Information Technology. The actors also targeted victims in US law enforcement, education, and religious organizations, as well as organizations across Southeast Asia, Africa, and North America.
+
+The information in this advisory originates from technical evidence recovered from, and observed during, multiple Federal Bureau of Investigation (FBI) investigations related to Integrity Technology Group.
+
+The FBI, Cybersecurity and Infrastructure Security Agency (CISA), National Security Agency (NSA), United Kingdom National Cyber Security Centre (NCSC-UK), Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC), the Canadian Centre for Cyber Security (Cyber Centre), Japan’s National Police Agency (NPA) and National Cybersecurity Office (NCO), New Zealand’s National Cyber Security Centre (NCSC-NZ), and Spain’s Centro Nacional de Inteligencia (CNI), hereafter referred to as “the authoring organizations”—are releasing this joint cybersecurity advisory to urge network defenders from government and relevant organizations to:
+
+Hunt for potential compromises from this activity.
+
+Better protect against this threat activity and other Chinese government-linked cyber targeting.
+
+This advisory also provides our US federal, state, local, territorial, and tribal (FSLTT) government agencies, and international and industry partners, with the indicators and details necessary to proactively defend their networks against this threat and protect critical data.
+
+For more information on People’s Republic of China (PRC) state-sponsored malicious cyber activity in general, see the FBI’s Cyber Threat Overview: China webpage. For more information on China-linked malicious cyber activity, see CISA’s People’s Republic of China Threat Overview and Advisories webpage.
+
+The authoring organizations encourage network defenders to implement the recommendations in the Mitigations section of this advisory to reduce the likelihood and impact of these incidents.
+
+Integrity Technology Group (Integrity Tech) is a China-based for-profit company with links to the Chinese government. Integrity Tech employs individuals who support malicious cyber activity in different ways, including acquiring or building cyber tools for use and sale, acquiring and hosting infrastructure, and compromising networks across global victims, which the authoring organizations track as China-based malicious cyber activity. The services provided by Integrity Tech also contribute to the larger Chinese cyber ecosystem, which aims to exfiltrate sensitive data from victims around the world.
+
+Notably, the threat actors enabled by Integrity Tech use TTPs consistent with the cyber activity publicly known as Flax Typhoon, Ethereal Panda, and Red Juliett, among others. However, these threat actors may also perform activity not associated with Integrity Tech.
+
+Note: Cybersecurity companies have different methods of tracking and attributing cyber actors and these may not be a 1:1 correlation to the US Government's methodology and understanding for all activity related to these groupings.
+
+Note: This advisory uses the MITRE ATT&CK ® Matrix for Enterprise framework, version 19. See Appendix A: Indicators of Compromise and the MITRE ATT&CK Tactics and Techniques section of this advisory for a table of the threat actors’ activity mapped to MITRE ATT&CK tactics and techniques.
+
+The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan. See Appendix A: Indicators of Compromise for a complete list of scanning tools.
+
+Some of these tools contain features useful for fingerprinting remote applications, testing remote authentication protocols, or enumerating the pages of a website. The use of open source tools typically found on GitHub suggests the threat actors tend to look for more vulnerable targets. In general, the threat actors focus on scanning ports 21 (file transfer protocol [FTP]), 22 (SSH), 53 (domain name system [DNS]), 80 (HTTP), 443 (HTTPS), and 1080 (SOCKS). When scanning websites with dirsearch, the threat actors attempt to enumerate PHP and ASP (.NET ) pages.
+
+As early as 2017, these threat actors have also used a malicious application known as “MicroScan.” This Python-based web application contains over 1,300 penetration testing scripts written to scan websites for specific vulnerabilities. The threat actors used these scripts to target services including OpenSSL, Oracle WebLogic, Rejetto, WordPress, Juniper ScreenOS, Jenkins, and Apache Struts. See Appendix B: Observed Common Vulnerabilities and Exposures for a list of successfully exploited common vulnerabilities and exposures (CVEs) recovered from penetration testing scripts. Figure 1 shows a MicroScan account dashboard displaying detected vulnerabilities.
+
+Since at least mid-January 2021, the threat actors have gained access to victim networks and cloud-based services primarily through command line utilities built on exploit codes written in popular programming languages, such as Python and Go. Additionally, the threat actors have used JavaScript and HTML code to execute cross-site scripting (XSS) attacks. XSS vulnerabilities allow malicious actors to use unwitting third-party applications vulnerable to XSS to modify content on a webpage and target other victims.
+
+During the investigations, the FBI recovered an XSS payload used by the threat actors. When executed on a vulnerable website running JavaScript, this payload modifies webpage content to display username and password fields, facilitating user credential harvesting (see Figure 2 ).
+
+After a user enters any username and password, the executed XSS payload page generates a link to download a password-protected.zip file. The.zip file’s contents originate from encoded bytes within the XSS payload and contain the executable file live700_v1.exe.
+
+Analysis of live700_v1.exe demonstrated the executable begins a process named DiagTrack.exe, which shares its name with legitimate Windows software. DiagTrack.exe then establishes encrypted communications over the HTTP protocol with the domain dns.studiocloud.xyz, which the FBI attributes to Integrity Tech. Given that the executable also contains functions designed to query data from user mailboxes, the FBI assesses the malware likely targets user email data for exfiltration.
+
+The threat actors use EBurst, an open source Python-based tool, to target accounts in the Microsoft Office365 Cloud environment. The tool compromises email accounts on Microsoft Exchange servers using multiple interfaces for password spraying and password guessing against each supplied email address. Based on the open source EBurst ReadMe file, these interfaces include:
+
+Exchange Control Panel (ECP);
+
+Exchange Web Services (EWS);
+
+Offline Address Book (OAB);
+
+Outlook Web Access (OWA);
+
+Remote Procedure Call (RPC);
+
+Application Programming Interface (API);
+
+Messaging Application Programming Interface (MAPI);
+
+PowerShell;
+
+Autodiscover; and
+
+Microsoft-Server-ActiveSync.
+
+Network defenders should include these interfaces when defending against EBurst.
+
+To establish persistence, the threat actors install virtual private network (VPN) software clients on victim devices to obfuscate command and control (C2) communications or other actions, further preventing victims from attributing malicious network activity.
+
+The threat actors typically download SoftEther installers onto victim devices from threat actor-controlled infrastructure using PowerShell or LOTL binaries for Windows Systems. For Linux/Unix distributions, the threat actors download SoftEther installers via curl or wget. For either operating system, the actors configure the SoftEther client to automatically reconnect on startup. They often name the installers conhost.exe or dllhost.exe to appear as common Windows executables. Additionally, endpoint detection software is less likely to flag SoftEther because it is a legitimate VPN software.
+
+In some observed cases, the threat actors stored the SoftEther program directly on the server. Analysis of these servers revealed victim domains and subdomains that hosted the SoftEther connections:
+
+98aiblog[.]com;
+
+hmbcloud[.]com;
+
+hmbcloud[.]net;
+
+hmbiplc-01[.]com;
+
+iepl.node[.]cm;
+
+javacheck.ooguy[.]com;
+
+javaupdate.giize[.]com;
+
+sexytube0[.]com; and
+
+twimg.co[.]uk.
+
+The threat actors use SoftEther to maintain persistent remote access to victim devices to enable data exfiltration. The FBI observed the threat actors installing the client on the end-user’s system, which connected to the C2 server using one of the identified domains, subdomains, or the server’s IP address. The threat actors also accessed other targets, including cybersecurity websites, connected to these hubs.
+
+The FBI observed the threat actors downloading databases or manually pulling data from the victim emails and staging the exfiltration data with discreet file names to minimize detection of the MySQL email dump. Some of these names include:
+
+001.gif;
+
+All_scanner_vXX.pl.gz (XX represents either a one- or two-digit number);
+
+Css.js;
+
+Include.png;
+
+M2k.js;
+
+M2k_list.js; and
+
+M2k_ui_adm.js.
+
+The FBI observed that the threat actors created a bot using the PHP script Curlc4.txt to obtain emails from victims. The script is specifically designed to interface with the Microsoft EWS API, which allows the threat actors to access email and content items, such as calendars and contacts.
+
+Based on observations, the script appears to be stand-alone rather than installed on a compromised device. The script uploaded emails to a remote server, obfuscating many of the directories and files it created, and changed the name of the child process to crypto.
+
+The script downloaded the original file from https://upl.natcloudservice[.]com using IP address 149.28.132[.]137. The main C2 domain for the bot was natcloudservice[.]com, and the domain communicated with https://natcloudservice[.]com/ews and upl.natcloudservice[.]com/ews. Before exfiltration, the bot compressed emails. In some instances, the threat actor also used a password to encrypt emails using RC4 or AES-128-CBC.
+
+The PHP script took up to two command-line arguments. The first argument appeared to be the root directory where the scripts execute. If the first argument was not supplied, then the script searched for a writeable directory to use as its directory. The script searched the directories listed in Table 1 until it found a writeable one. The script stored the second command-line argument in a variable saved to the targeted system.
+
+The following is a list of unique strings found in the script:
+
+$dir/storage/fm/.run;
+
+$dir/.run;
+
+public $password='jh4jnryw76ikmh';
+
+public $file='/var/tmp/.sess.zip';
+
+https://upl.natcloudservice[.]com.ews;
+
+public $key='rhnr5m54pk65wertc';
+
+$this->enc="r";this->cipher="rc4";this->iv="";
+
+$this->enc="a";this->cipher="aes-128-cbc";this->iv="1111111111111111";
+
+https://natcloudservice[.]com/ews; and
+
+curl_setopt($this->ch, CURLOPT_HTTPHEADER,array("X-Id: $clientid")).
+
+Other directories and files that indicate this script may be executed on a system include:
+
+RUNNING_DIRECTORY/storage/fm;
+
+RUNNING_DIRECTORY /storage/fm.run (file);
+
+RUNNING_DIRECTORY /.run;
+
+RUNNING_DIRECTORY/clientid (file); and
+
+RUNNING_DIRECTORY/cp (file).
+
+The threat actors used DC.exe to execute the DCSync replication technique to copy sensitive information from the Active Directory (AD), including account credentials, group membership details, and trust relationships. DC.exe used a Remote Procedure Call (RPC) binding to the victim’s domain controller. The file then used the Directory Replication Service to retrieve data from the victim’s AD. Specifically, it retrieved a handle to the local security policy object, which is used to query the domain controller for the DNS domain name, domain security identifier (SID), and domain replication epoch. The file also used the following object IDs to retrieve information about Active Directory attributes and configurations:
+
+1.2.840.113556.1.2.48;
+
+1.2.840.113556.1.4.1;
+
+1.2.840.113556.1.4.125;
+
+1.2.840.113556.1.4.129;
+
+1.2.840.113556.1.4.133;
+
+1.2.840.113556.1.4.135;
+
+1.2.840.113556.1.4.146;
+
+1.2.840.113556.1.4.159;
+
+1.2.840.113556.1.4.160;
+
+1.2.840.113556.1.4.221;
+
+1.2.840.113556.1.4.27;
+
+1.2.840.113556.1.4.302;
+
+1.2.840.113556.1.4.55;
+
+1.2.840.113556.1.4.609;
+
+1.2.840.113556.1.4.656;
+
+1.2.840.113556.1.4.8;
+
+1.2.840.113556.1.4.90;
+
+1.2.840.113556.1.4.94; and
+
+1.2.840.113556.1.4.96.
+
+The FBI recovered an archived email database the threat actors used to target email accounts of victim organizations. The threat actors collect account credentials and exfiltrate victim email data from on-premise systems and cloud-based services. Observed victims of email data theft included government organizations, law enforcement agencies, healthcare systems, and religious institutions located in Southeast Asia. In some instances, the threat actors restricted access to the exfiltrated data to only IP addresses from Xiamen, China.
+
+The threat actors use a command-line utility office-cli to continuously target and access Microsoft Outlook 365 email accounts to exfiltrate emails across different time periods. The threat actors occasionally update these accounts and swap them for the most recent accounts. The threat actors use office-cli to automate access and exfiltration of mail content using configuration files, such as client_id, tenant_id, and secret.
+
+The FBI observed the threat actors executing office-cli from the command line or by running it from a Bash script. In both instances, the threat actors place the JSON files required to access the mailboxes in the config directory. Additionally, office-cli saves data gathered from the victims in a subdirectory of the dump directory. The threat actors evade detection when using this program by using legitimate access methods.
+
+The threat actors maintain a custom web application that provides third-party access to stolen email content. Users of this application can pass specific arguments in URLs to see email content for specific accounts.

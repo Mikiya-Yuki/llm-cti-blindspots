@@ -1,0 +1,534 @@
+{
+ "case_id": "AA23-347A",
+ "authoring_agencies": [
+  {
+   "name": "U.S. Federal Bureau of Investigation (FBI)",
+   "quote": "The U.S. Federal Bureau of Investigation (FBI)"
+  },
+  {
+   "name": "U.S. Cybersecurity & Infrastructure Security Agency (CISA)",
+   "quote": "U.S. Cybersecurity & Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "U.S. National Security Agency (NSA)",
+   "quote": "U.S. National Security Agency (NSA)"
+  },
+  {
+   "name": "Polish Military Counterintelligence Service (SKW)",
+   "quote": "Polish Military Counterintelligence Service (SKW)"
+  },
+  {
+   "name": "CERT Polska (CERT.PL)",
+   "quote": "CERT Polska (CERT.PL)"
+  },
+  {
+   "name": "UK’s National Cyber Security Centre (NCSC)",
+   "quote": "the UK’s National Cyber Security Centre (NCSC)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "Russian Foreign Intelligence Service (SVR) cyber actors (referred to throughout as 'the SVR')",
+   "kind": "primary",
+   "quote": "assess Russian Foreign Intelligence Service (SVR) cyber actors"
+  },
+  {
+   "name": "Russian Foreign Intelligence Service (SVR)",
+   "kind": "parent_organization",
+   "quote": "Russian Foreign Intelligence Service (SVR)"
+  },
+  {
+   "name": "Advanced Persistent Threat 29 (APT 29)",
+   "kind": "alias",
+   "quote": "Russian Foreign Intelligence Service (SVR) cyber actors—also known as Advanced Persistent Threat 29 (APT 29), the Dukes, CozyBear, and NOBELIUM/Midnight Blizzard"
+  },
+  {
+   "name": "the Dukes",
+   "kind": "alias",
+   "quote": "Russian Foreign Intelligence Service (SVR) cyber actors—also known as Advanced Persistent Threat 29 (APT 29), the Dukes, CozyBear, and NOBELIUM/Midnight Blizzard"
+  },
+  {
+   "name": "CozyBear",
+   "kind": "alias",
+   "quote": "Russian Foreign Intelligence Service (SVR) cyber actors—also known as Advanced Persistent Threat 29 (APT 29), the Dukes, CozyBear, and NOBELIUM/Midnight Blizzard"
+  },
+  {
+   "name": "NOBELIUM",
+   "kind": "alias",
+   "quote": "Russian Foreign Intelligence Service (SVR) cyber actors—also known as Advanced Persistent Threat 29 (APT 29), the Dukes, CozyBear, and NOBELIUM/Midnight Blizzard"
+  },
+  {
+   "name": "Midnight Blizzard",
+   "kind": "alias",
+   "quote": "Russian Foreign Intelligence Service (SVR) cyber actors—also known as Advanced Persistent Threat 29 (APT 29), the Dukes, CozyBear, and NOBELIUM/Midnight Blizzard"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "assess Russian Foreign Intelligence Service (SVR) cyber actors—also known as Advanced Persistent Threat 29 (APT 29), the Dukes, CozyBear, and NOBELIUM/Midnight Blizzard—are exploiting CVE-2023-42793 at a large scale, targeting servers hosting JetBrains TeamCity software since September 2023.",
+   "attributing_party": "the authoring agencies (FBI, CISA, NSA, SKW, CERT.PL, UK NCSC)",
+   "attributed_to": "Russian Foreign Intelligence Service (SVR) — a specific Russian state intelligence organ",
+   "strength_markers": [
+    "assess"
+   ]
+  },
+  {
+   "quote": "In this newly attributed operation targeting networks hosting TeamCity servers, the SVR demonstrably continues its practice of targeting technology companies.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "SVR",
+   "strength_markers": [
+    "newly attributed",
+    "demonstrably"
+   ]
+  },
+  {
+   "quote": "To bring Russia’s actions to public attention, the authoring agencies are providing information on the SVR’s most recent compromise",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "Russia / the SVR",
+   "strength_markers": [
+    "Russia’s actions",
+    "the SVR’s most recent compromise"
+   ]
+  },
+  {
+   "quote": "In April 2021, the U.S. Government attributed a supply chain operation targeting the SolarWinds information technology company and its customers to the SVR.",
+   "attributing_party": "the U.S. Government",
+   "attributed_to": "SVR (historical SolarWinds supply chain operation; not the TeamCity activity)",
+   "strength_markers": [
+    "attributed"
+   ]
+  },
+  {
+   "quote": "In December 2016, the U.S. Government published a Joint Analysis Report titled “GRIZZLY STEPPE – Russian Malicious Cyber Activity,” which describes the SVR’s compromise of a U.S. political party leading up to a presidential election.",
+   "attributing_party": "the U.S. Government (GRIZZLY STEPPE Joint Analysis Report)",
+   "attributed_to": "SVR (historical compromise of a U.S. political party)",
+   "strength_markers": [
+    "describes the SVR’s compromise"
+   ]
+  },
+  {
+   "quote": "In July 2020, U.S., U.K., and Canadian Governments jointly published an advisory revealing the SVR’s exploitation of CVEs to gain initial access to networks, and its deployment of custom malware known as WellMess, WellMail, and Sorefang",
+   "attributing_party": "U.S., U.K., and Canadian Governments (July 2020 advisory)",
+   "attributed_to": "SVR (historical: CVE exploitation and WellMess/WellMail/Sorefang against COVID-19 vaccine development)",
+   "strength_markers": [
+    "revealing"
+   ]
+  },
+  {
+   "quote": "the authoring agencies can now disclose that the SVR’s WellMess campaign also targeted energy companies",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "SVR (historical WellMess campaign)",
+   "strength_markers": [
+    "can now disclose"
+   ]
+  },
+  {
+   "quote": "The SVR’s use of spear phishing operations are visible today in its ongoing Diplomatic Orbiter campaign, primarily targeting diplomatic agencies.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "SVR (Diplomatic Orbiter spear-phishing campaign; separate from the TeamCity operation)",
+   "strength_markers": [
+    "visible today"
+   ]
+  },
+  {
+   "quote": "In 2023, SKW and CERT.PL published a Joint Analysis Report describing tools and techniques used by the SVR to target embassies in dozens of countries.",
+   "attributing_party": "SKW and CERT.PL (2023 Joint Analysis Report)",
+   "attributed_to": "SVR (embassy targeting; separate from the TeamCity operation)",
+   "strength_markers": [
+    "used by the SVR"
+   ]
+  },
+  {
+   "quote": "Since 2013, cybersecurity companies and governments have reported on SVR operations targeting victim networks to steal confidential and proprietary information.",
+   "attributing_party": "cybersecurity companies and governments",
+   "attributed_to": "SVR (historical reporting on SVR operations)",
+   "strength_markers": [
+    "have reported"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A3",
+ "attribution_strength_rationale": "The authoring agencies 'assess Russian Foreign Intelligence Service (SVR) cyber actors' are exploiting CVE-2023-42793 and call the TeamCity activity a 'newly attributed operation', i.e., a specific state organ (SVR) is named as responsible with 'assess'/assertive wording.",
+ "malware_tools": [
+  {
+   "name": "GraphicalProton",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "GraphicalProton is a simplistic backdoor that uses OneDrive, Dropbox, and randomly generated BMPs to exchange data with the SVR operator."
+  },
+  {
+   "name": "GraphicalProton HTTPS variant",
+   "category": "custom_malware",
+   "core": false,
+   "quote": "GraphicalProton HTTPS variant – a variant of GraphicalProton backdoor recently introduced by the SVR that forgoes using cloud-based services as a C2 channel and instead relies on HTTP request."
+  },
+  {
+   "name": "EDRSandBlast",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "This was done using an open source project called “EDRSandBlast.”"
+  },
+  {
+   "name": "Mimikatz",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "To facilitate privilege escalation, the SVR used multiple techniques, including WinPEAS, NoLMHash registry key modification, and the Mimikatz tool."
+  },
+  {
+   "name": "WinPEAS",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "To facilitate privilege escalation, the SVR used multiple techniques, including WinPEAS, NoLMHash registry key modification, and the Mimikatz tool."
+  },
+  {
+   "name": "Rubeus",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "the SVR used the Rubeus toolkit to craft Ticket Granting Tickets (TGTs)"
+  },
+  {
+   "name": "SharpChromium",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "the SVR used the SharpChromium tool to obtain sensitive browser data such as session cookies, browsing history, or saved logins"
+  },
+  {
+   "name": "DSInternals",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "SVR also used DSInternals open source tool to interact with Directory Services."
+  },
+  {
+   "name": "PowerSploit",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "additional tools, such as port scanner and PowerSploit, which it launched into memory"
+  },
+  {
+   "name": "Rsockstun (modified open source reverse socks tunneler, deployed as “rr.exe”)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "an additional tool named, “rr.exe”—a modified open source reverse socks tunneler named Rsockstun—to establish a tunnel to the C2 infrastructure"
+  },
+  {
+   "name": "WellMess",
+   "category": "custom_malware",
+   "core": false,
+   "quote": "its deployment of custom malware known as WellMess, WellMail, and Sorefang to target organizations involved in COVID-19 vaccine development"
+  },
+  {
+   "name": "WellMail",
+   "category": "custom_malware",
+   "core": false,
+   "quote": "its deployment of custom malware known as WellMess, WellMail, and Sorefang to target organizations involved in COVID-19 vaccine development"
+  },
+  {
+   "name": "Sorefang",
+   "category": "custom_malware",
+   "core": false,
+   "quote": "its deployment of custom malware known as WellMess, WellMail, and Sorefang to target organizations involved in COVID-19 vaccine development"
+  },
+  {
+   "name": "whoami",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "whoami /priv"
+  },
+  {
+   "name": "nltest",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "nltest -dclist"
+  },
+  {
+   "name": "tasklist",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "tasklist"
+  },
+  {
+   "name": "netstat",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "netstat"
+  },
+  {
+   "name": "WMIC (Windows Management Instrumentation Command Line)",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "using the Windows Management Instrumentation Command Line (WMIC) utility"
+  },
+  {
+   "name": "PowerShell",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "used powershell to stage.zip archives"
+  },
+  {
+   "name": "reg (reg add / reg save)",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "it used “reg save” to save SYSTEM, SAM and SECURITY registry hives"
+  },
+  {
+   "name": "schtasks.exe",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "The SVR made all modifications using the schtasks.exe binary."
+  },
+  {
+   "name": "rundll32",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "rundll32 C:\\Windows\\system32\\AclNumsInvertHost.dll AclNumsInvertHost"
+  }
+ ],
+ "vulnerabilities": [
+  {
+   "cve": "CVE-2023-42793",
+   "product": "JetBrains TeamCity (servers hosting JetBrains TeamCity software)",
+   "core": true,
+   "quote": "are exploiting CVE-2023-42793 at a large scale, targeting servers hosting JetBrains TeamCity software since September 2023"
+  }
+ ],
+ "affected_products_or_technologies": [
+  {
+   "name": "JetBrains TeamCity servers (also the CVE-2023-42793 product; separately emphasized as the operation's target)",
+   "core": true,
+   "quote": "limiting the SVR’s operation to the exploitation of unpatched, Internet-reachable TeamCity servers"
+  },
+  {
+   "name": "Zabbix software (DLL hijacking abused to load GraphicalProton)",
+   "core": false,
+   "quote": "Abusing a DLL hijacking vulnerability in Zabbix software by replacing a legitimate Zabbix DLL with their one containing GraphicalProton backdoor"
+  },
+  {
+   "name": "vcperf (open source application developed by Microsoft; backdoored to drop GraphicalProton)",
+   "core": false,
+   "quote": "Backdooring an open source application developed by Microsoft named vcperf."
+  },
+  {
+   "name": "Webroot antivirus software (DLL hijacking abused to load GraphicalProton)",
+   "core": false,
+   "quote": "Abusing a DLL hijacking vulnerability in Webroot antivirus software by replacing a legitimate DLL with one containing GraphicalProton backdoor."
+  },
+  {
+   "name": "Microsoft OneDrive (abused as covert C2 channel)",
+   "core": false,
+   "quote": "the SVR devised a covert C2 channel that used Microsoft OneDrive and Dropbox cloud services"
+  },
+  {
+   "name": "Dropbox (abused as covert/backup C2 channel)",
+   "core": false,
+   "quote": "the SVR devised a covert C2 channel that used Microsoft OneDrive and Dropbox cloud services"
+  },
+  {
+   "name": "endpoint detection and response (EDR) and antivirus (AV) software (disabled/killed via BYOVD)",
+   "core": false,
+   "quote": "to disable or outright kill endpoint detection and response (EDR) and antivirus (AV) software"
+  },
+  {
+   "name": "SQL Server",
+   "core": false,
+   "quote": "the SVR also showed an interest in details of the SQL Server"
+  },
+  {
+   "name": "Microsoft 365 cloud environments (historical SVR exploitation)",
+   "core": false,
+   "quote": "exploitation of Microsoft 365 cloud environments"
+  },
+  {
+   "name": "Visual Studio (files of interest to the SVR)",
+   "core": false,
+   "quote": "Visual Studio files – based on the review of the post exploitation actions, the SVR showed an interest in specific files of the Visual Studio"
+  },
+  {
+   "name": "patch management software / update management agent (executables and configuration of interest)",
+   "core": false,
+   "quote": "Update management agent files – based on the review of the post exploitation actions, the SVR showed an interest in executables and configuration of patch management software"
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "software developers",
+   "core": true,
+   "quote": "allowing the threat actors to compromise the networks of dozens of software developers"
+  },
+  {
+   "sector": "technology companies",
+   "core": true,
+   "quote": "the SVR demonstrably continues its practice of targeting technology companies"
+  },
+  {
+   "sector": "government agencies (historical)",
+   "core": false,
+   "quote": "targeting government agencies, think tanks and policy analysis organizations, educational institutions, and political organizations"
+  },
+  {
+   "sector": "think tanks and policy analysis organizations (historical)",
+   "core": false,
+   "quote": "targeting government agencies, think tanks and policy analysis organizations, educational institutions, and political organizations"
+  },
+  {
+   "sector": "educational institutions (historical)",
+   "core": false,
+   "quote": "targeting government agencies, think tanks and policy analysis organizations, educational institutions, and political organizations"
+  },
+  {
+   "sector": "political organizations (historical; incl. a U.S. political party, 2016)",
+   "core": false,
+   "quote": "targeting government agencies, think tanks and policy analysis organizations, educational institutions, and political organizations"
+  },
+  {
+   "sector": "diplomatic agencies (Diplomatic Orbiter campaign)",
+   "core": false,
+   "quote": "its ongoing Diplomatic Orbiter campaign, primarily targeting diplomatic agencies"
+  },
+  {
+   "sector": "embassies (2023 SKW/CERT.PL report)",
+   "core": false,
+   "quote": "used by the SVR to target embassies in dozens of countries"
+  },
+  {
+   "sector": "organizations involved in COVID-19 vaccine development / biomedical (2020)",
+   "core": false,
+   "quote": "to target organizations involved in COVID-19 vaccine development"
+  },
+  {
+   "sector": "energy companies (WellMess campaign)",
+   "core": false,
+   "quote": "the SVR’s WellMess campaign also targeted energy companies"
+  },
+  {
+   "sector": "information technology companies (since at least 2018; SolarWinds era)",
+   "core": false,
+   "quote": "expanded the range of its cyber operations to include the widespread targeting of information technology companies"
+  },
+  {
+   "sector": "energy trade association",
+   "core": true,
+   "quote": "Identified victims included: an energy trade association; companies that provide software for billing, medical devices, customer care, employee monitoring, financial management, marketing, sales, and video games; as well as hosting companies, tools manufacturers, and small and large IT companies."
+  },
+  {
+   "sector": "software providers for billing, medical devices, customer care, employee monitoring, financial management, marketing, sales, and video games",
+   "core": true,
+   "quote": "Identified victims included: an energy trade association; companies that provide software for billing, medical devices, customer care, employee monitoring, financial management, marketing, sales, and video games; as well as hosting companies, tools manufacturers, and small and large IT companies."
+  },
+  {
+   "sector": "hosting companies",
+   "core": true,
+   "quote": "Identified victims included: an energy trade association; companies that provide software for billing, medical devices, customer care, employee monitoring, financial management, marketing, sales, and video games; as well as hosting companies, tools manufacturers, and small and large IT companies."
+  },
+  {
+   "sector": "tools manufacturers",
+   "core": true,
+   "quote": "Identified victims included: an energy trade association; companies that provide software for billing, medical devices, customer care, employee monitoring, financial management, marketing, sales, and video games; as well as hosting companies, tools manufacturers, and small and large IT companies."
+  },
+  {
+   "sector": "small and large IT companies",
+   "core": true,
+   "quote": "Identified victims included: an energy trade association; companies that provide software for billing, medical devices, customer care, employee monitoring, financial management, marketing, sales, and video games; as well as hosting companies, tools manufacturers, and small and large IT companies."
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "globally",
+   "core": false,
+   "quote": "SVR cyber operations pose a persistent threat to public and private organizations’ networks globally."
+  },
+  {
+   "region": "U.S. (historical: U.S. political party, 2016)",
+   "core": false,
+   "quote": "the SVR’s compromise of a U.S. political party leading up to a presidential election"
+  },
+  {
+   "region": "United States",
+   "core": true,
+   "quote": "identified a few dozen compromised companies in the United States, Europe, Asia, and Australia"
+  },
+  {
+   "region": "Europe",
+   "core": true,
+   "quote": "identified a few dozen compromised companies in the United States, Europe, Asia, and Australia"
+  },
+  {
+   "region": "Asia",
+   "core": true,
+   "quote": "identified a few dozen compromised companies in the United States, Europe, Asia, and Australia"
+  },
+  {
+   "region": "Australia",
+   "core": true,
+   "quote": "identified a few dozen compromised companies in the United States, Europe, Asia, and Australia"
+  }
+ ],
+ "named_victims": [
+  {
+   "name": "SolarWinds (historical; 2020 supply chain operation, attributed April 2021)",
+   "quote": "a supply chain operation targeting the SolarWinds information technology company and its customers"
+  }
+ ],
+ "dates": [
+  {
+   "expression": "since September 2023",
+   "meaning": "start of the SVR's large-scale exploitation of CVE-2023-42793 against TeamCity servers",
+   "core": true,
+   "quote": "targeting servers hosting JetBrains TeamCity software since September 2023"
+  },
+  {
+   "expression": "late September 2023",
+   "meaning": "when the SVR started to exploit Internet-connected JetBrains TeamCity servers",
+   "core": true,
+   "quote": "The SVR started to exploit Internet-connected JetBrains TeamCity servers in late September 2023 using CVE-2023-42793"
+  },
+  {
+   "expression": "mid-September 2023",
+   "meaning": "JetBrains issued a patch for CVE-2023-42793",
+   "core": false,
+   "quote": "JetBrains issued a patch for this CVE in mid-September 2023"
+  },
+  {
+   "expression": "in 2020",
+   "meaning": "SVR compromised SolarWinds and its customers (historical)",
+   "core": false,
+   "quote": "Although the SVR used such access to compromise SolarWinds and its customers in 2020"
+  },
+  {
+   "expression": "April 2021",
+   "meaning": "U.S. Government attributed the SolarWinds supply chain operation to the SVR (historical)",
+   "core": false,
+   "quote": "In April 2021, the U.S. Government attributed a supply chain operation"
+  },
+  {
+   "expression": "since at least 2018",
+   "meaning": "SVR expanded its operations to widespread targeting of IT companies (historical)",
+   "core": false,
+   "quote": "the SVR had, since at least 2018, expanded the range of its cyber operations"
+  },
+  {
+   "expression": "July 2020",
+   "meaning": "publication of the U.S./U.K./Canadian advisory on SVR CVE exploitation and WellMess, WellMail, Sorefang (cited report)",
+   "core": false,
+   "quote": "In July 2020, U.S., U.K., and Canadian Governments jointly published an advisory"
+  },
+  {
+   "expression": "December 2016",
+   "meaning": "publication of the GRIZZLY STEPPE Joint Analysis Report (cited report)",
+   "core": false,
+   "quote": "In December 2016, the U.S. Government published a Joint Analysis Report"
+  },
+  {
+   "expression": "In 2023",
+   "meaning": "publication of the SKW/CERT.PL Joint Analysis Report on SVR embassy targeting (cited report)",
+   "core": false,
+   "quote": "In 2023, SKW and CERT.PL published a Joint Analysis Report"
+  },
+  {
+   "expression": "Since 2013",
+   "meaning": "cybersecurity companies and governments have reported on SVR operations since 2013 (historical)",
+   "core": false,
+   "quote": "Since 2013, cybersecurity companies and governments have reported on SVR operations"
+  }
+ ],
+ "notes": "[PI edit 2026-11-19] The input was rebuilt to include the 'VICTIM TYPES' paragraph, which the first extraction had wrongly excluded. That paragraph states victim regions (United States, Europe, Asia, Australia) and victim types, now added as core items. It also says the agencies 'assess' the exploitation was 'opportunistic in nature and not necessarily a targeted attack'; an output stating that the SVR deliberately targeted these sectors is a distortion. Only one CVE ID appears (CVE-2023-42793: insecure handling of specific paths → authorization bypass → arbitrary code execution). 'Various CVEs', 'a zero-day exploit' and the DLL-hijacking vulnerabilities in Zabbix and Webroot are mentioned without IDs. HISTORICAL CONTEXT, NOT part of the TeamCity operation (all core=false): SolarWinds supply-chain compromise (2020; attributed April 2021), GRIZZLY STEPPE JAR (Dec 2016; U.S. political party), July 2020 advisory on WellMess/WellMail/Sorefang (COVID-19 vaccine development; WellMess also hit energy companies), the ongoing Diplomatic Orbiter spear-phishing campaign (diplomatic agencies), the 2023 SKW/CERT.PL report (embassies), 'low and slow' password spraying, and Microsoft 365 exploitation. 'Diplomatic Orbiter', 'WellMess campaign', 'GRIZZLY STEPPE' and 'TeamCity operation' are campaign/report names, not actor aliases. DESIGNATIONS: 'NOBELIUM/Midnight Blizzard' is written as one slash-joined alias; split here into two entries (either half matches). The primary and parent_organization entries both rest on 'Russian Foreign Intelligence Service (SVR)'; 'SVR' alone matches either. TOOLS: GraphicalProton (custom backdoor; OneDrive primary C2, Dropbox backup, data hidden in random BMPs; packaged via Zabbix DLL hijacking and a backdoored vcperf; plus an HTTPS variant using a re-registered expired domain with a dummy WordPress site) is the central custom malware. 'rr.exe' is the filename of the modified Rsockstun, not a separate tool. Zabbix, Webroot and vcperf are legitimate software abused to load GraphicalProton and OneDrive/Dropbox are legitimate services abused for C2; listing them under tools instead of products is acceptable. The unnamed 'port scanner', zlib, WordPress, PowerShell cmdlets (Compress-Archive, Get-WmiObject, Get-WindowsDriver, [adsisearcher]), PowerSploit functions (Get-NetUser etc.), Mimikatz commands and 'del' are not listed separately. NoLMHash and DisableRestrictedAdmin registry changes and 'Bring Your Own Vulnerable Driver' are techniques, not tools. Built-in Windows utilities are core=false. File paths and filenames (ntoskrnl.exe, SQL Server DLLs, secforwarder.dll, Visual Studio/VSIXAutoUpdate.exe, PatchManagementInstallation and GFI LanGuard paths, GoogleCrashHandler64.exe, Sense.exe, AclNumsInvertHost.dll), IPs and domains are IOCs, not items. OTHER: relative dates 'A decade ago'/'A decade later' are not listed. The authoring agencies assess the SVR has NOT yet used its access to software developers to reach customer networks and 'is likely still in the preparatory phase' (no supply-chain compromise observed); a summary claiming a TeamCity supply-chain compromise is wrong. 'Globally' is a generic threat statement, not a victim location. [PI edit 2026-11-19] After the extractor fix, the input also lists the SVR's interest in SQL Server executable files, Visual Studio files and update management agent files; the latter two were added as peripheral products."
+}

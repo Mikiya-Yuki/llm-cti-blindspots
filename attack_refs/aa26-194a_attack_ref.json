@@ -1,0 +1,300 @@
+{
+ "case_id": "AA26-194A",
+ "input_words": 655,
+ "input_sha256": "2abe1bc8ccfbff4cff9818ded699db3977cb51642534e7ab9c83dd5ec00b168a",
+ "inline_ids": [
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    42
+   ],
+   "evidence": "Copy its configuration to a file, often called “config.bkp” or “output.txt” [ T1003 , T1602.002 ]."
+  },
+  {
+   "id": "T1027",
+   "name": "Obfuscated Files or Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    41
+   ],
+   "evidence": "The Russian FSB Center 16 cyber actors primarily use scanning to identify poorly configured networking devices, primarily routers, for exploitation. The actors scan for Internet IP ranges with active Simple Network Management Protocol (SNMP) agents that accept common or default community strings for authentication [ T1595.001 , T1595.002 ]. These scans, run via proxies, consist of SNMP Set-Requests from a spoofed IP address [ T1027 ] containing Object Identifiers (OIDs) that instruct the SNMP agent on poorly configured networking devices to [ T1569 , T1602.001 , T1090 ]:"
+  },
+  {
+   "id": "T1048",
+   "name": "Exfiltration Over Alternative Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    43
+   ],
+   "evidence": "Transfer the file, typically using Trivial File Transfer Protocol (TFTP), to an actor-controlled leased virtual private server (VPS) or compromised FTP server [ T1583.003 , T1090 , T1071 , T1048 ]."
+  },
+  {
+   "id": "T1068",
+   "name": "Exploitation for Privilege Escalation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    44
+   ],
+   "evidence": "While SNMP scanning is the primary method the actors use to discover and exploit poorly configured networking devices, they occasionally exploit common vulnerabilities and exposures (CVEs) in Cisco devices, Cisco’s Smart Install (SMI) functionality, and web portals to manage network devices. The actors previously exploited at least the following CVEs [ T1584.008 , T1588.005 , T1190 , T1068 ]:"
+  },
+  {
+   "id": "T1071",
+   "name": "Application Layer Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    43
+   ],
+   "evidence": "Transfer the file, typically using Trivial File Transfer Protocol (TFTP), to an actor-controlled leased virtual private server (VPS) or compromised FTP server [ T1583.003 , T1090 , T1071 , T1048 ]."
+  },
+  {
+   "id": "T1090",
+   "name": "Proxy",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    41,
+    43
+   ],
+   "evidence": "The Russian FSB Center 16 cyber actors primarily use scanning to identify poorly configured networking devices, primarily routers, for exploitation. The actors scan for Internet IP ranges with active Simple Network Management Protocol (SNMP) agents that accept common or default community strings for authentication [ T1595.001 , T1595.002 ]. These scans, run via proxies, consist of SNMP Set-Requests from a spoofed IP address [ T1027 ] containing Object Identifiers (OIDs) that instruct the SNMP agent on poorly configured networking devices to [ T1569 , T1602.001 , T1090 ]:"
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    44
+   ],
+   "evidence": "While SNMP scanning is the primary method the actors use to discover and exploit poorly configured networking devices, they occasionally exploit common vulnerabilities and exposures (CVEs) in Cisco devices, Cisco’s Smart Install (SMI) functionality, and web portals to manage network devices. The actors previously exploited at least the following CVEs [ T1584.008 , T1588.005 , T1190 , T1068 ]:"
+  },
+  {
+   "id": "T1569",
+   "name": "System Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    41
+   ],
+   "evidence": "The Russian FSB Center 16 cyber actors primarily use scanning to identify poorly configured networking devices, primarily routers, for exploitation. The actors scan for Internet IP ranges with active Simple Network Management Protocol (SNMP) agents that accept common or default community strings for authentication [ T1595.001 , T1595.002 ]. These scans, run via proxies, consist of SNMP Set-Requests from a spoofed IP address [ T1027 ] containing Object Identifiers (OIDs) that instruct the SNMP agent on poorly configured networking devices to [ T1569 , T1602.001 , T1090 ]:"
+  },
+  {
+   "id": "T1583.003",
+   "name": "Virtual Private Server",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    43
+   ],
+   "evidence": "Transfer the file, typically using Trivial File Transfer Protocol (TFTP), to an actor-controlled leased virtual private server (VPS) or compromised FTP server [ T1583.003 , T1090 , T1071 , T1048 ]."
+  },
+  {
+   "id": "T1584.008",
+   "name": "Network Devices",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    44
+   ],
+   "evidence": "While SNMP scanning is the primary method the actors use to discover and exploit poorly configured networking devices, they occasionally exploit common vulnerabilities and exposures (CVEs) in Cisco devices, Cisco’s Smart Install (SMI) functionality, and web portals to manage network devices. The actors previously exploited at least the following CVEs [ T1584.008 , T1588.005 , T1190 , T1068 ]:"
+  },
+  {
+   "id": "T1588.005",
+   "name": "Exploits",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    44
+   ],
+   "evidence": "While SNMP scanning is the primary method the actors use to discover and exploit poorly configured networking devices, they occasionally exploit common vulnerabilities and exposures (CVEs) in Cisco devices, Cisco’s Smart Install (SMI) functionality, and web portals to manage network devices. The actors previously exploited at least the following CVEs [ T1584.008 , T1588.005 , T1190 , T1068 ]:"
+  },
+  {
+   "id": "T1595.001",
+   "name": "Scanning IP Blocks",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    41
+   ],
+   "evidence": "The Russian FSB Center 16 cyber actors primarily use scanning to identify poorly configured networking devices, primarily routers, for exploitation. The actors scan for Internet IP ranges with active Simple Network Management Protocol (SNMP) agents that accept common or default community strings for authentication [ T1595.001 , T1595.002 ]. These scans, run via proxies, consist of SNMP Set-Requests from a spoofed IP address [ T1027 ] containing Object Identifiers (OIDs) that instruct the SNMP agent on poorly configured networking devices to [ T1569 , T1602.001 , T1090 ]:"
+  },
+  {
+   "id": "T1595.002",
+   "name": "Vulnerability Scanning",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    41
+   ],
+   "evidence": "The Russian FSB Center 16 cyber actors primarily use scanning to identify poorly configured networking devices, primarily routers, for exploitation. The actors scan for Internet IP ranges with active Simple Network Management Protocol (SNMP) agents that accept common or default community strings for authentication [ T1595.001 , T1595.002 ]. These scans, run via proxies, consist of SNMP Set-Requests from a spoofed IP address [ T1027 ] containing Object Identifiers (OIDs) that instruct the SNMP agent on poorly configured networking devices to [ T1569 , T1602.001 , T1090 ]:"
+  },
+  {
+   "id": "T1602.001",
+   "name": "SNMP (MIB Dump)",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    41
+   ],
+   "evidence": "The Russian FSB Center 16 cyber actors primarily use scanning to identify poorly configured networking devices, primarily routers, for exploitation. The actors scan for Internet IP ranges with active Simple Network Management Protocol (SNMP) agents that accept common or default community strings for authentication [ T1595.001 , T1595.002 ]. These scans, run via proxies, consist of SNMP Set-Requests from a spoofed IP address [ T1027 ] containing Object Identifiers (OIDs) that instruct the SNMP agent on poorly configured networking devices to [ T1569 , T1602.001 , T1090 ]:"
+  },
+  {
+   "id": "T1602.002",
+   "name": "Network Device Configuration Dump",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    42
+   ],
+   "evidence": "Copy its configuration to a file, often called “config.bkp” or “output.txt” [ T1003 , T1602.002 ]."
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "OS Credential Dumping | T1003 | Collect router configuration with weak Cisco Type 7 passwords and Type 0"
+  },
+  {
+   "id": "T1027",
+   "name": "Obfuscated Files or Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Obfuscated Files or Information | T1027 | Obfuscate source IP addresses in system logs, as actions may be recorded as originating from local IP addresses"
+  },
+  {
+   "id": "T1048",
+   "name": "Exfiltration Over Alternative Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over Alternative Protocol | T1048 | Exfiltrating over a different protocol than that of the existing command and control channel."
+  },
+  {
+   "id": "T1068",
+   "name": "Exploitation for Privilege Escalation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploitation for Privilege Escalation | T1068 | Exploit publicly known CVEs for escalated privileges"
+  },
+  {
+   "id": "T1071",
+   "name": "Application Layer Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Application Layer Protocol | T1071 | Open and expose a variety of different services, including TFTP and FTP"
+  },
+  {
+   "id": "T1090",
+   "name": "Proxy",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Proxy | T1090 | Use a connection proxy to direct network traffic"
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploit Public-Facing Application | T1190 | Exploit publicly known CVEs"
+  },
+  {
+   "id": "T1569",
+   "name": "System Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "System Services | T1569 | Executing commands via SNMP"
+  },
+  {
+   "id": "T1583.003",
+   "name": "Virtual Private Server",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Acquire Infrastructure: Virtual Private Servers | T1583.003 | Leverage VPS as infrastructure"
+  },
+  {
+   "id": "T1584.008",
+   "name": "Network Devices",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Compromise Infrastructure: Network Devices | T1584.008 | Compromise intermediate routers"
+  },
+  {
+   "id": "T1588.005",
+   "name": "Exploits",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Obtain Capabilities: Exploits | T1588.005 | Use publicly available code to exploit vulnerable devices"
+  },
+  {
+   "id": "T1595.001",
+   "name": "Scanning IP Blocks",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Active Scanning: Scanning IP Blocks | T1595.001 | Scan range of IP addresses"
+  },
+  {
+   "id": "T1595.002",
+   "name": "Vulnerability Scanning",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Active Scanning: Vulnerability Scanning | T1595.002 | Scan victims for vulnerabilities that can be used during targeting"
+  },
+  {
+   "id": "T1602.001",
+   "name": "SNMP (MIB Dump)",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Data from Configuration Repository: SNMP (MIB Dump) | T1602.001 | Target MIB to collect network information via SNMP"
+  },
+  {
+   "id": "T1602.002",
+   "name": "Network Device Configuration Dump",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Data from Configuration Repository: Network Device Configuration Dump | T1602.002 | Acquire credentials by collecting network device configurations"
+  }
+ ],
+ "n_inline": 15,
+ "n_table": 15,
+ "n_union": 15,
+ "n_inline_not_active": 0,
+ "n_table_not_active": 0
+}

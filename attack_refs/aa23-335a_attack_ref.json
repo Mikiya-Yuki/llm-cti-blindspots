@@ -1,0 +1,131 @@
+{
+ "case_id": "AA23-335A",
+ "input_words": 1525,
+ "input_sha256": "d343e9056cc60a56ef3135807312d8e68e26770e45db79af959b6d79e76d8334",
+ "inline_ids": [
+  {
+   "id": "T1078.001",
+   "name": "Default Accounts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    19
+   ],
+   "evidence": "The actors compromised multiple Unitronics Vision Series devices by authenticating to internet-connected devices with communications set to the default TCP port 20256 [ T1110 ]. These devices either had a default password in place or no password [ T1078.001 ]. The actors made multiple changes to the devices to disrupt their functions and prevent remote operators from connecting to the devices to remediate the problem. Actions taken by the actors included the following:"
+  },
+  {
+   "id": "T1110",
+   "name": "Brute Force",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    19
+   ],
+   "evidence": "The actors compromised multiple Unitronics Vision Series devices by authenticating to internet-connected devices with communications set to the default TCP port 20256 [ T1110 ]. These devices either had a default password in place or no password [ T1078.001 ]. The actors made multiple changes to the devices to disrupt their functions and prevent remote operators from connecting to the devices to remediate the problem. Actions taken by the actors included the following:"
+  },
+  {
+   "id": "T1491.001",
+   "name": "Internal Defacement",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    26
+   ],
+   "evidence": "The actors uploaded a splash page with the aforementioned defacement message to the HMI screen, which prevented operators from reading anything the display screen would normally show, such as input and output readings [ T1491.001 ]. In at least one instance the actors displayed a text file with the same message on an older device that could not display a graphic image."
+  },
+  {
+   "id": "T1499",
+   "name": "Endpoint Denial of Service",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    23,
+    24
+   ],
+   "evidence": "The actors disabled the upload and download functions of the PLC device to prevent the device operators from taking down the splash page [ T1499 ]. Additionally, the actors enabled password protection for the upload settings, preventing device operators from changing the programming remotely [ T1531 ]."
+  },
+  {
+   "id": "T1531",
+   "name": "Account Access Removal",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    21,
+    23
+   ],
+   "evidence": "The actors renamed the compromised devices, which delayed the device operators from accessing the devices remotely as the device name was a required field for facilitating remote connections [ T1531 ]."
+  },
+  {
+   "id": "T1565.001",
+   "name": "Stored Data Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    20,
+    22
+   ],
+   "evidence": "The actors erased the original ladder logic file on the device and downloaded their own [ T1565.001 ]. Their ladder logic file contained no inputs or outputs. Since the programmed ladder logic is responsible for directing the functioning of the device, the replacement ladder logic file prevented the compromised devices from operating as intended."
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T1078.001",
+   "name": "Default Accounts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Valid Accounts: Default Accounts | T1078.001 | The actors compromised multiple devices via default credentials."
+  },
+  {
+   "id": "T1110",
+   "name": "Brute Force",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Brute Force | T1110 | The actors used brute force to gain access to Valid Accounts."
+  },
+  {
+   "id": "T1491.001",
+   "name": "Internal Defacement",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Defacement: Internal Defacement | T1491.001 | The actors uploaded a splash page to the HMI screen to display a message regarding the hacking."
+  },
+  {
+   "id": "T1499",
+   "name": "Endpoint Denial of Service",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Endpoint Denial of Service | T1499 | The actors disabled the upload and download functions of the PLC device to prevent the device operators from taking down the splash page."
+  },
+  {
+   "id": "T1531",
+   "name": "Account Access Removal",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Account Access Removal | T1531 | The actors renamed the compromised devices so that device operators could no longer access them. The actors enabled password protections for the upload functions to prevent device operators from changing the programming remotely."
+  },
+  {
+   "id": "T1565.001",
+   "name": "Stored Data Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Stored Data Manipulation | T1565.001 | The actors erased the original ladder logic file on compromised devices. The actors set the software version of their ladder logic file to an older version, which prevented device operators from communicating with the PLC using their engineering workstation. Th"
+  }
+ ],
+ "n_inline": 6,
+ "n_table": 6,
+ "n_union": 6,
+ "n_inline_not_active": 0,
+ "n_table_not_active": 0
+}

@@ -1,0 +1,286 @@
+{
+ "case_id": "AA23-270A",
+ "authoring_agencies": [
+  {
+   "name": "United States National Security Agency (NSA)",
+   "quote": "The United States National Security Agency (NSA)"
+  },
+  {
+   "name": "U.S. Federal Bureau of Investigation (FBI)",
+   "quote": "the U.S. Federal Bureau of Investigation (FBI)"
+  },
+  {
+   "name": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "the U.S. Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "Japan National Police Agency (NPA)",
+   "quote": "the Japan National Police Agency (NPA)"
+  },
+  {
+   "name": "Japan National Center of Incident Readiness and Strategy for Cybersecurity (NISC)",
+   "quote": "the Japan National Center of Incident Readiness and Strategy for Cybersecurity (NISC)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "BlackTech",
+   "kind": "primary",
+   "quote": "People’s Republic of China (PRC)-linked cyber actors known as BlackTech"
+  },
+  {
+   "name": "Palmerworm",
+   "kind": "alias",
+   "quote": "BlackTech (a.k.a. Palmerworm, Temp.Overboard, Circuit Panda, and Radio Panda)"
+  },
+  {
+   "name": "Temp.Overboard",
+   "kind": "alias",
+   "quote": "BlackTech (a.k.a. Palmerworm, Temp.Overboard, Circuit Panda, and Radio Panda)"
+  },
+  {
+   "name": "Circuit Panda",
+   "kind": "alias",
+   "quote": "BlackTech (a.k.a. Palmerworm, Temp.Overboard, Circuit Panda, and Radio Panda)"
+  },
+  {
+   "name": "Radio Panda",
+   "kind": "alias",
+   "quote": "BlackTech (a.k.a. Palmerworm, Temp.Overboard, Circuit Panda, and Radio Panda)"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "are releasing this joint cybersecurity advisory (CSA) to detail activity of the People’s Republic of China (PRC)-linked cyber actors known as BlackTech",
+   "attributing_party": "the authoring agencies (NSA, FBI, CISA, Japan NPA, Japan NISC)",
+   "attributed_to": "People’s Republic of China (PRC) — generic state linkage only; no state organ or unit named",
+   "strength_markers": [
+    "(PRC)-linked"
+   ]
+  },
+  {
+   "quote": "The PRC-linked BlackTech actors target international subsidiaries of U.S. and Japanese companies.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "People’s Republic of China (PRC) — generic state linkage only",
+   "strength_markers": [
+    "PRC-linked"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A1",
+ "attribution_strength_rationale": "The advisory links BlackTech to China only as 'People’s Republic of China (PRC)-linked cyber actors' and 'The PRC-linked BlackTech actors', naming no state organ and making no direct state-sponsorship claim of its own ('State-Sponsored' appears only in the titles of other, cross-referenced CSAs).",
+ "malware_tools": [
+  {
+   "name": "BendyBear",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Custom malware families employed by BlackTech include:\n\nBendyBear"
+  },
+  {
+   "name": "Bifrose",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Bifrose"
+  },
+  {
+   "name": "BTSDoor",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "BTSDoor"
+  },
+  {
+   "name": "FakeDead (a.k.a. TSCookie)",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "FakeDead (a.k.a. TSCookie)"
+  },
+  {
+   "name": "Flagpro",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "Flagpro"
+  },
+  {
+   "name": "FrontShell (FakeDead’s downloader module)",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "FrontShell (FakeDead’s downloader module)"
+  },
+  {
+   "name": "IconDown",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "IconDown"
+  },
+  {
+   "name": "PLEAD",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "PLEAD"
+  },
+  {
+   "name": "SpiderPig",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "SpiderPig"
+  },
+  {
+   "name": "SpiderSpring",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "SpiderSpring"
+  },
+  {
+   "name": "SpiderStack",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "SpiderStack"
+  },
+  {
+   "name": "WaterBear",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "WaterBear"
+  },
+  {
+   "name": "customized firmware backdoor for routers (unnamed; modified Cisco IOS image firmware + modified unsigned bootloader with built-in SSH backdoor, enabled/disabled by specially crafted TCP/UDP trigger packets)",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "BlackTech actors have compromised several Cisco ® routers using variations of a customized firmware backdoor."
+  },
+  {
+   "name": "NetCat (NetCat shells)",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "Common methods of persistence on a host include NetCat shells"
+  },
+  {
+   "name": "SNScan",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The actors have also used SNScan for enumeration"
+  }
+ ],
+ "vulnerabilities": [],
+ "affected_products_or_technologies": [
+  {
+   "name": "routers / router firmware",
+   "core": true,
+   "quote": "BlackTech has demonstrated capabilities in modifying router firmware without detection and exploiting routers’ domain-trust relationships"
+  },
+  {
+   "name": "Cisco routers (Cisco IOS-based routers)",
+   "core": true,
+   "quote": "In some cases, BlackTech actors replace the firmware for certain Cisco IOS ® -based routers with malicious firmware."
+  },
+  {
+   "name": "branch routers",
+   "core": true,
+   "quote": "BlackTech actors target branch routers—typically smaller appliances used at remote branch offices to connect to a corporate headquarters"
+  },
+  {
+   "name": "network edge devices",
+   "core": false,
+   "quote": "gaining administrator access to network edge devices, BlackTech cyber actors often modify the firmware to hide their activity across the edge devices"
+  },
+  {
+   "name": "Windows (operating systems targeted by the custom malware)",
+   "core": false,
+   "quote": "The actors have used a range of custom malware families targeting Windows ®, Linux ®, and FreeBSD ® operating systems."
+  },
+  {
+   "name": "Linux (operating systems targeted by the custom malware)",
+   "core": false,
+   "quote": "The actors have used a range of custom malware families targeting Windows ®, Linux ®, and FreeBSD ® operating systems."
+  },
+  {
+   "name": "FreeBSD (operating systems targeted by the custom malware)",
+   "core": false,
+   "quote": "The actors have used a range of custom malware families targeting Windows ®, Linux ®, and FreeBSD ® operating systems."
+  },
+  {
+   "name": "Embedded Event Manager (EEM) policies (Cisco IOS feature abused to hide/deny CLI commands)",
+   "core": false,
+   "quote": "by hiding Embedded Event Manager (EEM) policies—a feature usually used in Cisco IOS to automate tasks that execute upon specified events"
+  },
+  {
+   "name": "Cisco ROM Monitor (ROMMON) signature validation (bypassed)",
+   "core": false,
+   "quote": "bypass firmware signature checks in the Cisco ROM Monitor (ROMMON) signature validation functions"
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "government",
+   "core": true,
+   "quote": "actors have targeted government, industrial, technology, media, electronics, and telecommunication sectors, including entities that support the militaries of the U.S. and Japan"
+  },
+  {
+   "sector": "industrial",
+   "core": true,
+   "quote": "actors have targeted government, industrial, technology, media, electronics, and telecommunication sectors, including entities that support the militaries of the U.S. and Japan"
+  },
+  {
+   "sector": "technology",
+   "core": true,
+   "quote": "actors have targeted government, industrial, technology, media, electronics, and telecommunication sectors, including entities that support the militaries of the U.S. and Japan"
+  },
+  {
+   "sector": "media",
+   "core": true,
+   "quote": "actors have targeted government, industrial, technology, media, electronics, and telecommunication sectors, including entities that support the militaries of the U.S. and Japan"
+  },
+  {
+   "sector": "electronics",
+   "core": true,
+   "quote": "actors have targeted government, industrial, technology, media, electronics, and telecommunication sectors, including entities that support the militaries of the U.S. and Japan"
+  },
+  {
+   "sector": "telecommunication",
+   "core": true,
+   "quote": "actors have targeted government, industrial, technology, media, electronics, and telecommunication sectors, including entities that support the militaries of the U.S. and Japan"
+  },
+  {
+   "sector": "entities that support the militaries of the U.S. and Japan",
+   "core": true,
+   "quote": "actors have targeted government, industrial, technology, media, electronics, and telecommunication sectors, including entities that support the militaries of the U.S. and Japan"
+  },
+  {
+   "sector": "international subsidiaries of U.S. and Japanese companies and their headquarters (multinational corporations)",
+   "core": true,
+   "quote": "The PRC-linked BlackTech actors target international subsidiaries of U.S. and Japanese companies."
+  },
+  {
+   "sector": "public organizations and private industries (historical, U.S. and East Asia)",
+   "core": false,
+   "quote": "Active since 2010, BlackTech actors have historically targeted a wide range of U.S. and East Asia public organizations and private industries."
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "Japan",
+   "core": true,
+   "quote": "pivoting from international subsidiaries to headquarters in Japan and the U.S. — the primary targets"
+  },
+  {
+   "region": "U.S.",
+   "core": true,
+   "quote": "pivoting from international subsidiaries to headquarters in Japan and the U.S. — the primary targets"
+  },
+  {
+   "region": "East Asia",
+   "core": false,
+   "quote": "historically targeted a wide range of U.S. and East Asia public organizations and private industries"
+  }
+ ],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "Active since 2010",
+   "meaning": "start of BlackTech's known activity (actor active since 2010; background on historical targeting)",
+   "core": true,
+   "quote": "Active since 2010, BlackTech actors have historically targeted a wide range of U.S. and East Asia public organizations and private industries."
+  }
+ ],
+ "notes": "No CVE IDs and no named victims appear in the text (both lists intentionally empty). ATTRIBUTION: the advisory's own wording is only 'PRC-linked' (twice). 'People’s Republic of China State-Sponsored Cyber Actors Exploit Network Providers and Devices' and 'People's Republic of China State-Sponsored Cyber Actor Living off the Land to Evade Detection' are TITLES of other joint CSAs given as cross-references (and repeated in the reference list); they are not this advisory's attribution of BlackTech, so coding A2/'state-sponsored' from them is an over-reading. 'PRC-linked cyber actors' is a descriptor, not an additional actor name. MALWARE: the 12 custom families come from the bulleted list introduced by 'Custom malware families employed by BlackTech include:'. FakeDead and TSCookie are one item (a.k.a.), so either name matches; FrontShell is FakeDead's downloader module (separate list entry). 'Bifrose' is spelled as written. The router 'customized firmware backdoor' is unnamed in the text; credit any accurate description (modified/malicious Cisco IOS firmware or bootloader, SSH backdoor, magic/trigger packets, EEM-policy hiding). NOT ITEMS (acceptable extras, not required): RDP, SSH and a local FTP server (protocols/services used for persistence or moving data); generic 'remote access tools (RATs)', 'dual-use tools', 'living off the land', stolen code-signing certificates; Cisco IOS CLI, 'transport output none', NDI Methodology and the NSA/Cisco reference documents (mitigation/reference material). The advisory says the router TTP 'is not solely limited to Cisco routers' and similar techniques could be used on 'other network equipment' (hypothetical, not an observed target). CONTEXT: 'Active since 2010' and the U.S./East Asia 'public organizations and private industries' sentence are historical background (core=false except the date, which is the only activity date in the text). Japan and the U.S. are where the 'primary targets' (headquarters) are; the subsidiaries are 'international' with no other countries named. No publication date of this advisory appears in the text; dates inside reference URLs are not activity dates."
+}

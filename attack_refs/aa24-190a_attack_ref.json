@@ -1,0 +1,368 @@
+{
+ "case_id": "AA24-190A",
+ "input_words": 3758,
+ "input_sha256": "b553817d12cd8ad3ae1744709456b7f06dcaac0287fd66b051a5c26d408d6587",
+ "inline_ids": [
+  {
+   "id": "T1001.003",
+   "name": "Protocol or Service Impersonation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    12,
+    113
+   ],
+   "evidence": "Many of these SOHO devices are end-of-life or unpatched and offer a soft target for N-day exploitation. Once compromised, SOHO devices offer a launching point for attacks that is designed to blend in with legitimate traffic and challenge network defenders [ T1001.003 ]."
+  },
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    80,
+    110
+   ],
+   "evidence": "Using their access to the compromised appliance, the group collected genuine usernames, passwords [ T1003 ], and MFA token values [ T1111 ]. The group also collected JSON Web Tokens (JWTs) [ T1528 ], which is an authentication artefact used to create virtual desktop login sessions. The actor may have been able to use these to create or hijack virtual desktop sessions [ T1563.002 ] and access the internal organization network segment as a legitimate user [ T1078 ]."
+  },
+  {
+   "id": "T1018",
+   "name": "Remote System Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    28
+   ],
+   "evidence": "Beginning in July, actors were able to test and exploit a custom web application [ T1190 ] running on <webapp>2-ext , which enables the group to establish a foothold in the network demilitarized zone (DMZ). This was leveraged to enumerate both the network as well as all visible domains. Compromised credentials [ T1078.002 ] were used to query the Active Directory [ T1018 ] and exfiltrate data by mounting file shares [ T1039 ] from multiple machines within the DMZ. The actor carried out a Kerberoasting attack in order to obtain valid network credentials from a server [ T1558.003 ]. The group we"
+  },
+  {
+   "id": "T1021.001",
+   "name": "Remote Desktop Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    75
+   ],
+   "evidence": "The host with the compromised appliance provided authentication via Active Directory and a webserver, for users connecting to VDI sessions [ T1021.001 ]."
+  },
+  {
+   "id": "T1021.002",
+   "name": "SMB/Windows Admin Shares",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    23,
+    57
+   ],
+   "evidence": "The investigation uncovered evidence of large amounts of sensitive data being accessed and evidence that the actors moved laterally through the network [ T1021.002 ]. Much of the compromise was facilitated by the group’s establishment of multiple access vectors into the network, the network having a flat structure, and the use of insecure internally developed software that could be used to arbitrarily upload files. Exfiltrated data included privileged authentication credentials that enabled the group to log in, as well as network information that would allow the actors to regain unauthorized a"
+  },
+  {
+   "id": "T1039",
+   "name": "Data from Network Shared Drive",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    28
+   ],
+   "evidence": "Beginning in July, actors were able to test and exploit a custom web application [ T1190 ] running on <webapp>2-ext , which enables the group to establish a foothold in the network demilitarized zone (DMZ). This was leveraged to enumerate both the network as well as all visible domains. Compromised credentials [ T1078.002 ] were used to query the Active Directory [ T1018 ] and exfiltrate data by mounting file shares [ T1039 ] from multiple machines within the DMZ. The actor carried out a Kerberoasting attack in order to obtain valid network credentials from a server [ T1558.003 ]. The group we"
+  },
+  {
+   "id": "T1040",
+   "name": "Network Sniffing",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    104
+   ],
+   "evidence": "T1040 Network Sniffing"
+  },
+  {
+   "id": "T1041",
+   "name": "Exfiltration Over C2 Channel",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    59
+   ],
+   "evidence": "T1041 – Exfiltration Over C2 Channel (regarding the actor’s data exfiltration from Active Directory and mounting shares)"
+  },
+  {
+   "id": "T1046",
+   "name": "Network Service Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    108
+   ],
+   "evidence": "T1046 Network Service Discovery"
+  },
+  {
+   "id": "T1056.003",
+   "name": "Web Portal Capture",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    100
+   ],
+   "evidence": "T1056.003 Input Capture: Web Portal Capture"
+  },
+  {
+   "id": "T1059",
+   "name": "Command and Scripting Interpreter",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    52
+   ],
+   "evidence": "T1059 – Command and Scripting Interpreter (regarding command execution through the web shell)"
+  },
+  {
+   "id": "T1059.004",
+   "name": "Unix Shell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    91
+   ],
+   "evidence": "T1059.004 Command and Scripting Interpreter: Unix Shell"
+  },
+  {
+   "id": "T1068",
+   "name": "Exploitation for Privilege Escalation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    97
+   ],
+   "evidence": "T1068 Exploitation for Privilege Escalation"
+  },
+  {
+   "id": "T1071.001",
+   "name": "Web Protocols",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    111
+   ],
+   "evidence": "T1071.001 Application Layer Protocol: Web Protocols"
+  },
+  {
+   "id": "T1072",
+   "name": "Software Deployment Tools",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    53
+   ],
+   "evidence": "T1072 – Software Deployment Tools (regarding the actor using open-source tool Secure Socket Funnelling (SSF) to connect to an IP)"
+  },
+  {
+   "id": "T1078",
+   "name": "Valid Accounts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    80
+   ],
+   "evidence": "Using their access to the compromised appliance, the group collected genuine usernames, passwords [ T1003 ], and MFA token values [ T1111 ]. The group also collected JSON Web Tokens (JWTs) [ T1528 ], which is an authentication artefact used to create virtual desktop login sessions. The actor may have been able to use these to create or hijack virtual desktop sessions [ T1563.002 ] and access the internal organization network segment as a legitimate user [ T1078 ]."
+  },
+  {
+   "id": "T1078.002",
+   "name": "Domain Accounts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    28,
+    50
+   ],
+   "evidence": "Beginning in July, actors were able to test and exploit a custom web application [ T1190 ] running on <webapp>2-ext , which enables the group to establish a foothold in the network demilitarized zone (DMZ). This was leveraged to enumerate both the network as well as all visible domains. Compromised credentials [ T1078.002 ] were used to query the Active Directory [ T1018 ] and exfiltrate data by mounting file shares [ T1039 ] from multiple machines within the DMZ. The actor carried out a Kerberoasting attack in order to obtain valid network credentials from a server [ T1558.003 ]. The group we"
+  },
+  {
+   "id": "T1102",
+   "name": "Web Service",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "July: The actors established an initial connection to the front page of a custom web application [ T1190 ] built for the organization (hereafter referred to as the “web application” or “ webapp ”) via a transport layer security (TLS) connection [ T1102 ]. No other noteworthy activity was observed."
+  },
+  {
+   "id": "T1111",
+   "name": "Multi-Factor Authentication Interception",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    80,
+    102,
+    110
+   ],
+   "evidence": "Using their access to the compromised appliance, the group collected genuine usernames, passwords [ T1003 ], and MFA token values [ T1111 ]. The group also collected JSON Web Tokens (JWTs) [ T1528 ], which is an authentication artefact used to create virtual desktop login sessions. The actor may have been able to use these to create or hijack virtual desktop sessions [ T1563.002 ] and access the internal organization network segment as a legitimate user [ T1078 ]."
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    28,
+    30,
+    49,
+    85
+   ],
+   "evidence": "Beginning in July, actors were able to test and exploit a custom web application [ T1190 ] running on <webapp>2-ext , which enables the group to establish a foothold in the network demilitarized zone (DMZ). This was leveraged to enumerate both the network as well as all visible domains. Compromised credentials [ T1078.002 ] were used to query the Active Directory [ T1018 ] and exfiltrate data by mounting file shares [ T1039 ] from multiple machines within the DMZ. The actor carried out a Kerberoasting attack in order to obtain valid network credentials from a server [ T1558.003 ]. The group we"
+  },
+  {
+   "id": "T1213",
+   "name": "Data from Information Repositories",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    58
+   ],
+   "evidence": "T1213 – Data from Information Repositories (regarding manuals/documentation found on the BMS server)"
+  },
+  {
+   "id": "T1505.001",
+   "name": "SQL Stored Procedures",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    79,
+    81
+   ],
+   "evidence": "The ASD’s ACSC investigated limited data from the internal organization’s network segment. Attempted or successful malicious activity known to have impacted the internal organization’s network segment includes actor access to VDI-related artefacts, the scraping of an internal SQL server [ T1505.001 ], and unexplained traffic observed going from known malicious IP addresses through the access gateway appliances [ TA0011 ]."
+  },
+  {
+   "id": "T1505.003",
+   "name": "Web Shell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    9,
+    54,
+    94
+   ],
+   "evidence": "This group appears to prefer exploiting vulnerable, public-facing infrastructure over techniques that require user interaction, such as phishing campaigns, and places a high priority on obtaining valid credentials to enable a range of follow-on activities. APT40 regularly uses web shells [ T1505.003 ] for persistence, particularly early in the life cycle of an intrusion. Typically, after successful initial access APT40 focuses on establishing persistence to maintain access on the victim’s environment. However, as persistence occurs early in an intrusion, it is more likely to be observed in all"
+  },
+  {
+   "id": "T1528",
+   "name": "Steal Application Access Token",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    80
+   ],
+   "evidence": "Using their access to the compromised appliance, the group collected genuine usernames, passwords [ T1003 ], and MFA token values [ T1111 ]. The group also collected JSON Web Tokens (JWTs) [ T1528 ], which is an authentication artefact used to create virtual desktop login sessions. The actor may have been able to use these to create or hijack virtual desktop sessions [ T1563.002 ] and access the internal organization network segment as a legitimate user [ T1078 ]."
+  },
+  {
+   "id": "T1539",
+   "name": "Steal Web Session Cookie",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    106
+   ],
+   "evidence": "T1539 Steal Web Session Cookie"
+  },
+  {
+   "id": "T1552.001",
+   "name": "Credentials In Files",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    55
+   ],
+   "evidence": "T1552.001 – Credentials from Password Stores (regarding password files relating to building management system [BMS])"
+  },
+  {
+   "id": "T1558.003",
+   "name": "Kerberoasting",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    28,
+    56
+   ],
+   "evidence": "Beginning in July, actors were able to test and exploit a custom web application [ T1190 ] running on <webapp>2-ext , which enables the group to establish a foothold in the network demilitarized zone (DMZ). This was leveraged to enumerate both the network as well as all visible domains. Compromised credentials [ T1078.002 ] were used to query the Active Directory [ T1018 ] and exfiltrate data by mounting file shares [ T1039 ] from multiple machines within the DMZ. The actor carried out a Kerberoasting attack in order to obtain valid network credentials from a server [ T1558.003 ]. The group we"
+  },
+  {
+   "id": "T1563.002",
+   "name": "RDP Hijacking",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    80
+   ],
+   "evidence": "Using their access to the compromised appliance, the group collected genuine usernames, passwords [ T1003 ], and MFA token values [ T1111 ]. The group also collected JSON Web Tokens (JWTs) [ T1528 ], which is an authentication artefact used to create virtual desktop login sessions. The actor may have been able to use these to create or hijack virtual desktop sessions [ T1563.002 ] and access the internal organization network segment as a legitimate user [ T1078 ]."
+  },
+  {
+   "id": "T1572",
+   "name": "Protocol Tunneling",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    112
+   ],
+   "evidence": "Actors used web shells for command and control. Web shell commands would have been passed over HTTPS using the existing web server on the appliance [ T1572 ]."
+  },
+  {
+   "id": "T1584.008",
+   "name": "Network Devices",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    11
+   ],
+   "evidence": "APT40 has embraced the global trend of using compromised devices, including small-office/home-office (SOHO) devices, as operational infrastructure and last-hop redirectors [ T1584.008 ] for its operations in Australia. This has enabled the authoring agencies to better characterize and track this group’s movements."
+  },
+  {
+   "id": "T1594",
+   "name": "Search Victim-Owned Websites",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    10,
+    47
+   ],
+   "evidence": "Although APT40 has previously used compromised Australian websites as command and control (C2) hosts for its operations, the group have evolved this technique [ T1594 ]."
+  }
+ ],
+ "table_ids": [],
+ "n_inline": 31,
+ "n_table": 0,
+ "n_union": 31,
+ "n_inline_not_active": 0,
+ "n_table_not_active": 0
+}

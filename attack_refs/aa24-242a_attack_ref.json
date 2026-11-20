@@ -1,0 +1,443 @@
+{
+ "case_id": "AA24-242A",
+ "input_words": 1461,
+ "input_sha256": "065540fe53c17ad186c1798215469195c54fa4b6dc515afad54971cc8bb18bbd",
+ "inline_ids": [
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    29
+   ],
+   "evidence": "Following initial access, RansomHub affiliates created user accounts for persistence [ T1136 ], reenabled disabled accounts [ T1098 ], and used Mimikatz [ S0002 ] on Windows systems to gather credentials [ T1003 ] and escalate privileges to SYSTEM [ T1068 ]. Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP) [ T1021.001 ], PsExec [ S0029 ], Anydesk [ T1219 ], Connectwise, N-Able, Cobalt Strike [ S0154 ], Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "id": "T1018",
+   "name": "Remote System Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    27
+   ],
+   "evidence": "RansomHub affiliates conduct network scanning with tools such as AngryIPScanner, Nmap, and PowerShell-based living off the land methods with PowerShell to conduct network scanning [ T1018 ][ T1046 ][ T1059.001 ]."
+  },
+  {
+   "id": "T1021.001",
+   "name": "Remote Desktop Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    29
+   ],
+   "evidence": "Following initial access, RansomHub affiliates created user accounts for persistence [ T1136 ], reenabled disabled accounts [ T1098 ], and used Mimikatz [ S0002 ] on Windows systems to gather credentials [ T1003 ] and escalate privileges to SYSTEM [ T1068 ]. Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP) [ T1021.001 ], PsExec [ S0029 ], Anydesk [ T1219 ], Connectwise, N-Able, Cobalt Strike [ S0154 ], Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "id": "T1036",
+   "name": "Masquerading",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    28
+   ],
+   "evidence": "Cybersecurity researchers have observed affiliates renaming the ransomware executable with innocuous file names, such as Windows.exe , left on the user’s desktop ( C:\\Users\\%USERNAME%\\Desktop ) or downloads ( C:\\Users\\%USERNAME%\\Downloads ) [ T1036 ]. The affiliates have also cleared Windows and Linux system logs to inhibit any potential incident response [ T1070 ]. Affiliates used Windows Management Instrumentation [ T1047 ] to disable antivirus products. In some instances, RansomHub-specific tools were deployed to disable endpoint detection and response (EDR) tooling [ T1562.001 ]."
+  },
+  {
+   "id": "T1046",
+   "name": "Network Service Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    27
+   ],
+   "evidence": "RansomHub affiliates conduct network scanning with tools such as AngryIPScanner, Nmap, and PowerShell-based living off the land methods with PowerShell to conduct network scanning [ T1018 ][ T1046 ][ T1059.001 ]."
+  },
+  {
+   "id": "T1047",
+   "name": "Windows Management Instrumentation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    28
+   ],
+   "evidence": "Cybersecurity researchers have observed affiliates renaming the ransomware executable with innocuous file names, such as Windows.exe , left on the user’s desktop ( C:\\Users\\%USERNAME%\\Desktop ) or downloads ( C:\\Users\\%USERNAME%\\Downloads ) [ T1036 ]. The affiliates have also cleared Windows and Linux system logs to inhibit any potential incident response [ T1070 ]. Affiliates used Windows Management Instrumentation [ T1047 ] to disable antivirus products. In some instances, RansomHub-specific tools were deployed to disable endpoint detection and response (EDR) tooling [ T1562.001 ]."
+  },
+  {
+   "id": "T1048.002",
+   "name": "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "Data exfiltration methods depend heavily on the affiliate conducting the network compromise. The ransomware binary does not normally include any mechanism for data exfiltration. Data exfiltration has been observed through the usage of tools such as PuTTY [ T1048.002 ], Amazon AWS S3 buckets/tools [ T1537 ], HTTP POST requests [ T1048.003 ], WinSCP, Rclone, Cobalt Strike, Metasploit, and other methods."
+  },
+  {
+   "id": "T1048.003",
+   "name": "Exfiltration Over Unencrypted Non-C2 Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "Data exfiltration methods depend heavily on the affiliate conducting the network compromise. The ransomware binary does not normally include any mechanism for data exfiltration. Data exfiltration has been observed through the usage of tools such as PuTTY [ T1048.002 ], Amazon AWS S3 buckets/tools [ T1537 ], HTTP POST requests [ T1048.003 ], WinSCP, Rclone, Cobalt Strike, Metasploit, and other methods."
+  },
+  {
+   "id": "T1059.001",
+   "name": "PowerShell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    27
+   ],
+   "evidence": "RansomHub affiliates conduct network scanning with tools such as AngryIPScanner, Nmap, and PowerShell-based living off the land methods with PowerShell to conduct network scanning [ T1018 ][ T1046 ][ T1059.001 ]."
+  },
+  {
+   "id": "T1068",
+   "name": "Exploitation for Privilege Escalation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    29
+   ],
+   "evidence": "Following initial access, RansomHub affiliates created user accounts for persistence [ T1136 ], reenabled disabled accounts [ T1098 ], and used Mimikatz [ S0002 ] on Windows systems to gather credentials [ T1003 ] and escalate privileges to SYSTEM [ T1068 ]. Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP) [ T1021.001 ], PsExec [ S0029 ], Anydesk [ T1219 ], Connectwise, N-Able, Cobalt Strike [ S0154 ], Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "id": "T1070",
+   "name": "Indicator Removal",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    28
+   ],
+   "evidence": "Cybersecurity researchers have observed affiliates renaming the ransomware executable with innocuous file names, such as Windows.exe , left on the user’s desktop ( C:\\Users\\%USERNAME%\\Desktop ) or downloads ( C:\\Users\\%USERNAME%\\Downloads ) [ T1036 ]. The affiliates have also cleared Windows and Linux system logs to inhibit any potential incident response [ T1070 ]. Affiliates used Windows Management Instrumentation [ T1047 ] to disable antivirus products. In some instances, RansomHub-specific tools were deployed to disable endpoint detection and response (EDR) tooling [ T1562.001 ]."
+  },
+  {
+   "id": "T1098",
+   "name": "Account Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    29
+   ],
+   "evidence": "Following initial access, RansomHub affiliates created user accounts for persistence [ T1136 ], reenabled disabled accounts [ T1098 ], and used Mimikatz [ S0002 ] on Windows systems to gather credentials [ T1003 ] and escalate privileges to SYSTEM [ T1068 ]. Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP) [ T1021.001 ], PsExec [ S0029 ], Anydesk [ T1219 ], Connectwise, N-Able, Cobalt Strike [ S0154 ], Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "id": "T1110.003",
+   "name": "Password Spraying",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    8
+   ],
+   "evidence": "RansomHub affiliates typically compromise internet facing systems and user endpoints by using methods such as phishing emails [ T1566 ], exploitation of known vulnerabilities [ T1190 ], and password spraying [ T1110.003 ]. Password spraying targets accounts compromised through data breaches. Proof-of-concept exploits are obtained from sources such as ExploitDB and GitHub [ T1588.005 ]. Exploits based on the following CVEs have been observed:"
+  },
+  {
+   "id": "T1136",
+   "name": "Create Account",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    29
+   ],
+   "evidence": "Following initial access, RansomHub affiliates created user accounts for persistence [ T1136 ], reenabled disabled accounts [ T1098 ], and used Mimikatz [ S0002 ] on Windows systems to gather credentials [ T1003 ] and escalate privileges to SYSTEM [ T1068 ]. Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP) [ T1021.001 ], PsExec [ S0029 ], Anydesk [ T1219 ], Connectwise, N-Able, Cobalt Strike [ S0154 ], Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    8
+   ],
+   "evidence": "RansomHub affiliates typically compromise internet facing systems and user endpoints by using methods such as phishing emails [ T1566 ], exploitation of known vulnerabilities [ T1190 ], and password spraying [ T1110.003 ]. Password spraying targets accounts compromised through data breaches. Proof-of-concept exploits are obtained from sources such as ExploitDB and GitHub [ T1588.005 ]. Exploits based on the following CVEs have been observed:"
+  },
+  {
+   "id": "T1210",
+   "name": "Exploitation of Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    22
+   ],
+   "evidence": "The SMBv1 server in Microsoft Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 allows remote attackers to execute arbitrary code via crafted packets, also known as “Windows SMB Remote Code Execution Vulnerability” [ T1210 ]."
+  },
+  {
+   "id": "T1219",
+   "name": "Remote Access Tools",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    29
+   ],
+   "evidence": "Following initial access, RansomHub affiliates created user accounts for persistence [ T1136 ], reenabled disabled accounts [ T1098 ], and used Mimikatz [ S0002 ] on Windows systems to gather credentials [ T1003 ] and escalate privileges to SYSTEM [ T1068 ]. Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP) [ T1021.001 ], PsExec [ S0029 ], Anydesk [ T1219 ], Connectwise, N-Able, Cobalt Strike [ S0154 ], Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "id": "T1486",
+   "name": "Data Encrypted for Impact",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    31
+   ],
+   "evidence": "RansomHub ransomware has typically leveraged an Elliptic Curve Encryption algorithm called Curve 25519 to encrypt user accessible files on the system [ T1486 ]. Curve 25519 uses a public/private key that is unique to each victim organization. To successfully encrypt files that are currently in use, the ransomware binary will typically attempt to stop the following processes:"
+  },
+  {
+   "id": "T1490",
+   "name": "Inhibit System Recovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    68
+   ],
+   "evidence": "The ransomware executable does not typically encrypt executable files. A random file extension is added to file names and a ransom note generally titled How To Restore Your Files.txt is left on the compromised system. To further inhibit system recovery, the ransomware executable typically leverages the vssadmin.exe program to delete volume shadow copies [ T1490 ]."
+  },
+  {
+   "id": "T1537",
+   "name": "Transfer Data to Cloud Account",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "Data exfiltration methods depend heavily on the affiliate conducting the network compromise. The ransomware binary does not normally include any mechanism for data exfiltration. Data exfiltration has been observed through the usage of tools such as PuTTY [ T1048.002 ], Amazon AWS S3 buckets/tools [ T1537 ], HTTP POST requests [ T1048.003 ], WinSCP, Rclone, Cobalt Strike, Metasploit, and other methods."
+  },
+  {
+   "id": "T1562.001",
+   "name": "Disable or Modify Tools",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1685",
+   "evidence_paragraphs": [
+    28
+   ],
+   "evidence": "Cybersecurity researchers have observed affiliates renaming the ransomware executable with innocuous file names, such as Windows.exe , left on the user’s desktop ( C:\\Users\\%USERNAME%\\Desktop ) or downloads ( C:\\Users\\%USERNAME%\\Downloads ) [ T1036 ]. The affiliates have also cleared Windows and Linux system logs to inhibit any potential incident response [ T1070 ]. Affiliates used Windows Management Instrumentation [ T1047 ] to disable antivirus products. In some instances, RansomHub-specific tools were deployed to disable endpoint detection and response (EDR) tooling [ T1562.001 ]."
+  },
+  {
+   "id": "T1566",
+   "name": "Phishing",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    8
+   ],
+   "evidence": "RansomHub affiliates typically compromise internet facing systems and user endpoints by using methods such as phishing emails [ T1566 ], exploitation of known vulnerabilities [ T1190 ], and password spraying [ T1110.003 ]. Password spraying targets accounts compromised through data breaches. Proof-of-concept exploits are obtained from sources such as ExploitDB and GitHub [ T1588.005 ]. Exploits based on the following CVEs have been observed:"
+  },
+  {
+   "id": "T1588.005",
+   "name": "Exploits",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    8
+   ],
+   "evidence": "RansomHub affiliates typically compromise internet facing systems and user endpoints by using methods such as phishing emails [ T1566 ], exploitation of known vulnerabilities [ T1190 ], and password spraying [ T1110.003 ]. Password spraying targets accounts compromised through data breaches. Proof-of-concept exploits are obtained from sources such as ExploitDB and GitHub [ T1588.005 ]. Exploits based on the following CVEs have been observed:"
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "OS Credential Dumping | T1003 | RansomHub affiliates used Mimikatz on Windows systems to gather credentials."
+  },
+  {
+   "id": "T1018",
+   "name": "Remote System Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote System Discovery | T1018 | RansomHub affiliates may attempt to get a listing of other systems by IP address, hostname, or other logical identifier on a network that may be used for Lateral Movement from the current system."
+  },
+  {
+   "id": "T1021.001",
+   "name": "Remote Desktop Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote Services: Remote Desktop Protocol | T1021.001 | RansomHub affiliates may log onto systems using the Remote Desk Protocol, then perform actions as the logged-on user."
+  },
+  {
+   "id": "T1036",
+   "name": "Masquerading",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Masquerading | T1036 | RansomHub affiliates may hide binaries by renaming executable names."
+  },
+  {
+   "id": "T1046",
+   "name": "Network Service Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Network Service Discovery | T1046 | RansomHub affiliates may attempt to get a listing of services running on remote hosts and local network infrastructure devices,"
+  },
+  {
+   "id": "T1047",
+   "name": "Windows Management Instrumentation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Windows Management Instrumentation | T1047 | RansomHub affiliates may abuse Windows Management Instrumentation to execute malicious commands and payloads."
+  },
+  {
+   "id": "T1048.002",
+   "name": "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over Alternative Protocol: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol | T1048.002 | RansomHub affiliates may steal data by exfiltrating it over an asymmetrically encrypted network protocol other than that of the existing command and control channel."
+  },
+  {
+   "id": "T1048.003",
+   "name": "Exfiltration Over Unencrypted Non-C2 Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over Alternative Protocol: Exfiltration Over Asymmetric Unencrypted Non-C2 Protocol | T1048.003 | RansomHub affiliates may steal data by exfiltrating it over an un-encrypted network protocol other than that of the existing command and control channel."
+  },
+  {
+   "id": "T1059.001",
+   "name": "PowerShell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Command and Scripting Interpreter | T1059.001 | RansomHub affiliates used PowerShell and Scripts to quickly run and automate intrusion."
+  },
+  {
+   "id": "T1070",
+   "name": "Indicator Removal",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Indicator Removal on Host | T1070 | RansomHub affiliates may remove logs to inhibit cybersecurity response."
+  },
+  {
+   "id": "T1098",
+   "name": "Account Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Account Manipulation | T1098 | RansomHub affiliates may manipulate accounts to maintain and/or elevate access to victim systems."
+  },
+  {
+   "id": "T1110.003",
+   "name": "Password Spraying",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Brute Force: Password Spraying | T1110.003 | RansomHub affiliates may use password spraying to obtain initial access."
+  },
+  {
+   "id": "T1136",
+   "name": "Create Account",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Create Account | T1136 | RansomHub affiliates may create an account to maintain access to victim systems."
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploit Public-Facing Application | T1190 | RansomHub affiliates may exploit known vulnerabilities to obtain initial access."
+  },
+  {
+   "id": "T1210",
+   "name": "Exploitation of Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploitation of Remote Services | T1210 | RansomHub affiliates may exploit remote service to gain unauthorized access to internal systems once inside of a network."
+  },
+  {
+   "id": "T1219",
+   "name": "Remote Access Tools",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote Access Software | T1219 | RansomHub affiliates may use Anydesk, a legitimate desktop support and remote access software to establish an interactive command and control channel to target systems within networks."
+  },
+  {
+   "id": "T1486",
+   "name": "Data Encrypted for Impact",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Data Encrypted for Impact | T1486 | RansomHub affiliates used encryption for ransomware operations."
+  },
+  {
+   "id": "T1490",
+   "name": "Inhibit System Recovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Inhibit System Recovery | T1490 | RansomHub ransomware deleted volume shadow copies and affiliates removed backups for ransomware operations."
+  },
+  {
+   "id": "T1537",
+   "name": "Transfer Data to Cloud Account",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Transfer Data to Cloud Account | T1537 | RansomHub affiliates may exfiltrate data by transferring the data, including through sharing/syncing and creating backups of cloud environments, to another cloud account they control on the same service."
+  },
+  {
+   "id": "T1562.001",
+   "name": "Disable or Modify Tools",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1685",
+   "table_row": "Impair Defenses: Disable or Modify Tools | T1562.001 | RansomHub affiliates may disable endpoint detection and response (EDR) tooling to avoid detection."
+  },
+  {
+   "id": "T1566",
+   "name": "Phishing",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Phishing | T1566 | RansomHub affiliates used mass phishing and spear-phishing emails to obtain initial access."
+  },
+  {
+   "id": "T1588.005",
+   "name": "Exploits",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Obtain Capabilities: Exploits | T1588.005 | RansomHub affiliates may buy, steal, or download exploits that can be used during targeting."
+  }
+ ],
+ "n_inline": 23,
+ "n_table": 22,
+ "n_union": 23,
+ "n_inline_not_active": 1,
+ "n_table_not_active": 1
+}

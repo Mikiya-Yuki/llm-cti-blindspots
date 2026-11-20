@@ -1,0 +1,109 @@
+{
+ "case_id": "AA26-097A",
+ "input_words": 1143,
+ "input_sha256": "2b20125a96e3fc9068af811a29b1a26343d00974f071bf51104490e518c8bccb",
+ "inline_ids": [
+  {
+   "id": "T0883",
+   "name": "Internet Accessible Device",
+   "domain": "ics",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    17
+   ],
+   "evidence": "(Updated, July 22, 2026) The authoring agencies observed Iranian-affiliated APT actors using several foreign-based IP addresses to access internet-facing PLCs manufactured by Rockwell Automation/Allen-Bradley, Schneider Electric, Siemens, and potentially other manufactured PLCs [ T0883 ]. The actors used leased, third-party hosted infrastructure and manufacturers’ PLC programming software to connect to misconfigured victim PLCs. Inbound malicious traffic has been observed targeting PLC devices on the following ports: 44818 , 2222 , 102 , and 502 , as well as targeting modems on port 22 . Targe"
+  },
+  {
+   "id": "T0885",
+   "name": "Commonly Used Port",
+   "domain": "ics",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    21
+   ],
+   "evidence": "(Updated, July 22, 2026) The targeting of ports [ T0885 ] associated with other OT vendors’ protocols suggests these actors are opportunistically targeting devices manufactured by companies other than Rockwell Automation/Allen-Bradley, including Schneider Electric and Siemens. In one reported instance, the actors utilized Dropbear Secure Shell (SSH) software on victim modems to enable them to gain remote access through port 22 [ T1219 ]."
+  },
+  {
+   "id": "T1041",
+   "name": "Exfiltration Over C2 Channel",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    22
+   ],
+   "evidence": "(New, July 22, 2026) The authoring agencies observed Iranian-affiliated APT actors using configuration software—such as Rockwell Automation’s Studio 5000 Logix Designer, Schneider Electric’s EcoStruxure Control Expert, and Siemens’ Totally Integrated Automation (TIA) Portal—on leased, third-party hosted infrastructure to exfiltrate device project files from PLC devices to threat-actor-controlled infrastructure [ T1041 ]."
+  },
+  {
+   "id": "T1219",
+   "name": "Remote Access Tools",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    21
+   ],
+   "evidence": "(Updated, July 22, 2026) The targeting of ports [ T0885 ] associated with other OT vendors’ protocols suggests these actors are opportunistically targeting devices manufactured by companies other than Rockwell Automation/Allen-Bradley, including Schneider Electric and Siemens. In one reported instance, the actors utilized Dropbear Secure Shell (SSH) software on victim modems to enable them to gain remote access through port 22 [ T1219 ]."
+  },
+  {
+   "id": "T1565",
+   "name": "Data Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    23
+   ],
+   "evidence": "(Updated, July 22, 2026) After the actors extracted device project files, the FBI and CISA identified the modification and deletion of project file logic, to include Add-On Instructions (AOIs) and data manipulation on HMI and SCADA displays [ T1565 ]. Additionally, the changes disabled critical shutdown and alarm logic, allowing systems to enter unsafe conditions without notifying operators of the anomalies."
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T0883",
+   "name": "Internet Accessible Device",
+   "domain": "ics",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Internet Accessible Device | T0883 | The actors accessed and interacted with publicly exposed, internet-accessible PLCs that lacked sufficient network and/or hardening security controls."
+  },
+  {
+   "id": "T0885",
+   "name": "Commonly Used Port",
+   "domain": "ics",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Commonly Used Port | T0885 | The actors leveraged commonly used OT ports to communicate with PLCs."
+  },
+  {
+   "id": "T1041",
+   "name": "Exfiltration Over C2 Channel",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over C2 Channel | T1041 | The actors used remote, third-party hosted infrastructure as a C2 channel to transfer device project files out of victim environments."
+  },
+  {
+   "id": "T1219",
+   "name": "Remote Access Tools",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote Access Tools | T1219 | The actors deployed Dropbear SSH software on victim modems to enable them to gain remote access through port 22 ."
+  },
+  {
+   "id": "T1565",
+   "name": "Data Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Data Manipulation | T1565 | The actors maliciously interacted with project files, including modifying and deleting project file logic, and altered data displayed on HMI and SCADA displays."
+  }
+ ],
+ "n_inline": 5,
+ "n_table": 5,
+ "n_union": 5,
+ "n_inline_not_active": 0,
+ "n_table_not_active": 0
+}

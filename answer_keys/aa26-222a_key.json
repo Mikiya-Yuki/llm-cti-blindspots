@@ -1,0 +1,443 @@
+{
+ "case_id": "AA26-222A",
+ "authoring_agencies": [
+  {
+   "name": "Federal Bureau of Investigation (FBI)",
+   "quote": "The Federal Bureau of Investigation (FBI), Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "Department of Defense Cyber Crime Center (DC3)",
+   "quote": "Department of Defense Cyber Crime Center (DC3)"
+  },
+  {
+   "name": "National Security Agency (NSA)",
+   "quote": "National Security Agency (NSA)"
+  },
+  {
+   "name": "U.S. Secret Service (USSS)",
+   "quote": "U.S. Secret Service (USSS)"
+  },
+  {
+   "name": "Republic of Korea’s National Police Agency (KNPA)",
+   "quote": "Republic of Korea’s National Police Agency (KNPA)—hereafter referred to as “the authoring agencies”"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "Gunra",
+   "kind": "primary",
+   "quote": "are releasing this joint advisory to alert organizations to the emerging Gunra ransomware threat"
+  },
+  {
+   "name": "Golden Community",
+   "kind": "alias",
+   "quote": "The FBI observed the group adopting new branding aliases (notably operating under the name Golden Community) to support this expansion."
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "As of early 2026, Gunra expanded its operations through a structured ransomware-as-a-service (RaaS) affiliate program advertised on dark web forums to financially motivated cybercriminals.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "financially motivated cybercriminals (the Gunra RaaS operation and its affiliates); no state linkage",
+   "strength_markers": [
+    "ransomware-as-a-service (RaaS) affiliate program",
+    "financially motivated cybercriminals"
+   ]
+  },
+  {
+   "quote": "Gunra first emerged in April 2025 as a sophisticated double-extortion ransomware variant derived from the leaked Conti 1 ransomware source code.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "malware lineage: the leaked Conti ransomware source code (not an actor attribution)",
+   "strength_markers": [
+    "derived from"
+   ]
+  },
+  {
+   "quote": "Gunra ransomware appears to be based on, or significantly influenced by, the Conti ransomware source code leaked in 2022.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "malware lineage: Conti source code leaked in 2022",
+   "strength_markers": [
+    "appears to be based on",
+    "significantly influenced by"
+   ]
+  },
+  {
+   "quote": "The FBI observed the group adopting new branding aliases (notably operating under the name Golden Community) to support this expansion.",
+   "attributing_party": "FBI",
+   "attributed_to": "Golden Community (a branding alias of the Gunra group)",
+   "strength_markers": [
+    "observed",
+    "branding aliases"
+   ]
+  },
+  {
+   "quote": "Gunra has further commercialized its platform by actively recruiting penetration testers and ethical hackers to serve as initial access brokers, offering a share of the ransom profits in exchange for enterprise network access.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "profit-driven criminal enterprise (recruits initial access brokers for a share of ransom profits)",
+   "strength_markers": [
+    "commercialized",
+    "share of the ransom profits"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A0",
+ "attribution_strength_rationale": "There is no state attribution: Gunra is described as a ransomware-as-a-service operation 'advertised on dark web forums to financially motivated cybercriminals', and the only other linkages are malware lineage ('derived from the leaked Conti ... ransomware source code') and a criminal branding alias ('Golden Community').",
+ "malware_tools": [
+  {
+   "name": "Gunra ransomware",
+   "category": "ransomware",
+   "core": true,
+   "quote": "Gunra first emerged in April 2025 as a sophisticated double-extortion ransomware variant derived from the leaked Conti 1 ransomware source code."
+  },
+  {
+   "name": "Conti",
+   "category": "ransomware",
+   "core": true,
+   "quote": "Gunra ransomware appears to be based on, or significantly influenced by, the Conti ransomware source code leaked in 2022."
+  },
+  {
+   "name": "Impacket",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "Gunra actors regularly exploit Impacket libraries psexec.py and smbclient.py to move laterally across victim networks using the Server Message Block (SMB) protocol."
+  },
+  {
+   "name": "psexec.py",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "Gunra actors regularly exploit Impacket libraries psexec.py and smbclient.py to move laterally across victim networks using the Server Message Block (SMB) protocol."
+  },
+  {
+   "name": "smbclient.py",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "Gunra actors regularly exploit Impacket libraries psexec.py and smbclient.py to move laterally across victim networks using the Server Message Block (SMB) protocol."
+  },
+  {
+   "name": "secretsdump.py",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "The FBI observed multiple instances of Gunra actors using secretsdump.py (another Impacket library) to conduct OS credential dumping against compromised domain controllers"
+  },
+  {
+   "name": "OpenSSH",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "The actors subsequently downloaded OpenSSH (an SSH tunneling tool) from an external attacker-controlled server to establish connections between compromised systems and maintain persistence in the victim’s environment."
+  },
+  {
+   "name": "main.exe",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "The FBI observed Gunra actors use a malicious executable ( main.exe ) to exfiltrate victim data from Microsoft OneDrive and SharePoint."
+  },
+  {
+   "name": "Mega",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "the actors generated compressed archives with sensitive data and exfiltrated the archives to the file-sharing service Mega"
+  },
+  {
+   "name": "7-Zip",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "The FBI observed several common open source tools on Gunra infrastructure that Gunra actors use to facilitate collection and exfiltration of data, including 7-Zip, RClone, and FileZilla"
+  },
+  {
+   "name": "RClone",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "The FBI observed several common open source tools on Gunra infrastructure that Gunra actors use to facilitate collection and exfiltration of data, including 7-Zip, RClone, and FileZilla"
+  },
+  {
+   "name": "FileZilla",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "The FBI observed several common open source tools on Gunra infrastructure that Gunra actors use to facilitate collection and exfiltration of data, including 7-Zip, RClone, and FileZilla"
+  },
+  {
+   "name": "Windows Management Instrumentation (WMI)",
+   "category": "built_in_os_utility",
+   "core": true,
+   "quote": "Gunra actors also used Windows Management Instrumentation (WMI) to initiate deletion of volume shadow copies prior to encryption"
+  },
+  {
+   "name": "WMIC.exe",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "cmd.exe /c C:\\Windows\\System32\\wbem\\WMIC.exe shadowcopy where"
+  },
+  {
+   "name": "cmd.exe",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "cmd.exe /c C:\\Windows\\System32\\wbem\\WMIC.exe shadowcopy where"
+  },
+  {
+   "name": "qTox",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Subsequently, victims receive instructions to contact the Gunra actors via qTox (an encrypted messaging application) to negotiate ransom payments within five to seven days."
+  },
+  {
+   "name": "Tor",
+   "category": "other",
+   "core": false,
+   "quote": "The threat actors quickly established a DLS on the Tor network to list victims and publish exfiltrated data."
+  },
+  {
+   "name": "RDP",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "Using stolen session information, Gunra actors gained initial access to the internal virtual desktop infrastructure (VDI) environment and conducted lateral movement via RDP."
+  }
+ ],
+ "vulnerabilities": [
+  {
+   "cve": "CVE-2024-55591",
+   "product": "FortiOS and FortiProxy (specific versions)",
+   "core": true,
+   "quote": "CVE-2024-55591 [ CWE-288: Authentication Bypass Using an Alternate Path or Channel ]: Authentication bypass vulnerability affecting specific FortiOS and FortiProxy versions"
+  },
+  {
+   "cve": "CVE-2025-24472",
+   "product": "FortiOS and FortiProxy (specific versions)",
+   "core": true,
+   "quote": "CVE-2025-24472 [ CWE-288: Authentication Bypass Using an Alternate Path or Channel ]: Authentication bypass vulnerability affecting specific FortiOS and FortiProxy versions"
+  }
+ ],
+ "affected_products_or_technologies": [
+  {
+   "name": "firewall and VPN appliances",
+   "core": true,
+   "quote": "The FBI observed Gunra actors obtaining initial access primarily through the exploitation of known vulnerabilities in internet-facing devices, including firewall and VPN appliances."
+  },
+  {
+   "name": "internet-facing VPN gateways",
+   "core": true,
+   "quote": "KNPA observed Gunra actors exploit credential-exposure and Secure Shell (SSH) access control vulnerabilities in internet-facing VPN gateways to gain unauthorized remote access."
+  },
+  {
+   "name": "remote desktop protocol (RDP)-exposed infrastructure",
+   "core": false,
+   "quote": "Prioritizing patching known exploited vulnerabilities in internet-facing systems, including virtual private network (VPN) gateways and remote desktop protocol (RDP)-exposed infrastructure."
+  },
+  {
+   "name": "secure socket layer (SSL)-VPN appliance",
+   "core": false,
+   "quote": "Gunra actors gained access to an administrator account for a secure socket layer (SSL)-VPN appliance by exploiting default credentials when account lockout controls were not present"
+  },
+  {
+   "name": "virtual desktop infrastructure (VDI) environment",
+   "core": false,
+   "quote": "Gunra actors gained initial access to the internal virtual desktop infrastructure (VDI) environment"
+  },
+  {
+   "name": "Active Directory (AD) server",
+   "core": false,
+   "quote": "The actors pivoted to multiple critical systems, including the VDI authentication web server, the internal Active Directory (AD) server, and virtual desktops assigned to IT personnel."
+  },
+  {
+   "name": "domain controllers",
+   "core": false,
+   "quote": "to conduct OS credential dumping against compromised domain controllers to extract password hashes of user accounts from the NT Directory Services (NTDS) file"
+  },
+  {
+   "name": "Server Message Block (SMB) protocol",
+   "core": false,
+   "quote": "Gunra actors regularly exploit Impacket libraries psexec.py and smbclient.py to move laterally across victim networks using the Server Message Block (SMB) protocol."
+  },
+  {
+   "name": "Hiware system access control server",
+   "core": false,
+   "quote": "the actors accessed a Hiware system access control server via SSH from a compromised virtual desktop and stole a symmetric encryption key stored on the server"
+  },
+  {
+   "name": "Microsoft OneDrive",
+   "core": true,
+   "quote": "The FBI observed Gunra actors use a malicious executable ( main.exe ) to exfiltrate victim data from Microsoft OneDrive and SharePoint."
+  },
+  {
+   "name": "SharePoint",
+   "core": true,
+   "quote": "The FBI observed Gunra actors use a malicious executable ( main.exe ) to exfiltrate victim data from Microsoft OneDrive and SharePoint."
+  },
+  {
+   "name": "Windows environments",
+   "core": true,
+   "quote": "Initially, Gunra actors’ campaigns focused on Windows environments"
+  },
+  {
+   "name": "Linux",
+   "core": true,
+   "quote": "reporting in mid-2025 indicated the group introduced a Linux variant and moved toward broader cross-platform targeting"
+  },
+  {
+   "name": "database servers",
+   "core": false,
+   "quote": "deploy ransomware to encrypt key assets, including database servers and network attached storage (NAS) systems"
+  },
+  {
+   "name": "network attached storage (NAS) systems",
+   "core": false,
+   "quote": "deploy ransomware to encrypt key assets, including database servers and network attached storage (NAS) systems"
+  },
+  {
+   "name": "backup infrastructure",
+   "core": false,
+   "quote": "Gunra actors deleted backup and archived data stored on backup infrastructure at both the primary data center and disaster recovery center before and after the ransomware deployment"
+  },
+  {
+   "name": "volume shadow copies",
+   "core": false,
+   "quote": "to initiate deletion of volume shadow copies prior to encryption"
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "Healthcare and public health",
+   "core": true,
+   "quote": "These sectors include:\n\nHealthcare and public health"
+  },
+  {
+   "sector": "Financial services and insurance",
+   "core": true,
+   "quote": "Financial services and insurance"
+  },
+  {
+   "sector": "Critical manufacturing and construction",
+   "core": true,
+   "quote": "Critical manufacturing and construction"
+  },
+  {
+   "sector": "Transportation systems and logistics",
+   "core": true,
+   "quote": "Transportation systems and logistics"
+  },
+  {
+   "sector": "Government services and facilities",
+   "core": true,
+   "quote": "Government services and facilities"
+  },
+  {
+   "sector": "Utilities",
+   "core": true,
+   "quote": "Utilities"
+  },
+  {
+   "sector": "Academia",
+   "core": true,
+   "quote": "Academia"
+  },
+  {
+   "sector": "Media and communications",
+   "core": true,
+   "quote": "Media and communications"
+  },
+  {
+   "sector": "Retail",
+   "core": true,
+   "quote": "Retail"
+  },
+  {
+   "sector": "Professional and nonprofit services",
+   "core": true,
+   "quote": "Professional and nonprofit services"
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "the Americas",
+   "core": true,
+   "quote": "Gunra victims observed on the actors’ DLS span organizations across multiple sectors in the Americas, Europe, Middle East, Africa, and the Asia-Pacific."
+  },
+  {
+   "region": "Europe",
+   "core": true,
+   "quote": "Gunra victims observed on the actors’ DLS span organizations across multiple sectors in the Americas, Europe, Middle East, Africa, and the Asia-Pacific."
+  },
+  {
+   "region": "Middle East",
+   "core": true,
+   "quote": "Gunra victims observed on the actors’ DLS span organizations across multiple sectors in the Americas, Europe, Middle East, Africa, and the Asia-Pacific."
+  },
+  {
+   "region": "Africa",
+   "core": true,
+   "quote": "Gunra victims observed on the actors’ DLS span organizations across multiple sectors in the Americas, Europe, Middle East, Africa, and the Asia-Pacific."
+  },
+  {
+   "region": "the Asia-Pacific",
+   "core": true,
+   "quote": "Gunra victims observed on the actors’ DLS span organizations across multiple sectors in the Americas, Europe, Middle East, Africa, and the Asia-Pacific."
+  }
+ ],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "April 2025",
+   "meaning": "Gunra first emerged; the FBI also states it 'originally observed Gunra ransomware in April 2025'",
+   "core": true,
+   "quote": "Gunra first emerged in April 2025"
+  },
+  {
+   "expression": "As of January 2026",
+   "meaning": "Gunra launched a formal RaaS affiliate program on dark web forums",
+   "core": true,
+   "quote": "As of January 2026, Gunra launched a formal RaaS affiliate program on dark web forums"
+  },
+  {
+   "expression": "As of early 2026",
+   "meaning": "summary wording for the same RaaS expansion (equivalent to 'As of January 2026')",
+   "core": false,
+   "quote": "As of early 2026, Gunra expanded its operations through a structured ransomware-as-a-service (RaaS) affiliate program"
+  },
+  {
+   "expression": "2022",
+   "meaning": "year the Conti ransomware source code (Gunra's basis) was leaked; lineage/historical context",
+   "core": false,
+   "quote": "the Conti ransomware source code leaked in 2022"
+  },
+  {
+   "expression": "mid-2025",
+   "meaning": "reporting indicated Gunra introduced a Linux variant and moved toward cross-platform targeting",
+   "core": false,
+   "quote": "reporting in mid-2025 indicated the group introduced a Linux variant"
+  },
+  {
+   "expression": "July 2025",
+   "meaning": "date of one documented sample that used the .CRYPT file extension",
+   "core": false,
+   "quote": "Gunra also used the.CRYPT file extension in one documented sample from July 2025."
+  },
+  {
+   "expression": "Between June and July of 2025",
+   "meaning": "period when Gunra operated a clearnet mirror of its Tor-based DLS (datapub.news)",
+   "core": false,
+   "quote": "Between June and July of 2025, Gunra actors operated a clearnet mirror of their Tor-based DLS at domain datapub.news."
+  },
+  {
+   "expression": "By March 2026",
+   "meaning": "by this date Gunra had moved its original Tor-based DLS to a different .onion address",
+   "core": false,
+   "quote": "By March 2026, Gunra had moved their original Tor-based DLS to a different.onion address."
+  },
+  {
+   "expression": "within five to seven days",
+   "meaning": "ransom negotiation deadline given to victims (a duration, not a calendar date)",
+   "core": false,
+   "quote": "to negotiate ransom payments within five to seven days"
+  },
+  {
+   "expression": "10:00 p.m. – 06:00 a.m.",
+   "meaning": "late-night/early-morning window when Gunra actors primarily conduct malicious activity and reconnaissance (a time window, not a calendar date)",
+   "core": false,
+   "quote": "Gunra actors primarily conduct malicious activities and internal infrastructure reconnaissance during late-night and early-morning hours (10:00 p.m. – 06:00 a.m.)."
+  }
+ ],
+ "notes": "ATTRIBUTION: this is a #StopRansomware advisory about a financially motivated RaaS operation, coded A0; there is no state attribution of any kind. CONTI: Conti is lineage (Gunra is 'derived from' the Conti source code leaked in 2022), not a separate tool the actors deploy. It is marked core because the summary defines Gunra by it. 'Golden Community' is a branding alias of the same group. TEXT ARTIFACTS: 'KPNA' in the text is a typo for KNPA. Inline numerals ('Conti 1', 'Asia-Pacific. 2', 'documentation. 3', and so on up to 13) are footnote markers. Table 1 / 'Leveraged Tools' (the full tool list) is referenced but not in the input, so only tools named in the narrative are keyed. CVEs: CWE-288 is a weakness class, not a CVE. FortiOS and FortiProxy are recorded with the CVEs and not repeated as affected products. KNPA's 'credential-exposure and SSH access control vulnerabilities' in VPN gateways carry no CVE IDs. CORE CHOICES: details from single-victim KNPA/FBI case narratives are non-core. These include SSL-VPN default credentials, the unused account with its password-change bypass, VDI/RDP pivoting, session-cookie hijacking, the OTP-based MFA bypass, Hiware key theft, OpenSSH persistence, Mega exfiltration, NAS/database encryption, and backup deletion at the primary and DR centers. 'early 2026' (summary) and 'January 2026' (body) refer to the same RaaS launch, so credit either. RDP and SMB are protocols; RDP is listed as a tool and SMB as a technology, and either placement is acceptable. NON-SCHEMA FACTS a scorer may see in good outputs: double extortion; Tor-based negotiation portal and DLS (victims get a Client ID and password); ChaCha20 + RSA-4096 multi-threaded encryption; '.ENCRT' extension ('.CRYPT' in one July 2025 sample); static ransom note R3ADM3.txt; FindFirstFileW/FindNextFileW and IsDebuggerPresent APIs; exclusion of C:\\Windows and Program Files directories and .exe/.dll/.sys files; no network indicators during encryption; log deletion and command-history clearing; datapub.news clearnet DLS mirror (a domain IOC); ransom demands of over tens of millions of US dollars paid to cryptocurrency wallets; emails to management staff; initial access brokers recruited from penetration testers and ethical hackers; unnamed RaaS components (management panel, configurable builder, cross-platform locker payloads). REGIONS/VICTIMS: no named victims and no country-level targets are stated; KNPA's participation does not make Korea a stated target region. Category alternates: OpenSSH, qTox and Mega are coded rmm_or_legit_software (commodity_or_open_source_tool is acceptable for OpenSSH). Tor is coded 'other' (anonymity network hosting the DLS and negotiation portal). Impacket and its scripts are coded commodity_or_open_source_tool. main.exe is the only actor-specific executable named besides the Gunra binaries (Windows encryptor and Linux variant)."
+}

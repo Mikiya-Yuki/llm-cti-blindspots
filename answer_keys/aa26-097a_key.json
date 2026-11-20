@@ -1,0 +1,351 @@
+{
+ "case_id": "AA26-097A",
+ "authoring_agencies": [
+  {
+   "name": "Federal Bureau of Investigation (FBI)",
+   "quote": "The Federal Bureau of Investigation (FBI), Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "National Security Agency (NSA)",
+   "quote": "National Security Agency (NSA)"
+  },
+  {
+   "name": "Environmental Protection Agency (EPA)",
+   "quote": "Environmental Protection Agency (EPA)"
+  },
+  {
+   "name": "Department of Energy (DOE)",
+   "quote": "Department of Energy (DOE)"
+  },
+  {
+   "name": "United States Cyber Command – Cyber National Mission Force (CNMF)",
+   "quote": "United States Cyber Command – Cyber National Mission Force (CNMF)"
+  },
+  {
+   "name": "Department of the Treasury (Treasury)",
+   "quote": "Department of the Treasury (Treasury) (hereafter referred to as the “authoring agencies”)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "Iranian-affiliated advanced persistent threat (APT) actors",
+   "kind": "primary",
+   "quote": "ongoing cyber exploitation of internet-connected operational technology (OT) devices by Iranian-affiliated advanced persistent threat (APT) actors"
+  },
+  {
+   "name": "CyberAv3ngers",
+   "kind": "affiliate_label",
+   "quote": "The authoring agencies previously reported on similar activity targeting PLCs by CyberAv3ngers (aka Shahid Kaveh Group)"
+  },
+  {
+   "name": "Shahid Kaveh Group",
+   "kind": "alias",
+   "quote": "CyberAv3ngers (aka Shahid Kaveh Group)"
+  },
+  {
+   "name": "Hydro Kitten",
+   "kind": "alias",
+   "quote": "Private industry and open sources also refer to this group as Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691, and the Shahid Kaveh Group."
+  },
+  {
+   "name": "Storm-0784",
+   "kind": "alias",
+   "quote": "Private industry and open sources also refer to this group as Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691, and the Shahid Kaveh Group."
+  },
+  {
+   "name": "APT Iran",
+   "kind": "alias",
+   "quote": "Private industry and open sources also refer to this group as Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691, and the Shahid Kaveh Group."
+  },
+  {
+   "name": "Bauxite",
+   "kind": "alias",
+   "quote": "Private industry and open sources also refer to this group as Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691, and the Shahid Kaveh Group."
+  },
+  {
+   "name": "Mr. Soul",
+   "kind": "alias",
+   "quote": "Private industry and open sources also refer to this group as Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691, and the Shahid Kaveh Group."
+  },
+  {
+   "name": "Soldiers of Solomon",
+   "kind": "alias",
+   "quote": "Private industry and open sources also refer to this group as Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691, and the Shahid Kaveh Group."
+  },
+  {
+   "name": "UNC5691",
+   "kind": "alias",
+   "quote": "Private industry and open sources also refer to this group as Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691, and the Shahid Kaveh Group."
+  },
+  {
+   "name": "Islamic Revolutionary Guard Corps (IRGC) Cyber Electronic Command (CEC)",
+   "kind": "unit",
+   "quote": "a cyber threat actor affiliated with Iran’s Islamic Revolutionary Guard Corps (IRGC) Cyber Electronic Command (CEC)"
+  },
+  {
+   "name": "Islamic Revolutionary Guard Corps (IRGC)",
+   "kind": "parent_organization",
+   "quote": "Iran’s Islamic Revolutionary Guard Corps (IRGC)"
+  },
+  {
+   "name": "IRGC CEC-affiliated cyber threat actors",
+   "kind": "affiliate_label",
+   "quote": "the IRGC CEC-affiliated cyber threat actors known as \"CyberAv3ngers”"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "related to ongoing cyber exploitation of internet-connected operational technology (OT) devices by Iranian-affiliated advanced persistent threat (APT) actors",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "Iran (Iranian-affiliated APT actors)",
+   "strength_markers": [
+    "Iranian-affiliated"
+   ]
+  },
+  {
+   "quote": "The authoring agencies assess a group of Iranian-affiliated APT actors is conducting this activity to cause disruptive effects within the United States.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "Iran (a group of Iranian-affiliated APT actors); this is the main attribution sentence",
+   "strength_markers": [
+    "assess",
+    "Iranian-affiliated"
+   ]
+  },
+  {
+   "quote": "The authoring agencies previously reported on similar activity targeting PLCs by CyberAv3ngers (aka Shahid Kaveh Group)—a cyber threat actor affiliated with Iran’s Islamic Revolutionary Guard Corps (IRGC) Cyber Electronic Command (CEC).",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "IRGC Cyber Electronic Command (CEC), as the affiliation of CyberAv3ngers; it concerns previously reported similar activity, not the current activity",
+   "strength_markers": [
+    "previously reported",
+    "similar activity",
+    "affiliated with"
+   ]
+  },
+  {
+   "quote": "During a similar campaign beginning in November 2023, the IRGC CEC-affiliated cyber threat actors known as \"CyberAv3ngers” targeted U.S.-based PLCs and HMIs, causing disruptive effects.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "IRGC CEC, as the affiliation of CyberAv3ngers in the November 2023 campaign (historical)",
+   "strength_markers": [
+    "similar campaign",
+    "IRGC CEC-affiliated",
+    "known as"
+   ]
+  },
+  {
+   "quote": "Private industry and open sources also refer to this group as Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691, and the Shahid Kaveh Group.",
+   "attributing_party": "private industry and open sources",
+   "attributed_to": "alternative names for the CyberAv3ngers group",
+   "strength_markers": [
+    "also refer to this group as"
+   ]
+  },
+  {
+   "quote": "The FBI observed Iranian-affiliated APT actors targeting internet-exposed PLCs with the intent to cause disruptions",
+   "attributing_party": "FBI",
+   "attributed_to": "Iran (Iranian-affiliated APT actors)",
+   "strength_markers": [
+    "observed",
+    "Iranian-affiliated"
+   ]
+  },
+  {
+   "quote": "Iranian-affiliated APT targeting campaigns against U.S. critical infrastructure have recently escalated, likely in response to hostilities between Iran, and the United States and Israel.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "motive: hostilities between Iran and the United States and Israel",
+   "strength_markers": [
+    "Iranian-affiliated",
+    "likely in response to"
+   ]
+  },
+  {
+   "quote": "Since at least March 2026, the authoring agencies identified (through engagements with victim organizations) an Iranian-affiliated APT group disrupted the function of PLCs.",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "Iran (an Iranian-affiliated APT group)",
+   "strength_markers": [
+    "identified",
+    "Iranian-affiliated"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A1",
+ "attribution_strength_rationale": "The main attribution sentence uses hedged affiliation wording ('The authoring agencies assess a group of Iranian-affiliated APT actors is conducting this activity'). The IRGC Cyber Electronic Command is named only as the body CyberAv3ngers is 'affiliated with', in previously reported 'similar activity', and is never stated to be responsible for the current activity.",
+ "malware_tools": [
+  {
+   "name": "Studio 5000 Logix Designer",
+   "category": "rmm_or_legit_software",
+   "core": true,
+   "quote": "The authoring agencies observed Iranian-affiliated APT actors using configuration software—such as Rockwell Automation’s Studio 5000 Logix Designer, Schneider Electric’s EcoStruxure Control Expert, and Siemens’ Totally Integrated Automation (TIA) Portal—on leased, third-party hosted infrastructure"
+  },
+  {
+   "name": "EcoStruxure Control Expert",
+   "category": "rmm_or_legit_software",
+   "core": true,
+   "quote": "The authoring agencies observed Iranian-affiliated APT actors using configuration software—such as Rockwell Automation’s Studio 5000 Logix Designer, Schneider Electric’s EcoStruxure Control Expert, and Siemens’ Totally Integrated Automation (TIA) Portal—on leased, third-party hosted infrastructure"
+  },
+  {
+   "name": "Totally Integrated Automation (TIA) Portal",
+   "category": "rmm_or_legit_software",
+   "core": true,
+   "quote": "The authoring agencies observed Iranian-affiliated APT actors using configuration software—such as Rockwell Automation’s Studio 5000 Logix Designer, Schneider Electric’s EcoStruxure Control Expert, and Siemens’ Totally Integrated Automation (TIA) Portal—on leased, third-party hosted infrastructure"
+  },
+  {
+   "name": "Dropbear Secure Shell (SSH) software",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "In one reported instance, the actors utilized Dropbear Secure Shell (SSH) software on victim modems to enable them to gain remote access through port 22."
+  }
+ ],
+ "vulnerabilities": [],
+ "affected_products_or_technologies": [
+  {
+   "name": "internet-connected operational technology (OT) devices",
+   "core": true,
+   "quote": "ongoing cyber exploitation of internet-connected operational technology (OT) devices"
+  },
+  {
+   "name": "PLCs manufactured by Rockwell Automation/Allen-Bradley",
+   "core": true,
+   "quote": "including PLCs manufactured by Rockwell Automation/Allen-Bradley, Schneider Electric, Siemens, and potentially other manufactured PLCs"
+  },
+  {
+   "name": "PLCs manufactured by Schneider Electric",
+   "core": true,
+   "quote": "It also expands the manufacturer scope to include observed targeting of Schneider Electric, Siemens, and potentially other branded/manufactured PLCs"
+  },
+  {
+   "name": "PLCs manufactured by Siemens",
+   "core": true,
+   "quote": "It also expands the manufacturer scope to include observed targeting of Schneider Electric, Siemens, and potentially other branded/manufactured PLCs"
+  },
+  {
+   "name": "CompactLogix",
+   "core": true,
+   "quote": "Rockwell Automation: CompactLogix and Micro850 PLCs"
+  },
+  {
+   "name": "Micro850 PLCs",
+   "core": true,
+   "quote": "Rockwell Automation: CompactLogix and Micro850 PLCs"
+  },
+  {
+   "name": "BMX P34/Modicon M340 PLCs",
+   "core": true,
+   "quote": "Schneider Electric: BMX P34/Modicon M340 PLCs"
+  },
+  {
+   "name": "S7-1200 series PLCs",
+   "core": true,
+   "quote": "Siemens: S7-1200 series PLCs"
+  },
+  {
+   "name": "human machine interface (HMI)",
+   "core": true,
+   "quote": "the manipulation of data displayed on human machine interface (HMI) and supervisory control and data acquisition (SCADA) displays"
+  },
+  {
+   "name": "supervisory control and data acquisition (SCADA) displays",
+   "core": true,
+   "quote": "the manipulation of data displayed on human machine interface (HMI) and supervisory control and data acquisition (SCADA) displays"
+  },
+  {
+   "name": "PLC project files",
+   "core": true,
+   "quote": "experienced disruptions through malicious interactions with PLC project files"
+  },
+  {
+   "name": "Add-On Instructions (AOIs)",
+   "core": true,
+   "quote": "the FBI and CISA identified the modification and deletion of project file logic, to include Add-On Instructions (AOIs) and data manipulation on HMI and SCADA displays"
+  },
+  {
+   "name": "modems",
+   "core": true,
+   "quote": "Inbound malicious traffic has been observed targeting PLC devices on the following ports: 44818, 2222, 102, and 502, as well as targeting modems on port 22."
+  },
+  {
+   "name": "Unitronics PLC devices with an HMI",
+   "core": false,
+   "quote": "targeting U.S.-based Unitronics PLC devices with an HMI used across multiple critical infrastructure sectors, including the WWS"
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "Government Services and Facilities (to include local municipalities)",
+   "core": true,
+   "quote": "The group targeted devices spanning multiple U.S. critical infrastructure sectors, including Government Services and Facilities (to include local municipalities), Water and Wastewater Systems (WWS), and Energy Sectors."
+  },
+  {
+   "sector": "Water and Wastewater Systems (WWS)",
+   "core": true,
+   "quote": "The group targeted devices spanning multiple U.S. critical infrastructure sectors, including Government Services and Facilities (to include local municipalities), Water and Wastewater Systems (WWS), and Energy Sectors."
+  },
+  {
+   "sector": "Energy Sectors",
+   "core": true,
+   "quote": "The group targeted devices spanning multiple U.S. critical infrastructure sectors, including Government Services and Facilities (to include local municipalities), Water and Wastewater Systems (WWS), and Energy Sectors."
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "United States",
+   "core": true,
+   "quote": "is conducting this activity to cause disruptive effects within the United States"
+  }
+ ],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "April 7, 2026",
+   "meaning": "original publication date of the advisory",
+   "core": true,
+   "quote": "Note: This advisory was originally published on April 7, 2026"
+  },
+  {
+   "expression": "July 22, 2026",
+   "meaning": "date the authoring agencies updated (revised) the advisory: added guidance on detecting malicious changes in reusable code modules (AOIs) and expanded the manufacturer scope to Schneider Electric and Siemens",
+   "core": true,
+   "quote": "The authoring agencies updated this advisory on July 22, 2026, to add new guidance on detecting malicious changes in reusable code modules leveraged within Rockwell Automation PLC programs."
+  },
+  {
+   "expression": "Since at least March 2026",
+   "meaning": "start of the current activity: an Iranian-affiliated APT group disrupting PLC functions (identified through engagements with victim organizations)",
+   "core": true,
+   "quote": "Since at least March 2026, the authoring agencies identified (through engagements with victim organizations) an Iranian-affiliated APT group disrupted the function of PLCs."
+  },
+  {
+   "expression": "beginning in November 2023",
+   "meaning": "start of the earlier, similar CyberAv3ngers campaign against U.S.-based (Unitronics) PLCs and HMIs; historical context",
+   "core": false,
+   "quote": "During a similar campaign beginning in November 2023"
+  },
+  {
+   "expression": "July 22, 2026 IOCs",
+   "meaning": "date label of the IOC set (STIX XML/JSON) added with the update",
+   "core": false,
+   "quote": "(New, July 22, 2026) For a downloadable copy of July 22, 2026 IOCs, see:"
+  },
+  {
+   "expression": "historical April 7, 2026 IOCs",
+   "meaning": "date label of the original IOC set released with the first publication",
+   "core": false,
+   "quote": "For a downloadable copy of historical April 7, 2026 IOCs, see:"
+  },
+  {
+   "expression": "(New, July 22, 2026)",
+   "meaning": "label on paragraphs newly added in the July 22, 2026 revision (e.g., the malicious project file download at one U.S. victim; configuration software used to exfiltrate project files)",
+   "core": false,
+   "quote": "(New, July 22, 2026) At one U.S. victim, the FBI observed the APT actors download a malicious project file to a targeted PLC using configuration software."
+  },
+  {
+   "expression": "(Updated, July 22, 2026)",
+   "meaning": "label on paragraphs revised in the July 22, 2026 update (e.g., expanded manufacturers and targeted devices, ports, AOI modification)",
+   "core": false,
+   "quote": "(Updated, July 22, 2026) The authoring agencies observed Iranian-affiliated APT actors using several foreign-based IP addresses to access internet-facing PLCs"
+  }
+ ],
+ "notes": "REVISION: originally published April 7, 2026, and updated July 22, 2026; revised paragraphs are tagged '(New, July 22, 2026)' or '(Updated, July 22, 2026)'. The update added detection guidance for malicious changes to AOIs (the 'reusable code modules leveraged within Rockwell Automation PLC programs', analogous to 'Function Block'/'User Defined Function Block'). It also expanded the targeted manufacturers to Schneider Electric and Siemens. A good output records both dates. ATTRIBUTION: the current activity is attributed only to 'Iranian-affiliated APT actors', with 'assess' wording. CyberAv3ngers, its aliases (Shahid Kaveh Group, Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691) and the IRGC Cyber Electronic Command appear only in connection with previously reported 'similar activity'. That earlier campaign began in November 2023, targeted U.S.-based Unitronics PLCs and compromised 'at least 75 devices'. A model stating that CyberAv3ngers or IRGC-CEC conducts the current campaign overstates the text; noting the link or similarity is correct. Coding A3 because IRGC CEC is named is wrong. CyberAv3ngers is coded kind=affiliate_label because the text calls it 'a cyber threat actor affiliated with' IRGC CEC and never uses 'persona'; persona or alias are tolerable codings for scoring. The aliases are aliases of CyberAv3ngers, not of the primary 'Iranian-affiliated APT actors'. REGIONS: Israel appears only in the motive clause ('hostilities between Iran, and the United States and Israel'), not as a target. Iran is the actor side. 'foreign-based IP addresses' and 'leased, third-party hosted infrastructure' are actor infrastructure. TOOLS/CVEs: no CVEs and no malware family names appear. The abused tools are legitimate vendor engineering/configuration software, plus Dropbear SSH on victim modems (one reported instance, so non-core). Unnamed malicious artifacts: a malicious project file, logic overriding safety-related instruction sets, disabled critical shutdown and alarm logic, and custom ladder logic code (2023 campaign). Ports 44818, 2222, 102 and 502 (PLCs) and 22 (modems) are technical details, not schema items. Unitronics PLCs belong to the 2023 campaign (historical, non-core). TEXT ARTIFACTS: the line 'For a downloadable copy of historical April 7, 2026 IOCs, see:' has no link text after it in the input. The '1' after 'PLC project files' is a footnote marker. IMPACT (not a schema item): operational disruption and financial loss at some victims; data manipulation on HMI/SCADA displays. Referenced prior advisory, a document title and not an item: 'IRGC-Affiliated Cyber Actors Exploit PLCs in Multiple Sectors, Including US Water and Wastewater Systems Facilities'. Category alternates: Dropbear SSH is coded rmm_or_legit_software, but commodity_or_open_source_tool is acceptable. The three vendor engineering suites are legitimate software abused, not malware."
+}

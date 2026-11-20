@@ -1,0 +1,541 @@
+{
+ "case_id": "AA26-281A",
+ "authoring_agencies": [
+  {
+   "name": "Federal Bureau of Investigation (FBI)",
+   "quote": "The FBI, Cybersecurity and Infrastructure Security Agency (CISA), National Security Agency (NSA)"
+  },
+  {
+   "name": "Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "National Security Agency (NSA)",
+   "quote": "National Security Agency (NSA)"
+  },
+  {
+   "name": "United Kingdom National Cyber Security Centre (NCSC-UK)",
+   "quote": "United Kingdom National Cyber Security Centre (NCSC-UK)"
+  },
+  {
+   "name": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)",
+   "quote": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)"
+  },
+  {
+   "name": "Canadian Centre for Cyber Security (Cyber Centre)",
+   "quote": "the Canadian Centre for Cyber Security (Cyber Centre)"
+  },
+  {
+   "name": "Japan’s National Police Agency (NPA)",
+   "quote": "Japan’s National Police Agency (NPA)"
+  },
+  {
+   "name": "Japan’s National Cybersecurity Office (NCO)",
+   "quote": "Japan’s National Police Agency (NPA) and National Cybersecurity Office (NCO)"
+  },
+  {
+   "name": "New Zealand’s National Cyber Security Centre (NCSC-NZ)",
+   "quote": "New Zealand’s National Cyber Security Centre (NCSC-NZ)"
+  },
+  {
+   "name": "Spain’s Centro Nacional de Inteligencia (CNI)",
+   "quote": "Spain’s Centro Nacional de Inteligencia (CNI), hereafter referred to as “the authoring organizations”"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "Integrity Technology Group",
+   "kind": "enabling_company",
+   "quote": "Integrity Technology Group, a China-based company with links to the Chinese government, enables China-linked threat actors to exploit US and foreign organization networks"
+  },
+  {
+   "name": "Integrity Tech",
+   "kind": "enabling_company",
+   "quote": "Integrity Technology Group (Integrity Tech) is a China-based for-profit company with links to the Chinese government."
+  },
+  {
+   "name": "China-linked threat actors",
+   "kind": "primary",
+   "quote": "enables China-linked threat actors to exploit US and foreign organization networks across multiple sectors using various tools and techniques"
+  },
+  {
+   "name": "the threat actors",
+   "kind": "primary",
+   "quote": "from Integrity Technology Group and the threat actors they enable (hereafter referred to as “the threat actors”)"
+  },
+  {
+   "name": "Flax Typhoon",
+   "kind": "alias",
+   "quote": "the threat actors enabled by Integrity Tech use TTPs consistent with the cyber activity publicly known as Flax Typhoon, Ethereal Panda, and Red Juliett, among others"
+  },
+  {
+   "name": "Ethereal Panda",
+   "kind": "alias",
+   "quote": "the threat actors enabled by Integrity Tech use TTPs consistent with the cyber activity publicly known as Flax Typhoon, Ethereal Panda, and Red Juliett, among others"
+  },
+  {
+   "name": "Red Juliett",
+   "kind": "alias",
+   "quote": "the threat actors enabled by Integrity Tech use TTPs consistent with the cyber activity publicly known as Flax Typhoon, Ethereal Panda, and Red Juliett, among others"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "Integrity Technology Group, a China-based company with links to the Chinese government, enables China-linked threat actors to exploit US and foreign organization networks across multiple sectors using various tools and techniques.",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "Chinese government, indirectly: the enabling company has 'links to the Chinese government' and the enabled actors are 'China-linked'",
+   "strength_markers": [
+    "China-based",
+    "with links to the Chinese government",
+    "enables",
+    "China-linked"
+   ]
+  },
+  {
+   "quote": "Integrity Technology Group (Integrity Tech) is a China-based for-profit company with links to the Chinese government.",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "Chinese government (company-level 'links'); Integrity Tech characterized as a for-profit company",
+   "strength_markers": [
+    "China-based",
+    "for-profit company",
+    "with links to the Chinese government"
+   ]
+  },
+  {
+   "quote": "Integrity Tech employs individuals who support malicious cyber activity in different ways, including acquiring or building cyber tools for use and sale, acquiring and hosting infrastructure",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "Integrity Tech (its employees support malicious cyber activity: building/selling tools, hosting infrastructure, compromising networks)",
+   "strength_markers": [
+    "employs individuals who support malicious cyber activity"
+   ]
+  },
+  {
+   "quote": "compromising networks across global victims, which the authoring organizations track as China-based malicious cyber activity",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "China-based malicious cyber activity (tracking category)",
+   "strength_markers": [
+    "track as",
+    "China-based"
+   ]
+  },
+  {
+   "quote": "The services provided by Integrity Tech also contribute to the larger Chinese cyber ecosystem, which aims to exfiltrate sensitive data from victims around the world.",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "the larger Chinese cyber ecosystem",
+   "strength_markers": [
+    "contribute to the larger Chinese cyber ecosystem"
+   ]
+  },
+  {
+   "quote": "Notably, the threat actors enabled by Integrity Tech use TTPs consistent with the cyber activity publicly known as Flax Typhoon, Ethereal Panda, and Red Juliett, among others.",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "industry-named activity clusters Flax Typhoon, Ethereal Panda, Red Juliett (TTP consistency only, not asserted identity)",
+   "strength_markers": [
+    "TTPs consistent with",
+    "publicly known as",
+    "among others"
+   ]
+  },
+  {
+   "quote": "However, these threat actors may also perform activity not associated with Integrity Tech.",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "caveat: some activity of these actors is not associated with Integrity Tech",
+   "strength_markers": [
+    "may also",
+    "not associated with"
+   ]
+  },
+  {
+   "quote": "DiagTrack.exe then establishes encrypted communications over the HTTP protocol with the domain dns.studiocloud.xyz, which the FBI attributes to Integrity Tech.",
+   "attributing_party": "FBI",
+   "attributed_to": "Integrity Tech (C2 domain used by the live700_v1.exe / DiagTrack.exe malware)",
+   "strength_markers": [
+    "attributes"
+   ]
+  },
+  {
+   "quote": "Better protect against this threat activity and other Chinese government-linked cyber targeting.",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "Chinese government (implied: this activity is grouped with 'other Chinese government-linked cyber targeting')",
+   "strength_markers": [
+    "government-linked"
+   ]
+  },
+  {
+   "quote": "Cybersecurity companies have different methods of tracking and attributing cyber actors and these may not be a 1:1 correlation to the US Government's methodology and understanding for all activity related to these groupings.",
+   "attributing_party": "the authoring organizations (caveat on industry naming)",
+   "attributed_to": "caveat on how industry group names correspond to US Government methodology",
+   "strength_markers": [
+    "may not be a 1:1 correlation"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A1",
+ "attribution_strength_rationale": "The main attribution is indirect: Integrity Technology Group is 'a China-based company with links to the Chinese government' that 'enables China-linked threat actors' (also 'Chinese government-linked cyber targeting'), with no named state organ and no claim that this activity is state-sponsored (the 'PRC state-sponsored' phrase is only a generic pointer to an FBI webpage).",
+ "malware_tools": [
+  {
+   "name": "BBScan",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan."
+  },
+  {
+   "name": "dirsearch",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan."
+  },
+  {
+   "name": "Fscan",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan."
+  },
+  {
+   "name": "ksubdomain",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan."
+  },
+  {
+   "name": "masscan",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan."
+  },
+  {
+   "name": "NMAP",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan."
+  },
+  {
+   "name": "OneForAll",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan."
+  },
+  {
+   "name": "ShuiZe",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan."
+  },
+  {
+   "name": "wpscan",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan."
+  },
+  {
+   "name": "MicroScan",
+   "category": "other",
+   "core": true,
+   "quote": "As early as 2017, these threat actors have also used a malicious application known as “MicroScan.” This Python-based web application contains over 1,300 penetration testing scripts written to scan websites for specific vulnerabilities."
+  },
+  {
+   "name": "live700_v1.exe",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "The.zip file’s contents originate from encoded bytes within the XSS payload and contain the executable file live700_v1.exe."
+  },
+  {
+   "name": "DiagTrack.exe",
+   "category": "custom_malware",
+   "core": false,
+   "quote": "Analysis of live700_v1.exe demonstrated the executable begins a process named DiagTrack.exe, which shares its name with legitimate Windows software."
+  },
+  {
+   "name": "EBurst",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "The threat actors use EBurst, an open source Python-based tool, to target accounts in the Microsoft Office365 Cloud environment."
+  },
+  {
+   "name": "SoftEther",
+   "category": "rmm_or_legit_software",
+   "core": true,
+   "quote": "Additionally, endpoint detection software is less likely to flag SoftEther because it is a legitimate VPN software."
+  },
+  {
+   "name": "PowerShell",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "The threat actors typically download SoftEther installers onto victim devices from threat actor-controlled infrastructure using PowerShell or LOTL binaries for Windows Systems."
+  },
+  {
+   "name": "curl",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "For Linux/Unix distributions, the threat actors download SoftEther installers via curl or wget."
+  },
+  {
+   "name": "wget",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "For Linux/Unix distributions, the threat actors download SoftEther installers via curl or wget."
+  },
+  {
+   "name": "Curlc4.txt",
+   "category": "custom_malware",
+   "core": true,
+   "quote": "The FBI observed that the threat actors created a bot using the PHP script Curlc4.txt to obtain emails from victims."
+  },
+  {
+   "name": "DC.exe",
+   "category": "other",
+   "core": true,
+   "quote": "The threat actors used DC.exe to execute the DCSync replication technique to copy sensitive information from the Active Directory (AD), including account credentials, group membership details, and trust relationships."
+  },
+  {
+   "name": "office-cli",
+   "category": "other",
+   "core": true,
+   "quote": "The threat actors use a command-line utility office-cli to continuously target and access Microsoft Outlook 365 email accounts to exfiltrate emails across different time periods."
+  },
+  {
+   "name": "Bash",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "The FBI observed the threat actors executing office-cli from the command line or by running it from a Bash script."
+  }
+ ],
+ "vulnerabilities": [],
+ "affected_products_or_technologies": [
+  {
+   "name": "Microsoft Office365 Cloud environment",
+   "core": true,
+   "quote": "to target accounts in the Microsoft Office365 Cloud environment"
+  },
+  {
+   "name": "Microsoft Exchange servers",
+   "core": true,
+   "quote": "The tool compromises email accounts on Microsoft Exchange servers using multiple interfaces for password spraying and password guessing against each supplied email address."
+  },
+  {
+   "name": "Microsoft Outlook 365 email accounts",
+   "core": true,
+   "quote": "continuously target and access Microsoft Outlook 365 email accounts to exfiltrate emails across different time periods"
+  },
+  {
+   "name": "Microsoft EWS API",
+   "core": false,
+   "quote": "The script is specifically designed to interface with the Microsoft EWS API, which allows the threat actors to access email and content items, such as calendars and contacts."
+  },
+  {
+   "name": "Exchange Control Panel (ECP)",
+   "core": false,
+   "quote": "Exchange Control Panel (ECP);"
+  },
+  {
+   "name": "Exchange Web Services (EWS)",
+   "core": false,
+   "quote": "Exchange Web Services (EWS);"
+  },
+  {
+   "name": "Offline Address Book (OAB)",
+   "core": false,
+   "quote": "Offline Address Book (OAB);"
+  },
+  {
+   "name": "Outlook Web Access (OWA)",
+   "core": false,
+   "quote": "Outlook Web Access (OWA);"
+  },
+  {
+   "name": "Remote Procedure Call (RPC)",
+   "core": false,
+   "quote": "Remote Procedure Call (RPC);"
+  },
+  {
+   "name": "Application Programming Interface (API)",
+   "core": false,
+   "quote": "Application Programming Interface (API);"
+  },
+  {
+   "name": "Messaging Application Programming Interface (MAPI)",
+   "core": false,
+   "quote": "Messaging Application Programming Interface (MAPI);"
+  },
+  {
+   "name": "PowerShell",
+   "core": false,
+   "quote": "PowerShell;"
+  },
+  {
+   "name": "Autodiscover",
+   "core": false,
+   "quote": "Autodiscover; and"
+  },
+  {
+   "name": "Microsoft-Server-ActiveSync",
+   "core": false,
+   "quote": "Microsoft-Server-ActiveSync."
+  },
+  {
+   "name": "OpenSSL",
+   "core": false,
+   "quote": "The threat actors used these scripts to target services including OpenSSL, Oracle WebLogic, Rejetto, WordPress, Juniper ScreenOS, Jenkins, and Apache Struts."
+  },
+  {
+   "name": "Oracle WebLogic",
+   "core": false,
+   "quote": "The threat actors used these scripts to target services including OpenSSL, Oracle WebLogic, Rejetto, WordPress, Juniper ScreenOS, Jenkins, and Apache Struts."
+  },
+  {
+   "name": "Rejetto",
+   "core": false,
+   "quote": "The threat actors used these scripts to target services including OpenSSL, Oracle WebLogic, Rejetto, WordPress, Juniper ScreenOS, Jenkins, and Apache Struts."
+  },
+  {
+   "name": "WordPress",
+   "core": false,
+   "quote": "The threat actors used these scripts to target services including OpenSSL, Oracle WebLogic, Rejetto, WordPress, Juniper ScreenOS, Jenkins, and Apache Struts."
+  },
+  {
+   "name": "Juniper ScreenOS",
+   "core": false,
+   "quote": "The threat actors used these scripts to target services including OpenSSL, Oracle WebLogic, Rejetto, WordPress, Juniper ScreenOS, Jenkins, and Apache Struts."
+  },
+  {
+   "name": "Jenkins",
+   "core": false,
+   "quote": "The threat actors used these scripts to target services including OpenSSL, Oracle WebLogic, Rejetto, WordPress, Juniper ScreenOS, Jenkins, and Apache Struts."
+  },
+  {
+   "name": "Apache Struts",
+   "core": false,
+   "quote": "The threat actors used these scripts to target services including OpenSSL, Oracle WebLogic, Rejetto, WordPress, Juniper ScreenOS, Jenkins, and Apache Struts."
+  },
+  {
+   "name": "Active Directory (AD)",
+   "core": false,
+   "quote": "to copy sensitive information from the Active Directory (AD), including account credentials, group membership details, and trust relationships"
+  },
+  {
+   "name": "Windows Systems",
+   "core": false,
+   "quote": "using PowerShell or LOTL binaries for Windows Systems"
+  },
+  {
+   "name": "Linux/Unix distributions",
+   "core": false,
+   "quote": "For Linux/Unix distributions, the threat actors download SoftEther installers via curl or wget."
+  },
+  {
+   "name": "PHP and ASP (.NET ) pages",
+   "core": false,
+   "quote": "When scanning websites with dirsearch, the threat actors attempt to enumerate PHP and ASP (.NET ) pages."
+  },
+  {
+   "name": "MySQL email dump",
+   "core": false,
+   "quote": "staging the exfiltration data with discreet file names to minimize detection of the MySQL email dump"
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "Government Services and Facilities",
+   "core": true,
+   "quote": "The threat actors targeted victims across multiple US critical infrastructure sectors, including: Government Services and Facilities, Critical Manufacturing, Healthcare and Public Health, and Information Technology."
+  },
+  {
+   "sector": "Critical Manufacturing",
+   "core": true,
+   "quote": "The threat actors targeted victims across multiple US critical infrastructure sectors, including: Government Services and Facilities, Critical Manufacturing, Healthcare and Public Health, and Information Technology."
+  },
+  {
+   "sector": "Healthcare and Public Health",
+   "core": true,
+   "quote": "The threat actors targeted victims across multiple US critical infrastructure sectors, including: Government Services and Facilities, Critical Manufacturing, Healthcare and Public Health, and Information Technology."
+  },
+  {
+   "sector": "Information Technology",
+   "core": true,
+   "quote": "The threat actors targeted victims across multiple US critical infrastructure sectors, including: Government Services and Facilities, Critical Manufacturing, Healthcare and Public Health, and Information Technology."
+  },
+  {
+   "sector": "US law enforcement",
+   "core": true,
+   "quote": "The actors also targeted victims in US law enforcement, education, and religious organizations"
+  },
+  {
+   "sector": "education",
+   "core": true,
+   "quote": "The actors also targeted victims in US law enforcement, education, and religious organizations"
+  },
+  {
+   "sector": "religious organizations",
+   "core": true,
+   "quote": "The actors also targeted victims in US law enforcement, education, and religious organizations"
+  },
+  {
+   "sector": "government organizations",
+   "core": false,
+   "quote": "Observed victims of email data theft included government organizations, law enforcement agencies, healthcare systems, and religious institutions located in Southeast Asia."
+  },
+  {
+   "sector": "law enforcement agencies",
+   "core": false,
+   "quote": "Observed victims of email data theft included government organizations, law enforcement agencies, healthcare systems, and religious institutions located in Southeast Asia."
+  },
+  {
+   "sector": "healthcare systems",
+   "core": false,
+   "quote": "Observed victims of email data theft included government organizations, law enforcement agencies, healthcare systems, and religious institutions located in Southeast Asia."
+  },
+  {
+   "sector": "religious institutions",
+   "core": false,
+   "quote": "Observed victims of email data theft included government organizations, law enforcement agencies, healthcare systems, and religious institutions located in Southeast Asia."
+  },
+  {
+   "sector": "cybersecurity websites",
+   "core": false,
+   "quote": "The threat actors also accessed other targets, including cybersecurity websites, connected to these hubs."
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "US",
+   "core": true,
+   "quote": "enables China-linked threat actors to exploit US and foreign organization networks"
+  },
+  {
+   "region": "Southeast Asia",
+   "core": true,
+   "quote": "as well as organizations across Southeast Asia, Africa, and North America"
+  },
+  {
+   "region": "Africa",
+   "core": true,
+   "quote": "as well as organizations across Southeast Asia, Africa, and North America"
+  },
+  {
+   "region": "North America",
+   "core": true,
+   "quote": "as well as organizations across Southeast Asia, Africa, and North America"
+  },
+  {
+   "region": "global",
+   "core": false,
+   "quote": "compromising networks across global victims"
+  }
+ ],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "As early as 2017",
+   "meaning": "earliest stated use of the malicious MicroScan application by the threat actors",
+   "core": true,
+   "quote": "As early as 2017, these threat actors have also used a malicious application known as “MicroScan.”"
+  },
+  {
+   "expression": "Since at least mid-January 2021",
+   "meaning": "start of the threat actors gaining access to victim networks and cloud-based services through command-line utilities built on exploit code (Python, Go)",
+   "core": true,
+   "quote": "Since at least mid-January 2021, the threat actors have gained access to victim networks and cloud-based services primarily through command line utilities built on exploit codes"
+  }
+ ],
+ "notes": "SCOPE: the input contains only the intro and technical details. Appendix A (complete scanning-tool list/IOCs), Appendix B (the successfully exploited CVEs), Table 1 and Figures 1-2 are referenced but are NOT in the text. So 'vulnerabilities' is empty, and any CVE ID a model outputs is unsupported. DEFINITIONS: 'the threat actors' is defined to cover BOTH Integrity Technology Group and the actors it enables. Integrity Tech is the abbreviation of Integrity Technology Group. ATTRIBUTION: Flax Typhoon, Ethereal Panda and Red Juliett appear only as 'TTPs consistent with the cyber activity publicly known as ... among others'. This carries caveats ('may also perform activity not associated with Integrity Tech'; industry naming 'may not be a 1:1 correlation'), so they are kind=alias only for convenience and are not asserted identities. The only 'state-sponsored' wording ('People’s Republic of China (PRC) state-sponsored malicious cyber activity in general, see the FBI’s Cyber Threat Overview: China webpage') is a generic resource pointer, not an attribution of this activity. Coding A2 or A3 is over-reading. REGIONS: 'Xiamen, China' is where the IP addresses allowed to access the exfiltrated data came from. It is NOT a target region, and 'China-based' describes the company. EXCLUDED as IOCs/technical detail: the SoftEther hub/victim domains (98aiblog[.]com ... twimg.co[.]uk), natcloudservice[.]com, dns.studiocloud.xyz, IP 149.28.132[.]137, staging file names (001.gif, All_scanner_vXX.pl.gz, Css.js, Include.png, M2k*.js), PHP script strings, AD object IDs, RUNNING_DIRECTORY paths, and scanned ports (21, 22, 53, 80, 443, 1080). The 'victim domains' list names no victim organization, so named_victims is empty. TOOLS: conhost.exe and dllhost.exe are masquerade names for SoftEther installers, not separate tools (accept if listed, not required). DiagTrack.exe is the process spawned by live700_v1.exe; it shares its name with legitimate Windows software. Category ambiguity: MicroScan ('malicious application', a Python web app with more than 1,300 pen-test scripts), DC.exe and office-cli have unstated provenance, so they are coded 'other' (custom_malware is also acceptable). PowerShell appears both as a download method (tool) and as an Exchange interface attacked by EBurst. Not tools: Python, Go, JavaScript, HTML, PHP, RC4, AES-128-CBC, XSS, DCSync, Directory Replication Service. Unnamed capabilities a good output may mention: large-scale botnets, VPN infrastructure, repositories of CNE tools, LOTL binaries, the XSS credential-harvesting payload, and the custom web application giving third parties access to stolen email. SECTORS: the Southeast Asian email-theft victim types (government organizations, law enforcement agencies, healthcare systems, religious institutions) duplicate core sectors and are non-core. 'cybersecurity websites' is a target type, not a formal sector. AGENCIES: 10 authoring organizations; Japan contributes two (NPA and NCO). The text calls them 'the authoring organizations'. Evidence basis: multiple FBI investigations related to Integrity Technology Group. GitHub is mentioned only as where the open-source scanning tools are 'typically found'; it is not a targeted or abused platform. 'on-premise systems and cloud-based services' is generic."
+}

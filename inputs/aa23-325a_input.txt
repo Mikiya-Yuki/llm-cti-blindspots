@@ -1,0 +1,49 @@
+Note: This joint Cybersecurity Advisory (CSA) is part of an ongoing #StopRansomware effort to publish advisories for network defenders that detail various ransomware variants and ransomware threat actors. These #StopRansomware advisories include recently and historically observed tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) to help organizations protect against ransomware. Visit stopransomware.gov to see all #StopRansomware advisories and to learn more about other ransomware threats and no-cost resources.
+
+The Cybersecurity and Infrastructure Security Agency (CISA), Federal Bureau of Investigation (FBI), Multi-State Information Sharing & Analysis Center (MS-ISAC), and Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC) are releasing this joint Cybersecurity Advisory (CSA) to disseminate IOCs, TTPs, and detection methods associated with LockBit 3.0 ransomware exploiting CVE-2023-4966, labeled Citrix Bleed, affecting Citrix NetScaler web application delivery control (ADC) and NetScaler Gateway appliances.
+
+This CSA provides TTPs and IOCs obtained from FBI, ACSC, and voluntarily shared by Boeing. Boeing observed LockBit 3.0 affiliates exploiting CVE-2023-4966, to obtain initial access to Boeing Distribution Inc., its parts and distribution business that maintains a separate environment. Other trusted third parties have observed similar activity impacting their organization.
+
+Historically, LockBit 3.0 affiliates have conducted attacks against organizations of varying sizes across multiple critical infrastructure sectors, including education, energy, financial services, food and agriculture, government and emergency services, healthcare, manufacturing, and transportation. Observed TTPs for LockBit ransomware attacks can vary significantly in observed TTPs.
+
+Citrix Bleed, known to be leveraged by LockBit 3.0 affiliates, allows threat actors to bypass password requirements and multifactor authentication (MFA), leading to successful session hijacking of legitimate user sessions on Citrix NetScaler web application delivery control (ADC) and Gateway appliances. Through the takeover of legitimate user sessions, malicious actors acquire elevated permissions to harvest credentials, move laterally, and access data and resources.
+
+CISA and the authoring organizations strongly encourage network administrators to apply the mitigations found in this CSA, which include isolating NetScaler ADC and Gateway appliances and applying necessary software updates through the Citrix Knowledge Center.
+
+The authoring organizations encourage network defenders to hunt for malicious activity on their networks using the detection methods and IOCs within this CSA. If a potential compromise is detected, organizations should apply the incident response recommendations. If no compromise is detected, organizations should immediately apply patches made publicly available.
+
+For the associated Malware Analysis Report (MAR), see: MAR-10478915-1.v1 Citrix Bleed
+
+Note: This advisory uses the MITRE ATT&CK® for Enterprise framework, version 14. See the MITRE ATT&CK Tactics and Techniques section for a table of the threat actors’ activity mapped to MITRE ATT&CK tactics and techniques. For assistance with mapping malicious cyber activity to the MITRE ATT&CK framework, see CISA and MITRE ATT&CK’s Best Practices for MITRE ATT&CK Mapping and CISA’s Decider Tool.
+
+CVE-2023-4966 is a software vulnerability found in Citrix NetScaler ADC and NetScaler Gateway appliances with exploitation activity identified as early as August 2023. This vulnerability provides threat actors, including LockBit 3.0 ransomware affiliates, the capability to bypass MFA and hijack legitimate user sessions.
+
+After acquiring access to valid cookies, LockBit 3.0 affiliates establish an authenticated session within the NetScaler appliance without a username, password, or access to MFA tokens. Affiliates acquire this by sending an HTTP GET request with a crafted HTTP Host header, leading to a vulnerable appliance returning system memory information. The information obtained through this exploit contains a valid NetScaler AAA session cookie.
+
+Citrix publicly disclosed CVE-2023-4966 on Oct. 10, 2023, within their Citrix Security Bulletin, which issued guidance, and detailed the affected products, IOCs, and recommendations. Based on widely available public exploits and evidence of active exploitation, CISA added this vulnerability to the Known Exploited Vulnerabilities (KEVs) Catalog. This critical vulnerability exploit impacts the following software versions:
+
+NetScaler ADC and NetScaler Gateway 14.1 before 14.1-8.50
+
+NetScaler ADC and NetScaler Gateway 13.1 before 13.1-49.15
+
+NetScaler ADC and NetScaler Gateway 13.0 before 13.0-92.19
+
+NetScaler ADC and NetScaler Gateway version 12.1 (EOL)
+
+NetScaler ADC 13.1FIPS before 13.1-37.163
+
+NetScaler ADC 12.1-FIPS before 12.1-55.300
+
+NetScaler ADC 12.1-NDcPP before 12.1-55.300
+
+Due to the ease of exploitation, CISA and the authoring organizations expect to see widespread exploitation of the Citrix vulnerability in unpatched software services throughout both private and public networks.
+
+Malware identified in this campaign is generated beginning with the execution of a PowerShell script ( 123.ps1 ) which concatenates two base64 strings together, converts them to bytes, and writes them to the designated file path.
+
+The resulting file ( adobelib.dll ) is then executed by the PowerShell script using rundll32.
+
+rundll32 C:\Users\Public\adobelib.dll,main <104 hex char key>
+
+The Dynamic Link Library (DLL) will not execute correctly without the 104 hex character key. Following execution, the DLL attempts to send a POST request to https://adobe-us-updatefiles[.]digital/index.php which resolves to IP addresses 172.67.129[.]176 and 104.21.1[.]180 as of November 16, 2023. Although adobelib.dll and the adobe-us-updatefiles[.]digital have the appearance of legitimacy, the file and domain have no association with legitimate Adobe software and no identified interaction with the software.
+
+Other observed activities include the use of a variety of TTPs commonly associated with ransomware activity. For example, LockBit 3.0 affiliates have been observed using AnyDesk and Splashtop remote management and monitoring (RMM), Batch and PowerShell scripts, the execution of HTA files using the Windows native utility mshta.exe and other common software tools typically associated with ransomware incidents.

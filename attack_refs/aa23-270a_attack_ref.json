@@ -1,0 +1,309 @@
+{
+ "case_id": "AA23-270A",
+ "input_words": 2173,
+ "input_sha256": "fe0848c86866895a8c2418cb8168524093b1dc6cf19003532daf143f183d8ed3",
+ "inline_ids": [
+  {
+   "id": "T1021.001",
+   "name": "Remote Desktop Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    20
+   ],
+   "evidence": "BlackTech actors use living off the land TTPs to blend in with normal operating system and network activities, allowing them to evade detection by endpoint detection and response (EDR) products. Common methods of persistence on a host include NetCat shells, modifying the victim registry [ T1112 ] to enable the remote desktop protocol (RDP) [ T1021.001 ], and secure shell (SSH) [ T1021.004 ]. The actors have also used SNScan for enumeration [ TA0007 ], and a local file transfer protocol (FTP) server [ T1071.002 ] to move data through the victim network. For additional examples of malicious cybe"
+  },
+  {
+   "id": "T1021.004",
+   "name": "SSH",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    20
+   ],
+   "evidence": "BlackTech actors use living off the land TTPs to blend in with normal operating system and network activities, allowing them to evade detection by endpoint detection and response (EDR) products. Common methods of persistence on a host include NetCat shells, modifying the victim registry [ T1112 ] to enable the remote desktop protocol (RDP) [ T1021.001 ], and secure shell (SSH) [ T1021.004 ]. The actors have also used SNScan for enumeration [ TA0007 ], and a local file transfer protocol (FTP) server [ T1071.002 ] to move data through the victim network. For additional examples of malicious cybe"
+  },
+  {
+   "id": "T1071.002",
+   "name": "File Transfer Protocols",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    20
+   ],
+   "evidence": "BlackTech actors use living off the land TTPs to blend in with normal operating system and network activities, allowing them to evade detection by endpoint detection and response (EDR) products. Common methods of persistence on a host include NetCat shells, modifying the victim registry [ T1112 ] to enable the remote desktop protocol (RDP) [ T1021.001 ], and secure shell (SSH) [ T1021.004 ]. The actors have also used SNScan for enumeration [ TA0007 ], and a local file transfer protocol (FTP) server [ T1071.002 ] to move data through the victim network. For additional examples of malicious cybe"
+  },
+  {
+   "id": "T1090.002",
+   "name": "External Proxy",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    22
+   ],
+   "evidence": "Specifically, upon gaining an initial foothold into a target network and gaining administrator access to network edge devices, BlackTech cyber actors often modify the firmware to hide their activity across the edge devices to further maintain persistence in the network. To extend their foothold across an organization, BlackTech actors target branch routers—typically smaller appliances used at remote branch offices to connect to a corporate headquarters—and then abuse the trusted relationship [ T1199 ] of the branch routers within the corporate network being targeted. BlackTech actors then use "
+  },
+  {
+   "id": "T1112",
+   "name": "Modify Registry",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    20
+   ],
+   "evidence": "BlackTech actors use living off the land TTPs to blend in with normal operating system and network activities, allowing them to evade detection by endpoint detection and response (EDR) products. Common methods of persistence on a host include NetCat shells, modifying the victim registry [ T1112 ] to enable the remote desktop protocol (RDP) [ T1021.001 ], and secure shell (SSH) [ T1021.004 ]. The actors have also used SNScan for enumeration [ TA0007 ], and a local file transfer protocol (FTP) server [ T1071.002 ] to move data through the victim network. For additional examples of malicious cybe"
+  },
+  {
+   "id": "T1199",
+   "name": "Trusted Relationship",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    5,
+    22
+   ],
+   "evidence": "Active since 2010, BlackTech actors have historically targeted a wide range of U.S. and East Asia public organizations and private industries. BlackTech actors’ TTPs include developing customized malware and tailored persistence mechanisms for compromising routers. These TTPs allow the actors to disable logging [ T1562 ] and abuse trusted domain relationships [ T1199 ] to pivot between international subsidiaries and domestic headquarters’ networks."
+  },
+  {
+   "id": "T1205",
+   "name": "Traffic Signaling",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    23
+   ],
+   "evidence": "BlackTech has targeted and exploited various brands and versions of router devices. TTPs against routers enable the actors to conceal configuration changes, hide commands, and disable logging while BlackTech actors conduct operations. BlackTech actors have compromised several Cisco ® routers using variations of a customized firmware backdoor [ T1542.004 ]. The backdoor functionality is enabled and disabled through specially crafted TCP or UDP packets [ T1205 ]. This TTP is not solely limited to Cisco routers, and similar techniques could be used to enable backdoors in other network equipment."
+  },
+  {
+   "id": "T1542.004",
+   "name": "ROMMONkit",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    23
+   ],
+   "evidence": "BlackTech has targeted and exploited various brands and versions of router devices. TTPs against routers enable the actors to conceal configuration changes, hide commands, and disable logging while BlackTech actors conduct operations. BlackTech actors have compromised several Cisco ® routers using variations of a customized firmware backdoor [ T1542.004 ]. The backdoor functionality is enabled and disabled through specially crafted TCP or UDP packets [ T1205 ]. This TTP is not solely limited to Cisco routers, and similar techniques could be used to enable backdoors in other network equipment."
+  },
+  {
+   "id": "T1553.002",
+   "name": "Code Signing",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    19
+   ],
+   "evidence": "BlackTech actors continuously update these tools to evade detection [ TA0005 ] by security software. The actors also use stolen code-signing certificates [ T1588.003 ] to sign the malicious payloads, which make them appear legitimate and therefore more difficult for security software to detect [ T1553.002 ]."
+  },
+  {
+   "id": "T1553.006",
+   "name": "Code Signing Policy Modification",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    24
+   ],
+   "evidence": "In some cases, BlackTech actors replace the firmware for certain Cisco IOS ® -based routers with malicious firmware. Although BlackTech actors already had elevated privileges [ TA0004 ] on the router to replace the firmware via command-line execution, the malicious firmware is used to establish persistent backdoor access [ TA0003 ] and obfuscate future malicious activity. The modified firmware uses a built-in SSH backdoor [ T1556.004 ], allowing BlackTech actors to maintain access to the compromised router without BlackTech connections being logged [ T1562.003 ]. BlackTech actors bypass the ro"
+  },
+  {
+   "id": "T1556.004",
+   "name": "Network Device Authentication",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    24
+   ],
+   "evidence": "In some cases, BlackTech actors replace the firmware for certain Cisco IOS ® -based routers with malicious firmware. Although BlackTech actors already had elevated privileges [ TA0004 ] on the router to replace the firmware via command-line execution, the malicious firmware is used to establish persistent backdoor access [ TA0003 ] and obfuscate future malicious activity. The modified firmware uses a built-in SSH backdoor [ T1556.004 ], allowing BlackTech actors to maintain access to the compromised router without BlackTech connections being logged [ T1562.003 ]. BlackTech actors bypass the ro"
+  },
+  {
+   "id": "T1562",
+   "name": "Impair Defenses",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1685",
+   "evidence_paragraphs": [
+    5
+   ],
+   "evidence": "Active since 2010, BlackTech actors have historically targeted a wide range of U.S. and East Asia public organizations and private industries. BlackTech actors’ TTPs include developing customized malware and tailored persistence mechanisms for compromising routers. These TTPs allow the actors to disable logging [ T1562 ] and abuse trusted domain relationships [ T1199 ] to pivot between international subsidiaries and domestic headquarters’ networks."
+  },
+  {
+   "id": "T1562.001",
+   "name": "Disable or Modify Tools",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1685",
+   "evidence_paragraphs": [
+    25
+   ],
+   "evidence": "BlackTech actors may also hide their presence and obfuscate changes made to compromised Cisco routers by hiding Embedded Event Manager (EEM) policies—a feature usually used in Cisco IOS to automate tasks that execute upon specified events—that manipulate Cisco IOS Command-Line Interface (CLI) command results. On a compromised router, the BlackTech-created EEM policy waits for specific commands to execute obfuscation measures or deny execution of specified legitimate commands. This policy has two functions: (1) to remove lines containing certain strings in the output of specified, legitimate Ci"
+  },
+  {
+   "id": "T1562.003",
+   "name": "Impair Command History Logging",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1690",
+   "evidence_paragraphs": [
+    24
+   ],
+   "evidence": "In some cases, BlackTech actors replace the firmware for certain Cisco IOS ® -based routers with malicious firmware. Although BlackTech actors already had elevated privileges [ TA0004 ] on the router to replace the firmware via command-line execution, the malicious firmware is used to establish persistent backdoor access [ TA0003 ] and obfuscate future malicious activity. The modified firmware uses a built-in SSH backdoor [ T1556.004 ], allowing BlackTech actors to maintain access to the compromised router without BlackTech connections being logged [ T1562.003 ]. BlackTech actors bypass the ro"
+  },
+  {
+   "id": "T1562.006",
+   "name": "Indicator Blocking",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1685",
+   "evidence_paragraphs": [
+    25
+   ],
+   "evidence": "BlackTech actors may also hide their presence and obfuscate changes made to compromised Cisco routers by hiding Embedded Event Manager (EEM) policies—a feature usually used in Cisco IOS to automate tasks that execute upon specified events—that manipulate Cisco IOS Command-Line Interface (CLI) command results. On a compromised router, the BlackTech-created EEM policy waits for specific commands to execute obfuscation measures or deny execution of specified legitimate commands. This policy has two functions: (1) to remove lines containing certain strings in the output of specified, legitimate Ci"
+  },
+  {
+   "id": "T1588.003",
+   "name": "Code Signing Certificates",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    19
+   ],
+   "evidence": "BlackTech actors continuously update these tools to evade detection [ TA0005 ] by security software. The actors also use stolen code-signing certificates [ T1588.003 ] to sign the malicious payloads, which make them appear legitimate and therefore more difficult for security software to detect [ T1553.002 ]."
+  },
+  {
+   "id": "T1601.001",
+   "name": "Patch System Image",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    24
+   ],
+   "evidence": "In some cases, BlackTech actors replace the firmware for certain Cisco IOS ® -based routers with malicious firmware. Although BlackTech actors already had elevated privileges [ TA0004 ] on the router to replace the firmware via command-line execution, the malicious firmware is used to establish persistent backdoor access [ TA0003 ] and obfuscate future malicious activity. The modified firmware uses a built-in SSH backdoor [ T1556.004 ], allowing BlackTech actors to maintain access to the compromised router without BlackTech connections being logged [ T1562.003 ]. BlackTech actors bypass the ro"
+  },
+  {
+   "id": "T1601.002",
+   "name": "Downgrade System Image",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    24
+   ],
+   "evidence": "In some cases, BlackTech actors replace the firmware for certain Cisco IOS ® -based routers with malicious firmware. Although BlackTech actors already had elevated privileges [ TA0004 ] on the router to replace the firmware via command-line execution, the malicious firmware is used to establish persistent backdoor access [ TA0003 ] and obfuscate future malicious activity. The modified firmware uses a built-in SSH backdoor [ T1556.004 ], allowing BlackTech actors to maintain access to the compromised router without BlackTech connections being logged [ T1562.003 ]. BlackTech actors bypass the ro"
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T1021.001",
+   "name": "Remote Desktop Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote Services: Remote Desktop Protocol | T1021.001 | BlackTech actors use RDP to move laterally across a victim’s network."
+  },
+  {
+   "id": "T1021.004",
+   "name": "SSH",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote Services: SSH | T1021.004 | BlackTech actors use SSH to move laterally across a victim’s network."
+  },
+  {
+   "id": "T1071.002",
+   "name": "File Transfer Protocols",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Application Layer Protocol: File Transfer Protocols | T1071.002 | BlackTech actors use FTP to move data through a victim’s network or to deliver scripts for compromising routers."
+  },
+  {
+   "id": "T1090",
+   "name": "Proxy",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Proxy | T1090 | BlackTech actors use compromised routers to proxy traffic."
+  },
+  {
+   "id": "T1112",
+   "name": "Modify Registry",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Modify Registry | T1112 | BlackTech actors modify the victim’s registry."
+  },
+  {
+   "id": "T1199",
+   "name": "Trusted Relationship",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Trusted Relationship | T1199 | BlackTech actors exploit trusted domain relationships of routers to gain access to victim networks."
+  },
+  {
+   "id": "T1205",
+   "name": "Traffic Signaling",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Traffic Signaling | T1205 | BlackTech actors send specially crafted packets to enable or disable backdoor functionality on a compromised router."
+  },
+  {
+   "id": "T1542.004",
+   "name": "ROMMONkit",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Pre-OS Boot: ROMMONkit | T1542.004 | BlackTech actors modify router firmware to maintain persistence."
+  },
+  {
+   "id": "T1562",
+   "name": "Impair Defenses",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1685",
+   "table_row": "Impair Defenses | T1562 | BlackTech actors disable logging on compromised routers to avoid detection and evade defenses."
+  },
+  {
+   "id": "T1562.003",
+   "name": "Impair Command History Logging",
+   "domain": "enterprise",
+   "status": "revoked",
+   "replaced_by": "T1690",
+   "table_row": "Impair Defenses: Impair Command History Logging | T1562.003 | BlackTech actors disable logging on the compromised routers to prevent logging of any commands issued."
+  },
+  {
+   "id": "T1588.003",
+   "name": "Code Signing Certificates",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Obtain Capabilities: Code Signing Certificates | T1588.003 | BlackTech actors use stolen code-signing certificates to sign payloads and evade defenses."
+  },
+  {
+   "id": "T1601.001",
+   "name": "Patch System Image",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Modify System Image: Patch System Image | T1601.001 | BlackTech actors modify router firmware to evade detection."
+  }
+ ],
+ "n_inline": 18,
+ "n_table": 12,
+ "n_union": 19,
+ "n_inline_not_active": 4,
+ "n_table_not_active": 2
+}

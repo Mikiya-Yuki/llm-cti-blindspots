@@ -1,0 +1,300 @@
+{
+ "case_id": "AA26-281A",
+ "input_words": 2148,
+ "input_sha256": "0bbc5865561fe012a94e5b7cbca5cfab907f1c56930b819fb954be4d5ff8fc79",
+ "inline_ids": [
+  {
+   "id": "T1003.006",
+   "name": "DCSync",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    77
+   ],
+   "evidence": "The threat actors used DC.exe to execute the DCSync replication technique [ T1003.006 ] to copy sensitive information from the Active Directory (AD), including account credentials, group membership details, and trust relationships. DC.exe used a Remote Procedure Call (RPC) binding to the victim’s domain controller. The file then used the Directory Replication Service to retrieve data from the victim’s AD. Specifically, it retrieved a handle to the local security policy object, which is used to query the domain controller for the DNS domain name, domain security identifier (SID), and domain rep"
+  },
+  {
+   "id": "T1020",
+   "name": "Automated Exfiltration",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    57
+   ],
+   "evidence": "Based on observations, the script appears to be stand-alone rather than installed on a compromised device. The script uploaded emails to a remote server [ T1020 ], obfuscating many of the directories and files it created, and changed the name of the child process to crypto ."
+  },
+  {
+   "id": "T1036.003",
+   "name": "Rename Legitimate Utilities",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    22,
+    36
+   ],
+   "evidence": "Analysis of live700_v1.exe demonstrated the executable begins a process named DiagTrack.exe , which shares its name with legitimate Windows software [ T1036.003 ]. DiagTrack.exe then establishes encrypted communications over the HTTP protocol with the domain dns.studiocloud.xyz , which the FBI attributes to Integrity Tech. Given that the executable also contains functions designed to query data from user mailboxes, the FBI assesses the malware likely targets user email data for exfiltration."
+  },
+  {
+   "id": "T1059.001",
+   "name": "PowerShell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    36
+   ],
+   "evidence": "The threat actors typically download SoftEther installers onto victim devices from threat actor-controlled infrastructure using PowerShell or LOTL binaries for Windows Systems [ T1059.001 ]. For Linux/Unix distributions, the threat actors download SoftEther installers via curl or wget . For either operating system, the actors configure the SoftEther client to automatically reconnect on startup. They often name the installers conhost.exe or dllhost.exe to appear as common Windows executables [ T1036.003 ]. Additionally, endpoint detection software is less likely to flag SoftEther because it is "
+  },
+  {
+   "id": "T1059.004",
+   "name": "Unix Shell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    98
+   ],
+   "evidence": "The threat actors use a command-line utility office-cli [ T1059.004 ] to continuously target and access Microsoft Outlook 365 email accounts to exfiltrate emails across different time periods. The threat actors occasionally update these accounts and swap them for the most recent accounts. The threat actors use office-cli to automate access and exfiltration of mail content using configuration files, such as client_id , tenant_id , and secret ."
+  },
+  {
+   "id": "T1059.006",
+   "name": "Python",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    19
+   ],
+   "evidence": "Since at least mid-January 2021, the threat actors have gained access to victim networks and cloud-based services primarily through command line utilities built on exploit codes written in popular programming languages, such as Python and Go [ T1059.006 ]. Additionally, the threat actors have used JavaScript [ T1059.007 ] and HTML code to execute cross-site scripting (XSS) attacks. XSS vulnerabilities allow malicious actors to use unwitting third-party applications vulnerable to XSS to modify content on a webpage [ T1189 ] and target other victims."
+  },
+  {
+   "id": "T1059.007",
+   "name": "JavaScript",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    19
+   ],
+   "evidence": "Since at least mid-January 2021, the threat actors have gained access to victim networks and cloud-based services primarily through command line utilities built on exploit codes written in popular programming languages, such as Python and Go [ T1059.006 ]. Additionally, the threat actors have used JavaScript [ T1059.007 ] and HTML code to execute cross-site scripting (XSS) attacks. XSS vulnerabilities allow malicious actors to use unwitting third-party applications vulnerable to XSS to modify content on a webpage [ T1189 ] and target other victims."
+  },
+  {
+   "id": "T1074.001",
+   "name": "Local Data Staging",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    59
+   ],
+   "evidence": "The PHP script took up to two command-line arguments. The first argument appeared to be the root directory where the scripts execute. If the first argument was not supplied, then the script searched for a writeable directory [ T1074.001 ] to use as its directory. The script searched the directories listed in Table 1 until it found a writeable one. The script stored the second command-line argument in a variable saved to the targeted system."
+  },
+  {
+   "id": "T1110.001",
+   "name": "Password Guessing",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    23
+   ],
+   "evidence": "The threat actors use EBurst, an open source Python-based tool, to target accounts in the Microsoft Office365 Cloud environment. The tool compromises email accounts on Microsoft Exchange servers using multiple interfaces for password spraying [ T1110.003 ] and password guessing [ T1110.001 ] against each supplied email address. Based on the open source EBurst ReadMe file, these interfaces include:"
+  },
+  {
+   "id": "T1110.003",
+   "name": "Password Spraying",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    23
+   ],
+   "evidence": "The threat actors use EBurst, an open source Python-based tool, to target accounts in the Microsoft Office365 Cloud environment. The tool compromises email accounts on Microsoft Exchange servers using multiple interfaces for password spraying [ T1110.003 ] and password guessing [ T1110.001 ] against each supplied email address. Based on the open source EBurst ReadMe file, these interfaces include:"
+  },
+  {
+   "id": "T1114.002",
+   "name": "Remote Email Collection",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    56
+   ],
+   "evidence": "The FBI observed that the threat actors created a bot using the PHP script Curlc4.txt to obtain emails from victims. The script is specifically designed to interface with the Microsoft EWS API, which allows the threat actors to access email and content items, such as calendars and contacts [ T1114.002 ]."
+  },
+  {
+   "id": "T1133",
+   "name": "External Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    35
+   ],
+   "evidence": "To establish persistence, the threat actors install virtual private network (VPN) software clients on victim devices [ T1133 ] to obfuscate command and control (C2) communications or other actions, further preventing victims from attributing malicious network activity."
+  },
+  {
+   "id": "T1189",
+   "name": "Drive-by Compromise",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    19
+   ],
+   "evidence": "Since at least mid-January 2021, the threat actors have gained access to victim networks and cloud-based services primarily through command line utilities built on exploit codes written in popular programming languages, such as Python and Go [ T1059.006 ]. Additionally, the threat actors have used JavaScript [ T1059.007 ] and HTML code to execute cross-site scripting (XSS) attacks. XSS vulnerabilities allow malicious actors to use unwitting third-party applications vulnerable to XSS to modify content on a webpage [ T1189 ] and target other victims."
+  },
+  {
+   "id": "T1560.003",
+   "name": "Archive via Custom Method",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    58
+   ],
+   "evidence": "The script downloaded the original file from https://upl.natcloudservice[.]com using IP address 149.28.132[.]137 . The main C2 domain for the bot was natcloudservice[.]com, and the domain communicated with https://natcloudservice[.]com/ews and upl.natcloudservice[.]com/ews. Before exfiltration, the bot compressed emails. In some instances, the threat actor also used a password to encrypt emails using RC4 or AES-128-CBC [ T1560.003 ]."
+  },
+  {
+   "id": "T1595.002",
+   "name": "Vulnerability Scanning",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    16
+   ],
+   "evidence": "The threat actors use a variety of open source scanning tools to find vulnerabilities in networks and web-based applications, including: BBScan, dirsearch, Fscan, ksubdomain, masscan, NMAP, OneForAll, ShuiZe, and wpscan [ T1595.002 ]. See Appendix A: Indicators of Compromise for a complete list of scanning tools."
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T1003.006",
+   "name": "DCSync",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "OS Credential Dumping: DCSync | T1003.006 | The threat actors use DC.exe to execute the DCSync replication technique to copy sensitive information from the Active Directory."
+  },
+  {
+   "id": "T1020",
+   "name": "Automated Exfiltration",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Automated Exfiltration | T1020 | The threat actors leverage the PHP script to automatically upload emails to a remote server."
+  },
+  {
+   "id": "T1036.003",
+   "name": "Rename Legitimate Utilities",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Masquerading: Rename Legitimate Utilities | T1036.003 | The threat actors run executables with the same name of a known, legitimate Windows software and installers to evade detection."
+  },
+  {
+   "id": "T1059.001",
+   "name": "PowerShell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Command and Scripting Interpreter: PowerShell | T1059.001 | The threat actors typically download SoftEther installers onto victim devices from threat actor controlled infrastructure using PowerShell."
+  },
+  {
+   "id": "T1059.004",
+   "name": "Unix Shell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Command and Scripting Interpreter: Unix Shell | T1059.004 | The threat actors use office-cli , a Linux-based binary, to continuously target and access Microsoft Outlook 365 accounts. Office-cli automates exfiltration of mail content using configuration files, including account credentials."
+  },
+  {
+   "id": "T1059.006",
+   "name": "Python",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Command and Scripting Interpreter: Python | T1059.006 | The threat actors gain access to victim networks and cloud-based services primary through command-line utility tools based on exploit codes written in Python."
+  },
+  {
+   "id": "T1059.007",
+   "name": "JavaScript",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Command and Scripting Interpreter: JavaScript | T1059.007 | The threat actors use JavaScript to execute XSS attacks."
+  },
+  {
+   "id": "T1074.001",
+   "name": "Local Data Staging",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Data Staged: Local Data Staging | T1074.001 | The PHP script searches for a writeable directory to use as its directory."
+  },
+  {
+   "id": "T1110.001",
+   "name": "Password Guessing",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Brute Force: Password Guessing | T1110.001 | The threat actors use eburst.py to conduct password guessing to compromise email accounts on Microsoft Exchange servers."
+  },
+  {
+   "id": "T1110.003",
+   "name": "Password Spraying",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Brute Force: Password Spraying | T1110.003 | The threat actors use eburst.py to conduct password spraying to compromise email accounts on Microsoft Exchange servers."
+  },
+  {
+   "id": "T1114.002",
+   "name": "Remote Email Collection",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Email Collection: Remote Email | T1114.002 | The threat actors use the PHP script to interface with the Microsoft EWS API, enabling them to access email and content items."
+  },
+  {
+   "id": "T1133",
+   "name": "External Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "External Remote Services | T1133 | The threat actors install VPN software clients on victim devices to establish persistence and obfuscate C2 communications."
+  },
+  {
+   "id": "T1189",
+   "name": "Drive-by Compromise",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Drive-by Compromise | T1189 | The threat actors execute XSS attacks to leverage an unwitting third-party application to modify content on a webpage."
+  },
+  {
+   "id": "T1560.003",
+   "name": "Archive via Custom Method",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Archive Collection Data: Archive via Custom Method | T1560.003 | The threat actors use a custom bot to compress, and in some cases encrypt, files prior to exfiltration."
+  },
+  {
+   "id": "T1595.002",
+   "name": "Vulnerability Scanning",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Active Scanning: Vulnerability Scanning | T1595.002 | The threat actors leverage several scanning tools to find vulnerabilities in networks and web-based applications."
+  }
+ ],
+ "n_inline": 15,
+ "n_table": 15,
+ "n_union": 15,
+ "n_inline_not_active": 0,
+ "n_table_not_active": 0
+}

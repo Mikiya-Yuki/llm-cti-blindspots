@@ -1,0 +1,47 @@
+Note: This advisory was originally published on April 7, 2026, to provide tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) related to ongoing cyber exploitation of internet-connected operational technology (OT) devices by Iranian-affiliated advanced persistent threat (APT) actors. The authoring agencies updated this advisory on July 22, 2026, to add new guidance on detecting malicious changes in reusable code modules leveraged within Rockwell Automation PLC programs. It also expands the manufacturer scope to include observed targeting of Schneider Electric, Siemens, and potentially other branded/manufactured PLCs, emphasizing the importance of restricting direct internet access and providing best practice resources for secure deployment.
+
+The Federal Bureau of Investigation (FBI), Cybersecurity and Infrastructure Security Agency (CISA), National Security Agency (NSA), Environmental Protection Agency (EPA), Department of Energy (DOE), United States Cyber Command – Cyber National Mission Force (CNMF), and Department of the Treasury (Treasury) (hereafter referred to as the “authoring agencies”) are urgently warning U.S. organizations of ongoing cyber exploitation of internet-connected OT devices—including PLCs manufactured by Rockwell Automation/Allen-Bradley, Schneider Electric, Siemens, and potentially other manufactured PLCs—across multiple U.S. critical infrastructure sectors. As a result of this activity, organizations from multiple U.S. critical infrastructure sectors experienced disruptions through malicious interactions with PLC project files 1 and the manipulation of data displayed on human machine interface (HMI) and supervisory control and data acquisition (SCADA) displays. In a few cases, this activity caused operational disruption and financial loss.
+
+The authoring agencies assess a group of Iranian-affiliated APT actors is conducting this activity to cause disruptive effects within the United States. The group targeted devices spanning multiple U.S. critical infrastructure sectors, including Government Services and Facilities (to include local municipalities), Water and Wastewater Systems (WWS), and Energy Sectors. The authoring agencies previously reported on similar activity targeting PLCs by CyberAv3ngers (aka Shahid Kaveh Group)—a cyber threat actor affiliated with Iran’s Islamic Revolutionary Guard Corps (IRGC) Cyber Electronic Command (CEC).
+
+Due to the widespread use of these PLCs, and the potential for additional targeting of other branded OT devices across critical infrastructure, the authoring agencies recommend U.S. organizations urgently review the TTPs and IOCs in this advisory for indications of current or historical activity on their networks, and apply the recommendations listed in the Mitigations section of this advisory to reduce the risk of compromise.
+
+If owners and operators discover an affected internet-accessible device in their environment, additional technical measures may be necessary to evaluate the risk of compromise. Please engage your cyber incident response plans and contact the authoring agencies and applicable vendors through existing support channels available to customers and integrators (see Contact Information ) to receive support, mitigation, and investigation assistance.
+
+For more information on Iranian malicious cyber activity, see CISA’s Iran Threat Overview and Advisories webpage and the FBI’s Iran Threat and Iran Cyber Threat Overview webpages.
+
+(New, July 22, 2026) For a downloadable copy of July 22, 2026 IOCs, see:
+
+AA26-097A STIX XML (XML, 29 KB)
+
+AA26-097A STIX JSON (JSON, 30 KB)
+
+For a downloadable copy of historical April 7, 2026 IOCs, see:
+
+During a similar campaign beginning in November 2023, the IRGC CEC-affiliated cyber threat actors known as "CyberAv3ngers” targeted U.S.-based PLCs and HMIs, causing disruptive effects. Private industry and open sources also refer to this group as Hydro Kitten, Storm-0784, APT Iran, Bauxite, Mr. Soul, Soldiers of Solomon, UNC5691, and the Shahid Kaveh Group. These attacks compromised at least 75 devices, targeting U.S.-based Unitronics PLC devices with an HMI used across multiple critical infrastructure sectors, including the WWS. APT actors developed and deployed custom ladder logic code to these devices, replacing the valid ladder logic with malicious code that continues to be observed to date.
+
+For more information on this group’s activity, see the joint Cybersecurity Advisory IRGC-Affiliated Cyber Actors Exploit PLCs in Multiple Sectors, Including US Water and Wastewater Systems Facilities.
+
+The FBI observed Iranian-affiliated APT actors targeting internet-exposed PLCs with the intent to cause disruptions—including maliciously interacting with project files, and manipulating data displayed on HMI and SCADA displays—to U.S. critical infrastructure organizations. Iranian-affiliated APT targeting campaigns against U.S. critical infrastructure have recently escalated, likely in response to hostilities between Iran, and the United States and Israel.
+
+(New, July 22, 2026) At one U.S. victim, the FBI observed the APT actors download a malicious project file to a targeted PLC using configuration software. Analysis indicated the project file retained ladder logic for downstream function but added logic that overrode specific instruction sets responsible for maintaining safe operating parameters in the victim’s environment.
+
+Since at least March 2026, the authoring agencies identified (through engagements with victim organizations) an Iranian-affiliated APT group disrupted the function of PLCs. Organizations across several U.S. critical infrastructure sectors (including Government Services and Facilities, WWS, and Energy Sectors) deployed these PLCs within a wide variety of industrial automation processes. Some of the victims experienced operational disruption and financial loss.
+
+Note: This advisory uses the MITRE ATT&CK ® Matrix for Enterprise framework, version 19. See the MITRE ATT&CK Tactics and Techniques section of this advisory for tables of the threat actors’ activity mapped to MITRE ATT&CK tactics and techniques.
+
+(Updated, July 22, 2026) The authoring agencies observed Iranian-affiliated APT actors using several foreign-based IP addresses to access internet-facing PLCs manufactured by Rockwell Automation/Allen-Bradley, Schneider Electric, Siemens, and potentially other manufactured PLCs. The actors used leased, third-party hosted infrastructure and manufacturers’ PLC programming software to connect to misconfigured victim PLCs. Inbound malicious traffic has been observed targeting PLC devices on the following ports: 44818, 2222, 102, and 502, as well as targeting modems on port 22. Targeted devices include:
+
+Rockwell Automation: CompactLogix and Micro850 PLCs
+
+Schneider Electric: BMX P34/Modicon M340 PLCs
+
+Siemens: S7-1200 series PLCs
+
+(Updated, July 22, 2026) The targeting of ports associated with other OT vendors’ protocols suggests these actors are opportunistically targeting devices manufactured by companies other than Rockwell Automation/Allen-Bradley, including Schneider Electric and Siemens. In one reported instance, the actors utilized Dropbear Secure Shell (SSH) software on victim modems to enable them to gain remote access through port 22.
+
+(New, July 22, 2026) The authoring agencies observed Iranian-affiliated APT actors using configuration software—such as Rockwell Automation’s Studio 5000 Logix Designer, Schneider Electric’s EcoStruxure Control Expert, and Siemens’ Totally Integrated Automation (TIA) Portal—on leased, third-party hosted infrastructure to exfiltrate device project files from PLC devices to threat-actor-controlled infrastructure.
+
+(Updated, July 22, 2026) After the actors extracted device project files, the FBI and CISA identified the modification and deletion of project file logic, to include Add-On Instructions (AOIs) and data manipulation on HMI and SCADA displays. Additionally, the changes disabled critical shutdown and alarm logic, allowing systems to enter unsafe conditions without notifying operators of the anomalies.
+
+Note: An AOI is analogous to a “Function Block” or “User Defined Function Block” used in other PLC vendor programs.

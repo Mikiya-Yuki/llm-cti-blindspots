@@ -1,0 +1,447 @@
+{
+ "case_id": "AA24-190A",
+ "authoring_agencies": [
+  {
+   "name": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)",
+   "quote": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)"
+  },
+  {
+   "name": "United States Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "United States Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "United States National Security Agency (NSA)",
+   "quote": "United States National Security Agency (NSA)"
+  },
+  {
+   "name": "United States Federal Bureau of Investigation (FBI)",
+   "quote": "United States Federal Bureau of Investigation (FBI)"
+  },
+  {
+   "name": "United Kingdom National Cyber Security Centre (NCSC-UK)",
+   "quote": "United Kingdom National Cyber Security Centre (NCSC-UK)"
+  },
+  {
+   "name": "Canadian Centre for Cyber Security (CCCS)",
+   "quote": "Canadian Centre for Cyber Security (CCCS)"
+  },
+  {
+   "name": "New Zealand National Cyber Security Centre (NCSC-NZ)",
+   "quote": "New Zealand National Cyber Security Centre (NCSC-NZ)"
+  },
+  {
+   "name": "German Federal Intelligence Service (BND)",
+   "quote": "German Federal Intelligence Service (BND)"
+  },
+  {
+   "name": "German Federal Office for the Protection of the Constitution (BfV)",
+   "quote": "German Federal Intelligence Service (BND) and Federal Office for the Protection of the Constitution (BfV)"
+  },
+  {
+   "name": "Republic of Korea’s National Intelligence Service (NIS)",
+   "quote": "Republic of Korea’s National Intelligence Service (NIS)"
+  },
+  {
+   "name": "NIS' National Cyber Security Center (Republic of Korea)",
+   "quote": "Republic of Korea’s National Intelligence Service (NIS) and NIS’ National Cyber Security Center"
+  },
+  {
+   "name": "Japan’s National Center of Incident Readiness and Strategy for Cybersecurity (NISC)",
+   "quote": "Japan’s National Center of Incident Readiness and Strategy for Cybersecurity (NISC)"
+  },
+  {
+   "name": "Japan's National Police Agency (NPA)",
+   "quote": "Japan’s National Center of Incident Readiness and Strategy for Cybersecurity (NISC) and National Police Agency (NPA)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "APT40",
+   "kind": "primary",
+   "quote": "APT40 has repeatedly targeted Australian networks as well as government and private sector networks in the region"
+  },
+  {
+   "name": "Kryptonite Panda",
+   "kind": "alias",
+   "quote": "also known as Kryptonite Panda, GINGHAM TYPHOON, Leviathan and Bronze Mohawk in industry reporting"
+  },
+  {
+   "name": "GINGHAM TYPHOON",
+   "kind": "alias",
+   "quote": "also known as Kryptonite Panda, GINGHAM TYPHOON, Leviathan and Bronze Mohawk in industry reporting"
+  },
+  {
+   "name": "Leviathan",
+   "kind": "alias",
+   "quote": "also known as Kryptonite Panda, GINGHAM TYPHOON, Leviathan and Bronze Mohawk in industry reporting"
+  },
+  {
+   "name": "Bronze Mohawk",
+   "kind": "alias",
+   "quote": "also known as Kryptonite Panda, GINGHAM TYPHOON, Leviathan and Bronze Mohawk in industry reporting"
+  },
+  {
+   "name": "PRC Ministry of State Security (MSS)",
+   "kind": "parent_organization",
+   "quote": "this group conduct malicious cyber operations for the PRC Ministry of State Security (MSS)"
+  },
+  {
+   "name": "Hainan State Security Department",
+   "kind": "unit",
+   "quote": "receiving tasking from the PRC MSS, Hainan State Security Department"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "outlines a People’s Republic of China (PRC) state-sponsored cyber group and their current threat to Australian networks",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "People's Republic of China (PRC) - state sponsorship",
+   "strength_markers": [
+    "state-sponsored"
+   ]
+  },
+  {
+   "quote": "The authoring agencies assess that this group conduct malicious cyber operations for the PRC Ministry of State Security (MSS).",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "PRC Ministry of State Security (MSS)",
+   "strength_markers": [
+    "assess",
+    "conduct malicious cyber operations for"
+   ]
+  },
+  {
+   "quote": "The activity and techniques overlap with the groups tracked as Advanced Persistent Threat (APT) 40 (also known as Kryptonite Panda, GINGHAM TYPHOON, Leviathan and Bronze Mohawk in industry reporting).",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "APT40 and its industry-reported aliases (activity/technique overlap)",
+   "strength_markers": [
+    "overlap with",
+    "tracked as",
+    "also known as"
+   ]
+  },
+  {
+   "quote": "This group has previously been reported as being based in Haikou, Hainan Province, PRC and receiving tasking from the PRC MSS, Hainan State Security Department.",
+   "attributing_party": "prior reporting (source unspecified), relayed by the authoring agencies",
+   "attributed_to": "PRC MSS, Hainan State Security Department (tasking); based in Haikou, Hainan Province, PRC",
+   "strength_markers": [
+    "previously been reported",
+    "receiving tasking from"
+   ]
+  },
+  {
+   "quote": "The findings indicate the compromise was undertaken by APT40.",
+   "attributing_party": "ASD's ACSC (investigation findings; sentence appears in both case studies)",
+   "attributed_to": "APT40",
+   "strength_markers": [
+    "indicate",
+    "undertaken by"
+   ]
+  },
+  {
+   "quote": "Findings from the investigation indicate the organization was likely deliberately targeted by APT40, as opposed to falling victim opportunistically to a publicly known vulnerability.",
+   "attributing_party": "ASD's ACSC",
+   "attributed_to": "APT40 (deliberate targeting of the case study 1 organization)",
+   "strength_markers": [
+    "indicate",
+    "likely",
+    "deliberately targeted"
+   ]
+  },
+  {
+   "quote": "a confirmed malicious IP believed to be affiliated with a state-sponsored cyber group",
+   "attributing_party": "ASD's ACSC",
+   "attributed_to": "a state-sponsored cyber group (infrastructure linkage)",
+   "strength_markers": [
+    "confirmed",
+    "believed to be affiliated with",
+    "state-sponsored"
+   ]
+  },
+  {
+   "quote": "form an understanding of likely APT40 activity on the network",
+   "attributing_party": "ASD's ACSC",
+   "attributed_to": "APT40",
+   "strength_markers": [
+    "likely"
+   ]
+  },
+  {
+   "quote": "This server may have been compromised by multiple actors",
+   "attributing_party": "ASD's ACSC",
+   "attributed_to": "possibly multiple actors (case study 2 appliance)",
+   "strength_markers": [
+    "may have been"
+   ]
+  },
+  {
+   "quote": "the techniques highlighted below are regularly used by other PRC state-sponsored actors globally",
+   "attributing_party": "the authoring agencies",
+   "attributed_to": "other PRC state-sponsored actors (shared techniques, not unique to APT40)",
+   "strength_markers": [
+    "regularly used by",
+    "state-sponsored"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A3",
+ "attribution_strength_rationale": "The main attribution sentence, 'The authoring agencies assess that this group conduct malicious cyber operations for the PRC Ministry of State Security (MSS)', names a specific state organ (MSS) with 'assess' wording, reinforced by 'PRC state-sponsored cyber group' and reported tasking from the 'PRC MSS, Hainan State Security Department'; the weaker case-level wording ('believed to be affiliated with a state-sponsored cyber group', 'likely APT40 activity') does not override it.",
+ "malware_tools": [
+  {
+   "name": "Secure Socket Funnelling (SSF)",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "The actors deploy the open-source tool Secure Socket Funnelling, which was used to connect out to the malicious infrastructure."
+  },
+  {
+   "name": "web shells (generic; no family names given)",
+   "category": "other",
+   "core": true,
+   "quote": "APT40 regularly uses web shells for persistence, particularly early in the life cycle of an intrusion."
+  },
+  {
+   "name": "tcpdump",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "There is evidence that the utility tcpdump was executed on the compromised appliance"
+  },
+  {
+   "name": "nmap",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "There is evidence that network scanning utility nmap was executed on the compromised appliance"
+  },
+  {
+   "name": "Unix shell",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "may have been able to run commands in a Unix shell available on the affected appliance"
+  }
+ ],
+ "vulnerabilities": [
+  {
+   "cve": "CVE-2021-44228",
+   "product": "Log4J",
+   "core": true,
+   "quote": "Log4J ( CVE-2021-44228 )"
+  },
+  {
+   "cve": "CVE-2021-31207",
+   "product": "Atlassian Confluence and Microsoft Exchange (listed under both in the text)",
+   "core": true,
+   "quote": "Atlassian Confluence ( CVE-2021-31207, CVE-2021-26084 ) and Microsoft Exchange ( CVE-2021-31207, CVE-2021-34523, CVE-2021-34473 )"
+  },
+  {
+   "cve": "CVE-2021-26084",
+   "product": "Atlassian Confluence",
+   "core": true,
+   "quote": "Atlassian Confluence ( CVE-2021-31207, CVE-2021-26084 )"
+  },
+  {
+   "cve": "CVE-2021-34523",
+   "product": "Microsoft Exchange",
+   "core": true,
+   "quote": "Microsoft Exchange ( CVE-2021-31207, CVE-2021-34523, CVE-2021-34473 )"
+  },
+  {
+   "cve": "CVE-2021-34473",
+   "product": "Microsoft Exchange",
+   "core": true,
+   "quote": "Microsoft Exchange ( CVE-2021-31207, CVE-2021-34523, CVE-2021-34473 )"
+  }
+ ],
+ "affected_products_or_technologies": [
+  {
+   "name": "small-office/home-office (SOHO) devices (compromised and used as operational infrastructure / last-hop redirectors)",
+   "core": true,
+   "quote": "APT40 has embraced the global trend of using compromised devices, including small-office/home-office (SOHO) devices, as operational infrastructure and last-hop redirectors for its operations in Australia."
+  },
+  {
+   "name": "vulnerable, public-facing infrastructure",
+   "core": true,
+   "quote": "This group appears to prefer exploiting vulnerable, public-facing infrastructure over techniques that require user interaction, such as phishing campaigns"
+  },
+  {
+   "name": "custom web application (case study 1 initial access)",
+   "core": true,
+   "quote": "Beginning in July, actors were able to test and exploit a custom web application running on <webapp>2-ext"
+  },
+  {
+   "name": "remote access login and identity management product ('the compromised appliance', case study 2)",
+   "core": true,
+   "quote": "This server used a remote access login and identity management product and will be referred to in this report as 'the compromised appliance'."
+  },
+  {
+   "name": "vulnerable, end-of-life or no longer maintained devices",
+   "core": false,
+   "quote": "identify vulnerable, end-of-life or no longer maintained devices on networks of interest"
+  },
+  {
+   "name": "compromised Australian websites (previously used as C2 hosts)",
+   "core": false,
+   "quote": "APT40 has previously used compromised Australian websites as command and control (C2) hosts for its operations"
+  },
+  {
+   "name": "insecure internally developed software",
+   "core": false,
+   "quote": "the use of insecure internally developed software that could be used to arbitrarily upload files"
+  },
+  {
+   "name": "Active Directory",
+   "core": false,
+   "quote": "Compromised credentials were used to query the Active Directory and exfiltrate data by mounting file shares from multiple machines within the DMZ."
+  },
+  {
+   "name": "Windows machines within the DMZ (SMB shares)",
+   "core": false,
+   "quote": "A different compromised account is subsequently employed to mount shares on Windows machines within the DMZ, enabling successful data exfiltration."
+  },
+  {
+   "name": "building management system [BMS]",
+   "core": false,
+   "quote": "password files relating to building management system [BMS]"
+  },
+  {
+   "name": "virtual desktop infrastructure (VDI)",
+   "core": false,
+   "quote": "access a virtual desktop infrastructure (VDI) session as a legitimate user"
+  },
+  {
+   "name": "access gateway hosts",
+   "core": false,
+   "quote": "The appliance infrastructure also included access gateway hosts that provide a tunnel to the VDI for the user"
+  },
+  {
+   "name": "internal SQL server",
+   "core": false,
+   "quote": "The actor also used access to the compromised appliance to scrape an SQL server, which resided in the organization’s internal network."
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "government",
+   "core": true,
+   "quote": "APT40 has repeatedly targeted Australian networks as well as government and private sector networks in the region"
+  },
+  {
+   "sector": "private sector",
+   "core": true,
+   "quote": "APT40 has repeatedly targeted Australian networks as well as government and private sector networks in the region"
+  }
+ ],
+ "target_regions": [
+  {
+   "region": "Australia",
+   "core": true,
+   "quote": "their current threat to Australian networks"
+  },
+  {
+   "region": "United States",
+   "core": true,
+   "quote": "has previously targeted organizations in various countries, including Australia and the United States"
+  },
+  {
+   "region": "the region (around Australia)",
+   "core": false,
+   "quote": "government and private sector networks in the region"
+  },
+  {
+   "region": "the authoring agencies' countries",
+   "core": false,
+   "quote": "including networks in the authoring agencies’ countries"
+  }
+ ],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "as early as 2017",
+   "meaning": "age of the oldest vulnerabilities APT40 still exploits successfully",
+   "core": true,
+   "quote": "APT40 continues to find success exploiting vulnerabilities from as early as 2017."
+  },
+  {
+   "expression": "between July and September 2022",
+   "meaning": "case study 1: period of the compromise of the first victim network",
+   "core": true,
+   "quote": "the successful compromise of the organization’s network between July and September 2022"
+  },
+  {
+   "expression": "Beginning in July",
+   "meaning": "case study 1: actors begin testing/exploiting the custom web application",
+   "core": false,
+   "quote": "Beginning in July, actors were able to test and exploit a custom web application"
+  },
+  {
+   "expression": "From July to August",
+   "meaning": "case study 1: period of key actor activity observed by ASD's ACSC",
+   "core": false,
+   "quote": "From July to August, key actor activity observed by the ASD’s ACSC included:"
+  },
+  {
+   "expression": "between at least July and August",
+   "meaning": "case study 1: malicious IP interacting with the victim network",
+   "core": false,
+   "quote": "had interacted with the organization’s computer networks between at least July and August"
+  },
+  {
+   "expression": "In mid-August 2022",
+   "meaning": "case study 1: ASD's ACSC notifies the organization",
+   "core": false,
+   "quote": "In mid-August 2022, the ASD’s ACSC notified the organization"
+  },
+  {
+   "expression": "In late August",
+   "meaning": "case study 1: ASD's ACSC deploys host-based agent/sensors",
+   "core": false,
+   "quote": "In late August, the ASD’s ACSC deployed a host-based agent to hosts on the organization’s network"
+  },
+  {
+   "expression": "August - September",
+   "meaning": "case study 1: SSF tool re-establishes a connection to a malicious IP (until access blocked)",
+   "core": false,
+   "quote": "August – September: The SSF tool re-established a connection to a malicious IP."
+  },
+  {
+   "expression": "In September",
+   "meaning": "case study 1: organization denylists/blocks the malicious IP",
+   "core": false,
+   "quote": "In September, after consultation with the ASD’s ACSC, the organization decided to denylist the IP identified in the initial notification."
+  },
+  {
+   "expression": "In October",
+   "meaning": "case study 1: organization commences remediation",
+   "core": false,
+   "quote": "In October, the organization commenced remediation."
+  },
+  {
+   "expression": "in April 2022",
+   "meaning": "case study 2: compromise of the second victim network",
+   "core": true,
+   "quote": "the successful compromise of the organization’s network in April 2022"
+  },
+  {
+   "expression": "In May 2022",
+   "meaning": "case study 2: ASD's ACSC notifies the organization of suspected malicious activity",
+   "core": false,
+   "quote": "In May 2022, ASD’s ACSC notified an organization of suspected malicious activity impacting the organization’s network since April 2022."
+  },
+  {
+   "expression": "since at least April 2022",
+   "meaning": "case study 2: compromise via the remote access login portal (start)",
+   "core": false,
+   "quote": "via the organization’s remote access login portal since at least April 2022"
+  },
+  {
+   "expression": "in April 2022",
+   "meaning": "case study 2: exfiltration of several hundred username/password pairs from the appliance",
+   "core": false,
+   "quote": "had exfiltrated several hundred unique username and password pairs on the compromised appliance in April 2022"
+  },
+  {
+   "expression": "from April 2022 onwards",
+   "meaning": "case study 2: web shells deployed to the compromised appliance",
+   "core": false,
+   "quote": "to deploy web shells to the compromised appliance from April 2022 onwards"
+  }
+ ],
+ "notes": "(1) CVE-2021-31207 is listed in the text under BOTH Atlassian Confluence and Microsoft Exchange; it is keyed once, so accept either product association. The text spells 'Log4J'. (2) Case study 2 says the server 'was vulnerable to these CVEs' and was 'likely affected by a remote code execution (RCE) vulnerability that was widely publicized', but gives no CVE IDs and no vendor/product name (only 'a remote access login and identity management product'). Any CVE or vendor a model attaches to case study 2 is unsupported by the input. (3) VirusTotal is mentioned only as where ASD's ACSC uploaded malicious files; it is NOT an actor tool. Kerberoasting is a technique, not a tool. 'Web shells' is a generic category (no family names). JWTs, MFA token values and credentials are stolen artefacts, not products. MITRE ATT&CK is a framework reference. (4) Haikou, Hainan Province, PRC is where the group 'has previously been reported as being based' (actor location, not a target region); the Hainan State Security Department tasking also rests on prior reporting. (5) 'Other PRC state-sponsored actors' and the two cross-referenced joint advisories (on network providers/devices and on U.S. critical infrastructure) are context only; critical infrastructure and network providers are NOT stated as APT40 targets here. (6) Both victim organizations are anonymized: no named victims. The compromised device that 'probably belonged to a small business or home user' is actor infrastructure, not a victim. (7) The case study 1 sentence 'a likely compromised device being used by the group in late August' is garbled; the next paragraph places host-based agent deployment in late August, and actor activity ran July-August, with an SSF connection re-established August-September 2022. (8) 'within hours or days of public release' is an expected exploitation speed, not a calendar date. (9) Not in the input (tables stripped): the tooling file/hash table and the case study 2 investigation timeline. (10) A3 rests on the MSS 'assess' sentence; case-level wording is weaker ('believed to be affiliated with a state-sponsored cyber group', 'likely APT40 activity')."
+}

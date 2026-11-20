@@ -1,0 +1,701 @@
+{
+ "case_id": "AA26-222A",
+ "input_words": 2104,
+ "input_sha256": "22509b81b3b3586af98d19d132fbe905246afae889d4f545c0c2e0288f65bce6",
+ "inline_ids": [
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    36
+   ],
+   "evidence": "Additionally, the actors accessed a Hiware system access control server via SSH from a compromised virtual desktop and stole a symmetric encryption key stored on the server. The stolen key enabled the actors to decrypt passwords for enterprise server accounts stored within the database [ T1555 ] and perform credential dumping of credentials associated with all enterprise servers [ T1003 ]."
+  },
+  {
+   "id": "T1003.003",
+   "name": "NTDS",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    33
+   ],
+   "evidence": "The FBI observed multiple instances of Gunra actors using secretsdump.py (another Impacket library) to conduct OS credential dumping [ T1003.003 ] against compromised domain controllers to extract password hashes of user accounts from the NT Directory Services (NTDS) file. This enabled pass-the-hash [ T1550.002 ] or pass-the-ticket [ T1550.003 ] attacks for lateral movement into other privileged systems."
+  },
+  {
+   "id": "T1005",
+   "name": "Data from Local System",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    41,
+    43
+   ],
+   "evidence": "Prior to data encryption, Gunra actors collect sensitive victim data as part of their double-extortion strategy. The FBI observed actors collecting files from victims that included business-critical documents, databases, personally identifiable information (PII), and internal email communications [ TA0009 ][ T1114 ]. Gunra actors’ custom support for filtering redundant system files during initial discovery/file system reconnaissance streamlines the actors’ collection of user-specific data from local victim machines [ T1005 ]."
+  },
+  {
+   "id": "T1021.001",
+   "name": "Remote Desktop Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    32
+   ],
+   "evidence": "Using stolen session information, Gunra actors gained initial access to the internal virtual desktop infrastructure (VDI) environment and conducted lateral movement via RDP [ T1021.001 ]. The actors pivoted to multiple critical systems, including the VDI authentication web server, the internal Active Directory (AD) server, and virtual desktops assigned to IT personnel."
+  },
+  {
+   "id": "T1021.002",
+   "name": "SMB/Windows Admin Shares",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    29
+   ],
+   "evidence": "Gunra actors regularly exploit Impacket libraries psexec.py and smbclient.py to move laterally across victim networks using the Server Message Block (SMB) protocol [ T1021.002 ]."
+  },
+  {
+   "id": "T1040",
+   "name": "Network Sniffing",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    34
+   ],
+   "evidence": "For one victim, Gunra actors manipulated the network traffic control functionality of an SSL-VPN appliance to collect credentials and session information transmitted by users authenticating to a corporate VDI authentication portal [ T1040 ]. The actors then used stolen session cookies to conduct session hijacking [ T1539 ], impersonating legitimate users to gain access to the internal network."
+  },
+  {
+   "id": "T1047",
+   "name": "Windows Management Instrumentation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    49
+   ],
+   "evidence": "To increase the likelihood of ransom payment and prevent system recovery [ T1490 ], Gunra actors also used Windows Management Instrumentation (WMI) [ T1047 ] to initiate deletion of volume shadow copies prior to encryption, as demonstrated in the following example [ T1059.003 ]: 13"
+  },
+  {
+   "id": "T1048",
+   "name": "Exfiltration Over Alternative Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    44
+   ],
+   "evidence": "The FBI observed several common open source tools on Gunra infrastructure that Gunra actors use to facilitate collection and exfiltration of data, including 7-Zip, RClone, and FileZilla [ T1048 ] (see Leveraged Tools for a full list of tools used maliciously by Gunra actors)."
+  },
+  {
+   "id": "T1049",
+   "name": "System Network Connections Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    37
+   ],
+   "evidence": "Gunra employs multiple stealth and defense impairment techniques to hinder detection and analysis. While active within victim networks, Gunra actors typically attempt to mask their presence by deleting system/network access logs [ T1685 ] and clearing command history [ T1070.003 ]. Additionally, to evade administrator detection, Gunra actors primarily conduct malicious activities and internal infrastructure reconnaissance [ T1049 ] during late-night and early-morning hours (10:00 p.m. – 06:00 a.m.) [ T1678 ]."
+  },
+  {
+   "id": "T1059.003",
+   "name": "Windows Command Shell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    49
+   ],
+   "evidence": "To increase the likelihood of ransom payment and prevent system recovery [ T1490 ], Gunra actors also used Windows Management Instrumentation (WMI) [ T1047 ] to initiate deletion of volume shadow copies prior to encryption, as demonstrated in the following example [ T1059.003 ]: 13"
+  },
+  {
+   "id": "T1070.003",
+   "name": "Clear Command History",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    37
+   ],
+   "evidence": "Gunra employs multiple stealth and defense impairment techniques to hinder detection and analysis. While active within victim networks, Gunra actors typically attempt to mask their presence by deleting system/network access logs [ T1685 ] and clearing command history [ T1070.003 ]. Additionally, to evade administrator detection, Gunra actors primarily conduct malicious activities and internal infrastructure reconnaissance [ T1049 ] during late-night and early-morning hours (10:00 p.m. – 06:00 a.m.) [ T1678 ]."
+  },
+  {
+   "id": "T1078.001",
+   "name": "Default Accounts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "KPNA observed that against one victim, Gunra actors gained access to an administrator account for a secure socket layer (SSL)-VPN appliance [ T1133 ] by exploiting default credentials when account lockout controls were not present [ T1078.001 ][ T1078.002 ]. The actors subsequently downloaded OpenSSH (an SSH tunneling tool) [ T1105 ] from an external attacker-controlled server to establish connections between compromised systems and maintain persistence in the victim’s environment [ T1572 ]."
+  },
+  {
+   "id": "T1078.002",
+   "name": "Domain Accounts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "KPNA observed that against one victim, Gunra actors gained access to an administrator account for a secure socket layer (SSL)-VPN appliance [ T1133 ] by exploiting default credentials when account lockout controls were not present [ T1078.001 ][ T1078.002 ]. The actors subsequently downloaded OpenSSH (an SSH tunneling tool) [ T1105 ] from an external attacker-controlled server to establish connections between compromised systems and maintain persistence in the victim’s environment [ T1572 ]."
+  },
+  {
+   "id": "T1083",
+   "name": "File and Directory Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    40
+   ],
+   "evidence": "Prior to encryption, Gunra performs file and directory discovery across all accessible drive letters (A through Z) to identify victim data for targeting [ T1083 ]. 9"
+  },
+  {
+   "id": "T1098",
+   "name": "Account Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    31
+   ],
+   "evidence": "After gaining access to an internet-connected workstation used by a network administrator, Gunra actors accessed the SSL-VPN administrative web console and identified an unused account that had access to both the internet-facing and internal corporate networks. The actors modified the account configuration to bypass the mandatory password change requirement enforced on the account and subsequently leveraged it for malicious activities [ T1098 ]."
+  },
+  {
+   "id": "T1105",
+   "name": "Ingress Tool Transfer",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "KPNA observed that against one victim, Gunra actors gained access to an administrator account for a secure socket layer (SSL)-VPN appliance [ T1133 ] by exploiting default credentials when account lockout controls were not present [ T1078.001 ][ T1078.002 ]. The actors subsequently downloaded OpenSSH (an SSH tunneling tool) [ T1105 ] from an external attacker-controlled server to establish connections between compromised systems and maintain persistence in the victim’s environment [ T1572 ]."
+  },
+  {
+   "id": "T1106",
+   "name": "Native API",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    28
+   ],
+   "evidence": "Gunra’s Windows encryptor relies on native operating system (OS) application programming interfaces (APIs) to drive both execution and targeted encryption activity. The binary uses the FindFirstFileW / FindNextFileW API calls [ T1106 ] to enumerate files and directories on all accessible drive letters (A through Z), enabling comprehensive traversal of the file system prior to encryption of victim data."
+  },
+  {
+   "id": "T1114",
+   "name": "Email Collection",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    41
+   ],
+   "evidence": "Prior to data encryption, Gunra actors collect sensitive victim data as part of their double-extortion strategy. The FBI observed actors collecting files from victims that included business-critical documents, databases, personally identifiable information (PII), and internal email communications [ TA0009 ][ T1114 ]. Gunra actors’ custom support for filtering redundant system files during initial discovery/file system reconnaissance streamlines the actors’ collection of user-specific data from local victim machines [ T1005 ]."
+  },
+  {
+   "id": "T1133",
+   "name": "External Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "KPNA observed that against one victim, Gunra actors gained access to an administrator account for a secure socket layer (SSL)-VPN appliance [ T1133 ] by exploiting default credentials when account lockout controls were not present [ T1078.001 ][ T1078.002 ]. The actors subsequently downloaded OpenSSH (an SSH tunneling tool) [ T1105 ] from an external attacker-controlled server to establish connections between compromised systems and maintain persistence in the victim’s environment [ T1572 ]."
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    24
+   ],
+   "evidence": "The FBI observed Gunra actors obtaining initial access [ TA0001 ] primarily through the exploitation of known vulnerabilities in internet-facing devices [ T1190 ], including firewall and VPN appliances. The FBI observed exploits based on the following Common Vulnerabilities and Exposures (CVEs):"
+  },
+  {
+   "id": "T1486",
+   "name": "Data Encrypted for Impact",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    43,
+    45
+   ],
+   "evidence": "In addition to collecting business-critical documents, the KNPA identified a victim case in which Gunra actors connected to the VDI environments of IT personnel and collected sensitive documents containing system and network configuration information [ T1005 ]. The actors then leveraged enterprise server credentials stolen from a system access control server to deploy ransomware to encrypt key assets, including database servers and network attached storage (NAS) systems [ T1486 ]."
+  },
+  {
+   "id": "T1490",
+   "name": "Inhibit System Recovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    49,
+    51
+   ],
+   "evidence": "To increase the likelihood of ransom payment and prevent system recovery [ T1490 ], Gunra actors also used Windows Management Instrumentation (WMI) [ T1047 ] to initiate deletion of volume shadow copies prior to encryption, as demonstrated in the following example [ T1059.003 ]: 13"
+  },
+  {
+   "id": "T1530",
+   "name": "Data from Cloud Storage",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    42
+   ],
+   "evidence": "The FBI observed Gunra actors use a malicious executable ( main.exe ) to exfiltrate victim data from Microsoft OneDrive and SharePoint [ T1530 ]. For at least one known Gunra victim, the actors generated compressed archives with sensitive data [ T1560 ] and exfiltrated the archives to the file-sharing service Mega [ T1567 ]; the volume of exfiltrated data ranged up to tens of terabytes. 10"
+  },
+  {
+   "id": "T1539",
+   "name": "Steal Web Session Cookie",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    34
+   ],
+   "evidence": "For one victim, Gunra actors manipulated the network traffic control functionality of an SSL-VPN appliance to collect credentials and session information transmitted by users authenticating to a corporate VDI authentication portal [ T1040 ]. The actors then used stolen session cookies to conduct session hijacking [ T1539 ], impersonating legitimate users to gain access to the internal network."
+  },
+  {
+   "id": "T1550.002",
+   "name": "Pass the Hash",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    33
+   ],
+   "evidence": "The FBI observed multiple instances of Gunra actors using secretsdump.py (another Impacket library) to conduct OS credential dumping [ T1003.003 ] against compromised domain controllers to extract password hashes of user accounts from the NT Directory Services (NTDS) file. This enabled pass-the-hash [ T1550.002 ] or pass-the-ticket [ T1550.003 ] attacks for lateral movement into other privileged systems."
+  },
+  {
+   "id": "T1550.003",
+   "name": "Pass the Ticket",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    33
+   ],
+   "evidence": "The FBI observed multiple instances of Gunra actors using secretsdump.py (another Impacket library) to conduct OS credential dumping [ T1003.003 ] against compromised domain controllers to extract password hashes of user accounts from the NT Directory Services (NTDS) file. This enabled pass-the-hash [ T1550.002 ] or pass-the-ticket [ T1550.003 ] attacks for lateral movement into other privileged systems."
+  },
+  {
+   "id": "T1555",
+   "name": "Credentials from Password Stores",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    36
+   ],
+   "evidence": "Additionally, the actors accessed a Hiware system access control server via SSH from a compromised virtual desktop and stole a symmetric encryption key stored on the server. The stolen key enabled the actors to decrypt passwords for enterprise server accounts stored within the database [ T1555 ] and perform credential dumping of credentials associated with all enterprise servers [ T1003 ]."
+  },
+  {
+   "id": "T1556.006",
+   "name": "Multi-Factor Authentication",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    35
+   ],
+   "evidence": "For the same victim, the Gunra actors modified authentication processing files on the corporate VDI authentication portal server to allow successful authentication when a specific, Gunra-designated one time password (OTP) value was entered, thereby enabling the continuous bypass of multi-factor authentication (MFA) [ T1556.006 ]."
+  },
+  {
+   "id": "T1560",
+   "name": "Archive Collected Data",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    42
+   ],
+   "evidence": "The FBI observed Gunra actors use a malicious executable ( main.exe ) to exfiltrate victim data from Microsoft OneDrive and SharePoint [ T1530 ]. For at least one known Gunra victim, the actors generated compressed archives with sensitive data [ T1560 ] and exfiltrated the archives to the file-sharing service Mega [ T1567 ]; the volume of exfiltrated data ranged up to tens of terabytes. 10"
+  },
+  {
+   "id": "T1567",
+   "name": "Exfiltration Over Web Service",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    42
+   ],
+   "evidence": "The FBI observed Gunra actors use a malicious executable ( main.exe ) to exfiltrate victim data from Microsoft OneDrive and SharePoint [ T1530 ]. For at least one known Gunra victim, the actors generated compressed archives with sensitive data [ T1560 ] and exfiltrated the archives to the file-sharing service Mega [ T1567 ]; the volume of exfiltrated data ranged up to tens of terabytes. 10"
+  },
+  {
+   "id": "T1572",
+   "name": "Protocol Tunneling",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    30
+   ],
+   "evidence": "KPNA observed that against one victim, Gunra actors gained access to an administrator account for a secure socket layer (SSL)-VPN appliance [ T1133 ] by exploiting default credentials when account lockout controls were not present [ T1078.001 ][ T1078.002 ]. The actors subsequently downloaded OpenSSH (an SSH tunneling tool) [ T1105 ] from an external attacker-controlled server to establish connections between compromised systems and maintain persistence in the victim’s environment [ T1572 ]."
+  },
+  {
+   "id": "T1622",
+   "name": "Debugger Evasion",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    38
+   ],
+   "evidence": "The ransomware binary is self-contained and performs full volume encryption without observable network indicators (e.g., domain name system, HTTP). 6 The Windows binary includes the IsDebuggerPresent API [ T1622 ], which defends against reverse engineering by detecting if the application is being run in a debugger. 7"
+  },
+  {
+   "id": "T1657",
+   "name": "Financial Theft",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    47
+   ],
+   "evidence": "In their ransom notes, Gunra actors typically demand that victims initiate negotiation discussions within five to seven days via a Tor-based negotiation portal or qTox, or risk having their data leaked on Gunra’s DLS. The FBI observed Gunra actors attempting to communicate directly with management staff at victim companies via email to solicit ransom payments with limited success. Gunra actors instructed victims to send ransom payments to specific cryptocurrency wallet addresses [ T1657 ] and generally started negotiations at arbitrarily high ransom amounts (over tens of millions in US dollars"
+  },
+  {
+   "id": "T1678",
+   "name": "Delay Execution",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    37
+   ],
+   "evidence": "Gunra employs multiple stealth and defense impairment techniques to hinder detection and analysis. While active within victim networks, Gunra actors typically attempt to mask their presence by deleting system/network access logs [ T1685 ] and clearing command history [ T1070.003 ]. Additionally, to evade administrator detection, Gunra actors primarily conduct malicious activities and internal infrastructure reconnaissance [ T1049 ] during late-night and early-morning hours (10:00 p.m. – 06:00 a.m.) [ T1678 ]."
+  },
+  {
+   "id": "T1679",
+   "name": "Selective Exclusion",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    39
+   ],
+   "evidence": "To avoid dedicating encryption resources to non-critical files, the binary includes filtering logic to exclude common system directories (e.g., C:\\Windows , C:\\Program Files , C:\\Program Files (x86) ) from the file system reconnaissance [ T1679 ]. For files that pass the initial filter, the binary checks against a second set of filter rules that exclude file extensions related to system-critical files (e.g., .exe , .dll , .sys ). Files with extensions consistent with user data (e.g., documents, databases, images, archives) are approved and added to the work queue for data encryption. 8"
+  },
+  {
+   "id": "T1685",
+   "name": "Disable or Modify Tools",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    37
+   ],
+   "evidence": "Gunra employs multiple stealth and defense impairment techniques to hinder detection and analysis. While active within victim networks, Gunra actors typically attempt to mask their presence by deleting system/network access logs [ T1685 ] and clearing command history [ T1070.003 ]. Additionally, to evade administrator detection, Gunra actors primarily conduct malicious activities and internal infrastructure reconnaissance [ T1049 ] during late-night and early-morning hours (10:00 p.m. – 06:00 a.m.) [ T1678 ]."
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "OS Credential Dumping | T1003 | Gunra actors used a stolen symmetric encryption key from a Hiware system access control server to decrypt and dump stored enterprise server passwords."
+  },
+  {
+   "id": "T1003.003",
+   "name": "NTDS",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "OS Credential Dumping: NTDS | T1003.003 | Gunra actors used secretsdump.py on multiple victim domain controllers to extract password hashes for user accounts from the NTDS files."
+  },
+  {
+   "id": "T1005",
+   "name": "Data from Local System",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Data from Local System | T1005 | The Gunra ransomware binary recursed through the full directory structure of a compromised device to identify user-data files and directories for targeted exfiltration and subsequent encryption. In one instance, Gunra actors were observed collecting system and networ"
+  },
+  {
+   "id": "T1021.001",
+   "name": "Remote Desktop Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote Services: Remote Desktop Protocol | T1021.001 | Gunra actors used stolen VDI session information to access a victim’s internal VDI environment, then moved laterally via RDP to access the victim’s VDI authentication web server, internal AD server, and IT staff virtual desktops."
+  },
+  {
+   "id": "T1021.002",
+   "name": "SMB/Windows Admin Shares",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote Services: SMB/Windows Admin Shares | T1021.002 | Gunra actors used SMB administrative shares with valid credentials to move laterally and deploy tools across compromised systems."
+  },
+  {
+   "id": "T1040",
+   "name": "Network Sniffing",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Network Sniffing | T1040 | Gunra actors abused SSL-VPN network traffic controls to capture users’ VDI login credentials and session information in transit, effectively sniffing authentication traffic for a victim network."
+  },
+  {
+   "id": "T1047",
+   "name": "Windows Management Instrumentation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Windows Management Instrumentation | T1047 | The Gunra ransomware binary contained specific WMI commands to delete volume shadow copies on victim machines."
+  },
+  {
+   "id": "T1048",
+   "name": "Exfiltration Over Alternative Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over Alternative Protocol | T1048 | Gunra actors used Filezilla software to exfiltrate data over FTP."
+  },
+  {
+   "id": "T1049",
+   "name": "System Network Connections Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "System Network Connections Discovery | T1049 | Gunra actors enumerated active system network connections to map reachable internal infrastructure prior to ransomware deployment."
+  },
+  {
+   "id": "T1059.003",
+   "name": "Windows Command Shell",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Command and Scripting Interpreter: Windows Command Shell | T1059.003 | Gunra actors executed commands via cmd.exe on Windows to initiate the WMI command."
+  },
+  {
+   "id": "T1070.003",
+   "name": "Clear Command History",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Indicator Removal: Clear Command History | T1070.003 | Gunra actors cleared command history files on victim machines to prevent detection of their malicious activity."
+  },
+  {
+   "id": "T1078.001",
+   "name": "Default Accounts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Valid Accounts: Default Accounts | T1078.001 | Gunra actors compromised an SSL-VPN appliance by exploiting default credentials and the absence of account lockout controls to obtain administrator access to the victim network device."
+  },
+  {
+   "id": "T1078.002",
+   "name": "Domain Accounts",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Valid Accounts: Domain Accounts | T1078.002 | Gunra actors gained access to an administrator account for an SSL appliance."
+  },
+  {
+   "id": "T1083",
+   "name": "File and Directory Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "File and Directory Discovery | T1083 | The Gunra ransomware binary contains custom instructions to enumerate the complete directory structure of victim machines to identify user-data files and directories for encryption."
+  },
+  {
+   "id": "T1098",
+   "name": "Account Manipulation",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Account Manipulation | T1098 | Gunra actors gained access to an unused account for a victim network. They altered the account configuration to bypass the mandatory password change requirement, which allowed them to use the compromised account for subsequent malicious activities."
+  },
+  {
+   "id": "T1105",
+   "name": "Ingress Tool Transfer",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Ingress Tool Transfer | T1105 | After obtaining admin access to a victim’s SSL-VPN appliance, Gunra actors downloaded an SSH tunneling tool from an external server to create and maintain persistent tunnel connections to compromised systems in the victim’s network."
+  },
+  {
+   "id": "T1106",
+   "name": "Native API",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Native API | T1106 | The Gunra ransomware binary utilized Native APIs ( FindFirstFileW , FindNextFileW ) for file system discovery."
+  },
+  {
+   "id": "T1114",
+   "name": "Email Collection",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Email Collection | T1114 | Gunra actors collected internal email communications."
+  },
+  {
+   "id": "T1133",
+   "name": "External Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "External Remote Services | T1133 | Gunra actors used external-facing remote services in combination with an administrator account to gain access."
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploit Public-Facing Application | T1190 | Gunra actors exploited vulnerabilities in FortiGate firewall and SSL-VPN appliances to gain initial access to victim networks."
+  },
+  {
+   "id": "T1486",
+   "name": "Data Encrypted for Impact",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Data Encrypted for Impact | T1486 | Gunra actors encrypt victim data using combined ChaCha20 + RSA-4096 algorithms to prevent victim access to critical business files. Gunra encryptors are available for Windows and Linux, increasing the potential attack surface within a victim network. In one instan"
+  },
+  {
+   "id": "T1490",
+   "name": "Inhibit System Recovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Inhibit System Recovery | T1490 | To augment encryption of critical data on victim networks and prevent system recovery, Gunra actors disable backup features, such as volume shadow copies. In one instance, Gunra actors prevented restoration from backups by deleting backup and archived data stored at"
+  },
+  {
+   "id": "T1530",
+   "name": "Data from Cloud Storage",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Data from Cloud Storage | T1530 | Gunra actors launched a malicious application ( main.exe ) that specifically targeted Microsoft Cloud Services (OneDrive and SharePoint) for data exfiltration."
+  },
+  {
+   "id": "T1539",
+   "name": "Steal Web Session Cookie",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Steal Web Session Cookie | T1539 | Gunra actors captured legitimate VDI session data for a victim, which allowed them to steal and reuse session cookies to hijack active sessions and impersonate legitimate users on the internal victim network."
+  },
+  {
+   "id": "T1550.002",
+   "name": "Pass the Hash",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Use Alternate Authentication Material: Pass the Hash | T1550.002 | Gunra actors used pass-the-hash methods to move laterally to privileged systems."
+  },
+  {
+   "id": "T1550.003",
+   "name": "Pass the Ticket",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Use Alternate Authentication Material: Pass the Ticket | T1550.003 | Gunra actors used pass-the-ticket methods to move laterally to privileged systems."
+  },
+  {
+   "id": "T1555",
+   "name": "Credentials from Password Stores",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Credentials from Password Stores | T1555 | From a compromised virtual desktop, Gunra actors accessed the Hiware access control server for a victim and stole its symmetric encryption key."
+  },
+  {
+   "id": "T1556.006",
+   "name": "Multi-Factor Authentication",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Modify Authentication Process: Multi-Factor Authentication | T1556.006 | Gunra actors altered files in a victim’s VDI authentication server portal so that a specific attacker-chosen OTP always succeeded, creating a persistent backdoor that bypassed MFA."
+  },
+  {
+   "id": "T1560",
+   "name": "Archive Collected Data",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Archive Collected Data | T1560 | Gunra actors were observed utilizing tools such as 7-Zip, WinRAR, RClone, and others to copy and archive victim data for exfiltration."
+  },
+  {
+   "id": "T1567",
+   "name": "Exfiltration Over Web Service",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over Web Service | T1567 | Gunra actors were observed archiving victim data and exfiltrating it over the file-sharing service Mega."
+  },
+  {
+   "id": "T1572",
+   "name": "Protocol Tunneling",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Protocol Tunneling | T1572 | Gunra actors used an SSH tunneling tool to establish connections and maintain persistence between compromised systems."
+  },
+  {
+   "id": "T1622",
+   "name": "Debugger Evasion",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Debugger Evasion | T1622 | The Gunra ransomware Windows encryptor binary contained the IsDebuggerPresent API to defend against reverse engineering and debugging activity."
+  },
+  {
+   "id": "T1657",
+   "name": "Financial Theft",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Financial Theft | T1657 | Under the double-extortion model, Gunra actors demand ransom payment through a ransom note ( R34DM3.txt ) in cryptocurrency. The note instructs victims to make the payment to prevent public leaks of their sensitive business data and acquire decryption keys to unlock encrypt"
+  },
+  {
+   "id": "T1678",
+   "name": "Delay Execution",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Delay Execution | T1678 | Gunra actors strategically timed their reconnaissance and malicious network activities to late night or early morning to avoid detection by the victim."
+  },
+  {
+   "id": "T1679",
+   "name": "Selective Exclusion",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Selective Exclusion | T1679 | The Gunra ransomware binary programmatically excludes certain directories and filetypes from encryption to ensure system critical files continue to function and that ransom notes are readable. In addition, the binary contains logic to prevent re-encryption of already Gu"
+  },
+  {
+   "id": "T1685",
+   "name": "Disable or Modify Tools",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Disable or Modify Tools | T1685 | Gunra actors cleared system/network logs on victim machines to prevent detection of their malicious activity."
+  }
+ ],
+ "n_inline": 36,
+ "n_table": 36,
+ "n_union": 36,
+ "n_inline_not_active": 0,
+ "n_table_not_active": 0
+}

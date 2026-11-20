@@ -1,0 +1,69 @@
+Note: This updated joint Cybersecurity Advisory reflects new investigative and analytic insights for network defenders on malicious cyber activities conducted by advanced persistent threat (APT) cyber actors affiliated with the Iranian Government’s Islamic Revolutionary Guard Corps (IRGC). This advisory includes recent and historically observed tactics, techniques, and procedures (TTPs) to help organizations protect their critical infrastructure systems against such activities.
+
+Originally published Dec. 1, 2023, updates to this advisory include:
+
+Dec. 18, 2024
+
+New information on the extent of the activity, including newly observed TTPs employed by IRGC-affiliated APT cyber actors targeting U.S. and global critical infrastructure.
+
+Mapping of these newly observed TTPs to additional MITRE ATT&CK® Tactics and Techniques.
+
+New recommended mitigations that organizations should take to protect their infrastructure, based on the new TTPs.
+
+The Federal Bureau of Investigation (FBI), the Cybersecurity and Infrastructure Security Agency (CISA), the National Security Agency (NSA), the Environmental Protection Agency (EPA), the Israel National Cyber Directorate (INCD), the Canadian Centre for Cyber Security (CCCS), and the United Kingdom’s National Cyber Security Centre (NCSC)—hereafter referred to as “the authoring agencies”—are releasing this updated joint advisory to warn network defenders of continued malicious cyber activity by IRGC-affiliated APT cyber actors. This joint advisory provides TTPs obtained from extensive FBI investigation on this activity.
+
+The Iranian Government charged the IRGC, an armed force, with defending Iran’s revolutionary regime from perceived internal and external threats. The IRGC is designated as a foreign terrorist organization by the United States and Canada. In November 2023, IRGC-affiliated cyber actors using the persona “CyberAv3ngers” began actively targeting and compromising Israeli-made Unitronics Vision Series programmable logic controllers (PLCs) and human machine interfaces (HMIs). The IRGC-affiliated cyber actors left a defacement image stating, “You have been hacked, down with Israel. Every equipment ‘made in Israel’ is CyberAv3ngers legal target.” The victims spanned multiple U.S. states and foreign countries. These PLCs are commonly used in the Water and Wastewater Systems (WWS) Sector and used in other industries including, but not limited to, energy, food and beverage manufacturing, transportation systems, and healthcare. The PLCs may be rebranded and appear as originating from different manufacturers and companies.
+
+Complementing a previously published CISA Alert, the authoring agencies are releasing this updated joint advisory to share TTPs associated with IRGC cyber operations. The authoring agencies urge all organizations, especially those within critical infrastructure sectors, to apply the recommendations listed in the Mitigations section of this advisory to reduce the risk of compromise from these IRGC-affiliated cyber actors.
+
+This advisory provides observed TTPs the authoring agencies assess are likely associated with this IRGC-affiliated APT. The late 2023 campaign conducted by CyberAv3ngers compromised additional Unitronics version types, including older PLC models, than were previously outlined. The IRGC-affiliated APT cyber actors also developed custom ladder logic files to download for each of these device types. Previously unreported TTPs also outline how the actors supplanted existing ladder logic files with their own, renamed devices likely to forestall owner access, reset software versions to older versions, disabled upload and download functions, and changed the default port numbers. With this type of access, deeper device and network level accesses are available and could render additional, more profound cyber-physical effects on processes and equipment. Additionally, the NCSC observed the targeting of PLC devices, including in the United Kingdom, likely as part of a wider cyber campaign against Israel and Israeli-made technology. This targeting of PLCs poses an ongoing risk to UK organizations that utilize these components in their operational technology (OT) systems. For more information on Iranian state-sponsored malicious cyber activity, see CISA’s Iran Cyber Threat Overview and Advisories webpage and the FBI’s Iran Threat webpage.
+
+For a downloadable copy of the indicators of compromise (IOCs), see:
+
+Note: These IOCs are from the original joint advisory published Dec. 1, 2023, and are not current.
+
+Note: This advisory uses the MITRE ATT&CK ® Matrix for Enterprise framework, version 16. See Table 1 through Table 4 for threat actor activity mapped to MITRE ATT&CK tactics and techniques. For assistance with mapping malicious cyber activity to the MITRE ATT&CK framework, see CISA and MITRE ATT&CK’s Best Practices for MITRE ATT&CK Mapping and CISA’s Decider Tool.
+
+CyberAv3ngers is an Iranian IRGC-affiliated cyber persona (also known as CyberAveng3rs or Cyber Avengers) that has claimed responsibility for numerous attacks against critical infrastructure organizations primarily in the water and energy sectors in the United States, Israel, and other countries. Since 2020, CyberAv3ngers has claimed responsibility for cyberattacks in Israel, although several of these claimed compromises of critical infrastructure organizations in Israel are false. In October 2023, CyberAv3ngers claimed credit on their Telegram Channel for cyberattacks against Israel-based PLCs. The PLCs were internet-facing, used Unitronics’ default passwords or no password, and connected to default ports—vulnerabilities that were likely exploited by the actors. CyberAv3ngers also reportedly has connections to another IRGC-linked group known as Soldiers of Solomon. The observed activity includes the following:
+
+Between Sept. 13, 2023, and Oct. 30, 2023, the CyberAv3ngers Telegram channel displayed both legitimate and false claims of multiple cyberattacks against Israel. CyberAv3ngers targeted Israeli PLCs in the water, energy, shipping, and distribution sectors.
+
+Beginning on Nov. 22, 2023, IRGC cyber actors accessed multiple U.S.-based WWS facilities that operate HMI-capable Unitronics Vision Series PLCs likely by compromising internet accessible devices with default or no passwords. The targeted PLCs displayed the defacement message, “You have been hacked, down with Israel. Every equipment ‘made in Israel’ is Cyberav3ngers legal target.”
+
+(Update Dec. 18, 2024)
+
+Between November 2023 and January 2024, CyberAv3ngers targeted U.S.-based Unitronics PLC devices used in multiple critical infrastructure industries, including the WWS Sector, likely in four separate waves of cyberattacks. The actors compromised at least 75 devices, including at least 34 in the WWS Sector in the United States.
+
+The actors compromised multiple Unitronics Vision Series devices by authenticating to internet-connected devices with communications set to the default TCP port 20256. These devices either had a default password in place or no password. The actors made multiple changes to the devices to disrupt their functions and prevent remote operators from connecting to the devices to remediate the problem. Actions taken by the actors included the following:
+
+The actors erased the original ladder logic file on the device and downloaded their own. Their ladder logic file contained no inputs or outputs. Since the programmed ladder logic is responsible for directing the functioning of the device, the replacement ladder logic file prevented the compromised devices from operating as intended.
+
+The actors renamed the compromised devices, which delayed the device operators from accessing the devices remotely as the device name was a required field for facilitating remote connections.
+
+The actors set the software version of their ladder logic file to an older version. Resetting the software version prevented the device operators from communicating with the PLC using their engineering workstation. This could only be resolved if the engineering workstation’s software version changed to match the software version of the new ladder logic file or if the PLC device was factory reset so the ladder logic would be the latest software version.
+
+The actors disabled the upload and download functions of the PLC device to prevent the device operators from taking down the splash page. Additionally, the actors enabled password protection for the upload settings, preventing device operators from changing the programming remotely.
+
+The actors changed the default port number for communicating remotely with the PLC device (from 20256 to 20257 ).
+
+The actors did not burn their ladder logic file to the device, preventing the retrieval of the ladder logic file from the device.
+
+The actors uploaded a splash page with the aforementioned defacement message to the HMI screen, which prevented operators from reading anything the display screen would normally show, such as input and output readings. In at least one instance the actors displayed a text file with the same message on an older device that could not display a graphic image.
+
+Multiple versions of the Unitronics devices were compromised, including older models. The actors developed custom ladder logic files to download for each device type.
+
+With this type of access, and depending on the device’s configuration, deeper device and network level accesses are available and could render additional, more profound cyber-physical effects on processes and equipment. Organizations should consider and evaluate their systems for these possibilities.
+
+(Update End)
+
+U.S. organizations are encouraged to report suspicious or criminal activity related to information in this advisory to:
+
+CISA via CISA’s 24/7 Operations Center ( Contact@mail.cisa.dhs.gov or 884-729-2472) or your local FBI field office. When available, please include the following information regarding the incident: date, time, and location of the incident; type of activity; number of people affected; type of equipment used for the activity; the name of the submitting company or organization; and a designated point of contact.
+
+For NSA cybersecurity guidance inquiries, contact CybersecurityReports@nsa.gov.
+
+State, local, tribal, and territorial governments should report incidents to the MS-ISAC ( SOC@cisecurity.org or 866-787-4722).
+
+Canadian organizations are encouraged to report incidents by emailing CCCS at contact@cyber.gc.ca.
+
+U.K. organizations are encouraged to report incidents to https://report.ncsc.gov.uk/ (monitored 24 hours).

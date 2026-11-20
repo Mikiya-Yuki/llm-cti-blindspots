@@ -1,0 +1,215 @@
+{
+ "case_id": "AA23-325A",
+ "authoring_agencies": [
+  {
+   "name": "Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "The Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "Federal Bureau of Investigation (FBI)",
+   "quote": "Federal Bureau of Investigation (FBI)"
+  },
+  {
+   "name": "Multi-State Information Sharing & Analysis Center (MS-ISAC)",
+   "quote": "Multi-State Information Sharing & Analysis Center (MS-ISAC)"
+  },
+  {
+   "name": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)",
+   "quote": "Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "LockBit 3.0 affiliates (also 'LockBit 3.0 ransomware affiliates')",
+   "kind": "primary",
+   "quote": "Boeing observed LockBit 3.0 affiliates exploiting CVE-2023-4966"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "to disseminate IOCs, TTPs, and detection methods associated with LockBit 3.0 ransomware exploiting CVE-2023-4966, labeled Citrix Bleed",
+   "attributing_party": "the authoring organizations (CISA, FBI, MS-ISAC, ASD’s ACSC)",
+   "attributed_to": "LockBit 3.0 ransomware (criminal ransomware operation)",
+   "strength_markers": [
+    "associated with"
+   ]
+  },
+  {
+   "quote": "Boeing observed LockBit 3.0 affiliates exploiting CVE-2023-4966, to obtain initial access to Boeing Distribution Inc., its parts and distribution business that maintains a separate environment.",
+   "attributing_party": "Boeing",
+   "attributed_to": "LockBit 3.0 affiliates (ransomware affiliates)",
+   "strength_markers": [
+    "observed"
+   ]
+  },
+  {
+   "quote": "Other trusted third parties have observed similar activity impacting their organization.",
+   "attributing_party": "other trusted third parties",
+   "attributed_to": "'similar activity' (implicitly LockBit 3.0 affiliates exploiting CVE-2023-4966)",
+   "strength_markers": [
+    "observed",
+    "similar activity"
+   ]
+  },
+  {
+   "quote": "Citrix Bleed, known to be leveraged by LockBit 3.0 affiliates",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "LockBit 3.0 affiliates",
+   "strength_markers": [
+    "known to be leveraged"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A0",
+ "attribution_strength_rationale": "The activity is attributed only to criminal ransomware actors ('LockBit 3.0 affiliates', 'LockBit 3.0 ransomware'), e.g., 'Boeing observed LockBit 3.0 affiliates exploiting CVE-2023-4966', with no state, government, or state-linked wording anywhere in the text.",
+ "malware_tools": [
+  {
+   "name": "LockBit 3.0 (ransomware)",
+   "category": "ransomware",
+   "core": true,
+   "quote": "associated with LockBit 3.0 ransomware exploiting CVE-2023-4966"
+  },
+  {
+   "name": "adobelib.dll — malicious DLL written by PowerShell script 123.ps1 and run via rundll32 with a 104-hex-character key (unnamed 'malware identified in this campaign'; filenames are also IOCs)",
+   "category": "other",
+   "core": false,
+   "quote": "The resulting file ( adobelib.dll ) is then executed by the PowerShell script using rundll32."
+  },
+  {
+   "name": "AnyDesk",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have been observed using AnyDesk and Splashtop remote management and monitoring (RMM)"
+  },
+  {
+   "name": "Splashtop",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have been observed using AnyDesk and Splashtop remote management and monitoring (RMM)"
+  },
+  {
+   "name": "PowerShell (scripts)",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "Malware identified in this campaign is generated beginning with the execution of a PowerShell script ( 123.ps1 )"
+  },
+  {
+   "name": "Batch scripts",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "Batch and PowerShell scripts"
+  },
+  {
+   "name": "mshta.exe (execution of HTA files)",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "the execution of HTA files using the Windows native utility mshta.exe"
+  },
+  {
+   "name": "rundll32",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "is then executed by the PowerShell script using rundll32"
+  }
+ ],
+ "vulnerabilities": [
+  {
+   "cve": "CVE-2023-4966",
+   "product": "Citrix NetScaler web application delivery control (ADC) and NetScaler Gateway appliances (labeled 'Citrix Bleed')",
+   "core": true,
+   "quote": "LockBit 3.0 ransomware exploiting CVE-2023-4966, labeled Citrix Bleed, affecting Citrix NetScaler web application delivery control (ADC) and NetScaler Gateway appliances"
+  }
+ ],
+ "affected_products_or_technologies": [
+  {
+   "name": "Citrix NetScaler ADC and NetScaler Gateway appliances (also the CVE-2023-4966 product; separately emphasized in mitigations)",
+   "core": true,
+   "quote": "which include isolating NetScaler ADC and Gateway appliances and applying necessary software updates through the Citrix Knowledge Center"
+  },
+  {
+   "name": "affected versions: NetScaler ADC and NetScaler Gateway 14.1 before 14.1-8.50; 13.1 before 13.1-49.15; 13.0 before 13.0-92.19; version 12.1 (EOL); NetScaler ADC 13.1FIPS before 13.1-37.163; NetScaler ADC 12.1-FIPS before 12.1-55.300; NetScaler ADC 12.1-NDcPP before 12.1-55.300",
+   "core": false,
+   "quote": "This critical vulnerability exploit impacts the following software versions:\n\nNetScaler ADC and NetScaler Gateway 14.1 before 14.1-8.50"
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "education (historical LockBit 3.0 targeting)",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have conducted attacks against organizations of varying sizes across multiple critical infrastructure sectors, including education, energy, financial services, food and agriculture, government and emergency services, healthcare, manufacturing, and transportation."
+  },
+  {
+   "sector": "energy (historical)",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have conducted attacks against organizations of varying sizes across multiple critical infrastructure sectors, including education, energy, financial services, food and agriculture, government and emergency services, healthcare, manufacturing, and transportation."
+  },
+  {
+   "sector": "financial services (historical)",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have conducted attacks against organizations of varying sizes across multiple critical infrastructure sectors, including education, energy, financial services, food and agriculture, government and emergency services, healthcare, manufacturing, and transportation."
+  },
+  {
+   "sector": "food and agriculture (historical)",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have conducted attacks against organizations of varying sizes across multiple critical infrastructure sectors, including education, energy, financial services, food and agriculture, government and emergency services, healthcare, manufacturing, and transportation."
+  },
+  {
+   "sector": "government and emergency services (historical)",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have conducted attacks against organizations of varying sizes across multiple critical infrastructure sectors, including education, energy, financial services, food and agriculture, government and emergency services, healthcare, manufacturing, and transportation."
+  },
+  {
+   "sector": "healthcare (historical)",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have conducted attacks against organizations of varying sizes across multiple critical infrastructure sectors, including education, energy, financial services, food and agriculture, government and emergency services, healthcare, manufacturing, and transportation."
+  },
+  {
+   "sector": "manufacturing (historical)",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have conducted attacks against organizations of varying sizes across multiple critical infrastructure sectors, including education, energy, financial services, food and agriculture, government and emergency services, healthcare, manufacturing, and transportation."
+  },
+  {
+   "sector": "transportation (historical)",
+   "core": false,
+   "quote": "LockBit 3.0 affiliates have conducted attacks against organizations of varying sizes across multiple critical infrastructure sectors, including education, energy, financial services, food and agriculture, government and emergency services, healthcare, manufacturing, and transportation."
+  },
+  {
+   "sector": "critical infrastructure sectors (umbrella; historical)",
+   "core": false,
+   "quote": "across multiple critical infrastructure sectors"
+  },
+  {
+   "sector": "parts and distribution business (Boeing Distribution Inc., the observed victim in this campaign)",
+   "core": false,
+   "quote": "Boeing Distribution Inc., its parts and distribution business that maintains a separate environment"
+  }
+ ],
+ "target_regions": [],
+ "named_victims": [
+  {
+   "name": "Boeing Distribution Inc. (Boeing's parts and distribution business)",
+   "quote": "to obtain initial access to Boeing Distribution Inc., its parts and distribution business that maintains a separate environment"
+  }
+ ],
+ "dates": [
+  {
+   "expression": "as early as August 2023",
+   "meaning": "earliest identified exploitation activity of CVE-2023-4966 (Citrix Bleed)",
+   "core": true,
+   "quote": "with exploitation activity identified as early as August 2023"
+  },
+  {
+   "expression": "Oct. 10, 2023",
+   "meaning": "Citrix publicly disclosed CVE-2023-4966 in its Citrix Security Bulletin",
+   "core": false,
+   "quote": "Citrix publicly disclosed CVE-2023-4966 on Oct. 10, 2023, within their Citrix Security Bulletin"
+  },
+  {
+   "expression": "as of November 16, 2023",
+   "meaning": "observation date: the malware's C2 domain resolved to the listed IP addresses as of this date",
+   "core": false,
+   "quote": "which resolves to IP addresses 172.67.129[.]176 and 104.21.1[.]180 as of November 16, 2023"
+  }
+ ],
+ "notes": "Financially motivated ransomware case: the actors are 'LockBit 3.0 affiliates' (ransomware affiliates; the primary designation could equally be classed affiliate_label). No state, government or nation-state wording appears → A0. A model naming 'LockBit'/'LockBit 3.0' as the actor is acceptable but imprecise (LockBit 3.0 is the ransomware variant; the actors are its affiliates). Boeing is NOT an authoring agency; it 'voluntarily shared' TTPs/IOCs and observed the intrusion. The named victim is Boeing Distribution Inc., 'its parts and distribution business' — a model naming 'Boeing' as the victim should be accepted. 'Aerospace' is NOT stated anywhere in the text (outside-knowledge inference from Boeing's identity). 'Other trusted third parties' observed similar activity (unnamed). VULNERABILITY: CVE-2023-4966 = 'Citrix Bleed'; crafted HTTP GET request with a crafted Host header makes vulnerable appliances return memory containing a valid NetScaler AAA session cookie → session hijacking that bypasses passwords and MFA; CISA added it to the KEV Catalog. The version list is one combined item (core=false). SECTORS: the sector list is explicitly historical ('Historically, LockBit 3.0 affiliates have conducted attacks...') and not specific to the Citrix Bleed activity, so all sectors are core=false per the historical-context rule. 'Private and public networks' (expected widespread exploitation) is generic and not listed. REGIONS: no target countries or regions are stated (Australia appears only via ASD’s ACSC as an authoring agency/source of TTPs); target_regions is intentionally empty and any country a model adds is unsupported. MALWARE: the campaign malware has no family name in the text; it is described only by filenames (PowerShell script 123.ps1 → adobelib.dll, executed with rundll32 and a 104-hex-character key; POSTs to adobe-us-updatefiles[.]digital). These filenames, the domain and the IPs are IOCs; adobelib.dll is listed once (category 'other', core=false) only so mentions of it are not counted as hallucinations. The file and domain have 'no association with legitimate Adobe software' — Adobe is NOT an affected product. 'HTA files' are executed via mshta.exe (one item). 'MAR-10478915-1.v1 Citrix Bleed' is a companion Malware Analysis Report, not a tool. Dates: August 2023 = earliest exploitation (core); Oct. 10, 2023 = Citrix disclosure; November 16, 2023 = DNS-resolution observation date."
+}

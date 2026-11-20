@@ -1,0 +1,432 @@
+{
+ "case_id": "AA24-242A",
+ "authoring_agencies": [
+  {
+   "name": "Federal Bureau of Investigation (FBI)",
+   "quote": "Federal Bureau of Investigation (FBI)"
+  },
+  {
+   "name": "Cybersecurity and Infrastructure Security Agency (CISA)",
+   "quote": "Cybersecurity and Infrastructure Security Agency (CISA)"
+  },
+  {
+   "name": "Multi-State Information Sharing and Analysis Center (MS-ISAC)",
+   "quote": "Multi-State Information Sharing and Analysis Center (MS-ISAC)"
+  },
+  {
+   "name": "Department of Health and Human Services (HHS)",
+   "quote": "Department of Health and Human Services (HHS)"
+  }
+ ],
+ "actor_designations": [
+  {
+   "name": "RansomHub",
+   "kind": "primary",
+   "quote": "RansomHub is a ransomware-as-a-service variant"
+  },
+  {
+   "name": "Cyclops",
+   "kind": "alias",
+   "quote": "formerly known as Cyclops and Knight"
+  },
+  {
+   "name": "Knight",
+   "kind": "alias",
+   "quote": "formerly known as Cyclops and Knight"
+  },
+  {
+   "name": "RansomHub affiliates",
+   "kind": "affiliate_label",
+   "quote": "RansomHub affiliates typically compromise internet facing systems and user endpoints"
+  }
+ ],
+ "attribution_statements": [
+  {
+   "quote": "RansomHub is a ransomware-as-a-service variant—formerly known as Cyclops and Knight—that has established itself as an efficient and successful service model (recently attracting high-profile affiliates from other prominent variants such as LockBit and ALPHV).",
+   "attributing_party": "the authoring organizations (FBI, CISA, MS-ISAC, HHS)",
+   "attributed_to": "RansomHub ransomware-as-a-service (criminal); affiliates drawn from LockBit and ALPHV",
+   "strength_markers": [
+    "ransomware-as-a-service",
+    "formerly known as",
+    "affiliates"
+   ]
+  },
+  {
+   "quote": "These have been identified through FBI threat response activities and third-party reporting as recently as August 2024.",
+   "attributing_party": "FBI threat response activities and third-party reporting",
+   "attributed_to": "RansomHub (IOCs and TTPs)",
+   "strength_markers": [
+    "identified through"
+   ]
+  },
+  {
+   "quote": "The affiliates leverage a double-extortion model by encrypting systems and exfiltrating data to extort victims.",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "RansomHub affiliates (financially motivated extortion)",
+   "strength_markers": [
+    "double-extortion",
+    "extort"
+   ]
+  },
+  {
+   "quote": "It should be noted that data exfiltration methods are dependent on the affiliate conducting the network compromise.",
+   "attributing_party": "the authoring organizations",
+   "attributed_to": "individual RansomHub affiliates (TTPs vary by affiliate)",
+   "strength_markers": [
+    "dependent on the affiliate"
+   ]
+  },
+  {
+   "quote": "Cybersecurity researchers have observed affiliates renaming the ransomware executable with innocuous file names",
+   "attributing_party": "cybersecurity researchers",
+   "attributed_to": "RansomHub affiliates",
+   "strength_markers": [
+    "have observed"
+   ]
+  }
+ ],
+ "attribution_strength_code": "A0",
+ "attribution_strength_rationale": "The text describes RansomHub only as 'a ransomware-as-a-service variant' whose 'affiliates leverage a double-extortion model ... to extort victims' (affiliates drawn from 'LockBit and ALPHV'), with no state sponsorship or state linkage stated anywhere.",
+ "malware_tools": [
+  {
+   "name": "RansomHub",
+   "category": "ransomware",
+   "core": true,
+   "quote": "RansomHub is a ransomware-as-a-service variant"
+  },
+  {
+   "name": "Mimikatz",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "used Mimikatz on Windows systems to gather credentials and escalate privileges to SYSTEM"
+  },
+  {
+   "name": "Cobalt Strike",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP), PsExec, Anydesk, Connectwise, N-Able, Cobalt Strike, Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "name": "Metasploit",
+   "category": "commodity_or_open_source_tool",
+   "core": true,
+   "quote": "Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP), PsExec, Anydesk, Connectwise, N-Able, Cobalt Strike, Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "name": "Cyclops (former name of RansomHub)",
+   "category": "ransomware",
+   "core": false,
+   "quote": "formerly known as Cyclops and Knight"
+  },
+  {
+   "name": "Knight (former name of RansomHub)",
+   "category": "ransomware",
+   "core": false,
+   "quote": "formerly known as Cyclops and Knight"
+  },
+  {
+   "name": "LockBit (other variant; source of affiliates, not used here)",
+   "category": "ransomware",
+   "core": false,
+   "quote": "recently attracting high-profile affiliates from other prominent variants such as LockBit and ALPHV"
+  },
+  {
+   "name": "ALPHV (other variant; source of affiliates, not used here)",
+   "category": "ransomware",
+   "core": false,
+   "quote": "recently attracting high-profile affiliates from other prominent variants such as LockBit and ALPHV"
+  },
+  {
+   "name": "AngryIPScanner",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "RansomHub affiliates conduct network scanning with tools such as AngryIPScanner, Nmap, and PowerShell-based living off the land methods"
+  },
+  {
+   "name": "Nmap",
+   "category": "commodity_or_open_source_tool",
+   "core": false,
+   "quote": "RansomHub affiliates conduct network scanning with tools such as AngryIPScanner, Nmap, and PowerShell-based living off the land methods"
+  },
+  {
+   "name": "PowerShell",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "RansomHub affiliates conduct network scanning with tools such as AngryIPScanner, Nmap, and PowerShell-based living off the land methods"
+  },
+  {
+   "name": "Windows Management Instrumentation",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "Affiliates used Windows Management Instrumentation to disable antivirus products."
+  },
+  {
+   "name": "Remote Desktop Protocol (RDP)",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP), PsExec, Anydesk, Connectwise, N-Able, Cobalt Strike, Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "name": "PsExec",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP), PsExec, Anydesk, Connectwise, N-Able, Cobalt Strike, Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "name": "Anydesk",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP), PsExec, Anydesk, Connectwise, N-Able, Cobalt Strike, Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "name": "Connectwise",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP), PsExec, Anydesk, Connectwise, N-Able, Cobalt Strike, Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "name": "N-Able",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Affiliates then moved laterally inside the network through methods including Remote Desktop Protocol (RDP), PsExec, Anydesk, Connectwise, N-Able, Cobalt Strike, Metasploit, or other widely used command-and-control (C2) methods."
+  },
+  {
+   "name": "PuTTY",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Data exfiltration has been observed through the usage of tools such as PuTTY, Amazon AWS S3 buckets/tools, HTTP POST requests, WinSCP, Rclone, Cobalt Strike, Metasploit, and other methods."
+  },
+  {
+   "name": "Amazon AWS S3 buckets/tools",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Data exfiltration has been observed through the usage of tools such as PuTTY, Amazon AWS S3 buckets/tools, HTTP POST requests, WinSCP, Rclone, Cobalt Strike, Metasploit, and other methods."
+  },
+  {
+   "name": "WinSCP",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Data exfiltration has been observed through the usage of tools such as PuTTY, Amazon AWS S3 buckets/tools, HTTP POST requests, WinSCP, Rclone, Cobalt Strike, Metasploit, and other methods."
+  },
+  {
+   "name": "Rclone",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "Data exfiltration has been observed through the usage of tools such as PuTTY, Amazon AWS S3 buckets/tools, HTTP POST requests, WinSCP, Rclone, Cobalt Strike, Metasploit, and other methods."
+  },
+  {
+   "name": "vssadmin.exe",
+   "category": "built_in_os_utility",
+   "core": false,
+   "quote": "the ransomware executable typically leverages the vssadmin.exe program to delete volume shadow copies"
+  },
+  {
+   "name": "Tor browser (victim-facing contact channel, not an intrusion tool)",
+   "category": "rmm_or_legit_software",
+   "core": false,
+   "quote": "instructs them to contact the ransomware group via a unique.onion URL (reachable through the Tor browser)"
+  }
+ ],
+ "vulnerabilities": [
+  {
+   "cve": "CVE-2023-3519",
+   "product": "Citrix ADC (NetScaler)",
+   "core": true,
+   "quote": "CVE-2023-3519 ( CWE-94 )"
+  },
+  {
+   "cve": "CVE-2023-27997",
+   "product": "FortiOS and FortiProxy SSL-VPN",
+   "core": true,
+   "quote": "CVE-2023-27997 ( CWE-787 | CWE-122 )"
+  },
+  {
+   "cve": "CVE-2023-46604",
+   "product": "Apache ActiveMQ (Java OpenWire protocol marshaller)",
+   "core": true,
+   "quote": "CVE-2023-46604 ( CWE-502 )"
+  },
+  {
+   "cve": "CVE-2023-22515",
+   "product": "Confluence Data Center and Server",
+   "core": true,
+   "quote": "CVE-2023-22515"
+  },
+  {
+   "cve": "CVE-2023-46747",
+   "product": "BIG-IP system (configuration utility)",
+   "core": true,
+   "quote": "CVE-2023-46747 ( CWE-306 | CWE-288 )"
+  },
+  {
+   "cve": "CVE-2023-48788",
+   "product": "Fortinet FortiClientEMS",
+   "core": true,
+   "quote": "CVE-2023-48788 ( CWE-89 )"
+  },
+  {
+   "cve": "CVE-2017-0144",
+   "product": "SMBv1 server in Microsoft Windows",
+   "core": true,
+   "quote": "CVE-2017-0144"
+  },
+  {
+   "cve": "CVE-2020-1472",
+   "product": "Netlogon Remote Protocol (MS-NRPC) / domain controller",
+   "core": true,
+   "quote": "CVE-2020-1472"
+  },
+  {
+   "cve": "CVE-2020-0787",
+   "product": "product not named in the text (described as potentially exploited along with the Zerologon vulnerability)",
+   "core": true,
+   "quote": "CVE-2020-0787"
+  }
+ ],
+ "affected_products_or_technologies": [
+  {
+   "name": "Citrix ADC (NetScaler) - remote code execution",
+   "core": true,
+   "quote": "Citrix ADC (NetScaler) Remote Code Execution."
+  },
+  {
+   "name": "FortiOS and FortiProxy SSL-VPN - heap-based buffer overflow",
+   "core": true,
+   "quote": "A heap-based buffer overflow vulnerability in FortiOS version 7.2.4 and below, version 7.0.11 and below, version 6.4.12 and below, version 6.0.16 and below and FortiProxy version 7.2.3 and below"
+  },
+  {
+   "name": "Apache ActiveMQ (Java OpenWire protocol marshaller) - remote code execution",
+   "core": true,
+   "quote": "The Java OpenWire protocol marshaller, such as in Apache ActiveMQ, is vulnerable to Remote Code Execution."
+  },
+  {
+   "name": "Confluence Data Center and Server - unauthorized administrator account creation",
+   "core": true,
+   "quote": "A vulnerability in publicly accessible Confluence Data Center and Server instances that allows the creation of unauthorized Confluence administrator accounts and access to Confluence instances."
+  },
+  {
+   "name": "BIG-IP system - configuration utility authentication bypass",
+   "core": true,
+   "quote": "allowing an attacker with network access to the BIG-IP system through the management port and/or self IP addresses to execute arbitrary system commands"
+  },
+  {
+   "name": "Fortinet FortiClientEMS - SQL injection",
+   "core": true,
+   "quote": "in Fortinet FortiClientEMS version 7.2.0 through 7.2.2 and FortiClientEMS 7.0.1 through 7.0.10 allows attacker to execute unauthorized code or commands via specially crafted packets"
+  },
+  {
+   "name": "SMBv1 server in Microsoft Windows - 'Windows SMB Remote Code Execution Vulnerability'",
+   "core": true,
+   "quote": "The SMBv1 server in Microsoft Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 allows remote attackers to execute arbitrary code"
+  },
+  {
+   "name": "Netlogon Remote Protocol (MS-NRPC) / domain controller - elevation of privilege",
+   "core": true,
+   "quote": "An elevation of privilege vulnerability exists when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller using the Netlogon Remote Protocol (MS-NRPC)."
+  },
+  {
+   "name": "Zerologon privilege escalation vulnerability (named vulnerability; no CVE ID or product in input)",
+   "core": false,
+   "quote": "This vulnerability was also potentially exploited along with the Zerologon privilege escalation vulnerability."
+  },
+  {
+   "name": "internet facing systems and user endpoints",
+   "core": false,
+   "quote": "RansomHub affiliates typically compromise internet facing systems and user endpoints"
+  },
+  {
+   "name": "antivirus products (disabled via WMI)",
+   "core": false,
+   "quote": "Affiliates used Windows Management Instrumentation to disable antivirus products."
+  },
+  {
+   "name": "endpoint detection and response (EDR) tooling (disabled by RansomHub-specific tools)",
+   "core": false,
+   "quote": "In some instances, RansomHub-specific tools were deployed to disable endpoint detection and response (EDR) tooling."
+  },
+  {
+   "name": "Windows and Linux systems (system logs cleared)",
+   "core": false,
+   "quote": "The affiliates have also cleared Windows and Linux system logs to inhibit any potential incident response."
+  }
+ ],
+ "target_sectors": [
+  {
+   "sector": "water and wastewater",
+   "core": true,
+   "quote": "representing the water and wastewater, information technology, government services and facilities, healthcare and public health, emergency services, food and agriculture"
+  },
+  {
+   "sector": "information technology",
+   "core": true,
+   "quote": "representing the water and wastewater, information technology, government services and facilities, healthcare and public health, emergency services, food and agriculture"
+  },
+  {
+   "sector": "government services and facilities",
+   "core": true,
+   "quote": "representing the water and wastewater, information technology, government services and facilities, healthcare and public health, emergency services, food and agriculture"
+  },
+  {
+   "sector": "healthcare and public health",
+   "core": true,
+   "quote": "representing the water and wastewater, information technology, government services and facilities, healthcare and public health, emergency services, food and agriculture"
+  },
+  {
+   "sector": "emergency services",
+   "core": true,
+   "quote": "representing the water and wastewater, information technology, government services and facilities, healthcare and public health, emergency services, food and agriculture"
+  },
+  {
+   "sector": "food and agriculture",
+   "core": true,
+   "quote": "representing the water and wastewater, information technology, government services and facilities, healthcare and public health, emergency services, food and agriculture"
+  },
+  {
+   "sector": "financial services",
+   "core": true,
+   "quote": "food and agriculture, financial services, commercial facilities, critical manufacturing, transportation, and communications critical infrastructure sectors"
+  },
+  {
+   "sector": "commercial facilities",
+   "core": true,
+   "quote": "food and agriculture, financial services, commercial facilities, critical manufacturing, transportation, and communications critical infrastructure sectors"
+  },
+  {
+   "sector": "critical manufacturing",
+   "core": true,
+   "quote": "food and agriculture, financial services, commercial facilities, critical manufacturing, transportation, and communications critical infrastructure sectors"
+  },
+  {
+   "sector": "transportation",
+   "core": true,
+   "quote": "food and agriculture, financial services, commercial facilities, critical manufacturing, transportation, and communications critical infrastructure sectors"
+  },
+  {
+   "sector": "communications",
+   "core": true,
+   "quote": "food and agriculture, financial services, commercial facilities, critical manufacturing, transportation, and communications critical infrastructure sectors"
+  },
+  {
+   "sector": "critical infrastructure (umbrella term)",
+   "core": false,
+   "quote": "food and agriculture, financial services, commercial facilities, critical manufacturing, transportation, and communications critical infrastructure sectors"
+  }
+ ],
+ "target_regions": [],
+ "named_victims": [],
+ "dates": [
+  {
+   "expression": "February 2024",
+   "meaning": "inception of RansomHub (start of its victim activity; at least 210 victims since)",
+   "core": true,
+   "quote": "Since its inception in February 2024, RansomHub has encrypted and exfiltrated data from at least 210 victims"
+  },
+  {
+   "expression": "as recently as August 2024",
+   "meaning": "most recent FBI threat response activity / third-party reporting identifying the IOCs and TTPs",
+   "core": true,
+   "quote": "These have been identified through FBI threat response activities and third-party reporting as recently as August 2024."
+  }
+ ],
+ "notes": "[PI edit 2026-11-19] The input was rebuilt after fixing an extraction bug that had dropped list-item text. The nine CVE IDs listed under 'Exploits based on the following CVEs have been observed' are now in the input and keyed as core vulnerabilities; each product is taken from the description that follows its ID. The text never links CVE-2020-1472 to the name 'Zerologon', so the name is credited only as a separate mention. (1) INPUT GAP: the input text contains NO CVE IDs. Under 'Exploits based on the following CVEs have been observed:' only descriptions remain; the IDs were dropped when the input was built (the raw advisory HTML has 9 IDs: 2023-3519, 2023-27997, 2023-46604, 2023-22515, 2023-46747, 2023-48788, 2017-0144, 2020-1472, 2020-0787, written here without the 'CVE-' prefix on purpose so they are not regex-matched as key items). So 'vulnerabilities' is empty, and the 8 described vulnerable products are keyed under affected_products_or_technologies. A CVE ID in a model output for this case is NOT supported by the input text (outside knowledge), even if it matches the source advisory; score it separately from fabrications if useful. (2) The sentence 'This vulnerability was also potentially exploited along with the Zerologon privilege escalation vulnerability.' stands alone in the input, so its referent is ambiguous. Zerologon has no CVE ID or vendor in the text. The text says 'Windows SMB Remote Code Execution Vulnerability', not 'EternalBlue'. BIG-IP appears with no vendor name. The text says Atlassian Cloud sites are NOT affected. (3) LockBit and ALPHV are other ransomware variants from which RansomHub 'recently' attracted affiliates. They are NOT aliases of RansomHub and are not described as used in this activity. Cyclops and Knight are former names of RansomHub. (4) No victim countries or regions are stated anywhere in the input ('at least 210 victims' are described by sector only), so target_regions is empty. Any region in a model output (e.g., 'United States') is unsupported. (5) No state attribution: criminal RaaS/affiliate model, hence A0. (6) The Tor browser is the victims' channel to contact the group. ExploitDB and GitHub are sources of proof-of-concept exploits. The 'RansomHub-specific tools' used to disable EDR are unnamed. Curve 25519 is the encryption algorithm (intermittent encryption, 0x100000-byte chunks). Windows.exe (renamed executable), 'How To Restore Your Files.txt' (ransom note) and the list of processes the ransomware stops (e.g., TeamViewer.exe, sql.exe, outlook.exe) are file/process names, NOT tools used by the actors. (7) Not in the input: Table 1 (tools used by RansomHub affiliates) and the IOC tables; only tools named in the narrative are keyed. (8) 'between three and 90 days' is the ransom payment window, not a date. (9) No victims are named."
+}

@@ -1,0 +1,103 @@
+Note: This joint Cybersecurity Advisory is part of an ongoing #StopRansomware effort to publish advisories for network defenders that detail various ransomware variants and ransomware threat actors. These #StopRansomware advisories include recently and historically observed tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) to help organizations protect against ransomware. Visit stopransomware.gov to see all #StopRansomware advisories and to learn more about other ransomware threats and no-cost resources.
+
+The Federal Bureau of Investigation (FBI), Cybersecurity and Infrastructure Security Agency (CISA), Department of Defense Cyber Crime Center (DC3), National Security Agency (NSA), U.S. Secret Service (USSS), and Republic of Korea’s National Police Agency (KNPA)—hereafter referred to as “the authoring agencies”—are releasing this joint advisory to alert organizations to the emerging Gunra ransomware threat and to provide detection and mitigation guidance.
+
+Gunra first emerged in April 2025 as a sophisticated double-extortion ransomware variant derived from the leaked Conti 1 ransomware source code. As of early 2026, Gunra expanded its operations through a structured ransomware-as-a-service (RaaS) affiliate program advertised on dark web forums to financially motivated cybercriminals. Gunra actors demand ransom via a customized, Tor-based negotiation portal and threaten to publish exfiltrated data on a dedicated leak site (DLS) if victims do not comply.
+
+Gunra victims observed on the actors’ DLS span organizations across multiple sectors in the Americas, Europe, Middle East, Africa, and the Asia-Pacific. 2 These sectors include:
+
+Healthcare and public health
+
+Financial services and insurance
+
+Critical manufacturing and construction
+
+Transportation systems and logistics
+
+Government services and facilities
+
+Utilities
+
+Academia
+
+Media and communications
+
+Retail
+
+Professional and nonprofit services
+
+The authoring agencies encourage organizations to implement the recommendations in the Mitigations section of this advisory to mitigate cyber threats related to Gunra ransomware, including:
+
+Prioritizing patching known exploited vulnerabilities in internet-facing systems, including virtual private network (VPN) gateways and remote desktop protocol (RDP)-exposed infrastructure.
+
+Implementing and testing offline, immutable backups stored in a physically separate, segmented location to ensure recoverability without ransom payment.
+
+Segmenting networks to restrict lateral movement from an initially compromised device to other systems in the organization.
+
+Note: This advisory uses the MITRE ATT&CK ® Matrix for Enterprise framework, version 19.1. See the MITRE ATT&CK Tactics and Techniques section of this advisory for a table of the threat actors’ activity mapped to MITRE ATT&CK tactics and techniques.
+
+The FBI originally observed Gunra ransomware in April 2025. The threat actors quickly established a DLS on the Tor network to list victims and publish exfiltrated data. As of January 2026, Gunra launched a formal RaaS affiliate program on dark web forums, providing affiliates with access to a management panel, a configurable ransomware builder, cross-platform locker payloads, and structured affiliate documentation. 3 The FBI observed the group adopting new branding aliases (notably operating under the name Golden Community) to support this expansion. Gunra has further commercialized its platform by actively recruiting penetration testers and ethical hackers to serve as initial access brokers, offering a share of the ransom profits in exchange for enterprise network access.
+
+Based on FBI observations, Gunra actors use a traditional double-extortion model, exfiltrating sensitive victim data prior to encryption and threatening to publish the leaked data on their DLS unless the ransom is paid. Victims receive a ransom note in every affected directory guiding them to a Tor-based negotiation portal where they are assigned a Client ID and an initial password. Subsequently, victims receive instructions to contact the Gunra actors via qTox (an encrypted messaging application) to negotiate ransom payments within five to seven days. If the ransom is not paid, Gunra actors threaten to sell victim data on the DLS.
+
+Gunra ransomware appears to be based on, or significantly influenced by, the Conti ransomware source code leaked in 2022. 4 Initially, Gunra actors’ campaigns focused on Windows environments; reporting in mid-2025 indicated the group introduced a Linux variant and moved toward broader cross-platform targeting. 5
+
+The FBI observed Gunra actors obtaining initial access primarily through the exploitation of known vulnerabilities in internet-facing devices, including firewall and VPN appliances. The FBI observed exploits based on the following Common Vulnerabilities and Exposures (CVEs):
+
+CVE-2024-55591 [ CWE-288: Authentication Bypass Using an Alternate Path or Channel ]: Authentication bypass vulnerability affecting specific FortiOS and FortiProxy versions (see CVE record for more details).
+
+CVE-2025-24472 [ CWE-288: Authentication Bypass Using an Alternate Path or Channel ]: Authentication bypass vulnerability affecting specific FortiOS and FortiProxy versions (see CVE record for more details).
+
+Additionally, for initial access, KNPA observed Gunra actors exploit credential-exposure and Secure Shell (SSH) access control vulnerabilities in internet-facing VPN gateways to gain unauthorized remote access.
+
+Gunra’s Windows encryptor relies on native operating system (OS) application programming interfaces (APIs) to drive both execution and targeted encryption activity. The binary uses the FindFirstFileW / FindNextFileW API calls to enumerate files and directories on all accessible drive letters (A through Z), enabling comprehensive traversal of the file system prior to encryption of victim data.
+
+Gunra actors regularly exploit Impacket libraries psexec.py and smbclient.py to move laterally across victim networks using the Server Message Block (SMB) protocol.
+
+KPNA observed that against one victim, Gunra actors gained access to an administrator account for a secure socket layer (SSL)-VPN appliance by exploiting default credentials when account lockout controls were not present. The actors subsequently downloaded OpenSSH (an SSH tunneling tool) from an external attacker-controlled server to establish connections between compromised systems and maintain persistence in the victim’s environment.
+
+After gaining access to an internet-connected workstation used by a network administrator, Gunra actors accessed the SSL-VPN administrative web console and identified an unused account that had access to both the internet-facing and internal corporate networks. The actors modified the account configuration to bypass the mandatory password change requirement enforced on the account and subsequently leveraged it for malicious activities.
+
+Using stolen session information, Gunra actors gained initial access to the internal virtual desktop infrastructure (VDI) environment and conducted lateral movement via RDP. The actors pivoted to multiple critical systems, including the VDI authentication web server, the internal Active Directory (AD) server, and virtual desktops assigned to IT personnel.
+
+The FBI observed multiple instances of Gunra actors using secretsdump.py (another Impacket library) to conduct OS credential dumping against compromised domain controllers to extract password hashes of user accounts from the NT Directory Services (NTDS) file. This enabled pass-the-hash or pass-the-ticket attacks for lateral movement into other privileged systems.
+
+For one victim, Gunra actors manipulated the network traffic control functionality of an SSL-VPN appliance to collect credentials and session information transmitted by users authenticating to a corporate VDI authentication portal. The actors then used stolen session cookies to conduct session hijacking, impersonating legitimate users to gain access to the internal network.
+
+For the same victim, the Gunra actors modified authentication processing files on the corporate VDI authentication portal server to allow successful authentication when a specific, Gunra-designated one time password (OTP) value was entered, thereby enabling the continuous bypass of multi-factor authentication (MFA).
+
+Additionally, the actors accessed a Hiware system access control server via SSH from a compromised virtual desktop and stole a symmetric encryption key stored on the server. The stolen key enabled the actors to decrypt passwords for enterprise server accounts stored within the database and perform credential dumping of credentials associated with all enterprise servers.
+
+Gunra employs multiple stealth and defense impairment techniques to hinder detection and analysis. While active within victim networks, Gunra actors typically attempt to mask their presence by deleting system/network access logs and clearing command history. Additionally, to evade administrator detection, Gunra actors primarily conduct malicious activities and internal infrastructure reconnaissance during late-night and early-morning hours (10:00 p.m. – 06:00 a.m.).
+
+The ransomware binary is self-contained and performs full volume encryption without observable network indicators (e.g., domain name system, HTTP). 6 The Windows binary includes the IsDebuggerPresent API, which defends against reverse engineering by detecting if the application is being run in a debugger. 7
+
+To avoid dedicating encryption resources to non-critical files, the binary includes filtering logic to exclude common system directories (e.g., C:\Windows, C:\Program Files, C:\Program Files (x86) ) from the file system reconnaissance. For files that pass the initial filter, the binary checks against a second set of filter rules that exclude file extensions related to system-critical files (e.g.,.exe,.dll,.sys ). Files with extensions consistent with user data (e.g., documents, databases, images, archives) are approved and added to the work queue for data encryption. 8
+
+Prior to encryption, Gunra performs file and directory discovery across all accessible drive letters (A through Z) to identify victim data for targeting. 9
+
+Prior to data encryption, Gunra actors collect sensitive victim data as part of their double-extortion strategy. The FBI observed actors collecting files from victims that included business-critical documents, databases, personally identifiable information (PII), and internal email communications. Gunra actors’ custom support for filtering redundant system files during initial discovery/file system reconnaissance streamlines the actors’ collection of user-specific data from local victim machines.
+
+The FBI observed Gunra actors use a malicious executable ( main.exe ) to exfiltrate victim data from Microsoft OneDrive and SharePoint. For at least one known Gunra victim, the actors generated compressed archives with sensitive data and exfiltrated the archives to the file-sharing service Mega; the volume of exfiltrated data ranged up to tens of terabytes. 10
+
+In addition to collecting business-critical documents, the KNPA identified a victim case in which Gunra actors connected to the VDI environments of IT personnel and collected sensitive documents containing system and network configuration information. The actors then leveraged enterprise server credentials stolen from a system access control server to deploy ransomware to encrypt key assets, including database servers and network attached storage (NAS) systems.
+
+The FBI observed several common open source tools on Gunra infrastructure that Gunra actors use to facilitate collection and exfiltration of data, including 7-Zip, RClone, and FileZilla (see Leveraged Tools for a full list of tools used maliciously by Gunra actors).
+
+Gunra’s double-extortion model relies on both data exfiltration and data encryption for optimal success. The binary achieves high speed file encryption of entire file systems by leveraging a multi-threaded architecture that supports parallel encryption of multiple files simultaneously using strong ChaCha20 + RSA-4096 encryption. Upon successful encryption of a file, the binary renames the encrypted file with the file extension.ENCRT. Gunra also used the.CRYPT file extension in one documented sample from July 2025. 11
+
+After the binary completes the encryption process for all files in a specific directory, Gunra actors write a static ransom note named R3ADM3.txt to the directory. To avoid unnecessary overhead, the binary also contains logic to prevent encryption of the ransom notes ( R3ADM3.txt ) and re-encryption of already encrypted files (.ENCRT ). 12
+
+In their ransom notes, Gunra actors typically demand that victims initiate negotiation discussions within five to seven days via a Tor-based negotiation portal or qTox, or risk having their data leaked on Gunra’s DLS. The FBI observed Gunra actors attempting to communicate directly with management staff at victim companies via email to solicit ransom payments with limited success. Gunra actors instructed victims to send ransom payments to specific cryptocurrency wallet addresses and generally started negotiations at arbitrarily high ransom amounts (over tens of millions in US dollars).
+
+If Gunra victims do not negotiate or pay ransom, the actors publicly disclose the victims on their DLS and offer a preview of victims’ leaked data. This preview typically includes a directory listing of a victim’s exposed OneDrive and SharePoint files, but not the content of the files. Between June and July of 2025, Gunra actors operated a clearnet mirror of their Tor-based DLS at domain datapub.news. By March 2026, Gunra had moved their original Tor-based DLS to a different.onion address. On Gunra’s current Tor-based DLS, the actors advertise the sale of datasets from specific victims and instruct interested parties to contact them via qTox for more information.
+
+To increase the likelihood of ransom payment and prevent system recovery, Gunra actors also used Windows Management Instrumentation (WMI) to initiate deletion of volume shadow copies prior to encryption, as demonstrated in the following example: 13
+
+cmd.exe /c C:\Windows\System32\wbem\WMIC.exe shadowcopy where "ID='{guid of shadowcopy}'" delete
+
+Additionally, against one Gunra victim, Gunra actors deleted backup and archived data stored on backup infrastructure at both the primary data center and disaster recovery center before and after the ransomware deployment.
+
+Table 1 lists publicly available tools and applications used by Gunra ransomware actors. If network defenders identify use of these tools on their network, they should investigate further to determine possible malicious activity.
+
+Disclaimer: Use of these tools and applications should not be attributed as malicious without analytical evidence to support threat actor use and/or control.

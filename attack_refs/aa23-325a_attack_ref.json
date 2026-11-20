@@ -1,0 +1,82 @@
+{
+ "case_id": "AA23-325A",
+ "input_words": 887,
+ "input_sha256": "955f9fd38756e94dc0286a05bee0a0cdfd9c746f5c87a330bdb7656dd09e00b6",
+ "inline_ids": [
+  {
+   "id": "T1082",
+   "name": "System Information Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    12
+   ],
+   "evidence": "After acquiring access to valid cookies, LockBit 3.0 affiliates establish an authenticated session within the NetScaler appliance without a username, password, or access to MFA tokens [ T1539 ]. Affiliates acquire this by sending an HTTP GET request with a crafted HTTP Host header, leading to a vulnerable appliance returning system memory information [ T1082 ]. The information obtained through this exploit contains a valid NetScaler AAA session cookie."
+  },
+  {
+   "id": "T1539",
+   "name": "Steal Web Session Cookie",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    12
+   ],
+   "evidence": "After acquiring access to valid cookies, LockBit 3.0 affiliates establish an authenticated session within the NetScaler appliance without a username, password, or access to MFA tokens [ T1539 ]. Affiliates acquire this by sending an HTTP GET request with a crafted HTTP Host header, leading to a vulnerable appliance returning system memory information [ T1082 ]. The information obtained through this exploit contains a valid NetScaler AAA session cookie."
+  },
+  {
+   "id": "T1556.006",
+   "name": "Multi-Factor Authentication",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    11
+   ],
+   "evidence": "CVE-2023-4966 is a software vulnerability found in Citrix NetScaler ADC and NetScaler Gateway appliances with exploitation activity identified as early as August 2023. This vulnerability provides threat actors, including LockBit 3.0 ransomware affiliates, the capability to bypass MFA [ T1556.006 ] and hijack legitimate user sessions [ T1563 ]."
+  },
+  {
+   "id": "T1563",
+   "name": "Remote Service Session Hijacking",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    11
+   ],
+   "evidence": "CVE-2023-4966 is a software vulnerability found in Citrix NetScaler ADC and NetScaler Gateway appliances with exploitation activity identified as early as August 2023. This vulnerability provides threat actors, including LockBit 3.0 ransomware affiliates, the capability to bypass MFA [ T1556.006 ] and hijack legitimate user sessions [ T1563 ]."
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T1082",
+   "name": "System Information Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "System Information Discovery | T1082 | Threat actors will attempt to obtain information about the operating system and hardware, including versions, and patches."
+  },
+  {
+   "id": "T1539",
+   "name": "Steal Web Session Cookie",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Steal Web Session Cookie | T1539 | Threat actors with access to valid cookies can establish an authenticated session within the NetScaler appliance without a username, password, or access to multifactor authentication (MFA) tokens."
+  },
+  {
+   "id": "T1556.006",
+   "name": "Multi-Factor Authentication",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Modify Authentication Process: Multifactor Authentication | T1556.006 | Threat actors leverage vulnerabilities found within CVE- to compromise, modify, and/or bypass multifactor authentication to hijack user sessions, harvest credentials, and move laterally, which enables persistent access."
+  }
+ ],
+ "n_inline": 4,
+ "n_table": 3,
+ "n_union": 4,
+ "n_inline_not_active": 0,
+ "n_table_not_active": 0
+}

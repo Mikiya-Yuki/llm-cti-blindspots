@@ -1,0 +1,93 @@
+Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors
+
+Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) builds on FBI’s Russian Government Cyber Actors Targeting Networking Devices, Critical Infrastructure Public Service Announcement of the decade-plus FSB Center 16 cyber activity by providing additional tactics, techniques, and procedures (TTPs) to enable defenders to more fully understand and counter the threat.
+
+This CSA is being released by the following authoring and co-sealing agencies:
+
+United States National Security Agency (NSA)
+
+United States Cybersecurity and Infrastructure Security Agency (CISA)
+
+United States Federal Bureau of Investigation (FBI)
+
+United States Department of Defense Cyber Crime Center (DC3)
+
+Australian Signals Directorate’s Australian Cyber Security Centre (ASD’s ACSC)
+
+Communications Security Establishment Canada’s (CSE’s) Canadian Centre for Cyber Security (Cyber Centre)
+
+New Zealand National Cyber Security Centre (NCSC-NZ)
+
+United Kingdom National Cyber Security Centre (NCSC-UK)
+
+Czech Republic National Cyber and Information Security Agency (NÚKIB) 1
+
+Danish Defence Intelligence Service (DDIS) 2
+
+Estonian Foreign Intelligence Service (EFIS) 3
+
+Estonian Information System Authority (RIA) 4
+
+Finnish Defence Intelligence (FDI) 5
+
+Finnish Security and Intelligence Service (SUPO) 6
+
+French National Cybersecurity Agency (ANSSI) 7
+
+Italian External Intelligence and Security Agency (AISE) 8
+
+Italian Internal Intelligence and Security Agency (AISI) 9
+
+The Military Counterintelligence Service of Poland (SKW) 10
+
+Sweden National Cyber Security Centre (NCSC-SE) 11
+
+The authoring and co-sealing agencies strongly urge device owners and network defenders to take mitigation and remediation actions against Russian government-sponsored exploitation of vulnerable routers.
+
+Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting (PDF, 816KB)
+
+The cybersecurity industry provides overlapping cyber threat intelligence, indicators of compromise (IOCs), and mitigation recommendations related to this activity. Although not all encompassing, the following list contains the most notable threat group names commonly used within the cybersecurity community related to this activity:
+
+Berserk Bear
+
+Energetic Bear
+
+Crouching Yeti
+
+Dragonfly
+
+Ghost Blizzard
+
+Static Tundra
+
+Note: Cybersecurity companies have different methods of tracking and attributing cyber actors, and this list may not provide a 1:1 correlation to the authoring agencies’ understanding for all activity related to these groupings.
+
+Critical infrastructure sectors most at risk from the Russian Federal Security Service (FSB) Center 16 cyber actors’ targeting include:
+
+Communications,
+
+Defense Industrial Base,
+
+Energy,
+
+Financial Services,
+
+Government Services and Facilities, especially organizations at the state and local level, and
+
+Healthcare and Public Health.
+
+Note: This advisory uses the MITRE ATT&CK® Matrix for Enterprise 12 framework, version 19. See Appendix A for tables of the activity mapped to MITRE ATT&CK tactics and techniques. This advisory also uses MITRE DEFEND TM version 1.4.0.
+
+The Russian FSB Center 16 cyber actors primarily use scanning to identify poorly configured networking devices, primarily routers, for exploitation. The actors scan for Internet IP ranges with active Simple Network Management Protocol (SNMP) agents that accept common or default community strings for authentication. These scans, run via proxies, consist of SNMP Set-Requests from a spoofed IP address containing Object Identifiers (OIDs) that instruct the SNMP agent on poorly configured networking devices to:
+
+Copy its configuration to a file, often called “config.bkp” or “output.txt”.
+
+Transfer the file, typically using Trivial File Transfer Protocol (TFTP), to an actor-controlled leased virtual private server (VPS) or compromised FTP server.
+
+While SNMP scanning is the primary method the actors use to discover and exploit poorly configured networking devices, they occasionally exploit common vulnerabilities and exposures (CVEs) in Cisco devices, Cisco’s Smart Install (SMI) functionality, and web portals to manage network devices. The actors previously exploited at least the following CVEs:
+
+CVE-2018-0171
+
+CVE-2008-4128 13
+
+Many of these TTPs overlap with activity by other malicious cyber actors, such as Salt Typhoon. Even though this CSA focuses on Russian FSB Center 16 cyber activity, the mitigations below should detect and counter these and similar TTPs used by other actors.

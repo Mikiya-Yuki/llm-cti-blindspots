@@ -1,0 +1,434 @@
+{
+ "case_id": "AA24-207A",
+ "input_words": 2041,
+ "input_sha256": "f549a86f24c61c5f46830c3f161e485ec653b0d75b693d3cd0d26d15f9296113",
+ "inline_ids": [
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    94,
+    111
+   ],
+   "evidence": "ProcDump [ T1003 ]"
+  },
+  {
+   "id": "T1021",
+   "name": "Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    115,
+    119
+   ],
+   "evidence": "The actors have also used Remote Desktop Protocol (RDP) to move laterally [ T1021 ]."
+  },
+  {
+   "id": "T1021.002",
+   "name": "SMB/Windows Admin Shares",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    113
+   ],
+   "evidence": "The actors also enumerate directories and files of connected devices using Server Message Block (SMB) protocol, which enables network file sharing and the ability to request services and programs from a network [ T1021.002 ]."
+  },
+  {
+   "id": "T1027",
+   "name": "Obfuscated Files or Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    110
+   ],
+   "evidence": "The actors routinely pack late-stage tooling in VMProtect and Themida. Malicious tooling packed with these and other commercial tools have advanced anti-debugging and detection capabilities. These files are typically multiple megabytes in size and often contain unusual file section names such as vmp0 and vmp1 for VMProtect and Themida or randomized file section names for Themida [ T1027 ]."
+  },
+  {
+   "id": "T1039",
+   "name": "Data from Network Shared Drive",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    117
+   ],
+   "evidence": "Malware previously used by the actors permitted placement and access to search through files that could be of interest, including scanning computer files for keywords related to defense and military sectors in English and Korean. The actors identify data for theft by enumerating files and folders across many directories and servers using command-line activity or functionality built into custom tools. The actors collect the relevant files into RAR archives, sometimes using a version of WinRAR brought into the victim’s environment with other malicious tooling [ T1560 , T1039 ]."
+  },
+  {
+   "id": "T1040",
+   "name": "Network Sniffing",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    89
+   ],
+   "evidence": "Juggernaut [ T1040 ]"
+  },
+  {
+   "id": "T1048",
+   "name": "Exfiltration Over Alternative Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    100,
+    118
+   ],
+   "evidence": "WinSCP [ T1048 ]"
+  },
+  {
+   "id": "T1059",
+   "name": "Command and Scripting Interpreter",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    103
+   ],
+   "evidence": "The actors are well-versed in using native tools and processes on systems, known as living off the land (LOTL). They use Windows command line, PowerShell, Windows Management Instrumentation command line (WMIC), and Linux bash, for system, network, and account enumeration. While individual commands typically vary, the authoring agencies assess the actors prefer netstat commands, such as netstat –naop and netstat –noa [ T1059 ]. Example commands used by the actors include the following:"
+  },
+  {
+   "id": "T1071",
+   "name": "Application Layer Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    116
+   ],
+   "evidence": "The actors leverage techniques and infrastructure positioned around the world to send commands to compromised systems. The actors disguise their malware within HTTP packets to appear as benign network traffic. They also use tunneling tools such as 3Proxy, PLINK, and Stunnel as well as custom proxy tunneling tools to tunnel traffic over a variety of protocols from inside a network back to a C2 server. Tunneling enables the actors to perform C2 operations despite network configurations that would typically pose a challenge, such as the use of Network Address Translation (NAT) or traffic funneled"
+  },
+  {
+   "id": "T1083",
+   "name": "File and Directory Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    112
+   ],
+   "evidence": "The actors used customized file system enumeration tooling written in .NET. The tool is capable of receiving and executing command line arguments to enumerate directories and files and compress output files. The tool collects the following information for each drive targeted on a system: depth relative to starting path, name, last write time, last access time, creation time, size, and attributes [ T1087 , T1083 ]."
+  },
+  {
+   "id": "T1087",
+   "name": "Account Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    112
+   ],
+   "evidence": "The actors used customized file system enumeration tooling written in .NET. The tool is capable of receiving and executing command line arguments to enumerate directories and files and compress output files. The tool collects the following information for each drive targeted on a system: depth relative to starting path, name, last write time, last access time, creation time, size, and attributes [ T1087 , T1083 ]."
+  },
+  {
+   "id": "T1090",
+   "name": "Proxy",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    84,
+    88,
+    96,
+    116
+   ],
+   "evidence": "3Proxy [ T1090 ]"
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    102
+   ],
+   "evidence": "The actors gain initial access through widespread exploitation of web servers through known vulnerabilities, such as CVE-2021-44228 (“Log4Shell”) in Apache’s Log4j software library and other CVEs listed above, to deploy web shells and gain access to sensitive information and applications for further exploitation. The actors continue to breach organizations by exploiting web server vulnerabilities in public-facing devices and have conducted widespread activity against a number of different organizations simultaneously [ T1190 ]."
+  },
+  {
+   "id": "T1560",
+   "name": "Archive Collected Data",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    99,
+    117
+   ],
+   "evidence": "WinRAR [ T1560 ]"
+  },
+  {
+   "id": "T1567",
+   "name": "Exfiltration Over Web Service",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    118
+   ],
+   "evidence": "The actors typically exfiltrate data to web services such as cloud storage or servers not associated with their primary C2. Notably, the actors have been observed logging into actor-controlled cloud-based storage service accounts directly from victim networks to exfiltrate data [ T1567 ]. The actors have also been observed using the utilities PuTTY and WinSCP to exfiltrate data to North Korea-controlled servers via File Transfer Protocol (FTP) and other protocols [ T1048 ]."
+  },
+  {
+   "id": "T1572",
+   "name": "Protocol Tunneling",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    93,
+    95,
+    97,
+    101
+   ],
+   "evidence": "PLINK [ T1572 ]"
+  },
+  {
+   "id": "T1587.001",
+   "name": "Malware",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    82
+   ],
+   "evidence": "These tools include functionality for executing arbitrary commands, keylogging, screenshots, listing files and directories, browser history retrieval, process snooping, creating and writing to files, capturing network connections, and uploading content to command and control (C2) [ T1587.001 , T1587.004 ]. The tools allow the actors to maintain access to the victim system with each implant having a designated C2 node."
+  },
+  {
+   "id": "T1587.004",
+   "name": "Exploits",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    82
+   ],
+   "evidence": "These tools include functionality for executing arbitrary commands, keylogging, screenshots, listing files and directories, browser history retrieval, process snooping, creating and writing to files, capturing network connections, and uploading content to command and control (C2) [ T1587.001 , T1587.004 ]. The tools allow the actors to maintain access to the victim system with each implant having a designated C2 node."
+  },
+  {
+   "id": "T1591",
+   "name": "Gather Victim Org Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    20
+   ],
+   "evidence": "While there is limited available information on the group’s initial reconnaissance methods, the actors likely identify vulnerable systems using publicly available internet scanning tools that reveal information such as vulnerabilities in public-facing web servers [ T1595 , T1592 ]. The actors gather open source information about their victims for use in targeting [ T1591 ] and research Common Vulnerabilities and Exposures (CVEs) when published to the National Institute of Standards and Technology (NIST) National Vulnerability Database [ T1596 ]. CVEs researched include:"
+  },
+  {
+   "id": "T1592",
+   "name": "Gather Victim Host Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    20
+   ],
+   "evidence": "While there is limited available information on the group’s initial reconnaissance methods, the actors likely identify vulnerable systems using publicly available internet scanning tools that reveal information such as vulnerabilities in public-facing web servers [ T1595 , T1592 ]. The actors gather open source information about their victims for use in targeting [ T1591 ] and research Common Vulnerabilities and Exposures (CVEs) when published to the National Institute of Standards and Technology (NIST) National Vulnerability Database [ T1596 ]. CVEs researched include:"
+  },
+  {
+   "id": "T1595",
+   "name": "Active Scanning",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    20
+   ],
+   "evidence": "While there is limited available information on the group’s initial reconnaissance methods, the actors likely identify vulnerable systems using publicly available internet scanning tools that reveal information such as vulnerabilities in public-facing web servers [ T1595 , T1592 ]. The actors gather open source information about their victims for use in targeting [ T1591 ] and research Common Vulnerabilities and Exposures (CVEs) when published to the National Institute of Standards and Technology (NIST) National Vulnerability Database [ T1596 ]. CVEs researched include:"
+  },
+  {
+   "id": "T1596",
+   "name": "Search Open Technical Databases",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "evidence_paragraphs": [
+    20
+   ],
+   "evidence": "While there is limited available information on the group’s initial reconnaissance methods, the actors likely identify vulnerable systems using publicly available internet scanning tools that reveal information such as vulnerabilities in public-facing web servers [ T1595 , T1592 ]. The actors gather open source information about their victims for use in targeting [ T1591 ] and research Common Vulnerabilities and Exposures (CVEs) when published to the National Institute of Standards and Technology (NIST) National Vulnerability Database [ T1596 ]. CVEs researched include:"
+  }
+ ],
+ "table_ids": [
+  {
+   "id": "T1003",
+   "name": "OS Credential Dumping",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "OS Credential Dumping | T1003 | The actors attempt to dump credentials to obtain account login and credential material, normally in the form of a hash or a clear text password, from the operating system and software."
+  },
+  {
+   "id": "T1021",
+   "name": "Remote Services",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote Services | T1021 | The actors use valid accounts to log into a service that accepts remote connections, such as telnet, SSH, and VNC."
+  },
+  {
+   "id": "T1021.002",
+   "name": "SMB/Windows Admin Shares",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Remote Services: SMB/Windows Admin Shares | T1021.002 | The actors use valid accounts to interact with a remote network share using Server Message Block (SMB)."
+  },
+  {
+   "id": "T1027",
+   "name": "Obfuscated Files or Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Obfuscated Files or Information | T1027 | The actors attempt to make an executable or file difficult to discover or analyze by encrypting, encoding, or otherwise obfuscating its content on the system or in transit."
+  },
+  {
+   "id": "T1039",
+   "name": "Data from Network Shared Drive",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Data from Network Shared Drive | T1039 | The actors search network shares on computers they have compromised to find files of interest."
+  },
+  {
+   "id": "T1048",
+   "name": "Exfiltration Over Alternative Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over Alternative Protocol | T1048 | The actors steal data by exfiltrating it over a different protocol than that of the existing command and control channel."
+  },
+  {
+   "id": "T1059",
+   "name": "Command and Scripting Interpreter",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Command and Scripting Interpreter | T1059 | The actors abuse command and script interpreters to execute commands, scripts, or binaries."
+  },
+  {
+   "id": "T1071",
+   "name": "Application Layer Protocol",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Application Layer Protocol | T1071 | The actors establish command and control capabilities over commonly used application layer protocols such as HTTP(S), OPC, telnet, DNP3, and Modbus."
+  },
+  {
+   "id": "T1083",
+   "name": "File and Directory Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "File and Directory Discovery | T1083 | The actors enumerate files and directories or may search in specific locations of a host or network share for certain information within a file system."
+  },
+  {
+   "id": "T1087",
+   "name": "Account Discovery",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Account Discovery | T1087 | The actors attempt to get a listing of valid accounts, usernames, or email addresses on a system or within a compromised environment."
+  },
+  {
+   "id": "T1090",
+   "name": "Proxy",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Proxy | T1090 | The actors use a connection proxy to direct network traffic between systems or act as intermediary for network communications to a command and control server to avoid direct connections to their infrastructure."
+  },
+  {
+   "id": "T1190",
+   "name": "Exploit Public-Facing Application",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exploit Public-Facing Application | T1190 | The actors attempt to exploit a weakness in an Internet-facing host or system to initially access a network."
+  },
+  {
+   "id": "T1560",
+   "name": "Archive Collected Data",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Archive Collected Data | T1560 | The actors compress and/or encrypt data that is collected prior to exfiltration."
+  },
+  {
+   "id": "T1567",
+   "name": "Exfiltration Over Web Service",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Exfiltration Over Web Service | T1567 | The actors use an existing, legitimate external Web service to exfiltrate data rather than their primary command and control channel."
+  },
+  {
+   "id": "T1572",
+   "name": "Protocol Tunneling",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Protocol Tunneling | T1572 | The actors tunnel network communications to and from a victim system within a separate protocol to avoid detection/network filtering and/or enable access to otherwise unreachable systems."
+  },
+  {
+   "id": "T1587.001",
+   "name": "Malware",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Develop Capabilities: Malware | T1587.001 | The actors develop malware and malware components that can be used during targeting."
+  },
+  {
+   "id": "T1587.004",
+   "name": "Exploits",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Develop Capabilities: Exploits | T1587.004 | The actors develop exploits that can be used during targeting."
+  },
+  {
+   "id": "T1591",
+   "name": "Gather Victim Org Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Gather Victim Org Information | T1591 | The actors gather information about the victim’s organization that can be used during targeting."
+  },
+  {
+   "id": "T1592",
+   "name": "Gather Victim Host Information",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Gather Victim Host Information | T1592 | The actors gather information about the victim’s hosts that can be used during targeting."
+  },
+  {
+   "id": "T1595",
+   "name": "Active Scanning",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Active Scanning | T1595 | The actors execute active reconnaissance scans to gather information that can be used during targeting."
+  },
+  {
+   "id": "T1596",
+   "name": "Search Open Technical Databases",
+   "domain": "enterprise",
+   "status": "active",
+   "replaced_by": null,
+   "table_row": "Search Open Technical Databases | T1596 | The actors search freely available technical databases for information about victims that can be used during targeting."
+  }
+ ],
+ "n_inline": 22,
+ "n_table": 21,
+ "n_union": 22,
+ "n_inline_not_active": 0,
+ "n_table_not_active": 0
+}
