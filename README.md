@@ -2,7 +2,7 @@
 
 *Differential Evaluation and Retrieval-Based Mitigation*: pilot materials, version 1.0
 
-**Status (2026-11-22):** Phase A1 (Claude at standard access) has been run. Its aggregate counts are in [A1 result](#a1-result-aggregate-counts-only). Under the decision rule, verified access was not requested. The author first decided not to pursue it, then reconsidered the same day and pre-registered an extension, [Phase A3](#phase-a3-extension-pre-registered-2026-11-22), with defensive tasks closer to cyber work. Whether verified access is requested now depends only on the A3 result. A3 has not been run yet. Phase A2 (open-weight models) and the manual coding have not been run, and no date is set for them. The v1.0 materials are unchanged from release `v1.0` (2026-11-20), which was tagged before any model run; the A3 materials were tagged `a3-v1.0` before any A3 run.
+**Status (2026-11-23):** Phases A1 and A3 (Claude at standard access) have been run. Their aggregate counts are in [A1 result](#a1-result-aggregate-counts-only) and [A3 result](#a3-result-aggregate-counts-only). None of the 504 responses ended with `stop_reason: "refusal"`, so under the decision rules verified access will not be requested and Phase B will not be run. After A1, the author first decided not to pursue verified access, then reconsidered the same day and pre-registered [Phase A3](#phase-a3-extension-pre-registered-2026-11-22) as the deciding test; no further task set will be designed for this decision. Phase A2 (open-weight models) and the manual coding have not been run, and no date is set for them. The v1.0 materials are unchanged from release `v1.0` (2026-11-20), which was tagged before any model run; the A3 materials were tagged `a3-v1.0` before any A3 run.
 
 ## Summary
 
@@ -70,7 +70,25 @@ A3 asks whether general cyber safeguards intervene on defensive tasks that are c
 - **Counts:** 12 cases × 3 tasks × 3 languages = 108 prompts, each run twice (216 requests).
 - **Decision rule:** verified access is requested only if at least one A3 response has `stop_reason: "refusal"` with `stop_details.category: "cyber"`. If none does, it is not requested, and no further task set is designed for this decision.
 - **Disclosure:** A3 was designed after the A1 counts were known; no A1 response text was read. It is therefore an extension designed after A1, not part of the v1.0 pre-registration.
-- **Status:** frozen (tag `a3-v1.0`). Not yet run.
+- **Status:** frozen (tag `a3-v1.0`) and run. Results are below.
+
+## A3 result (aggregate counts only)
+
+A3 was run on 2026-11-22, US Eastern Time (2026-11-23 UTC), starting about five minutes after the `a3-v1.0` tag was created. It ran in the Default workspace of a Claude Console organization (standard access, no CVP), with the frozen A3 prompts and the settings in this repository.
+
+| Measure | Count |
+|---|---|
+| Requests completed (108 prompts × 2 runs) | 216 |
+| Responses from model ID `claude-opus-5-5` | 216 |
+| `stop_reason: "end_turn"` (72 in each of T3, T4 and T5; 72 in each of en, zh-Hans and zh-Hant) | 216 |
+| `stop_reason: "refusal"`, any `stop_details.category` | 0 |
+| `stop_reason: "refusal"` with `stop_details.category: "cyber"` | 0 |
+| Stopped at `max_tokens` | 0 |
+| Requests still in error after resending | 0 |
+
+Three requests, sent at about the same moment, first ended in a client-side read timeout (no data received for 15 minutes). The runner stopped, as it does on any unexpected error. The run was then resumed, and the three requests were resent unchanged, as the settings provide for transient errors, and completed. As for A1, the counts cover only the stop reason. The response texts have not been read or coded, and they are not published.
+
+**Decision on verified access.** No A3 response was declined with category `"cyber"`. Under the A3 decision rule ([`PROTOCOL_A3.md`](PROTOCOL_A3.md) §6), verified access is therefore not requested, and no further task set will be designed for this decision. Across A1 and A3, Claude Opus 5.5 at standard access completed all 504 requests on these public advisories without a refusal stop reason. Phase B will not be run, and the second part of research question 2 (the comparison under verified access) remains unanswered.
 
 ## Safety boundary
 
@@ -161,6 +179,8 @@ The Git tag of the release records the public timestamp. Any later change is log
 2026-11-22: the status line and the A1 result section were added to this README, and the README entry in `MANIFEST.sha256` was updated. No frozen material was changed.
 
 2026-11-22, later the same day: Phase A3 was added (`PROTOCOL_A3.md`, `prompts_a3.md`, `prompt_manifest_a3.tsv`, `scripts/run_claude_a3.py`; tag `a3-v1.0`). The status line and the decision paragraph of the A1 section were revised, and `MANIFEST.sha256` now also lists the A3 files. No v1.0 material was changed.
+
+2026-11-23, after the A3 run: the A3 result section was added, the status line was revised, and the README entry in `MANIFEST.sha256` was updated. No frozen material was changed.
 
 ## Licenses and notices
 
