@@ -2,7 +2,7 @@
 
 *Differential Evaluation and Retrieval-Based Mitigation*: pilot materials, version 1.0
 
-**Status (2026-11-20):** Materials frozen as v1.0 before any model run. No model has been run; there are no results yet.
+**Status (2026-11-22):** Phase A1 (Claude at standard access) has been run. Its aggregate counts are in [A1 result](#a1-result-aggregate-counts-only). Under the decision rule, verified access was not requested, and the author has decided not to pursue it, so Phase B will not be run. Phase A2 (open-weight models) and the manual coding have not been run, and no date is set for them. The frozen materials are unchanged from release `v1.0` (2026-11-20), which was tagged before any model run.
 
 ## Summary
 
@@ -43,6 +43,24 @@ The project extends the author's ongoing research on censorship-induced gaps in 
 - **Claude Mythos is not used for the main comparison.** It has no standard-access condition under its own model ID. If a Fable 5.2 vs. Mythos 5.2 contrast is ever run, it will be exploratory and reported separately.
 
 **Scoring.** T1 outputs are scored against answer keys written before any model run. Every key item carries a verbatim quotation from the input, and all 922 quotations are verified by script. Scoring follows the manual codebook, which covers response status and reason, item recall and distortion, unsupported additions, attribution fidelity, ATT&CK validity, support and evidence, and a safety flag ([`codebook_en.md`](codebook_en.md)). For intra-coder reliability, a random 20% of coded runs is re-coded at least 7 days later, with a target of κ/α ≥ 0.70. The answer keys were drafted by AI sub-agents based on Claude, the model family evaluated in A1 and B, working only from the frozen inputs. Every quotation was verified by script and the PI approved the open judgments; [`PROTOCOL.md`](PROTOCOL.md) §13 discusses the resulting limitation.
+
+## A1 result (aggregate counts only)
+
+A1 was run on 2026-11-22 in the Default workspace of a Claude Console organization (standard access, no CVP). It used the v1.0 prompts, settings and scripts in this repository. The counts come from `scripts/summarize_claude.py`.
+
+| Measure | Count |
+|---|---|
+| Requests completed (72 prompts × 4 runs; 72 per case group) | 288 |
+| Responses from model ID `claude-opus-5-5` | 288 |
+| `stop_reason: "end_turn"` | 288 |
+| `stop_reason: "refusal"`, any `stop_details.category` | 0 |
+| `stop_reason: "refusal"` with `stop_details.category: "cyber"` | 0 |
+| Stopped at `max_tokens` | 0 |
+| Requests that ended in an error | 0 |
+
+These counts cover only the stop reason. The response texts have not been read or coded. Refusals, partial refusals and transformations written in the text (codebook RS-R, RS-P, RS-T) are therefore unknown, and no output has been scored against the answer keys. Model outputs are not published.
+
+**Decision on verified access.** The mechanical check did not meet condition 3 of the decision rule ([`PROTOCOL.md`](PROTOCOL.md) §12), so verified access was not requested. The rule would then have waited for the manual coding after A2. The author has decided not to pursue verified access. That re-evaluation and Phase B will therefore not be carried out, and the second part of research question 2 (the comparison under verified access) remains unanswered.
 
 ## Safety boundary
 
@@ -122,6 +140,8 @@ The HTML snapshots are not redistributed. Their SHA-256 hashes are in `snapshots
 | Cases, snapshot hashes, inputs, ATT&CK references | — | 2026-11-19 |
 
 The Git tag of the release records the public timestamp. Any later change is logged with its date and reason in the codebook (§10), the prompts' change log, `answer_keys/README.md`, or the protocol's revision record.
+
+2026-11-22: the status line and the A1 result section were added to this README, and the README entry in `MANIFEST.sha256` was updated. No frozen material was changed.
 
 ## Licenses and notices
 
